@@ -1,0 +1,34 @@
+{
+    "system_prompt": "You are an expert sociolinguist and bias researcher.  Your task is to classify short statements along two axes: 1) Type of harm: Stereotyping, Simplifying, Stigmatizing, Dehumanizing. 2) Othering: Yes or No.  Respond ONLY in JSON format with keys 'label' and 'othering'.",
+    "question": "Classify the following statement:",
+    "demos": [
+        {
+            "text": "All women are bad drivers.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Immigrants only come here for jobs.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "People with mental illness are dangerous.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Those addicts are not human.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        }
+    ]
+}
