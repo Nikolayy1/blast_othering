@@ -1,0 +1,9 @@
+---
+prompt_file: default.json
+dataset: default_corpus.json
+model: llama3.3:70b-instruct-q4
+seed: 42
+temperature: 0.2
+workers: 4
+save_interval: 20
+max_retries: 3
