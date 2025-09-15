@@ -141,7 +141,7 @@ class Annotate:
         """
         Load the prompt data and dataset from json.
         """
-        prompt_path = os.path.join(script_path, self.config.prompt)
+        prompt_path = os.path.join(script_path, self.config.prompt_file)
         prompt_data = load_file(
             prompt_path, logger=self.logger
         )
