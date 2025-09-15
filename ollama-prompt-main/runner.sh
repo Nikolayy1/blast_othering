@@ -26,10 +26,10 @@ export HF_HOME="$SLURM_SCRATCH/cache/HF"
 export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
 echo "Starting up Ollama server"  # and redirecting output to a log file to currently running directory
-nohup ollama serve > ollama_log_3.txt 2>&1 &
+nohup ollama serve > ollama_log_annotation.txt 2>&1 &
 
 echo "Waiting for Ollama server to start"
 sleep 1m
 
 host_ip=$(hostname -i)
-python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml
+python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml --out_filename="2nd_pass_annnotated_data.json"
