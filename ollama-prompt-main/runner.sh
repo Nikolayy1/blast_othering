@@ -2,7 +2,6 @@
 
 #SBATCH --account=blanca-blast-lecs
 #SBATCH --qos=blanca-curc
-#SBATCH --partition=blanca-blast-lecs
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=12
