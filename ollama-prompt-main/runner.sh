@@ -12,7 +12,7 @@
 
 #SBATCH --mail-user=niklas.hofstetter@colorado.edu
 #SBATCH --mail-type=ALL
-#SBATCH --job-name=BLANK_ann
+#SBATCH --job-name=annotate_data
 #SBATCH --output=logs/data.%j.log
 
 source ~/.bashrc
@@ -23,7 +23,7 @@ conda activate bt_2025  # activate the conda environment with ollama installed
 mkdir -p "$SLURM_SCRATCH/cache/HF"
 
 export HF_HOME="$SLURM_SCRATCH/cache/HF"
-export PYTHONPATH=/scratch/alpine/$USER/ollama-prompt
+export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
 echo "Starting up Ollama server"  # and redirecting output to a log file to currently running directory
 nohup ollama serve > ollama_log_3.txt 2>&1 &
