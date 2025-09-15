@@ -84,7 +84,7 @@ class OllamaClient:
         except Exception as e:
             self.logger.exception("Exception: " + str(e))
             self.logger.exception("Invalid response. Please try again.")
-            return "No valid json response."
+            return None
 
 
 class Annotate:
