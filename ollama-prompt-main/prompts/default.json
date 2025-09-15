@@ -29,6 +29,48 @@
                 "label": "Dehumanizing",
                 "othering": "Yes"
             }
+        },
+        {
+            "text": "We are all human.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Unlike us, they have no respect for traditions.",
+            "answer": {
+                "label": "None",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "People with depression can’t handle responsibility.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Everyone from that region thinks the same way.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "They are like robots without feelings.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Men are naturally better at science.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "Yes"
+            }
         }
     ]
 }
