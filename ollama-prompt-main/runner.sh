@@ -1,12 +1,13 @@
 #!/bin/bash
 
 #SBATCH --account=blanca-blast-lecs
-#SBATCH --qos=blanca-curc
+#SBATCH --qos=blanca-blast-lecs
+#SBATCH --partition=blanca-blast-lecs
 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=12
 #SBATCH --time=02:00:00
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:h100_3g.40gb:2
 #SBATCH --mem=50G
 
 #SBATCH --mail-user=niklas.hofstetter@colorado.edu
