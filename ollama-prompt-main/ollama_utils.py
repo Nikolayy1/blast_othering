@@ -71,7 +71,8 @@ class OllamaClient:
             options=self.options,
             format=self.Answer.model_json_schema()
         )
-        print("DEBUG Raw response:", response.message.content)
+        
+        
         try:
             response = self.Answer.model_validate_json(
                 response.message.content
@@ -83,7 +84,7 @@ class OllamaClient:
         except Exception as e:
             self.logger.exception("Exception: " + str(e))
             self.logger.exception("Invalid response. Please try again.")
-            return None
+            return "No valid json response."
 
 
 class Annotate:
