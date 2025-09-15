@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert sociolinguist and bias researcher.  Your task is to classify short statements along two axes: 1) Type of harm: Stereotyping, Simplifying, Stigmatizing, Dehumanizing, None. 2) Othering: Yes or No.  Respond ONLY in JSON format with keys 'label' and 'othering'.",
+    "system_prompt": "You are an expert sociolinguist and bias researcher.  Your task is to classify short statements along two axes: 1) Type of harm: Stereotyping, Simplifying, Stigmatizing, Dehumanizing, None. 2) Othering: Yes or No.  Respond only in JSON with keys 'label' and 'othering'. Do not include extra text.",
     "question": "Classify the following statement:",
     "demos": [
         {
