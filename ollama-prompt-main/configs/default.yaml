@@ -1,6 +1,6 @@
 ---
-prompt_file: default.json
-dataset: examples.json
+prompt_file: prompts/default.json
+dataset: ../data/examples.json
 model: llama3.3:70b-instruct-q4
 seed: 42
 temperature: 0.2
