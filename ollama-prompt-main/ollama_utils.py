@@ -72,8 +72,6 @@ class OllamaClient:
             format=self.Answer.model_json_schema()
         )
         
-        self.logger.info(f"Raw response: {response.message.content}")
-        
         try:
             response = self.Answer.model_validate_json(
                 response.message.content
