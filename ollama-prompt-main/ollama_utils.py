@@ -23,8 +23,8 @@ class OllamaClient:
         """
         Class to format the response from the LLM.
         """
-        # TODO: customize this class for the desired type of response
-        temp_response: str
+        label: str
+        othering: str
     
     class Messages():
         """
@@ -50,8 +50,6 @@ class OllamaClient:
         self.model = model
         self.seed = seed
         self.temperature = temperature
-
-        ollama.pull(model)
 
         self.options: ollama.Options = {
             "seed": seed,
@@ -200,10 +198,8 @@ class Annotate:
         returns
             - dict: {"text": str}
         """
-        raise NotImplementedError("must write function to format doc")
         entry = {}
-        entry["text"] = ""
-
+        entry["text"] = doc_data["text"]
         return entry
 
     def annotate(self, doc_prompt: str) -> dict:
