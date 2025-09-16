@@ -1,16 +1,9 @@
 {
-    "system_prompt": "You are an expert sociolinguist and bias researcher. Classify the given short statement into exactly one of the following categories, treating 'None' as the default unless clear harm is present: - Dehumanizing: The statement explicitly denies humanity by comparing a group to animals, objects, or diseases (e.g., 'rats', 'vermin', 'a cancer'). - Stigmatizing: The statement insults, blames, or marks a group as harmful, inferior, or undesirable, including slurs, derogatory terms, or claims they are ruining society. - Stereotyping: The statement attributes fixed roles, traits, or behaviors to an entire group, in a way that reduces them to that trait (e.g., 'all women are bad drivers'). Only use this when it is clearly a generalization and not neutral description. - Simplifying: The statement erases diversity within a group by treating them as all the same, without attaching insult or specific traits (e.g., 'immigrants are all alike'). - None: Neutral, factual, descriptive, or sociological statements, even if they mention groups, as long as they do not insult, generalize negatively, or dehumanize. For othering, mark 'Yes' only if the statement explicitly draws an 'us vs them' divide (e.g., 'those people', 'foreigners', 'they versus we'). Otherwise mark 'No'. Respond only in JSON with two keys: 'label' (None, Stereotyping, Simplifying, Stigmatizing, Dehumanizing) and 'othering' (Yes or No).",
+    "system_prompt": "Classify the given short statement. Default to 'None' unless the statement clearly meets one of the definitions below. If in doubt, choose 'None'. Categories: - None: Mentions of groups or people that are neutral, factual, descriptive, or sociological. No insult, generalization, or dehumanization. (This is the default.) - Dehumanizing: Explicitly denies humanity by comparing a group to animals, objects, or diseases (e.g., 'rats', 'trash', 'cancer'). - Stigmatizing: Explicitly insults, blames, or marks a group as harmful, inferior, or undesirable, including slurs and claims they ruin society. - Stereotyping: Assigns a fixed trait, role, or behavior to an entire group (e.g., 'all women are bad drivers'). - Simplifying: Treats a group as all the same, erasing diversity, without assigning traits (e.g., 'immigrants are all alike'). Othering: Mark 'Yes' only if the statement explicitly makes an 'us vs them' divide (e.g., 'those people', 'foreigners', 'they versus we'). Otherwise 'No'. Respond only in JSON with 'label' and 'othering'.",
     "question": "Classify the following statement:",
     "demos": [
         {
             "text": "All women are bad drivers.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "All Asians are good at math.",
             "answer": {
                 "label": "Stereotyping",
                 "othering": "No"
@@ -24,13 +17,6 @@
             }
         },
         {
-            "text": "Men and women each think in only one way.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
-            }
-        },
-        {
             "text": "Those immigrants are ruining our country.",
             "answer": {
                 "label": "Stigmatizing",
@@ -38,35 +24,7 @@
             }
         },
         {
-            "text": "Foreigners can never be trusted.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Jews are secretly controlling the government.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "No"
-            }
-        },
-        {
             "text": "Muslims are like a disease that spreads.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "They are nothing but animals.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Immigrants in the UK are just human trash.",
             "answer": {
                 "label": "Dehumanizing",
                 "othering": "Yes"
@@ -87,21 +45,28 @@
             }
         },
         {
-            "text": "Men on average are taller than women.",
+            "text": "What the fuck is wrong with people?",
             "answer": {
                 "label": "None",
                 "othering": "No"
             }
         },
         {
-            "text": "Those people across town have their own customs.",
+            "text": "Foreigners can never be trusted.",
             "answer": {
-                "label": "None",
+                "label": "Stigmatizing",
                 "othering": "Yes"
             }
         },
         {
-            "text": "Statistics show women vote at higher rates than men.",
+            "text": "They are nothing but animals.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Men on average are taller than women.",
             "answer": {
                 "label": "None",
                 "othering": "No"
