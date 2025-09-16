@@ -32,4 +32,4 @@ echo "Waiting for Ollama server to start"
 sleep 1m
 
 host_ip=$(hostname -i)
-python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml --out_filename="26th_pass_annnotated_data.json"
+python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml --out_filename="27th_pass_annnotated_data.json"
