@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert sociolinguist and bias researcher. Classify the following short statement along two axes:\n\n1) Type of harm (choose exactly one):\n- Stereotyping: Attributing fixed traits, roles, or behaviors to a group.\n- Simplifying: Reducing a group's diversity or complexity into an oversimplified view.\n- Stigmatizing: Assigning negative judgment, blame, or undesirability to a group.\n- Dehumanizing: Denying a group's full humanity (e.g., comparing to animals, objects, disease).\n- None: No harmful content present.\n\n2) Othering (choose one):\n- Yes: The statement frames an in-group vs. out-group distinction (e.g., 'those people', 'foreigners').\n- No: No in-group vs. out-group distinction.\n\nRespond only in JSON with keys:\n- \"label\" (one of: Stereotyping, Simplifying, Stigmatizing, Dehumanizing, None)\n- \"othering\" (Yes or No)\n\nDo not include explanations or extra text. Only look at the statement provided, do not make assumptions about context or intent.",
+    "system_prompt": "You are an expert sociolinguist and bias researcher. Classify the following short statement along two axes: 1. Type of harm (choose exactly one): 'Stereotyping' (A statement that attributes fixed traits, roles, or behaviors to all members of a group, treating them as homogeneous.), 'Simplifying' (A statement that erases diversity or nuance within a group without assigning specific traits.), 'Stigmatizing' (A statement that explicitly marks a group as undesirable, problematic, or inferior, often blaming them for harm.), 'Dehumanizing' (A statement that denies the humanity of a group, comparing them to animals, objects, or diseases.), 'None' (A statement that does not stereotype, simplify, stigmatize, or dehumanize a group.). 2. Othering (choose one): 'Yes' (The statement explicitly marks an 'us vs them' divide, such as 'those people,' 'foreigners,' or 'they' versus 'we.'), 'No' (No in-group versus out-group framing.). Respond only in JSON with keys: 'label' (one of: Stereotyping, Simplifying, Stigmatizing, Dehumanizing, None) 'othering' (Yes or No). Do not assume any context, only look at the statements provided. Do not include explanations or extra text.",
     "question": "Classify the following statement:",
     "demos": [
         {
@@ -10,65 +10,93 @@
             }
         },
         {
-            "text": "Immigrants only come here for jobs.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "People with mental illness are dangerous.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Those addicts are not human.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "We are all human.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Unlike us, they have no respect for traditions.",
-            "answer": {
-                "label": "None",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "People with depression can't handle responsibility.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Everyone from that region thinks the same way.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "They are like robots without feelings.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Men are naturally better at science.",
+            "text": "Those Russian trolls are always at it",
             "answer": {
                 "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Women should stay at home and take care of the kids.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Retard!",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Those immigrants are such jerks.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Being muslim is a sin.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Stay away from blacks, they are dangerous.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Jews have big ugly noses.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Literally all women are good for, is cooking.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "They are such crybabies, remove them from our country.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Immigrants in UK are just human trash.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "We are all human beings, stop the hate.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Nothing wrong with that.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Those people across town have their own way of doing things.",
+            "answer": {
+                "label": "None",
                 "othering": "Yes"
             }
         }

@@ -5,7 +5,7 @@
 #SBATCH --partition=blanca-blast-lecs
 
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=12
+#SBATCH --ntasks-per-node=4
 #SBATCH --time=00:10:00
 #SBATCH --gres=gpu:h100_3g.40gb:2
 #SBATCH --mem=50G
