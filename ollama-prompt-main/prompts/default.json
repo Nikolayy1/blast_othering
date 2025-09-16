@@ -3,126 +3,35 @@
     "question": "Classify the following statement:",
     "demos": [
         {
-            "text": "All women are bad drivers.",
+            "text": "you mean, no reason to hate jews more than any other religion.",
             "answer": {
-                "label": "Stereotyping",
+                "label": "None",
                 "othering": "No"
             }
         },
         {
-            "text": "Immigrants are all the same.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Those immigrants are ruining our country.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Muslims are like a disease that spreads.",
+            "text": "make it illegal for Jews to hold jobs/own land",
             "answer": {
                 "label": "Dehumanizing",
                 "othering": "Yes"
             }
         },
         {
-            "text": "We are all human beings, stop the hate.",
+            "text": "Having breasts and a vagina doesn't make a woman alien",
             "answer": {
                 "label": "None",
                 "othering": "No"
             }
         },
         {
-            "text": "Most of our immigrants are other Europeans.",
+            "text": "It is the media and other women are dictating what men should want.",
             "answer": {
                 "label": "None",
                 "othering": "No"
             }
         },
         {
-            "text": "What the fuck is wrong with people?",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Foreigners can never be trusted.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "They are nothing but animals.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Men on average are taller than women.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Blacks are more likely to commit violent crime.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Most men are pigs and rapists.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Women don't have it any better or worse than guys in the West.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "I was talking to a Muslim friend yesterday",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Immigrants live in my neighborhood",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Black women are beautiful.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "People really need to stop assuming women are weaker than men.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Stop treating immigrants like they are all criminals.",
+            "text": "If women's tennis is known as the 'sport where chicks freak out at the refs' then it's her fault.",
             "answer": {
                 "label": "None",
                 "othering": "No"
