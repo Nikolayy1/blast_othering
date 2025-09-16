@@ -1,9 +1,23 @@
 {
-    "system_prompt": "You are an expert sociolinguist and bias researcher. Classify the following short statement along two axes. 1. Type of harm (choose exactly one, using the priority order below): - Dehumanizing (Denying the humanity of a group by comparing them to animals, objects, or diseases, it must explicitly mention one of those groups, otherwise it is Stigmatizing), Stigmatizing (attaching blame, harm, or moral wrongdoing to a group), Stereotyping (Attributing fixed traits, roles, or behaviors to all members of a group), Simplifying (Erasing diversity within a group by reducing them to an oversimplified view without traits), None (Neutral, factual, or descriptive statements that do not stereotype, simplify, stigmatize, or dehumanize). 2. Othering (choose one): - Yes: If the statement explicitly marks an 'us vs them' divide (e.g., 'those people', 'foreigners', 'they' versus 'we'). - No: Otherwise. Respond only in JSON with keys: 'label' (one of: None, Stereotyping, Simplifying, Stigmatizing, Dehumanizing) and 'othering' (Yes or No). Do not assume context. Only evaluate the text given. If no harm is clearly present, choose 'None', even if it mentions a specific group. Treat None as the default option. If multiple types of harm are present, choose the one with the highest priority (None > Dehumanizing > Stigmatizing > Stereotyping > Simplifying).",
+    "system_prompt": "You are an expert sociolinguist and bias researcher. Classify the following short statement along two axes. 1. Type of harm (choose exactly one, using the priority order below): - Dehumanizing (Denying the humanity of a group by comparing them to animals, objects, or diseases, it must explicitly mention one of those groups, otherwise it is Stigmatizing), Stigmatizing (attaching blame, harm, or moral wrongdoing to a group), Stereotyping (Attributing fixed traits, roles, or behaviors to all members of a group), Simplifying (Erasing diversity within a group by reducing them to an oversimplified view without traits), None (Neutral, factual, or descriptive statements that do not stereotype, simplify, stigmatize, or dehumanize). 2. Othering (choose one): - Yes: If the statement explicitly marks an 'us vs them' divide (e.g., 'those people', 'foreigners', 'they' versus 'we'). - No: Otherwise. Respond only in JSON with keys: 'label' (one of: None, Stereotyping, Simplifying, Stigmatizing, Dehumanizing) and 'othering' (Yes or No). Do not assume context. Only evaluate the text given. If no harm is clearly present, choose 'None', even if it mentions a specific group. Treat None as the default option. If multiple types of harm are present, choose the one with the highest priority (Dehumanizing > Stigmatizing > Stereotyping > Simplifying > None).",
     "question": "Classify the following statement:",
     "demos": [
         {
             "text": "All women are bad drivers.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "All Asians are good at math.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Those kids are always noisy.",
             "answer": {
                 "label": "Stereotyping",
                 "othering": "No"
@@ -17,6 +31,20 @@
             }
         },
         {
+            "text": "Men and women each think in only one way.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Europeans are just one culture.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
             "text": "Those immigrants are ruining our country.",
             "answer": {
                 "label": "Stigmatizing",
@@ -24,7 +52,35 @@
             }
         },
         {
+            "text": "Foreigners can never be trusted.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Jews are secretly controlling the government.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "No"
+            }
+        },
+        {
             "text": "Muslims are like a disease that spreads.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "They are nothing but animals.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Immigrants in the UK are just human trash.",
             "answer": {
                 "label": "Dehumanizing",
                 "othering": "Yes"
@@ -45,65 +101,9 @@
             }
         },
         {
-            "text": "No reason to hate Jews more than any other religion.",
+            "text": "Men on average are taller than women.",
             "answer": {
                 "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "If women want equality, they should give men an equal say in parenthood.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Those people across town have their own way of doing things.",
-            "answer": {
-                "label": "None",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "They are nothing but animals.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Women should stay at home and take care of the kids.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "All Asians are good at math.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Immigrants in UK are just human trash.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Foreigners can never be trusted.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Those kids are always noisy.",
-            "answer": {
-                "label": "Stereotyping",
                 "othering": "No"
             }
         }
