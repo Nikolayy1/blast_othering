@@ -4,7 +4,7 @@
         "prompt_file": "prompts/default.json",
         "dataset": "../data/examples.json",
         "out_filename": "32th_pass_annnotated_data.json",
-        "model": "llama3.3:70b-instruct-q4_0",
+        "model": "llama3.1:70b-instruct-q4_0",
         "seed": 42,
         "temperature": 0.25,
         "host": "10.225.144.50",
