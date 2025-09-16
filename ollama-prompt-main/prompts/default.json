@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the given short statement. Default to 'None' unless the statement clearly meets one of the definitions. If in doubt, choose 'None'. Categories: - None: Mentions of groups or people that are neutral, factual, descriptive, or sociological, even if critical. No insult, generalization, or dehumanization. - Dehumanizing: Explicitly denies humanity by using slurs or comparing a group to animals, objects, or diseases (e.g., 'rats', 'trash', 'cancer', 'pigs'). Always use this if such terms appear, even if also a stereotype. - Stigmatizing: Explicit insults, slurs, or blame that mark a group as harmful, inferior, or undesirable, without fixed traits. (e.g., 'immigrants are ruining society'). - Stereotyping: Assigns fixed roles, traits, or behaviors to a group (e.g., 'all women are bad drivers'). Negative traits still count as stereotypes. - Simplifying: Treats a group as all the same, erasing diversity, without traits (e.g., 'immigrants are all alike'). Othering: Mark 'Yes' only if there is an explicit 'us vs them' divide, with groups named (e.g., 'foreigners', 'those people', 'they vs we'). Do not mark vague 'they' without group context. Respond only in JSON with 'label' and 'othering'.",
+    "system_prompt": "Classify the given short statement. Default to 'None' unless the statement clearly meets one of the definitions. If in doubt, choose 'None'. Categories: - None: Mentions of groups or people that are neutral, factual, descriptive, or sociological, even if critical. No insult, generalization, or dehumanization. - Dehumanizing: Explicitly denies humanity by using slurs or comparing a group to animals, objects, or diseases (e.g., 'rats', 'trash', 'cancer', 'pigs'). Always use this if such terms appear, even if also a stereotype. - Stigmatizing: Explicit insults, slurs, or blame that mark a group as harmful, inferior, or undesirable, without fixed traits. (e.g., 'immigrants are ruining society'). - Stereotyping: Assigns fixed roles, traits, or behaviors to a group (e.g., 'all women are bad drivers'). Negative traits still count as stereotypes. - Simplifying: Treats a group as all the same, erasing diversity, without traits (e.g., 'immigrants are all alike'). Othering: Mark 'Yes' only if there is an explicit 'us vs them' divide, with groups named (e.g., 'foreigners', 'those people', 'they vs we'). Do not mark vague 'they' without group context. Respond only in JSON with 'label' and 'othering'. Default to 'None', only classify as harmful if the statement very clearly meets the definition. Ambiguity = None. If you are unsure, or if the harm is not explicit, choose None.",
     "question": "Classify the following statement:",
     "demos": [
         {
@@ -92,6 +92,28 @@
                 "label": "None",
                 "othering": "No"
             }
+        },
+        {
+            "text": "I was talking to a Muslim friend yesterday",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Immigrants live in my neighborhood",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Black women are beautiful.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
         }
+
     ]
 }
