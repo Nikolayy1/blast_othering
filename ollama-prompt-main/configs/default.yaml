@@ -3,7 +3,7 @@ prompt_file: prompts/default.json
 dataset: ../data/examples.json
 model: llama3.3:70b-instruct-q4_0
 seed: 42
-temperature: 0.0
+temperature: 0.25
 workers: 4
 save_interval: 1
 max_retries: 3
