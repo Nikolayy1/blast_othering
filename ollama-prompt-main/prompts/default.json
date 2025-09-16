@@ -10,16 +10,37 @@
             }
         },
         {
-            "text": "Those Russian trolls are always at it",
+            "text": "Those Russian trolls are always at it.",
             "answer": {
                 "label": "Stereotyping",
-                "othering": "No"
+                "othering": "Yes"
             }
         },
         {
             "text": "Women should stay at home and take care of the kids.",
             "answer": {
                 "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "All Asians are good at math.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Immigrants are all the same.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Africa is one big country.",
+            "answer": {
+                "label": "Simplifying",
                 "othering": "No"
             }
         },
@@ -38,7 +59,7 @@
             }
         },
         {
-            "text": "Being muslim is a sin.",
+            "text": "Being Muslim is a sin.",
             "answer": {
                 "label": "Stigmatizing",
                 "othering": "Yes"
@@ -52,28 +73,14 @@
             }
         },
         {
-            "text": "Jews have big ugly noses.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Literally all women are good for, is cooking.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "They are such crybabies, remove them from our country.",
+            "text": "Immigrants in the UK are just human trash.",
             "answer": {
                 "label": "Dehumanizing",
                 "othering": "Yes"
             }
         },
         {
-            "text": "Immigrants in UK are just human trash.",
+            "text": "They are like parasites, taking over our land.",
             "answer": {
                 "label": "Dehumanizing",
                 "othering": "Yes"
@@ -87,10 +94,31 @@
             }
         },
         {
-            "text": "Nothing wrong with that.",
+            "text": "Christians celebrate Christmas in December.",
             "answer": {
                 "label": "None",
                 "othering": "No"
+            }
+        },
+        {
+            "text": "Muslims fast during Ramadan.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "In Japan, people often eat sushi.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Those students live in the dorm across campus.",
+            "answer": {
+                "label": "None",
+                "othering": "Yes"
             }
         },
         {
