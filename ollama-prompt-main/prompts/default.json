@@ -1,93 +1,9 @@
 {
-    "system_prompt": "Classify the following short statement along two axes:\n\n1. Type of harm (choose exactly one):\n- None: The statement may mention groups or practices, but it is descriptive, factual, or neutral. It makes no generalizations, simplifications, negative judgments, or dehumanizing comparisons.\n- Stereotyping: The statement attributes fixed traits, roles, or behaviors to all members of a group, treating them as homogeneous.\n- Simplifying: The statement erases diversity or nuance within a group, reducing them to an oversimplified view without assigning specific traits.\n- Stigmatizing: The statement explicitly marks a group as undesirable, problematic, or inferior, often blaming them for harm.\n- Dehumanizing: The statement denies the humanity of a group, comparing them to animals, objects, or diseases.\n\n2. Othering (choose one):\n- Yes: The statement explicitly marks an 'us vs them' divide, such as 'those people,' 'foreigners,' or 'they' versus 'we.'\n- No: No in-group versus out-group framing.\n\nRespond only in JSON with keys:\n- 'label' (one of: None, Stereotyping, Simplifying, Stigmatizing, Dehumanizing)\n- 'othering' (Yes or No)\n\nImportant: Do not assume context. Only evaluate the text given. If no harm is clearly present, choose 'None'.",
+    "system_prompt": "Classify the following short statement along two axes:\n\n1. Type of harm (choose exactly one):\n- None: The statement may mention groups or practices, but it is descriptive, factual, or neutral. It makes no generalizations, simplifications, negative judgments, or dehumanizing comparisons.\n- Stereotyping: The statement attributes fixed traits, roles, or behaviors to all members of a group, treating them as homogeneous.\n- Simplifying: The statement erases diversity or nuance within a group, reducing them to an oversimplified view without assigning specific traits.\n- Stigmatizing: The statement explicitly marks a group as undesirable, problematic, or inferior, often blaming them for harm.\n- Dehumanizing: The statement denies the humanity of a group, comparing them to animals, objects, or diseases.\n\n2. Othering (choose one):\n- Yes: The statement explicitly marks an 'us vs them' divide, such as 'those people,' 'foreigners,' or 'they' versus 'we.'\n- No: No in-group versus out-group framing.\n\nRespond only in JSON with keys:\n- 'label' (one of: None, Stereotyping, Simplifying, Stigmatizing, Dehumanizing)\n- 'othering' (Yes or No)\n\nImportant: Do not assume context. Only evaluate the text given. If no harm is clearly present, choose 'None'. Important Notes: If the statement only mentions a group or practice in a factual, descriptive, or neutral way, classify as 'None'. Simplifying reduces a group to “all the same” without traits; Stereotyping gives them traits (e.g., lazy, smart, criminal). Stigmatizing blames or marks as inferior; Dehumanizing uses animal/object/disease comparisons or denies humanity. Respond only in valid JSON. No extra words, no explanations.",
     "question": "Classify the following statement:",
     "demos": [
         {
-            "text": "All women are bad drivers.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Those Russian trolls are always at it.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Women should stay at home and take care of the kids.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "All Asians are good at math.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Immigrants are all the same.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Africa is one big country.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Retard!",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Those immigrants are such jerks.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Being Muslim is a sin.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Stay away from blacks, they are dangerous.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Immigrants in the UK are just human trash.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "They are like parasites, taking over our land.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "We are all human beings, stop the hate.",
+            "text": "Muslims fast during Ramadan.",
             "answer": {
                 "label": "None",
                 "othering": "No"
@@ -101,14 +17,7 @@
             }
         },
         {
-            "text": "Muslims fast during Ramadan.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "In Japan, people often eat sushi.",
+            "text": "In Japan, many people eat sushi.",
             "answer": {
                 "label": "None",
                 "othering": "No"
@@ -118,7 +27,7 @@
             "text": "Those students live in the dorm across campus.",
             "answer": {
                 "label": "None",
-                "othering": "Yes"
+                "othering": "No"
             }
         },
         {
@@ -126,6 +35,132 @@
             "answer": {
                 "label": "None",
                 "othering": "Yes"
+            }
+        },
+        {
+            "text": "All Asians are good at math.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Women are naturally bad at driving.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Immigrants are lazy and uneducated.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Immigrants are all the same.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Africa is just one big country.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "All religions are basically identical.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Immigrants are ruining our economy.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Being Muslim is a sin.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Those immigrants are such jerks.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Immigrants are like parasites, feeding off our country.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "They are just animals who don’t deserve rights.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Those people are nothing but trash.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Muslims pray five times a day.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Muslims are all terrorists.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Immigrants contribute to the economy.",
+            "answer": {
+                "label": "None",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Immigrants are a burden on the economy.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "The French team won the tournament.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Elderly people often have different healthcare needs.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
             }
         }
     ]
