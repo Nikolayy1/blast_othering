@@ -10,38 +10,10 @@
             }
         },
         {
-            "text": "All Asians are good at math.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Those kids are always noisy.",
-            "answer": {
-                "label": "Stereotyping",
-                "othering": "No"
-            }
-        },
-        {
             "text": "Immigrants are all the same.",
             "answer": {
                 "label": "Simplifying",
                 "othering": "Yes"
-            }
-        },
-        {
-            "text": "Men and women each think in only one way.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "Europeans are just one culture.",
-            "answer": {
-                "label": "Simplifying",
-                "othering": "No"
             }
         },
         {
@@ -52,35 +24,7 @@
             }
         },
         {
-            "text": "Foreigners can never be trusted.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Jews are secretly controlling the government.",
-            "answer": {
-                "label": "Stigmatizing",
-                "othering": "No"
-            }
-        },
-        {
             "text": "Muslims are like a disease that spreads.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "They are nothing but animals.",
-            "answer": {
-                "label": "Dehumanizing",
-                "othering": "Yes"
-            }
-        },
-        {
-            "text": "Immigrants in the UK are just human trash.",
             "answer": {
                 "label": "Dehumanizing",
                 "othering": "Yes"
@@ -101,7 +45,49 @@
             }
         },
         {
+            "text": "What the fuck is wrong with people?",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Foreigners can never be trusted.",
+            "answer": {
+                "label": "Stigmatizing",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "They are nothing but animals.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "Yes"
+            }
+        },
+        {
             "text": "Men on average are taller than women.",
+            "answer": {
+                "label": "None",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Blacks are more likely to commit violent crime.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Most men are pigs and rapists.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "Women don't have it any better or worse than guys in the West.",
             "answer": {
                 "label": "None",
                 "othering": "No"
