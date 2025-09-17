@@ -23,8 +23,11 @@ class OllamaClient:
         """
         Class to format the response from the LLM.
         """
-        label: str
-        othering: str
+        stigmatizing: bool
+        dehumanizing: bool
+        stereotyping: bool
+        simplifying: bool
+        othering: bool
     
     class Messages():
         """
