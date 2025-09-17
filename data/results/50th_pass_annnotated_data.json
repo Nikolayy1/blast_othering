@@ -1,0 +1,1045 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file": "prompts/default.json",
+        "dataset": "../data/examples.json",
+        "out_filename": "50th_pass_annnotated_data.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3
+    },
+    "time_saved": "2025-09-16 21:04:20",
+    "prompt_data": {
+        "system_prompt": "You are an expert at analyzing harmful speech. You have no bias and only look at the given statement, do not include context. Decide if this statement includes harmful speech or not. If not harmful, label it as None. Important: Do not classify as harmful just because a statement contains profanity, insults, or strong language. Only mark as harmful if the target of the insult is a group (e.g., women, immigrants, Jews). If the insult is generic, vague, directed at individuals, or does not clearly apply to an entire group, choose 'None'. Profanity alone does not imply harm. Then analyze the harmful statements for the following categories: stigmatizing, dehumanizing, stereotyping, simplifying, othering. Answer in JSON format with boolean values (true/false) for each category.",
+        "question": "Analyze the following statement:",
+        "demos": [
+            {
+                "text": "Jews are a disease.",
+                "answer": {
+                    "stigmatizing": true,
+                    "dehumanizing": true,
+                    "stereotyping": false,
+                    "simplifying": false,
+                    "othering": true
+                }
+            },
+            {
+                "text": "Every religion should be respected.",
+                "answer": {
+                    "stigmatizing": false,
+                    "dehumanizing": false,
+                    "stereotyping": false,
+                    "simplifying": false,
+                    "othering": false
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": true
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "17": {
+            "text": "You do know that 4chan was supporting female game developers with this right?",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": true
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": true
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": true
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": false
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": true
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "49": {
+            "text": "Having breasts and a vagina doesn't make a woman alien",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "50": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "52": {
+            "text": " It is the media and other women are dictating what men should want.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "56": {
+            "text": "And that, boys and girls, is called a false equivalency.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "60": {
+            "text": "And what about the stories of those women?",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "64": {
+            "text": "Women are not minors.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": false
+            }
+        },
+        "73": {
+            "text": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "74": {
+            "text": "Nobody is dragged through the mud for being raped.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "80": {
+            "text": "Maybe I'm crazy but I think women aren't helpless babies that need to be coddled.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "85": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "86": {
+            "text": "I agree that atheists can build morals off of other things that aren't God.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "89": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": false
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": true,
+                "stereotyping": false,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": true
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "stigmatizing": true,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": false,
+                "othering": true
+            }
+        },
+        "100": {
+            "text": "Women don't have it any better or worse than guys in the West",
+            "annotation": {
+                "stigmatizing": false,
+                "dehumanizing": false,
+                "stereotyping": true,
+                "simplifying": true,
+                "othering": false
+            }
+        }
+    }
+}
