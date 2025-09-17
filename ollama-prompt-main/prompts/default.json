@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'None' or 'Hate'. Additionally, determine if the statement includes Othering (Yes/No) - the act of perceiving or portraying someone as fundamentally different or alien. Provide your answer in the following JSON format: {\"label\": \"<None/Hate>\", \"othering\": \"<Yes/No>\"}. Only respond with the JSON object and nothing else.",
+    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'None' or 'Hate'. Do not focus on specific group + word combination, instead look at the full sentence. Additionally, determine if the statement includes Othering (Yes/No) - the act of perceiving or portraying someone as fundamentally different or alien. Provide your answer in the following JSON format: {\"label\": \"<None/Hate>\", \"othering\": \"<Yes/No>\"}. Only respond with the JSON object and nothing else.",
     "question": "Classify the following statement:",
     "demos": [
         {
