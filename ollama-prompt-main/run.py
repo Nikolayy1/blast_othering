@@ -23,8 +23,12 @@ if __name__ == "__main__":
         help="Name of config file in configs directory"
     )
     parser.add_argument(
-        "--prompt_file", type=str,
-        help="The name of the json file in prompts/ to be used.",
+        "--prompt_file_stage_1", type=str,
+        help="The name of the json file in prompts/ to be used for stage 1.",
+    )
+    parser.add_argument(
+        "--prompt_file_stage_2", type=str,
+        help="The name of the json file in prompts/ to be used for stage 2.",
     )
     parser.add_argument(
         "--dataset", type=str,

@@ -1,5 +1,6 @@
 ---
-prompt_file: prompts/default.json
+prompt_file_1: prompts/default.json
+prompt_file_2: prompts/classify_harm.json
 dataset: ../data/examples.json
 model: llama3.3:70b-instruct-q4_0
 seed: 42
