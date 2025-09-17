@@ -1,0 +1,30 @@
+{
+    "system_prompt": "You are an expert at analyzing and classifying harmful speech. This statement contains some form of harmful speech. Analyze the harmful statements for the following categories: Stigmatizing, Dehumanizing, Stereotyping, Simplifying. Answer in JSON format only.",
+    "question": "Classify the following statement:",
+    "demos": [
+        {
+            "text": "Jews are a disease.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Women can't drive.",
+            "answer": {
+                "label": "Stereotyping"
+            }
+        },
+        {
+            "text": "All men are the same.",
+            "answer": {
+                "label": "Simplifying"
+            }
+        },
+        {
+            "text": "Immigrants are ruining our country.",
+            "answer": {
+                "label": "Stigmatizing"
+            }
+        }
+    ]
+}

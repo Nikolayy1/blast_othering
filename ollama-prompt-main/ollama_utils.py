@@ -23,11 +23,7 @@ class OllamaClient:
         """
         Class to format the response from the LLM.
         """
-        stigmatizing: bool
-        dehumanizing: bool
-        stereotyping: bool
-        simplifying: bool
-        othering: bool
+        label: str
     
     class Messages():
         """
@@ -145,7 +141,7 @@ class Annotate:
         """
         Load the prompt data and dataset from json.
         """
-        prompt_path = os.path.join(script_path, self.config.prompt_file)
+        prompt_path = os.path.join(script_path, self.config.prompt_file_1)
         prompt_data = load_file(
             prompt_path, logger=self.logger
         )
