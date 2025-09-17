@@ -77,6 +77,7 @@ if __name__ == "__main__":
     # load the environment variables.
     env_vars = load_env()
     DATA_PATH = env_vars["DATA_PATH"]
+    CURRENT_ITERATION = env_vars["CURRENT_ITERATION"]
     SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 
     args = parser.parse_args()
@@ -86,6 +87,8 @@ if __name__ == "__main__":
         parser.set_defaults(**config)
         args = parser.parse_args()
         
+    if not args.out_filename:
+        args.out_filename = f"stage_1_results_{CURRENT_ITERATION}.json"
     # Stage 1
     annotator_stage_1 = Annotate(
         args,
@@ -106,12 +109,12 @@ if __name__ == "__main__":
     }
     
     # Save filtered data for Stage 2
-    stage2_dataset = "stage2_dataset.json"
+    stage2_dataset = f"stage_2_data_{CURRENT_ITERATION}.json"
     save_file(hate_only, DATA_PATH, stage2_dataset)
     
     # Stage 2
     args.dataset = stage2_dataset
-    args.out_filename = "stage_2_results.json"
+    args.out_filename = f"stage_2_results_{CURRENT_ITERATION}.json"
     
     # create the annotator object and process the documents.
     annotator_stage_2 = Annotate(
