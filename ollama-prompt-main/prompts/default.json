@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'None' or 'Hate'. Do not focus on specific group + word combination, instead look at the full sentence. Important: Do not classify as harmful just because a statement contains profanity, insults, or strong language. Only mark as harmful if the target of the insult is a group (e.g., women, immigrants, Jews). If the insult is generic, vague, directed at individuals, or does not clearly apply to an entire group, choose 'None'. Profanity alone does not imply harm. Additionally, determine if the statement includes Othering (Yes/No) - the act of perceiving or portraying someone as fundamentally different or alien. Provide your answer in the following JSON format: {\"label\": \"<None/Hate>\", \"othering\": \"<Yes/No>\"}. Only respond with the JSON object and nothing else.",
+    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speech or not. If not harmful, label it as None. If harmful, choose exactly one of the following categories based on the content: - Dehumanizing: Explicitly denies humanity by comparing a group to animals, objects, or diseases, or uses demeaning slurs - Stigmatizing: Direct insults, slurs, or blame that mark a group as harmful, inferior, or undesirable without assigning fixed traits. - Stereotyping: Assigns fixed roles, traits, or behaviors to a group. Negative traits still count as stereotypes. - Simplifying: Treats a group as all the same, erasing diversity, without assigning traits. Do not focus on specific group + word combination, instead look at the full sentence. Important: Do not classify as harmful just because a statement contains profanity, insults, or strong language. Only mark as harmful if the target of the insult is a group (e.g., women, immigrants, Jews). If the insult is generic, vague, directed at individuals, or does not clearly apply to an entire group, choose 'None'. Profanity alone does not imply harm. Additionally, determine if the statement includes Othering (Yes/No) - the act of perceiving or portraying someone as fundamentally different or alien. Provide your answer in the following JSON format: {\"label\": \"<None/Hate>\", \"othering\": \"<Yes/No>\"}. Only respond with the JSON object and nothing else.",
     "question": "Classify the following statement:",
     "demos": [
         {
@@ -8,12 +8,33 @@
                 "label": "None",
                 "othering": "No"
             }
-        }, 
+        },
         {
             "text": "All jews should die.",
             "answer": {
-                "label": "Hate",
+                "label": "Stigmatizing",
                 "othering": "Yes"
+            }
+        },
+        {
+            "text": "You are scum.",
+            "answer": {
+                "label": "Dehumanizing",
+                "othering": "No"
+            }
+        },
+        {
+            "text": "They are all the same.",
+            "answer": {
+                "label": "Simplifying",
+                "othering": "Yes"
+            }
+        },
+        {
+            "text": "Women are all bad drivers.",
+            "answer": {
+                "label": "Stereotyping",
+                "othering": "No"
             }
         }
     ]
