@@ -1,0 +1,638 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/examples.json",
+        "out_filename": "stage_1_results_1.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3
+    },
+    "time_saved": "2025-09-17 00:40:12",
+    "prompt_data": {
+        "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'None' or 'Hate'. Do not focus on specific group + word combination, instead look at the full sentence. Important: Do not classify as harmful just because a statement contains profanity, insults, or strong language. Only mark as harmful if the target of the insult is a group (e.g., women, immigrants, Jews). If the insult is generic, vague, directed at individuals, or does not clearly apply to an entire group, choose 'None'. Profanity alone does not imply harm. Only respond with the JSON object and nothing else.",
+        "question": "Classify the following statement:",
+        "demos": [
+            {
+                "text": "you mean, no reason to hate jews more than any other religion.",
+                "answer": {
+                    "label": "None"
+                }
+            },
+            {
+                "text": "All jews should die.",
+                "answer": {
+                    "label": "Hate"
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "17": {
+            "text": "You do know that 4chan was supporting female game developers with this right?",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "49": {
+            "text": "Having breasts and a vagina doesn't make a woman alien",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "50": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "52": {
+            "text": " It is the media and other women are dictating what men should want.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "56": {
+            "text": "And that, boys and girls, is called a false equivalency.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "60": {
+            "text": "And what about the stories of those women?",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "64": {
+            "text": "Women are not minors.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "73": {
+            "text": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "74": {
+            "text": "Nobody is dragged through the mud for being raped.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "80": {
+            "text": "Maybe I'm crazy but I think women aren't helpless babies that need to be coddled.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "85": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "86": {
+            "text": "I agree that atheists can build morals off of other things that aren't God.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "89": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "label": "None"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Hate"
+            }
+        },
+        "100": {
+            "text": "Women don't have it any better or worse than guys in the West",
+            "annotation": {
+                "label": "None"
+            }
+        }
+    }
+}

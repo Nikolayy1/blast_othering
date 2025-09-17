@@ -1,0 +1,9 @@
+Starting up Ollama server
+Waiting for Ollama server to start
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/run.py", line 80, in <module>
+    CURRENT_ITERATION = env_vars["CURRENT_ITERATION"]
+                        ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'CURRENT_ITERATION'
