@@ -1,40 +1,19 @@
 {
-    "system_prompt": "Classify the given short statement. Assume this statement does NOT include any harm at the beginning. Then analyze if the statement includes Stereotyping (Assigning a fixed set of characteristics to all members of a group), Dehumanizing (Portraying a group as less than human, often by comparing them to animals or objects), Stigmatizing (mark a group or individual with stigma, portraying them as harmful/shameful/...), Simplifying (Reducing a whole group of people to a single trait). If none of those categories explicitly occur in that statement, classify it as None. Additionally, determine if the statement includes Othering (Yes/No) - the act of perceiving or portraying someone as fundamentally different or alien. Provide your answer in the following JSON format: {\"label\": \"<Stereotyping/Dehumanizing/None>\", \"othering\": \"<Yes/No>\"}. Only respond with the JSON object and nothing else.",
+    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'Hate' or 'No Hate'. Additionally, determine if the statement includes Othering (Yes/No) - the act of perceiving or portraying someone as fundamentally different or alien. Provide your answer in the following JSON format: {\"label\": \"<Hate/No Hate>\", \"othering\": \"<Yes/No>\"}. Only respond with the JSON object and nothing else.",
     "question": "Classify the following statement:",
     "demos": [
         {
             "text": "you mean, no reason to hate jews more than any other religion.",
             "answer": {
-                "label": "None",
+                "label": "No Hate",
                 "othering": "No"
             }
-        },
+        }, 
         {
-            "text": "make it illegal for Jews to hold jobs/own land",
+            "text": "All jews should die.",
             "answer": {
-                "label": "Dehumanizing",
+                "label": "Hate",
                 "othering": "Yes"
-            }
-        },
-        {
-            "text": "Having breasts and a vagina doesn't make a woman alien",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "It is the media and other women are dictating what men should want.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
-            }
-        },
-        {
-            "text": "If women's tennis is known as the 'sport where chicks freak out at the refs' then it's her fault.",
-            "answer": {
-                "label": "None",
-                "othering": "No"
             }
         }
     ]
