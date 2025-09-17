@@ -25,6 +25,7 @@ def load_env(logger: logging.Logger=None):
     load_dotenv()
     vars = {
         "DATA_PATH": os.environ.get("DATA_PATH"),
+        "CURRENT_ITERATION": os.environ.get("CURRENT_ITERATION"),
     }
 
     if logger:
