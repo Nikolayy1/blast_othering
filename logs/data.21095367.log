@@ -1,0 +1,17 @@
+Starting up Ollama server
+Waiting for Ollama server to start
+2025-09-16 23:23:10,333 - INFO - Setting Annotator variables and initializing Ollama client.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/run.py", line 90, in <module>
+    annotator_stage_1 = Annotate(
+                        ^^^^^^^^^
+  File "/scratch/alpine/niho8409/blast_othering/ollama-prompt-main/ollama_utils.py", line 118, in __init__
+    self.load_data(script_path, data_path, stage)
+  File "/scratch/alpine/niho8409/blast_othering/ollama-prompt-main/ollama_utils.py", line 145, in load_data
+    prompt_path = os.path.join(script_path, self.config.prompt_file_stage_1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 90, in join
+  File "<frozen genericpath>", line 152, in _check_arg_types
+TypeError: join() argument must be str, bytes, or os.PathLike object, not 'NoneType'
