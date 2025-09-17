@@ -93,7 +93,7 @@ class Annotate:
 
     def __init__(
             self, args: argparse.Namespace, 
-            script_path: str, data_path: str, logger=None
+            script_path: str, data_path: str, stage=1, logger=None
     ):
         # set up logging.
         if logger is None:
@@ -115,7 +115,7 @@ class Annotate:
 
         # load the data.
         self.prompt_data, self.docs = \
-            self.load_data(script_path, data_path)
+            self.load_data(script_path, data_path, stage)
 
         # check for existing results.
         self.already_processed, self.docs = \
@@ -137,11 +137,17 @@ class Annotate:
             logger
         )
 
-    def load_data(self, script_path: str, data_path: str) -> tuple[dict, dict]:
+    def load_data(self, script_path: str, data_path: str, stage: int) -> tuple[dict, dict]:
         """
         Load the prompt data and dataset from json.
         """
-        prompt_path = os.path.join(script_path, self.config.prompt_file_1)
+        if(stage == 1):
+            prompt_path = os.path.join(script_path, self.config.prompt_file_stage_1)
+        elif(stage == 2):
+            prompt_path = os.path.join(script_path, self.config.prompt_file_stage_2)
+        else:
+            raise ValueError("Stage must be 1 or 2")
+        
         prompt_data = load_file(
             prompt_path, logger=self.logger
         )

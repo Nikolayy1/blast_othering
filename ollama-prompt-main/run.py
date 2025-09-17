@@ -3,7 +3,7 @@ import yaml
 import os
 import argparse
 
-from utils import load_env
+from utils import load_env, load_file, save_file
 from ollama_utils import Annotate 
 
 
@@ -85,11 +85,39 @@ if __name__ == "__main__":
         config = yaml.safe_load(open(config_file)) if args.config is not None else {}
         parser.set_defaults(**config)
         args = parser.parse_args()
-
-    # create the annotator object and process the documents.
-    annotator = Annotate(
+        
+    # Stage 1
+    annotator_stage_1 = Annotate(
         args,
         SCRIPT_PATH,
-        DATA_PATH
+        DATA_PATH,
+        stage=1
     )
-    annotator.process_docs()
+    annotator_stage_1.process_docs()
+    
+    # Load Stage 1 results
+    stage_1_out_path = os.path.join(DATA_PATH, "results", args.out_filename)
+    stage_1_results = load_file(stage_1_out_path)
+
+    hate_only = {
+        doc_id: {"text": doc["text"]}
+        for doc_id, doc in stage_1_results["data"].items()
+        if doc["annotation"] and doc["annotation"]["label"].lower() == "hate"
+    }
+    
+    # Save filtered data for Stage 2
+    stage2_dataset = "stage2_dataset.json"
+    save_file(hate_only, DATA_PATH, stage2_dataset)
+    
+    # Stage 2
+    args.dataset = stage2_dataset
+    args.out_filename = "stage_2_results.json"
+    
+    # create the annotator object and process the documents.
+    annotator_stage_2 = Annotate(
+        args,
+        SCRIPT_PATH,
+        DATA_PATH,
+        stage=2
+    )
+    annotator_stage_2.process_docs()
