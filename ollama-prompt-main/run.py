@@ -96,29 +96,29 @@ if __name__ == "__main__":
     annotator_stage_1 = Annotate(
         args,
         SCRIPT_PATH,
-        RESULT_PATH,  # write stage 1 outputs into results/{iteration}
+        DATA_PATH,
         stage=1,
     )
     annotator_stage_1.process_docs()
-    
+
     # Load Stage 1 results
     stage_1_out_path = os.path.join(RESULT_PATH, args.out_filename)
     stage_1_results = load_file(stage_1_out_path)
-    
+
     hate_only = {
         doc_id: {"text": doc["text"]}
         for doc_id, doc in stage_1_results["data"].items()
         if doc["annotation"] and doc["annotation"]["label"].lower() == "hate"
     }
-    
+
     # Save filtered data for Stage 2
     stage2_dataset = f"stage_2_data_{CURRENT_ITERATION}.json"
     save_file(hate_only, RESULT_PATH, stage2_dataset)
-    
+
     # Stage 2
     args.dataset = stage2_dataset
     args.out_filename = f"stage_2_results_{CURRENT_ITERATION}.json"
-    
+
     annotator_stage_2 = Annotate(
         args, SCRIPT_PATH, RESULT_PATH, stage=2  # keep stage 2 outputs in same folder
     )
