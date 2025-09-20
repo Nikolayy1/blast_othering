@@ -93,7 +93,7 @@ class Annotate:
 
     def __init__(
             self, args: argparse.Namespace, 
-            script_path: str, data_path: str, stage=1, logger=None
+            script_path: str, data_path: str, stage=1, logger=None, curr_iteration=0
     ):
         # set up logging.
         if logger is None:
@@ -110,7 +110,7 @@ class Annotate:
 
         # set directories for reading/writing data.
         self.data_path = data_path
-        self.results_path = os.path.join(data_path, "results")
+        self.results_path = os.path.join(data_path, "results", str(curr_iteration))
         os.makedirs(self.results_path, exist_ok=True)
 
         # load the data.
