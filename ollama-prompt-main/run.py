@@ -96,7 +96,7 @@ if __name__ == "__main__":
     annotator_stage_1 = Annotate(
         args,
         SCRIPT_PATH,
-        DATA_PATH,
+        RESULT_PATH,
         stage=1,
         curr_iteration=CURRENT_ITERATION,
     )
