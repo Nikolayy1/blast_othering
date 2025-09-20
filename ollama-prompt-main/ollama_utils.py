@@ -109,8 +109,7 @@ class Annotate:
             self.config.out_filename = f"{data_file}_processed.json"
 
         # set directories for reading/writing data.
-        self.data_path = data_path
-        self.results_path = os.path.join(data_path, "results", str(curr_iteration))
+        self.results_path = data_path
         os.makedirs(self.results_path, exist_ok=True)
 
         # load the data.

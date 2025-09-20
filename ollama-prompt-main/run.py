@@ -121,6 +121,6 @@ if __name__ == "__main__":
     args.out_filename = f"stage_2_results_{CURRENT_ITERATION}.json"
 
     annotator_stage_2 = Annotate(
-        args, SCRIPT_PATH, DATA_PATH, stage=2, curr_iteration=CURRENT_ITERATION
+        args, SCRIPT_PATH, RESULT_PATH, stage=2, curr_iteration=CURRENT_ITERATION
     )
     annotator_stage_2.process_docs()
