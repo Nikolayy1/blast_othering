@@ -99,7 +99,7 @@ if __name__ == "__main__":
     annotator_stage_1.process_docs()
     
     # Load Stage 1 results
-    stage_1_out_path = os.path.join(DATA_PATH, "results", args.out_filename)
+    stage_1_out_path = os.path.join(DATA_PATH, "results/", args.out_filename)
     stage_1_results = load_file(stage_1_out_path)
 
     hate_only = {

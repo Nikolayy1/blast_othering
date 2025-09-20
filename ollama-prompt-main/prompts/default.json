@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'None' or 'Hate'. Do not focus on specific group + word combination, instead look at the full sentence. Important: Do not classify as harmful just because a statement contains profanity, insults, or strong language. Only mark as harmful if the target of the insult is a group (e.g., women, immigrants, Jews). Only respond with the JSON object and nothing else.",
+    "system_prompt": "Classify the given short statement. Decide if this statement includes harmful speach or not. Label it as 'None' or 'Hate'. Do not focus on specific group + word combination, instead look at the full sentence. Only respond with the JSON object and nothing else.",
     "question": "Classify the following statement:",
     "demos": [
         {
