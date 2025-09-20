@@ -19,29 +19,44 @@ class OllamaClient:
     """
     Class to handle the Ollama client.
     """
+
     class Answer(BaseModel):
         """
         Class to format the response from the LLM.
         """
+
         label: str
-    
-    class Messages():
+
+    class Messages:
         """
         Class to handle the messages for the LLM.
         """
+
         def __init__(self, system_prompt: str, user_head_prompt: str):
             self.system_prompt = system_prompt
             self.head_user_prompt = user_head_prompt
-        
+
         def add_doc_prompt(self, doc_prompt: str):
             to_process = [
                 {"role": "system", "content": self.system_prompt},
-                {"role": "user", "content": self.head_user_prompt + "\n\n" + doc_prompt}
+                {
+                    "role": "user",
+                    "content": self.head_user_prompt + "\n\n" + doc_prompt,
+                },
             ]
             return to_process
-    
 
-    def __init__(self, host, port, model, seed, temperature, system_prompt, user_head_prompt, logger):
+    def __init__(
+        self,
+        host,
+        port,
+        model,
+        seed,
+        temperature,
+        system_prompt,
+        user_head_prompt,
+        logger,
+    ):
         self.logger = logger
         server_host = f"{host}:{port}"
         self.client = ollama.Client(server_host)
@@ -50,10 +65,7 @@ class OllamaClient:
         self.seed = seed
         self.temperature = temperature
 
-        self.options: ollama.Options = {
-            "seed": seed,
-            "temperature": temperature
-        }
+        self.options: ollama.Options = {"seed": seed, "temperature": temperature}
 
         # set the messages for client.
         self.messages = self.Messages(system_prompt, user_head_prompt)
@@ -63,19 +75,16 @@ class OllamaClient:
         Chat with the LLM and check the response.
         """
         to_process = self.messages.add_doc_prompt(doc_prompt)
-        
+
         response = self.client.chat(
             self.model,
             messages=to_process,
             options=self.options,
-            format=self.Answer.model_json_schema()
+            format=self.Answer.model_json_schema(),
         )
-        
-        
+
         try:
-            response = self.Answer.model_validate_json(
-                response.message.content
-            )
+            response = self.Answer.model_validate_json(response.message.content)
             if response is not None:  # make the output serializable.
                 response = response.model_dump()
             return response
@@ -92,8 +101,14 @@ class Annotate:
     """
 
     def __init__(
-            self, args: argparse.Namespace, 
-            script_path: str, data_path: str, stage=1, logger=None, curr_iteration=0
+        self,
+        args,
+        script_path,
+        data_path,
+        results_path,
+        stage=1,
+        logger=None,
+        curr_iteration=0,
     ):
         # set up logging.
         if logger is None:
@@ -109,21 +124,19 @@ class Annotate:
             self.config.out_filename = f"{data_file}_processed.json"
 
         # set directories for reading/writing data.
-        self.results_path = data_path
-        os.makedirs(self.results_path, exist_ok=True)
+        self.data_path = data_path
+        self.results_path = results_path
 
         # load the data.
-        self.prompt_data, self.docs = \
-            self.load_data(script_path, data_path, stage)
+        self.prompt_data, self.docs = self.load_data(script_path, data_path, stage)
 
         # check for existing results.
-        self.already_processed, self.docs = \
-            self.handle_processed()
-        
+        self.already_processed, self.docs = self.handle_processed()
+
         # set the head messages for the conversations.
         system_prompt = self.prompt_data["system_prompt"]
         user_head_prompt = self.get_user_head_prompt()
-        
+
         # initialize the ollama client.
         self.ollama_client = OllamaClient(
             args.host,
@@ -133,40 +146,37 @@ class Annotate:
             args.temperature,
             system_prompt,
             user_head_prompt,
-            logger
+            logger,
         )
 
-    def load_data(self, script_path: str, data_path: str, stage: int) -> tuple[dict, dict]:
+    def load_data(
+        self, script_path: str, dataset_path: str, stage: int
+        ) -> tuple[dict, dict]:
         """
         Load the prompt data and dataset from json.
         """
-        if(stage == 1):
+        if stage == 1:
             prompt_path = os.path.join(script_path, self.config.prompt_file_stage_1)
-        elif(stage == 2):
+        elif stage == 2:
             prompt_path = os.path.join(script_path, self.config.prompt_file_stage_2)
         else:
             raise ValueError("Stage must be 1 or 2")
-        
-        prompt_data = load_file(
-            prompt_path, logger=self.logger
-        )
 
-        dataset_path = os.path.join(data_path, self.config.dataset)
-        dataset = load_file(
-            dataset_path, logger=self.logger
-        )
+        prompt_data = load_file(prompt_path, logger=self.logger)
+
+        dataset_file = os.path.join(dataset_path, self.config.dataset)
+        dataset = load_file(dataset_file, logger=self.logger)
 
         return prompt_data, dataset
-
+    
+    
     def handle_processed(self) -> tuple[dict, dict]:
         """
-        Load docs that have already been processed and 
+        Load docs that have already been processed and
         remove them from the list of docs to process.
         """
         # check for existing results.
-        out_file_path = os.path.join(
-            self.results_path, self.config.out_filename
-        )
+        out_file_path = os.path.join(self.results_path, self.config.out_filename)
         already_processed = {}
         to_process = self.docs
         if os.path.exists(out_file_path):
@@ -175,8 +185,11 @@ class Annotate:
             self.logger.info(f"Found {len(already_processed)} existing results.")
 
             # remove already processed docs from the list.
-            to_process = {doc_id: doc for doc_id, doc in self.docs.items()
-                          if doc_id not in already_processed.keys()}
+            to_process = {
+                doc_id: doc
+                for doc_id, doc in self.docs.items()
+                if doc_id not in already_processed.keys()
+            }
 
         return already_processed, to_process
 
@@ -189,7 +202,9 @@ class Annotate:
         head_user_prompt = ""
         if "demos" in self.prompt_data.keys() and len(self.prompt_data["demos"]) > 0:
             for demo_item in self.prompt_data["demos"]:
-                user_turn = "user: " + self.prompt_data["question"] + "\n" + demo_item["text"]
+                user_turn = (
+                    "user: " + self.prompt_data["question"] + "\n" + demo_item["text"]
+                )
                 assissant_turn = "assistant: " + str(demo_item["answer"])
                 shots.append(user_turn + "\n" + assissant_turn)
 
@@ -215,9 +230,7 @@ class Annotate:
         retry_count = 0
         while retry_count < max_retries:
             try:
-                annotation = self.ollama_client.chat(
-                    doc_prompt
-                )
+                annotation = self.ollama_client.chat(doc_prompt)
                 if annotation is not None:
                     return annotation
                 else:  # retry if the response did not match the schema.
@@ -228,16 +241,16 @@ class Annotate:
                 self.logger.exception("Ollama Error. Please try again.")
                 retry_count += 1
         return None
-    
+
     def process_doc(self, doc: dict) -> dict:
         """
         Process the doc with the LLM.
         """
-        doc_prompt = self.prompt_data["question"] + '\n' + doc["text"]
+        doc_prompt = self.prompt_data["question"] + "\n" + doc["text"]
         annotation = self.annotate(doc_prompt)
         doc["annotation"] = annotation
         return doc
-    
+
     def save_results(self, processed_data: dict):
         """
         Save the results and config details to a json file.
@@ -249,8 +262,10 @@ class Annotate:
         final_output["data"] = processed_data
 
         save_file(
-            final_output, self.results_path,
-            self.config.out_filename, logger=self.logger
+            final_output,
+            self.results_path,
+            self.config.out_filename,
+            logger=self.logger,
         )
 
     def process_docs(self):
@@ -272,9 +287,12 @@ class Annotate:
         total_docs = len(data)
 
         # Use a ThreadPoolExecutor for parallel processing
-        self.logger.info(f"Processing docs with {num_workers} workers.")  
+        self.logger.info(f"Processing docs with {num_workers} workers.")
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_workers) as executor:
-            futures = {executor.submit(self.process_doc, doc): doc_id for doc_id, doc in data.items()}
+            futures = {
+                executor.submit(self.process_doc, doc): doc_id
+                for doc_id, doc in data.items()
+            }
 
             # Initialize tqdm progress bar to track doc processing
             with tqdm(total=total_docs) as pbar:
@@ -294,7 +312,9 @@ class Annotate:
                         # Save annotated_docs at regular intervals
                         if processed_count % save_interval == 0:
                             self.save_results(annotated_docs)
-                            self.logger.info(f"Progress saved after processing {processed_count} docs.")
+                            self.logger.info(
+                                f"Progress saved after processing {processed_count} docs."
+                            )
 
                     except Exception as e:
                         self.logger.exception(f"Error processing doc {doc_idx}: {e}")
