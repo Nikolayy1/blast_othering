@@ -9,7 +9,49 @@
             }
         },
         {
-            "text": "Women are all really stupid.",
+            "text": "Blacks are monkeys.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Immigrants are cockroaches infesting our country.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Jews are parasites sucking the life out of society.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Gays are filthy animals that should be put down.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Refugees are vermin spreading like rats.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Women are stupid and lazy.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Most men are pigs and rapists.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Fuck you and your normalization of hating Jews.",
             "answer": {
                 "label": "Other"
             }
@@ -21,25 +63,25 @@
             }
         },
         {
-            "text": "Blacks are monkeys",
-            "answer": {
-                "label": "Dehumanizing"
-            }
-        },
-        {
-            "text": "You are fucking stupid man",
+            "text": "You are a fucking idiot.",
             "answer": {
                 "label": "Other"
             }
         },
         {
-            "text": "Jews are scum, throw them in the trash.",
+            "text": "Christians are hypocrites.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Other"
             }
-        }, 
+        },
         {
-            "text": "I am not a Jew, but I also don't hate on them.",
+            "text": "Asians are good at math.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Democrats are clueless.",
             "answer": {
                 "label": "Other"
             }
