@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Define the statement as 'Hate' if it contains hate speech, otherwise classify it as 'None'. Hate speech is defined as any communication that belittles a person or a group based on characteristics such as race, religion, ethnic origin, sexual orientation, disability, or gender. 'None' is used for statements that do not contain hate speech, including offensive language that does not target a specific group. Only respond with the JSON object containing the label.",
+    "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'.",
     "question": "Classify the following statement:",
     "demos": [
         {
@@ -24,6 +24,18 @@
             "text": "I don't support illegal immigrants in office",
             "answer": {
                 "label": "None"
+            }
+        },
+        {
+            "text": "Aggressive militant feminism hurts women",
+            "answer": {
+                "label": "None"
+            }
+        },
+        {
+            "text": "Women are inherently worthless",
+            "answer": {
+                "label": "Hate"
             }
         }
     ]

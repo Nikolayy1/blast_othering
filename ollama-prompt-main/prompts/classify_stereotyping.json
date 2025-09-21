@@ -1,0 +1,7 @@
+{
+    "system_prompt": "Classify the following statement as Stereotyping or Other. Only answer in JSON format with the key 'label' and value either 'Stereotyping' or 'Other'.",
+    "question": "Is this statement Stereotyping?",
+    "demos": [
+        
+    ]
+}
