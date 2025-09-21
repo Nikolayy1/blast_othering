@@ -1,0 +1,28 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_4_data_23.json",
+        "out_filename": "stage_4_results_23.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-20 22:53:26",
+    "prompt_data": {
+        "system_prompt": "Classify the following statement as Stereotyping or Other. Only answer in JSON format with the key 'label' and value either 'Stereotyping' or 'Other'.",
+        "question": "Is this statement Stereotyping?",
+        "demos": []
+    },
+    "data": {}
+}
