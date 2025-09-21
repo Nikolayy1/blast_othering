@@ -1,113 +1,131 @@
 {
-    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing ONLY if the statement likens a group of people to animals, vermin, objects, or diseases, OR explicitly denies their humanity. Do not classify as dehumanizing if it is just stereotyping, stigmatizing, insulting, or criticizing. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
+    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing ONLY if the statement likens a group of people to animals, vermin, objects, or diseases, OR explicitly denies their humanity. Do not classify as dehumanizing if it is just stereotyping, stigmatizing, insulting, or criticizing. Only answer in JSON format with the fields 'label' and 'reasoning'. In the reasoning field, explain why you classified it as Dehumanizing or Other.",
     "question": "Is this statement Dehumanizing?",
     "demos": [
         {
             "text": "Muslims are a disease that needs to be eradicated.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares Muslims to a disease and calls for eradication, which explicitly denies their humanity."
             }
         },
         {
             "text": "Blacks are monkeys.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares Black people to animals (monkeys), a direct form of dehumanization."
             }
         },
         {
             "text": "Immigrants are cockroaches infesting our country.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "Immigrants are likened to cockroaches, a vermin metaphor that dehumanizes them."
             }
         },
         {
             "text": "Jews are parasites sucking the life out of society.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "The statement describes Jews as parasites, reducing them to harmful organisms rather than humans."
             }
         },
         {
             "text": "Gays are filthy animals that should be put down.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "This compares gay people to animals and calls for them to be 'put down,' a clear denial of humanity."
             }
         },
         {
             "text": "Refugees are vermin spreading like rats.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "The statement equates refugees with vermin/rats, a classic dehumanizing metaphor."
             }
         },
         {
             "text": "Women are stupid and lazy.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a stereotype and insult but does not compare women to animals, objects, or diseases."
             }
         },
         {
             "text": "Most men are pigs and rapists.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "Although offensive, this is stereotyping rather than dehumanization; 'pigs' is used metaphorically as behavior, not literal denial of humanity."
             }
         },
         {
             "text": "Fuck you and your normalization of hating Jews.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is an aggressive insult but is not dehumanizing Jews; rather, it criticizes hatred toward them."
             }
         },
         {
             "text": "Feminists are so annoying.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a negative opinion about feminists but does not use dehumanizing language."
             }
         },
         {
             "text": "You are a fucking idiot.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "A personal insult directed at an individual, not a dehumanizing comparison to non-human entities."
             }
         },
         {
             "text": "Christians are hypocrites.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a critique or stereotype but does not deny humanity or compare to non-human entities."
             }
         },
         {
             "text": "Asians are good at math.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a stereotype, not dehumanization."
             }
         },
         {
             "text": "Democrats are clueless.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a criticism but not dehumanization."
             }
         },
         {
             "text": "Women don't like to work.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a stereotype but does not involve dehumanization."
             }
         },
         {
             "text": "That guy's just retarded.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a stigmatizing insult but not dehumanization."
             }
         },
         {
             "text": "Americans have been far too lenient with the protestants and their backward ways.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is stigmatizing language toward Protestants but not dehumanization."
             }
         },
         {
             "text": "Atheists spend more time antagonizing Christians than any other religious group.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "This is a negative stereotype about atheists but not dehumanizing."
             }
         }
     ]

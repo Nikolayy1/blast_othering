@@ -26,6 +26,7 @@ class OllamaClient:
         """
 
         label: str
+        reasoning: str
 
     class Messages:
         """
