@@ -18,7 +18,7 @@
         "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
         "prompt_file_simplifying": "prompts/classify_simplifying.json"
     },
-    "time_saved": "2025-09-20 21:34:32",
+    "time_saved": "2025-09-20 21:39:41",
     "prompt_data": {
         "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing ONLY if the statement likens a group of people to animals, vermin, objects, or diseases, OR explicitly denies their humanity. Do not classify as dehumanizing if it is just stereotyping, stigmatizing, insulting, or criticizing. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
         "question": "Is this statement Dehumanizing?",
@@ -103,6 +103,30 @@
             },
             {
                 "text": "Democrats are clueless.",
+                "answer": {
+                    "label": "Other"
+                }
+            },
+            {
+                "text": "Women don't like to work.",
+                "answer": {
+                    "label": "Other"
+                }
+            },
+            {
+                "text": "That guy's just retarded.",
+                "answer": {
+                    "label": "Other"
+                }
+            },
+            {
+                "text": "Americans have been far too lenient with the protestants and their backward ways.",
+                "answer": {
+                    "label": "Other"
+                }
+            },
+            {
+                "text": "Atheists spend more time antagonizing Christians than any other religious group.",
                 "answer": {
                     "label": "Other"
                 }
