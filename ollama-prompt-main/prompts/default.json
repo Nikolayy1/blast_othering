@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Decide if the comment expresses hate speech (attacks/devalues a group/stigmatizes/stereotypes) or if it is merely offensive, or neutral. Do NOT label profanity alone as hate. Do NOT label criticism of behavior as hate unless it explicitly devalues a group. Label it as 'None' or 'Hate'. Only respond with the JSON object.",
+    "system_prompt": "Decide if the comment expresses hate speech (attacks/devalues a group/stigmatizes/stereotypes) or is neutral. Do NOT label profanity alone as hate. Do NOT label criticism of behavior as hate unless it explicitly devalues a group. Label it as 'None' or 'Hate'. Only respond with the JSON object. Only classify statements as hate if you are 80% sure. If unsure, classify as 'None'.",
     "question": "Classify the following statement:",
     "demos": [
         {
