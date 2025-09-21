@@ -1,7 +1,36 @@
 {
-    "system_prompt": "Classify the following statement as Dehumanizing or Other. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
+    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing requires explicitly denying humanity by comparing a group to animals, objects, diseases, or vermin. General insults, stereotypes, or offensive language are Other. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
     "question": "Is this statement Dehumanizing?",
     "demos": [
-        
+        {
+            "text": "Muslims are a disease that needs to be eradicated.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "Women are all really stupid.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Feminists are so annoying.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Blacks are monkeys",
+            "answer": {
+                "label": "Dehumanizing"
+            }
+        },
+        {
+            "text": "You are fucking stupid man",
+            "answer": {
+                "label": "Other"
+            }
+        }
     ]
 }
