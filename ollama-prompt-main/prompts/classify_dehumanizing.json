@@ -37,6 +37,12 @@
             "answer": {
                 "label": "Dehumanizing"
             }
+        }, 
+        {
+            "text": "I am not a Jew, but I also don't hate on them.",
+            "answer": {
+                "label": "Other"
+            }
         }
     ]
 }
