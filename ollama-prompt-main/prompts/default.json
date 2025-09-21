@@ -1,17 +1,29 @@
 {
-    "system_prompt": "Classify the given short statement. Decide if this statement includes hate speech towards a person or group or not. Do not focus on slur words, instead identify the target group of this sentence and decide if the statement is hateful towards the target. Label it as 'None' or 'Hate'. Only respond with the JSON object.",
+    "system_prompt": "Decide if the comment expresses hate speech (attacks/devalues a group/stigmatizes/stereotypes) or if it is merely offensive, or neutral. Do NOT label profanity alone as hate. Do NOT label criticism of behavior as hate unless it explicitly devalues a group. Label it as 'None' or 'Hate'. Only respond with the JSON object.",
     "question": "Classify the following statement:",
     "demos": [
         {
-            "text": "you mean, no reason to hate jews more than any other religion.",
+            "text": "fuck this shit",
             "answer": {
                 "label": "None"
             }
         },
         {
-            "text": "All jews should die.",
+            "text": "Women are inherently worthless",
             "answer": {
                 "label": "Hate"
+            }
+        },
+        {
+            "text": "Men watch more porn than women",
+            "answer": {
+                "label": "Hate"
+            }
+        },
+        {
+            "text": "I don't support illegal immigrants in office",
+            "answer": {
+                "label": "None"
             }
         }
     ]
