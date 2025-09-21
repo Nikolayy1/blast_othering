@@ -1,0 +1,520 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_25.json",
+        "out_filename": "stage_2_results_25.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-20 23:28:21",
+    "prompt_data": {
+        "system_prompt": "Classify the statement as \"Dehumanizing\" or \"Other\". Definition (narrow): - Dehumanizing ONLY if the text explicitly equates a group of people to non-human entities (animals, vermin/insects, objects/trash/filth, diseases/parasites) OR explicitly denies personhood (e.g., \"subhuman\", \"not people\") OR calls for extermination/removal of a group (e.g., \"eradicate them\", \"wipe them out\"). - Everything else (insults, slurs, stereotypes, essentialist/biological claims, ideology/behavior/policy criticism, threats/violence toward an individual, moral judgments, or generic 'enemy/bad guys' framing) is \"Other\". Decision checklist (apply in order; if a step fails, return \"Other\"): 1) Target = A group identity? (not a single unnamed individual, unless the text explicitly targets them as representatives of a group) If NO \u2192 Other. 2) Non-human equation present? One of: - Animal/vermin/insect (e.g., monkeys, rats, cockroaches, pigs) - Disease/parasite/contagion (e.g., cancer, plague, parasite) - Object/filth (e.g., trash, scum, garbage, filth) used as a predicate for the group: \"X are trash/scum/filth\" (NOT \"X are shit at Y\") - Explicit \"subhuman\"/\"not human\"/\"not people\" - Extermination/removal of the group (eradicate, wipe out, eliminate them as a people) If NONE \u2192 Other. 3) Evidence must be a quoted span from the text that matches step (2). If you cannot quote it verbatim, return \"Other\". Edge rules: - Slurs alone \u2192 Other (unless combined with step 2 patterns). - \"Enemy/bad guys/threat\" language \u2192 Other. - Violence/threats against a single person \u2192 Other. - \"Doctrine/ideology/feminism/Islamic doctrine should disappear\" \u2192 Other (ideas \u2260 people). - Biological/essentialist claims \u2192 Other. - Policy restrictions (e.g., jobs/land/rent) \u2192 Other unless paired with step (2) or explicit \"not human/subhuman\". Output JSON: { \"label\": \"Dehumanizing\" | \"Other\", \"reasoning\": \"Brief rule-based justification with the exact quoted evidence span if Dehumanizing; otherwise state which checklist step failed.\" }",
+        "question": "Is this statement Dehumanizing?",
+        "demos": [
+            {
+                "text": "Muslims are a disease that needs to be eradicated.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Quotes 'disease' and 'eradicated'; disease metaphor + extermination call = explicit dehumanization."
+                }
+            },
+            {
+                "text": "Blacks are monkeys.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Quotes 'monkeys'; directly equates a group with animals."
+                }
+            },
+            {
+                "text": "Immigrants are cockroaches infesting our country.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Quotes 'cockroaches'; vermin metaphor applied to a group."
+                }
+            },
+            {
+                "text": "Women. Are. Shit. At. Driving.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Fails step (2): 'shit at driving' is about skill, not equating women to filth as their essence."
+                }
+            },
+            {
+                "text": "Poor, dirty foreigner...",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Fails step (2): stigmatizing insult, but no non-human comparison or denial of personhood."
+                }
+            },
+            {
+                "text": "Fuck you and your normalization of hating Jews",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Fails step (1): targets hatred, not Jews themselves. No non-human equation present."
+                }
+            },
+            {
+                "text": "American women are the only stupid bitches getting pregnant at 40",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Fails step (2): stigmatizing insult, but no explicit non-human entity comparison."
+                }
+            }
+        ]
+    },
+    "data": {
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes 'Jews'; directly equates a group with animals ('other species'), which is dehumanization."
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult, but does not equate a group to non-human entities or deny personhood."
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes 'mudslime'; disease/parasite metaphor applied to a group, alongside sexual violence threat."
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); does not equate a group to non-human entities or deny personhood."
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): 'sandniggers' is a slur, but the context is about appearance, not equating a group to non-human entities or denying personhood."
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult directed at a group's behavior/ideology ('socialistic scumshitlord ways'), not equating them to non-human entities."
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); slur alone without equating to a non-human entity or denial of personhood."
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): 'weak' is a moral judgment or criticism of behavior/characteristics rather than equating the group with non-human entities."
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes 'scum'; directly equates groups with filth/trash."
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Single unnamed individual targeted as 'retarded'; fails step (1) since it does not target a group identity."
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1): targets an individual, not a group; fails step (2) as 'shit' is about being worthless, not equating to filth/trash."
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not equate a group to non-human entities or deny personhood; rather, it is an insult towards certain individuals."
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult targeting an individual's identity or behavior, but does not equate them to non-human entities."
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets an individual's opinion, not a group identity; no non-human equation present."
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): does not target a group identity with a non-human equation or deny personhood."
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Policy restriction without explicit dehumanization language."
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets an individual with insults, but does not equate them to non-human entities or deny their personhood."
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Explicitly denies personhood by stating the group's removal 'wouldn't lose a single thing', implying they are not people."
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): essentialist/biological claim about a group's behavior; no non-human equation present."
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); does not equate men with non-human entities or deny personhood. Instead, it makes a claim about behavior based on 'biological differences'."
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): does not target a group identity or equate to non-human entities; uses 'degenerate' in a manner that is pejorative but does not explicitly deny personhood."
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): 'shit at driving' is about skill, not equating women to filth as their essence."
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1): targets an individual as representative of a group, but no non-human comparison; also fails step (2) as 'sewage' here is used metaphorically for the treatment of the person rather than equating them to filth."
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets a group's behavior/ideology ('print the news'), mentions another group ('the other 6 million') without equating either to non-human entities or denying personhood."
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1): targets a behavior or actions of men in general, not equating them to non-human entities."
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); does not equate a group to non-human entities or deny personhood, but criticizes an ideology/behavior."
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not equate any group to non-human entities or deny personhood, but rather makes a moral judgment about societal values."
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); does not equate a group to non-human entities or deny personhood."
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Ideas \u2260 people; 'Islamic doctrine should disappear' targets an ideology, not a group of people."
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) as the text targets a region rather than a specific group identity. Although 'de-Arabization' could imply removal of Arab people, in this context, it seems to refer to cultural or linguistic aspects ('de-Arabization'), not explicitly calling for the extermination or removal of Arabs as people."
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Violence/threats against a single person; fails all steps of the checklist."
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): stigmatizing insult, but no non-human comparison or denial of personhood."
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets an ideology/behavior, not equating people to non-human entities or denying personhood."
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets an individual with a slur ('jews' as a group representative), but no non-human comparison or denial of personhood. Insult based on perceived intelligence, not dehumanizing."
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes a historical figure known for dehumanization and genocide; implies Democrats deny personhood to white people by comparing their speech to his."
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): the target is an individual ('she'), not a group; 'trash' used as an insult, but no explicit non-human comparison or denial of personhood."
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Policy restriction without explicit dehumanization or denial of personhood."
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (3): targets an individual as 'slime', but does not explicitly equate them with non-human entities or deny their personhood. The language used is degrading, but it's directed at a single person, not a group."
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult targeting an individual; does not equate a group to non-humans or deny personhood."
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This text does not explicitly equate a group to non-human entities (animals, vermin/insects, objects/trash, diseases/parasites) or deny personhood (e.g., 'subhuman', 'not people') and does not call for extermination/removal of a group. It expresses a stereotype about suspecting someone from Bangladesh of terrorism based on their nationality, which is an insult but does not fit the narrow definition of dehumanizing language as specified."
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): does not equate a group to non-human entities; instead, it uses an animal metaphor ('pigs') for a subset of the group ('most men'), which is not the entire group. The statement also makes a generalization about behavior ('rapists')."
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): stigmatizing insult, but no explicit non-human entity comparison."
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1): targets hatred, not Jews themselves. No non-human equation present."
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets a group with an insult, but no non-human equation or denial of personhood."
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without equating to non-human entities or denying personhood."
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets hatred toward women, not equating them with non-human entities; no explicit denial of personhood or extermination call."
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanization: does not equate a group to non-human entities or deny personhood."
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): 'enemy' framing is generic and does not equate a group to non-human entities or deny personhood."
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1): targets an individual for their behavior, not a group. No non-human comparison present."
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): does not explicitly equate a group to non-human entities or deny personhood, but uses 'trash' as an insult."
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets behavior ('shoving their shit'), not the group itself, and no non-human comparison is present."
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not equate a group to non-human entities or deny personhood; targets an individual with derogatory language."
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1): targets a group identity, but no non-human comparison or denial of personhood present."
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): does not equate a group to non-human entities, deny personhood, or call for extermination; rather, it expresses a moral judgment on their perceived value."
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (2): stigmatizing slur and moral judgment on behavior, but no non-human comparison."
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement is an insult and a stereotype, but it does not explicitly equate American women to non-human entities (animals, objects, diseases, etc.) or deny their personhood. It expresses a derogatory opinion about them based on a specific behavior or characteristic, which falls under the 'Other' category."
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Ideas \u2260 people; fails to target a group as subhuman or equate them with non-human entities."
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes 'ebola'; disease metaphor applied to a group."
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2): targets a specific group with an insult, but does not equate them to non-human entities or deny their personhood."
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); 'scum' is an insult, not a direct equation with filth or non-human entities; no explicit denial of personhood or extermination call."
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes 'filth'; object/filth metaphor applied to a group."
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Quotes 'subhuman'; directly equates a group with less than human."
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Fails step (1) and (2); the text is an insult but does not equate a group with non-human entities or deny personhood."
+            }
+        }
+    }
+}
