@@ -25,6 +25,12 @@
             "answer": {
                 "label": "Stigmatizing"
             }
+        },
+        {
+            "text": "Most men are pigs.",
+            "answer": {
+                "label": "Dehumanizing"
+            }
         }
     ]
 }
