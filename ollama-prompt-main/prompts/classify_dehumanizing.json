@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing requires explicitly denying humanity by comparing a group to animals, objects, diseases, or vermin. General insults, stereotypes, or offensive language are Other. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
+    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing requires explicitly denying humanity by comparing a group to animals, objects or diseases. General insults, stereotypes, or offensive language are Other. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
     "question": "Is this statement Dehumanizing?",
     "demos": [
         {
@@ -30,6 +30,12 @@
             "text": "You are fucking stupid man",
             "answer": {
                 "label": "Other"
+            }
+        },
+        {
+            "text": "Jews are scum, throw them in the trash.",
+            "answer": {
+                "label": "Dehumanizing"
             }
         }
     ]
