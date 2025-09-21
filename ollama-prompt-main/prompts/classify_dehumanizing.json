@@ -85,6 +85,30 @@
             "answer": {
                 "label": "Other"
             }
+        },
+        {
+            "text": "Women don't like to work.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "That guy's just retarded.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "answer": {
+                "label": "Other"
+            }
+        },
+        {
+            "text": "Atheists spend more time antagonizing Christians than any other religious group.",
+            "answer": {
+                "label": "Other"
+            }
         }
     ]
 }
