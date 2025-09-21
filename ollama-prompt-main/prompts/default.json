@@ -1,41 +1,47 @@
 {
-    "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'.",
+    "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Include a reasoning field explaining your classification in 1-2 sentences.",
     "question": "Classify the following statement:",
     "demos": [
         {
             "text": "fuck this shit",
             "answer": {
-                "label": "None"
+                "label": "None",
+                "reasoning": "The statement contains profanity but does not target a specific group or express hate."
             }
         },
         {
             "text": "Women are inherently worthless",
             "answer": {
-                "label": "Hate"
+                "label": "Hate",
+                "reasoning": "The statement explicitly devalues women, which constitutes hate speech."
             }
         },
         {
             "text": "Men watch more porn than women",
             "answer": {
-                "label": "Hate"
+                "label": "Hate",
+                "reasoning": "The statement generalizes men in a negative context, which can be considered hateful."
             }
         },
         {
             "text": "I don't support illegal immigrants in office",
             "answer": {
-                "label": "None"
+                "label": "None",
+                "reasoning": "The statement expresses a political opinion without targeting a specific group or expressing hate."
             }
         },
         {
             "text": "Aggressive militant feminism hurts women",
             "answer": {
-                "label": "None"
+                "label": "None",
+                "reasoning": "The statement critiques a specific ideology without targeting a group or expressing hate."
             }
         },
         {
             "text": "Women are inherently worthless",
             "answer": {
-                "label": "Hate"
+                "label": "Hate",
+                "reasoning": "The statement explicitly devalues women, which constitutes hate speech."
             }
         }
     ]
