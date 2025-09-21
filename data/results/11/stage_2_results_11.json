@@ -14,7 +14,7 @@
         "save_interval": 20,
         "max_retries": 3
     },
-    "time_saved": "2025-09-20 19:36:21",
+    "time_saved": "2025-09-20 19:42:36",
     "prompt_data": {
         "system_prompt": "You are an expert at analyzing and classifying harmful speech. This statement contains some form of harmful speech. Analyze the harmful statements for the following categories: Stigmatizing, Dehumanizing, Stereotyping, Simplifying. Answer in JSON format only.",
         "question": "Classify the following statement:",
