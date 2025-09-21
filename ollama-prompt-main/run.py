@@ -119,9 +119,9 @@ if __name__ == "__main__":
 
     # Stage 2
     args.dataset = stage2_dataset
-    args.out_filename = os.path.join(RESULT_PATH, f"stage_2_results_{CURRENT_ITERATION}.json")
+    args.out_filename = f"stage_2_results_{CURRENT_ITERATION}.json"
 
     annotator_stage_2 = Annotate(
-        args, SCRIPT_PATH, stage_1_out_path, RESULT_PATH, stage=2, curr_iteration=CURRENT_ITERATION
+        args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=2, curr_iteration=CURRENT_ITERATION
     )
     annotator_stage_2.process_docs()
