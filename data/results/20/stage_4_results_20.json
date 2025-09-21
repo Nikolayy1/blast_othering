@@ -18,7 +18,7 @@
         "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
         "prompt_file_simplifying": "prompts/classify_simplifying.json"
     },
-    "time_saved": "2025-09-20 21:34:59",
+    "time_saved": "2025-09-20 21:39:41",
     "prompt_data": {
         "system_prompt": "Classify the following statement as Stereotyping or Other. Only answer in JSON format with the key 'label' and value either 'Stereotyping' or 'Other'.",
         "question": "Is this statement Stereotyping?",
