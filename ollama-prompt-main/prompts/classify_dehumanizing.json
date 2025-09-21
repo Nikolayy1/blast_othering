@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing requires explicitly denying humanity by comparing a group to animals, objects or diseases. General insults, stereotypes, or offensive language are Other. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
+    "system_prompt": "Classify the following statement as Dehumanizing or Other. Dehumanizing ONLY if the statement likens a group of people to animals, vermin, objects, or diseases, OR explicitly denies their humanity. Do not classify as dehumanizing if it is just stereotyping, stigmatizing, insulting, or criticizing. Only answer in JSON format with the key 'label' and value either 'Dehumanizing' or 'Other'.",
     "question": "Is this statement Dehumanizing?",
     "demos": [
         {
