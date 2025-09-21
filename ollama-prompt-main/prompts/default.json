@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the given short statement. Decide if this statement includes hate speech towards a person or group or not. Label it as 'None' or 'Hate'. Only respond with the JSON object.",
+    "system_prompt": "Classify the given short statement. Decide if this statement includes hate speech towards a person or group or not. Do not focus on slur words, instead identify the target group of this sentence and decide if the statement is hateful towards the target. Label it as 'None' or 'Hate'. Only respond with the JSON object.",
     "question": "Classify the following statement:",
     "demos": [
         {
