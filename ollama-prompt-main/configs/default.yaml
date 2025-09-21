@@ -1,6 +1,10 @@
 ---
 prompt_file_stage_1: prompts/default.json
 prompt_file_stage_2: prompts/classify_harm.json
+prompt_file_dehumanizing: prompts/classify_dehumanizing.json
+prompt_file_stigmatizing: prompts/classify_stigmatizing.json
+prompt_file_stereotyping: prompts/classify_stereotyping.json
+prompt_file_simplifying: prompts/classify_simplifying.json
 dataset: ../data/examples.json
 model: llama3.3:70b-instruct-q4_0
 seed: 42

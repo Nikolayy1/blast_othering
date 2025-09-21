@@ -125,3 +125,69 @@ if __name__ == "__main__":
         args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=2, curr_iteration=CURRENT_ITERATION
     )
     annotator_stage_2.process_docs()
+    
+
+    # Load Stage 2 results
+    stage_2_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    stage_2_results = load_file(stage_2_out_path)
+
+    other_only = {
+        doc_id: {"text": doc["text"]}
+        for doc_id, doc in stage_2_results["data"].items()
+        if doc["annotation"] and doc["annotation"]["label"].lower() == "other"
+    }
+    # Save filtered data for Stage 3
+    stage3_dataset = f"stage_3_data_{CURRENT_ITERATION}.json"
+    save_file(other_only, RESULT_PATH, stage3_dataset)
+    
+    # Stage 3
+    args.dataset = stage3_dataset
+    args.out_filename = f"stage_3_results_{CURRENT_ITERATION}.json"
+
+    annotator_stage_3 = Annotate(
+        args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=3, curr_iteration=CURRENT_ITERATION
+    )
+    annotator_stage_3.process_docs()
+    
+    # Load Stage 2 results
+    stage_2_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    stage_2_results = load_file(stage_2_out_path)
+
+    other_only = {
+        doc_id: {"text": doc["text"]}
+        for doc_id, doc in stage_2_results["data"].items()
+        if doc["annotation"] and doc["annotation"]["label"].lower() == "other"
+    }
+    # Save filtered data for Stage 4
+    stage4_dataset = f"stage_4_data_{CURRENT_ITERATION}.json"
+    save_file(other_only, RESULT_PATH, stage4_dataset)
+
+    # Stage 4
+    args.dataset = stage4_dataset
+    args.out_filename = f"stage_4_results_{CURRENT_ITERATION}.json"
+
+    annotator_stage_4 = Annotate(
+        args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=4, curr_iteration=CURRENT_ITERATION
+    )
+    annotator_stage_4.process_docs()
+
+    # Load Stage 4 results
+    stage_4_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    stage_4_results = load_file(stage_4_out_path)
+
+    other_only = {
+        doc_id: {"text": doc["text"]}
+        for doc_id, doc in stage_4_results["data"].items()
+        if doc["annotation"] and doc["annotation"]["label"].lower() == "other"
+    }
+    # Save filtered data for Stage 5
+    stage5_dataset = f"stage_5_data_{CURRENT_ITERATION}.json"
+    save_file(other_only, RESULT_PATH, stage5_dataset)
+    
+    # Stage 5
+    args.dataset = stage5_dataset
+    args.out_filename = f"stage_5_results_{CURRENT_ITERATION}.json"
+    annotator_stage_5 = Annotate(
+        args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=5, curr_iteration=CURRENT_ITERATION
+    )
+    annotator_stage_5.process_docs()

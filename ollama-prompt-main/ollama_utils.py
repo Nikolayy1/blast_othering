@@ -158,9 +158,13 @@ class Annotate:
         if stage == 1:
             prompt_path = os.path.join(script_path, self.config.prompt_file_stage_1)
         elif stage == 2:
-            prompt_path = os.path.join(script_path, self.config.prompt_file_stage_2)
-        else:
-            raise ValueError("Stage must be 1 or 2")
+            prompt_path = os.path.join(script_path, self.config.prompt_file_dehumanizing)
+        elif stage == 3:
+            prompt_path = os.path.join(script_path, self.config.prompt_file_stigmatizing)
+        elif stage == 4:
+            prompt_path = os.path.join(script_path, self.config.prompt_file_stereotyping)
+        elif stage == 5:
+            prompt_path = os.path.join(script_path, self.config.prompt_file_simplifying)
 
         prompt_data = load_file(prompt_path, logger=self.logger)
 
