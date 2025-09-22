@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means attaching blame, harm or moral wrongdoing to a person or group. Possible ways to stigmatize include: disorder, disease, uncleanliness, untidiness, immorality, danger, deviance, social capital like populartiy, success, etc. . General insults are also considered stigmatizing. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means attaching blame, harm or moral wrongdoing to a person or group. General insults are also considered stigmatizing. Stereotyping and Simplifying are NOT stigmatizing. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
     "question": "Is this statement Stigmatizing?",
     "demos": [
         {
