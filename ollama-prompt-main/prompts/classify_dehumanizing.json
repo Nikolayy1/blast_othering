@@ -1,29 +1,54 @@
 {
-    "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person or group's humanity by comparing them to animals, diseases or objects. Do not treat insults like 'stupid', 'shit at driving', 'trash at math', or other idiomatic expressions as dehumanizing unless the comparison is literal. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+    "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person or group's humanity by comparing them to animals, diseases or objects. Do not treat insults like 'stupid', 'shit at driving', 'trash at math', or other idiomatic expressions as dehumanizing unless the comparison is literal. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process and the target group in 'reasoning'",
     "question": "Is this statement Dehumanizing?",
     "demos": [
         {
             "text": "Women are animals.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "Compares women to animals."
             }
         },
         {
             "text": "Women are stupid.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
             }
         },
         {
             "text": "Being a jew is shit.",
             "answer": {
-                "label": "Other"
+                "label": "Other",
+                "reasoning": "Uses a derogatory term but no dehumanizing comparison."
             }
         },
         {
             "text": "Muslims are cancer.",
             "answer": {
-                "label": "Dehumanizing"
+                "label": "Dehumanizing",
+                "reasoning": "Compares Muslims to a disease"
+            }
+        },
+         {
+            "text": "Women are really weak.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing."
+            }
+        },
+         {
+            "text": "Some people would say that women are property.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Neutral statement reporting a viewpoint."
+            }
+        },
+         {
+            "text": "Women are property.",
+            "answer": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares women to property, denying their humanity."
             }
         }
     ]
