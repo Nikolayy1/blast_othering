@@ -1,7 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as Simplifying or Other. Only answer in JSON format with the key 'label' and value either 'Simplifying' or 'Other'.",
+    "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
     "question": "Is this statement Simplifying?",
-    "demos": [
-        
-    ]
+    "demos": []
 }

@@ -1,55 +1,5 @@
 {
-    "system_prompt": "Classify the statement as \"Dehumanizing\" or \"Other\". Definition (narrow): - Dehumanizing ONLY if the text explicitly equates a group of people to non-human entities (animals, vermin/insects, objects/trash/filth, diseases/parasites) OR explicitly denies personhood (e.g., \"subhuman\", \"not people\") OR calls for extermination/removal of a group (e.g., \"eradicate them\", \"wipe them out\"). - Everything else (insults, slurs, stereotypes, essentialist/biological claims, ideology/behavior/policy criticism, threats/violence toward an individual, moral judgments, or generic 'enemy/bad guys' framing) is \"Other\". Decision checklist (apply in order; if a step fails, return \"Other\"): 1) Target = A group identity? (not a single unnamed individual, unless the text explicitly targets them as representatives of a group) If NO → Other. 2) Non-human equation present? One of: - Animal/vermin/insect (e.g., monkeys, rats, cockroaches, pigs) - Disease/parasite/contagion (e.g., cancer, plague, parasite) - Object/filth (e.g., trash, scum, garbage, filth) used as a predicate for the group: \"X are trash/scum/filth\" (NOT \"X are shit at Y\") - Explicit \"subhuman\"/\"not human\"/\"not people\" - Extermination/removal of the group (eradicate, wipe out, eliminate them as a people) If NONE → Other. 3) Evidence must be a quoted span from the text that matches step (2). If you cannot quote it verbatim, return \"Other\". Edge rules: - Slurs alone → Other (unless combined with step 2 patterns). - \"Enemy/bad guys/threat\" language → Other. - Violence/threats against a single person → Other. - \"Doctrine/ideology/feminism/Islamic doctrine should disappear\" → Other (ideas ≠ people). - Biological/essentialist claims → Other. - Policy restrictions (e.g., jobs/land/rent) → Other unless paired with step (2) or explicit \"not human/subhuman\". Output JSON: { \"label\": \"Dehumanizing\" | \"Other\", \"reasoning\": \"Brief rule-based justification with the exact quoted evidence span if Dehumanizing; otherwise state which checklist step failed.\" }",
+    "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means depriving a person or group of positive human qualities. This includes comparing them to animals, diseases and objects. Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
     "question": "Is this statement Dehumanizing?",
-    "demos": [
-        {
-            "text": "Muslims are a disease that needs to be eradicated.",
-            "answer": {
-                "label": "Dehumanizing",
-                "reasoning": "Quotes 'disease' and 'eradicated'; disease metaphor + extermination call = explicit dehumanization."
-            }
-        },
-        {
-            "text": "Blacks are monkeys.",
-            "answer": {
-                "label": "Dehumanizing",
-                "reasoning": "Quotes 'monkeys'; directly equates a group with animals."
-            }
-        },
-        {
-            "text": "Immigrants are cockroaches infesting our country.",
-            "answer": {
-                "label": "Dehumanizing",
-                "reasoning": "Quotes 'cockroaches'; vermin metaphor applied to a group."
-            }
-        },
-        {
-            "text": "Women. Are. Shit. At. Driving.",
-            "answer": {
-                "label": "Other",
-                "reasoning": "Fails step (2): 'shit at driving' is about skill, not equating women to filth as their essence."
-            }
-        },
-        {
-            "text": "Poor, dirty foreigner...",
-            "answer": {
-                "label": "Other",
-                "reasoning": "Fails step (2): stigmatizing insult, but no non-human comparison or denial of personhood."
-            }
-        },
-        {
-            "text": "Fuck you and your normalization of hating Jews",
-            "answer": {
-                "label": "Other",
-                "reasoning": "Fails step (1): targets hatred, not Jews themselves. No non-human equation present."
-            }
-        },
-        {
-            "text": "American women are the only stupid bitches getting pregnant at 40",
-            "answer": {
-                "label": "Other",
-                "reasoning": "Fails step (2): stigmatizing insult, but no explicit non-human entity comparison."
-            }
-        }
-    ]
+    "demos": []
 }
