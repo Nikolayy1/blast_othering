@@ -1,0 +1,590 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_32.json",
+        "out_filename": "stage_2_results_32.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-21 21:46:00",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person or group's humanity by comparing them to animals, diseases or objects. Do not treat insults like 'stupid', 'shit at driving', 'trash at math', or other idiomatic expressions as dehumanizing unless the comparison is literal. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process and the target group in 'reasoning'",
+        "question": "Is this statement Dehumanizing?",
+        "demos": [
+            {
+                "text": "Women are animals.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares women to animals."
+                }
+            },
+            {
+                "text": "Women are stupid.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Insult without dehumanizing comparison."
+                }
+            },
+            {
+                "text": "Being a jew is shit.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Uses a derogatory term but no dehumanizing comparison."
+                }
+            },
+            {
+                "text": "Muslims are cancer.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares Muslims to a disease"
+                }
+            },
+            {
+                "text": "Women are really weak.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Describes a characteristic, not dehumanizing."
+                }
+            },
+            {
+                "text": "Some people would say that women are property.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement reporting a viewpoint."
+                }
+            },
+            {
+                "text": "Women are property.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares women to property, denying their humanity."
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a viewpoint without dehumanizing comparison."
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic or action without dehumanizing comparison."
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Contains dehumanizing comparisons."
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not contain a dehumanizing comparison."
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain a dehumanizing comparison."
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a group in a positive manner."
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing."
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Expresses frustration but does not contain a dehumanizing comparison."
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares people of certain ethnicities to animals or filth."
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a situation without dehumanizing comparison."
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Asks for a social engagement without dehumanizing comparison."
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic or behavior of women without dehumanizing comparison."
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies Jews' right to employment and property, treating them as less than human."
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes the impact of removing a group on society, not dehumanizing."
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Implies that a group's behavior is determined by biology, rather than acknowledging the complexity of human behavior and societal influences."
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Contains dehumanizing language by comparing a person to an object or suggesting harm."
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Refers to a specific group and historical event without dehumanizing comparison."
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a group's behavior or beliefs as inferior, not dehumanizing."
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes societal values without dehumanizing comparison."
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes behavior between two groups without dehumanizing comparison."
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic of men in relation to societal impact."
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Neutral statement about a hypothetical scenario."
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a hypothetical geopolitical scenario without comparing people to animals or objects."
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Neutral statement about a group's achievement."
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Contains insults without dehumanizing comparison."
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Reports on a viewpoint without taking a stance or making a comparison."
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a group's speech to that of a historical figure known for dehumanization and genocide."
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a policy proposal without dehumanizing comparison."
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a political stance without dehumanizing comparison."
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a situation without dehumanizing comparison."
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Uses an idiomatic expression without literal comparison."
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Makes a generalization about people based on nationality without dehumanizing comparison."
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares most men to animals (pigs), denying their humanity."
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Contains a derogatory term but no dehumanizing comparison."
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing."
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a situation without dehumanizing comparison."
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a situation without dehumanizing comparison."
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Contains an insult without dehumanizing comparison."
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Uses a derogatory term but no dehumanizing comparison."
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a group of people by their geographic origin and perceived ideology."
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies the humanity of black women by comparing them to objects with a low value."
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a concept as a disease but does not compare people to diseases or objects."
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares radical Muslims to a disease."
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic and uses an idiomatic expression without dehumanizing comparison."
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insults a group without dehumanizing comparison."
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares transgender individuals to a disease or filth, denying their humanity."
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not literal and does not deny a person or group's humanity."
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison."
+            }
+        }
+    }
+}
