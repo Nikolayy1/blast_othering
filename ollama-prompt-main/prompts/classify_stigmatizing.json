@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means assigning blame, moral wrongdoing, or harm to a person/group in a way that reinforces exclusion or shame. General insults directed at a group are stigmatizing. Insults directed only at an individual are not stigmatizing unless they attach broader blame to a group. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means assigning blame, moral wrongdoing, or harm to a person/group in a way that reinforces exclusion or shame. General insults directed at a group are stigmatizing. Insults directed only at an individual are not stigmatizing unless they attach broader blame to a group. Do not label something stigmatizing if it fits dehumanizing, stereotyping, or simplifying. Stigmatizing is only for moral blame/shame language that doesn't fit those other categories. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
     "question": "Is this statement Stigmatizing?",
     "demos": [
         {
@@ -72,6 +72,30 @@
                 "label": "Other",
                 "reasoning": "General frustration, not stigmatizing.",
                 "target": "People"
+            }
+        },
+        {
+            "text": "Women are bad drivers.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Stereotype but not stigmatizing.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "Muslims are subhuman.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Dehumanizing but not stigmatizing.",
+                "target": "Muslims"
+            }
+        },
+        {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is curvy.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Body-shaming (simplifying), not stigmatizing.",
+                "target": "White women"
             }
         }
     ]
