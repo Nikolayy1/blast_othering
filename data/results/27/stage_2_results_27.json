@@ -1,0 +1,540 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_27.json",
+        "out_filename": "stage_2_results_27.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-21 20:41:28",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means depicating a person or group as less than human, denying their humanity, agency, or dignity. Do not assume context, only take the literal meaning of the text into account. Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Dehumanizing?",
+        "demos": []
+    },
+    "data": {
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This text contains dehumanizing language, denying the humanity of a group based on their ethnicity and immigration status."
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement denies the humanity and dignity of a group of people, specifically those who identify as feminist militants, by depicting them as causing harm to others."
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement is cautionary but does not deny the humanity or dignity of the individuals mentioned."
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement denies the humanity and dignity of women by using derogatory language to describe them."
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it makes a sweeping generalization about an entire group of people (women) based on a negative stereotype, implying they lack agency or dignity."
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement makes fun of a specific ethnic group, denying their dignity and humanity."
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that Jews are not worthy of the same respect or dignity as people of other religions, which denies their humanity and agency."
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The term used is a racial slur, which denies the humanity and dignity of a group of people."
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that denies the humanity, agency, or dignity of a specific group of people, in this case, women."
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The term 'degenerate' denies the humanity of atheists, depicting them as less than human."
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that women and girls are inherently weak, which denies them agency and dignity."
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement questions the nature of people, implying they are flawed or problematic, which can be seen as denying their humanity or dignity."
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This text contains extreme racist language, denying the humanity of multiple groups based on their ethnicity and race."
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement uses an ableist slur to insult someone, denying their humanity or dignity."
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement reduces a group of people to less than human by using derogatory language and implying they are inferior or not worthy of respect."
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that denies the target's humanity, using derogatory terms to debase and degrade them."
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement reduces women to mere objects that can be worked with, implying a lack of agency or autonomy."
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement objectifies women, but does so in a way that is more playful and flirtatious than dehumanizing."
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text denies the person's humanity and dignity by using derogatory language and making negative generalizations about their life."
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it denies the intelligence and dignity of an entire group of people based on their gender."
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement denies women's agency by implying they do not want to participate in the workforce, which is a dehumanizing portrayal."
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it denies a specific group's (Jews) basic human rights, such as the right to work and own property."
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that denies the person's intelligence, implying they are less capable or worthy than others, which is a form of dehumanization."
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that the removal of an entire group of people based on their religion would not be a loss for humanity, which denies their humanity and dignity."
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it implies that a person's likelihood of committing a crime is determined by their race and biology, rather than their individual actions or circumstances. It denies the agency and dignity of individuals based on their racial group."
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that women are not capable of being as morally corrupt or flawed as men, which denies their agency and dignity."
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains a derogatory phrase that denies women their dignity and agency, depicting them as less capable than others in driving."
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains extreme language that denies a person's humanity, agency, and dignity, depicting them as less than human."
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing as it denies the dignity and humanity of a specific group based on their religion, using derogatory language and referencing a tragic historical event in a disrespectful manner."
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it denies the humanity and dignity of a specific group, in this case Protestants, by depicting them as 'backward'."
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement implies that men are less valuable or have less dignity than women, which denies their humanity and agency."
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it implies that atheists, as a group, are inherently antagonistic towards Christians, denying their humanity and agency."
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that men, as a group, are inherently harmful to society, which denies their humanity and agency."
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it implies that a group of people (those who follow Islamic doctrine) would be better off if they did not exist or were eliminated."
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it implies that the removal of Arab populations from the region would lead to greater stability, effectively denying their humanity and agency."
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it implies that Muslims are typically associated with violence and denies their agency and dignity by expressing surprise at their accomplishment of something else."
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This text contains extreme language that denies the humanity and dignity of a person or group, depicting them as worthless and using degrading terms."
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement denies the dignity of a person or group by using derogatory language to describe them based on their socioeconomic status and nationality."
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement implies that people from the Middle East or their apologists view women as less than human, which denies their humanity and dignity."
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it denies the target's humanity and agency by using derogatory language and making a racist comment about Jewish people."
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares Democrats to Hitler, implying they dehumanize white people in a similar manner to how Hitler spoke about Jews, which is a dehumanizing comparison."
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of a person to trash denies their humanity, agency, or dignity."
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement denies the humanity of foreigners by suggesting they should not have access to basic human needs like housing, thus dehumanizing them."
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement denies a group of people (illegal immigrants) the right to hold public office, which is a form of denying their humanity or agency."
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that people are inherently not nice to each other and need an 'evil bad guy' to interact, which denies their humanity and agency."
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement refers to a person using degrading language, comparing them to 'slime', which denies their humanity and dignity."
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text denies the person's humanity by using derogatory terms like 'loser', 'criminal', and 'idiot'."
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement makes a generalization about people from Bangladesh, implying they are more likely to be terrorists based on their nationality."
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement depicts a group of people (men) as less than human by comparing them to animals ('pigs') and denying their agency and dignity by associating them with criminal behavior ('rapists')."
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement refers to female tennis players using a derogatory term ('chicks'), implying they are less than human, and denies their agency by blaming them for freaking out."
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it contains hate speech targeting a specific group, in this case Jewish people."
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement denies the agency and dignity of women by depicting them as inherently weak, which is a dehumanizing portrayal."
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement implies that most women lack intelligence, which is a harmful and discriminatory stereotype."
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement depicts a group of people (women) as being targeted with hate, denying them dignity and respect."
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement denies the intelligence or mental capacity of a group of people, which can be seen as denying their humanity or dignity."
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement depicts a group of people, specifically White men, as 'the enemy', which denies them their humanity and dignity."
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement contains language that denies the humanity of a person or group, specifically targeting their dignity and agency with derogatory terms."
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains a slur that denies the dignity of a group based on their sexual orientation, which is dehumanizing."
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text depicts a group, Christians, as less than human by using derogatory language and denying them agency and dignity."
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it uses derogatory language to refer to a person, denying their dignity and humanity."
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it broadly categorizes a large group of people based on their geographic origin and religion, implying they all practice 'radical Islam'."
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains strong language that denies the dignity or agency of a group of people, specifically those who follow Christian laws."
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement uses derogatory language to describe a group, denying their dignity and humanity."
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that black women are viewed as having less worth or value than others, which denies their humanity and dignity."
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that is derogatory and denies dignity to a specific group, which qualifies as dehumanizing."
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This text contains derogatory language towards American women, specifically those who get pregnant at age 40, implying they are less than human due to their gender and age of pregnancy."
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it refers to a group of people (feminists) as a 'cancer', which denies their humanity and dignity."
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares a group of people to a deadly disease, denying their humanity and dignity."
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement denies the humanity of a specific group, namely overweight white women, by using derogatory language and stereotypes."
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it denies the humanity and dignity of LGBTQ individuals by using derogatory language to describe them."
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it denies the humanity and dignity of transgender individuals by using derogatory language to describe them."
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares Muslims to animals, denying their humanity and dignity."
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it makes a sweeping generalization about an entire group of people, women, and uses derogatory language to describe them."
+            }
+        }
+    }
+}
