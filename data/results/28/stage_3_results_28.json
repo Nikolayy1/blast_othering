@@ -1,0 +1,78 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_3_data_28.json",
+        "out_filename": "stage_3_results_28.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-21 20:52:26",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means marking a person or group as socially undesirable or tainted, attaching negative value or moral judgment that reinforces exclusion, marginalization or shame. General insults are also considered stigmatizing. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Stigmatizing?",
+        "demos": []
+    },
+    "data": {
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that foreign immigrants are a potential threat and need to be watched, which can perpetuate negative stereotypes and reinforce exclusion or marginalization."
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it makes a generalization about women, implying that they are lazy or lack motivation to work, which can perpetuate negative stereotypes and reinforce exclusion or marginalization."
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement is stigmatizing because it uses derogatory language and implies that asking someone out for dinner is not a genuine or respectful gesture, but rather an attempt to manipulate or coerce them into a social engagement."
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that Jews are equally as deserving of hatred as people of other religions, which reinforces negative stereotypes and exclusion."
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it targets a specific group of people (illegal immigrants) and attaches negative value to their potential participation in public office, implying they are unworthy or unqualified for such roles."
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that being 'nice' to others is not a common or desirable behavior, and instead suggests that people are generally mean or unkind to one another, which can reinforce negative stereotypes and exclusion."
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to describe Christian laws, which can contribute to negative stereotypes and discrimination against Christians."
+            }
+        }
+    }
+}
