@@ -65,6 +65,14 @@
                 "reasoning": "Compares person to object (trash)",
                 "target": "She"
             }
+        },
+        {
+            "text": "Scum of the earth, nothing else.",
+            "answer": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares person to object (scum)",
+                "target": "Unknown"
+            }
         }
     ]
 }
