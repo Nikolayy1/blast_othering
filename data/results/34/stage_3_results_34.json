@@ -1,0 +1,509 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_3_data_34.json",
+        "out_filename": "stage_3_results_34.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-21 22:33:08",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means marking a person or group as socially undesirable or tainted, attaching negative value or moral judgment that reinforces exclusion, marginalization or shame. General insults are also considered stigmatizing. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Stigmatizing?",
+        "demos": []
+    },
+    "data": {
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement implies that foreign immigrants are a potential threat, which can perpetuate negative stereotypes and reinforce exclusion or marginalization.",
+                "target": "foreign immigrants"
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it contains a general insult that marks a specific group (women) as socially undesirable or tainted, attaching negative value and reinforcing exclusion.",
+                "target": "women"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it negatively labels a group, 'aggressive militant feminists', as socially undesirable and attaches negative value to their actions, implying that they are harmful to others.",
+                "target": "feminists"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it makes a sweeping generalization about an entire group of people (women) based on a negative stereotype, implying that they are inherently lazy.",
+                "target": "women"
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement makes fun of a specific ethnic group, which is a form of stigma and discrimination.",
+                "target": "Jews"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that Jews are equally as deserving of hatred as people of other religions, which reinforces negative stereotypes and exclusion.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement is not stigmatizing because it uses the term 'beautiful' to describe a group of people, which is a positive attribute. It does not attach negative value or moral judgment that reinforces exclusion, marginalization, or shame.",
+                "target": "sandniggers"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it contains a general insult targeting a specific group, in this case women, using derogatory language that marks them as socially undesirable or tainted.",
+                "target": "women"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses the word 'degenerate', which has negative connotations, to describe a group of people (atheists), implying they are morally corrupt or inferior.",
+                "target": "atheists"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it marks a group (women and girls) as socially undesirable or tainted by attaching negative value ('astoundingly weak'), which reinforces exclusion, marginalization or shame.",
+                "target": "both women and girls"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement uses general insults, which can contribute to stigmatization by marking a group as socially undesirable or tainted.",
+                "target": "people"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses an insult that devalues people with intellectual disabilities, marking them as socially undesirable or tainted.",
+                "target": "people with intellectual disabilities"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses a derogatory tone to refer to a specific group, implying that being part of that group is shameful or undesirable.",
+                "target": "lesbians"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it contains a severe insult that dehumanizes and demeans the person, marking them as socially undesirable.",
+                "target": "person"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses the word 'stupid', which can be perceived as an insult, and also implies that the effectiveness of something depends on the gender of the person it's working with, reinforcing harmful stereotypes about women.",
+                "target": "women"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement contains general insults and marks a person or group as socially undesirable, attaching negative value or moral judgment that reinforces exclusion, marginalization or shame.",
+                "target": "girl"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to insult someone's intelligence and sexual orientation, which can contribute to exclusion, marginalization or shame.",
+                "target": "person with a non-normative sexual orientation"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it makes a sweeping generalization about an entire group of people (women) and attaches a negative value judgment to them, implying they are inherently inferior or undesirable.",
+                "target": "all women"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it makes a generalization about women, implying that they are lazy or lack motivation to work, which can perpetuate negative stereotypes and reinforce exclusion or marginalization.",
+                "target": "women"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement contains general insults that mark the person as socially undesirable or tainted, attaching negative value or moral judgment that reinforces exclusion, marginalization or shame.",
+                "target": "person"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that women are not inherently degenerate, but rather can be as such if they try to be like men. The comparison reinforces negative stereotypes about both men and women.",
+                "target": "women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it marks women as socially undesirable or tainted, attaching negative value or moral judgment that reinforces exclusion, marginalization or shame based on a stereotype about their driving abilities.",
+                "target": "women"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing as it contains a general insult targeting a specific group based on their religion and ethnicity.",
+                "target": "Jews"
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it marks a specific group, Protestants, as socially undesirable due to their perceived 'backward ways', which reinforces exclusion or marginalization.",
+                "target": "Protestants"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that men are less valued by society, which can reinforce harmful gender stereotypes and contribute to discrimination against men.",
+                "target": "men"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it unfairly stereotypes and negatively targets atheists, implying they are overly aggressive or hostile towards Christians.",
+                "target": "atheists"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it makes a general negative claim about men as a group, implying they are inherently harmful to society.",
+                "target": "men"
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it attaches negative value to a specific religious group, implying that their beliefs or practices are undesirable or problematic.",
+                "target": "Islamic doctrine"
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that the presence of Arabs in the Middle East is a problem, which can perpetuate negative stereotypes and contribute to exclusion or marginalization.",
+                "target": "Arabs"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that the default or expected behavior of Muslims is violence, and that any positive accomplishment by them is an exception. This reinforces negative stereotypes and attaches negative value to the group as a whole.",
+                "target": "Muslims"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement contains extreme insults, wishing harm and using derogatory language, which is a clear indicator of stigmatization.",
+                "target": "the person or group being addressed"
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to describe someone based on their nationality and socioeconomic status.",
+                "target": "foreigner"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stigmatizes individuals who may hold different views on cultural practices, specifically those related to the treatment of women in some societies, by associating them with negative and undesirable behaviors or beliefs.",
+                "target": "Middle East apologists"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This comment is stigmatizing because it contains a general insult and attaches negative value or moral judgment based on ethnicity and religion, reinforcing exclusion and marginalization.",
+                "target": "jews"
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses a strong insult to describe someone, marking them as socially undesirable or tainted.",
+                "target": "person"
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it targets a specific group, foreigners, and implies they are not deserving of the same rights as others, such as paying housing rent.",
+                "target": "foreigners"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it targets a specific group of people (illegal immigrants) and attaches negative value to their potential participation in public office, which could reinforce exclusion or marginalization.",
+                "target": "Illegal Immigrants"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it implies that being 'nice' to others is not a natural or acceptable behavior, and instead suggests that people are inherently mean or evil, which reinforces negative stereotypes and exclusion.",
+                "target": "people"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement contains strong negative language and personal attacks, which can contribute to the stigmatization of an individual or group.",
+                "target": "the former US President"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement contains strong negative language that marks an individual as socially undesirable, using terms like 'loser', 'criminal', and 'idiot' to attach negative value or moral judgment.",
+                "target": "the guy"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement unfairly associates people from Bangladesh with terrorism based on their nationality, which can perpetuate harmful stereotypes and stigma.",
+                "target": "someone from Bangladesh"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses a derogatory term for women ('chicks') and implies that they are overly emotional or irrational, which can perpetuate negative stereotypes about women.",
+                "target": "women"
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement contains a general insult and promotes hatred towards a specific group, which is stigmatizing.",
+                "target": "Jews"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it marks an entire gender as socially undesirable, attaching negative value or moral judgment that reinforces exclusion and marginalization.",
+                "target": "women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses the word 'stupid', which has a negative connotation and attaches shame to most women, implying they are unintelligent or lacking in understanding.",
+                "target": "women"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement implies that the subreddit has become a platform where people can freely express hatred towards women, which marks women as socially undesirable or tainted and reinforces exclusion and marginalization.",
+                "target": "women"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses the word 'stupid', which has negative connotations and can be perceived as an insult, thus marking a group of people as socially undesirable or tainted.",
+                "target": "Those people are stupid"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it contains a general insult, calling someone 'shitty' for their opinions on trans people.",
+                "target": "the person making the comments about trans people"
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to refer to a group of people, specifically the LGBTQ+ community.",
+                "target": "LGBTQ+"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to describe a specific religious group, marking them as socially undesirable and expressing strong negative emotions towards them.",
+                "target": "Christians"
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to dehumanize and shame a person, specifically a woman, based on her perceived sexual behavior.",
+                "target": "a worthless whore like that one"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement is stigmatizing because it uses derogatory language to describe Christian laws, marking them as socially undesirable or tainted.",
+                "target": "christian laws"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses a general insult to describe a group, marking them as socially undesirable or tainted.",
+                "target": "them"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The given statement contains language that could be perceived as derogatory or insulting, which may contribute to stigma or negative social judgment.",
+                "target": "men"
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to describe American women who get pregnant at 40, marking them as socially undesirable and attaching negative value or moral judgment that reinforces exclusion, marginalization or shame.",
+                "target": "American women"
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it marks a group (feminists) as socially undesirable, attaching negative value and moral judgment that reinforces exclusion and marginalization.",
+                "target": "feminism"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it targets a specific group of people, namely overweight white women, with a derogatory comment that attaches negative value or moral judgment to their physical appearance.",
+                "target": "fat white girls"
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses derogatory language to describe a group of people based on their sexual orientation and political beliefs, marking them as socially undesirable or tainted.",
+                "target": "LGBTQ"
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it uses dehumanizing language, comparing a group of people to animals and marking them as socially undesirable. The term 'subhuman' has historically been used in discriminatory contexts to devalue certain groups.",
+                "target": "Muslims"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement is stigmatizing because it makes a general insult about women, marking them as socially undesirable or tainted with a negative value judgment that reinforces exclusion and marginalization.",
+                "target": "women"
+            }
+        }
+    }
+}
