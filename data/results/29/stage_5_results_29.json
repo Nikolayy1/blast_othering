@@ -1,0 +1,28 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_5_data_29.json",
+        "out_filename": "stage_5_results_29.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-21 21:15:50",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Simplifying?",
+        "demos": []
+    },
+    "data": {}
+}
