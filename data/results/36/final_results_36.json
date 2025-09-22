@@ -1,0 +1,804 @@
+{
+    "data": {
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral as it simply states a fact about the origin of most immigrants without expressing any negative emotions or hatred.",
+                "target": "Most of our immigrants are other Europeans"
+            }
+        },
+        "17": {
+            "text": "You do know that 4chan was supporting female game developers with this right?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech or discriminatory language, but rather appears to be a neutral or possibly positive comment about 4chan's support for female game developers.",
+                "target": "female game developers"
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes an idea, specifically the notion that white people cannot experience poverty, which is a social issue rather than targeting any individual or group with hate speech.",
+                "target": "white people"
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement presents a factual comparison between men and women regarding the likelihood of committing violent crimes, without expressing any hateful or derogatory sentiment towards either gender.",
+                "target": "Men are more likely to commit violent crime over women, mostly due to biological differences"
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement discusses a topic in a neutral and analytical manner without expressing any hate or discriminatory sentiments.",
+                "target": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women."
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement presents a balanced view on gender equality by suggesting that both men and women should have equal rights and responsibilities in parenthood.",
+                "target": "If women want equality, they should give men an equal opt-out and an equal say in parenthood."
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement provides factual information about differences in behavior between men and women regarding masturbation, pornography consumption, and payment for sex, without expressing any hate or discriminatory sentiments.",
+                "target": "Men masturbate more, watch more porn, pay for sex, etc."
+            }
+        },
+        "49": {
+            "text": "Having breasts and a vagina doesn't make a woman alien",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is making a point about gender identity, specifically that having certain physical characteristics does not define someone as a woman, and it does so in a neutral and matter-of-fact way.",
+                "target": "Having breasts and a vagina doesn't make a woman alien"
+            }
+        },
+        "50": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not contain any hate speech or discriminatory language, but rather makes a comment about women being radical in different time periods.",
+                "target": "Women were as radical for early 20th standars as they are for today's."
+            }
+        },
+        "52": {
+            "text": " It is the media and other women are dictating what men should want.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes societal expectations imposed on men by the media and women, but does not contain any direct hate speech or discriminatory language.",
+                "target": "It is the media and other women are dictating what men should want."
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement critiques women who are not skilled in the kitchen, but does so in a neutral and non-aggressive manner, without expressing hate or intolerance towards any individual or group.",
+                "target": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\""
+            }
+        },
+        "56": {
+            "text": "And that, boys and girls, is called a false equivalency.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech or discriminatory language, but rather appears to be a critique of a flawed argument or comparison.",
+                "target": "And that, boys and girls, is called a false equivalency."
+            }
+        },
+        "60": {
+            "text": "And what about the stories of those women?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any language that expresses hate, but rather seems to be a question or prompt for discussion about stories of women.",
+                "target": "stories of those women"
+            }
+        },
+        "64": {
+            "text": "Women are not minors.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is simply stating a fact about women's age and does not contain any hateful or discriminatory language.",
+                "target": "Women are not minors."
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a neutral observation about an individual's physical characteristics, without expressing any hateful or derogatory sentiment towards them.",
+                "target": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women."
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes sexism as being pervasive in society, which is a neutral or objective commentary and does not express hate.",
+                "target": "society"
+            }
+        },
+        "73": {
+            "text": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement, while somewhat dismissive and critical of women, does not contain extreme or derogatory language that would qualify it as hate speech. It appears to be a casual, albeit slightly negative comment.",
+                "target": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said."
+            }
+        },
+        "74": {
+            "text": "Nobody is dragged through the mud for being raped.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech, but rather seems to be discussing a serious topic in a neutral or possibly positive way by highlighting that nobody should be shamed or blamed for being a victim of rape.",
+                "target": "rape"
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement advocates for equality and criticizes societal pressure on women to conform to traditional gender roles, which is a positive and supportive message.",
+                "target": "women"
+            }
+        },
+        "80": {
+            "text": "Maybe I'm crazy but I think women aren't helpless babies that need to be coddled.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement presents a view that challenges traditional gender stereotypes, promoting equality and independence for women, which is a neutral and empowering perspective.",
+                "target": "women"
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is classifying a behavior (hugging and kissing) as possibly being perceived as 'gay' in a lighthearted manner, without expressing any negative sentiment or hate towards the LGBTQ+ community.",
+                "target": "LGBTQ+"
+            }
+        },
+        "85": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is promoting equality and challenging sexist beliefs, which is a positive and supportive message.",
+                "target": "women"
+            }
+        },
+        "86": {
+            "text": "I agree that atheists can build morals off of other things that aren't God.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not contain any hateful or discriminatory language, but rather presents a philosophical perspective on morality.",
+                "target": "atheists"
+            }
+        },
+        "89": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is arguing against the idea that women are inherently worthless, which is a positive and supportive message.",
+                "target": "women"
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is classifying a specific type of hate speech that targets individuals based on their sexual orientation, and it does so in an informative and neutral manner without promoting or expressing hatred.",
+                "target": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person. "
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a historical fact about African Americans, and it does not contain any hateful or discriminatory language.",
+                "target": "African Americans"
+            }
+        },
+        "100": {
+            "text": "Women don't have it any better or worse than guys in the West",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not express hate, but rather makes a general comparison between women's and men's situations in the West.",
+                "target": "Women don't have it any better or worse than guys in the West"
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares immigrant groups to animals or filth, denying their humanity.",
+                "target": "Somalian and other immigrants"
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Makes a dehumanizing comparison involving Jewish people and animals.",
+                "target": "Jewish people"
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares groups of people to objects or dirt, denying their humanity.",
+                "target": "Tatars, black people, Jewish people, and Turks"
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies Jewish people their human rights by restricting their access to employment and property ownership.",
+                "target": "Jewish people"
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Describes the removal of an entire group as not losing anything significant.",
+                "target": "A religious following"
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies humanity by comparing racial groups based on perceived biological differences and implying a hierarchy of races.",
+                "target": "Black people"
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies humanity by comparing to objects or animals, using extremely violent language.",
+                "target": "His girl"
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies humanity of a group by suggesting their beliefs or practices should disappear.",
+                "target": "People who follow Islamic doctrine"
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Uses degrading terms like \u2018dirty\u2019 to deny the humanity of a group.",
+                "target": "Foreigners"
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a group of people to how Hitler spoke of another group, denying their humanity.",
+                "target": "White people"
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a person to an object (trash)",
+                "target": "She"
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares most men to animals (pigs) and denies their humanity by association with a crime (rapists)",
+                "target": "Men"
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares gay people to trash, denying their humanity.",
+                "target": "Gay people"
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares immigrant group to a disease (cancer)",
+                "target": "Immigrants from the Middle East and North Africa"
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies humanity by implying a group has less value.",
+                "target": "Black women"
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a group (feminists) to a disease (cancer)",
+                "target": "Feminists"
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares radical Muslims to a disease (Ebola)",
+                "target": "Radical Muslims"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a group of people to animals, implying they are less than human.",
+                "target": "Fat white girls"
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares LGBTQ people to objects (scum), denying their humanity.",
+                "target": "LGBTQ people"
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares transgender people to filth, denying their humanity.",
+                "target": "Transgender people"
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Implies Muslims are less than human by comparing them unfavorably to \"subhumans\"",
+                "target": "Muslims"
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Stigmatizes on the basis of deviance by implying that militant feminism is harmful to women.",
+                "target": "Feminists"
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Implies that foreign immigrants are dangerous.",
+                "target": "Foreign immigrants"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement stereotypes women as being lazy.",
+                "target": "Women"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Implies hatred towards Jews.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Uses derogatory term.",
+                "target": "Women of color"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Atheists"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stigmatizes by stating that a group is weak.",
+                "target": "Women and girls"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "People"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Implies immorality or deviance to a group based on their sexual orientation.",
+                "target": "Lesbians"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult and stigmatizes on the basis of sexual orientation.",
+                "target": "Individual"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement stereotypes women as stupid.",
+                "target": "Women"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stereotypes women.",
+                "target": "Women"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement contains a slur that is dehumanizing and stigmatizes women.",
+                "target": "Women"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stigmatizes Jewish people by implying they control the media and are responsible for harm.",
+                "target": "Jewish people"
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Attaches blame to a group by implying they are morally wrong.",
+                "target": "Protestants"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Implies men are less valuable.",
+                "target": "Men"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stigmatizes atheists by implying they are more likely to antagonize others, specifically Christians.",
+                "target": "Atheists"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Stigmatizes men by implying they are more harmful to society.",
+                "target": "Men"
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Stigmatizes on the basis of disorder and deviance.",
+                "target": "Arabs in the Middle East"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Implies that the expected behavior of Muslims is violence.",
+                "target": "Muslims"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Attaches blame by implying that the target group supports or condones immoral acts.",
+                "target": "Middle East apologists"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult with antisemitic slur.",
+                "target": "Jewish people"
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Stigmatizes on the basis of danger by implying that a group is harmful.",
+                "target": "Foreigners"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stigmatizes on the basis of social capital like success.",
+                "target": "Illegal immigrants"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Attaches blame or suspicion to individuals based on their nationality.",
+                "target": "Individuals from Bangladesh"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Blames a group for deviance.",
+                "target": "Women's tennis players"
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult and stigmatizes on the basis of immorality.",
+                "target": "Individual"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement stereotypes women as weak.",
+                "target": "Women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The word \"stupid\" is used to insult the group of women.",
+                "target": "Women"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Accuses the community of hating on women.",
+                "target": "Community"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Blames a group for harm by portraying them as enemies.",
+                "target": "White men"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement stigmatizes on the basis of immorality and danger.",
+                "target": "Christians"
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Sex workers"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Christians"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The use of the word \"cunt\" can be stigmatizing as it is often used as a derogatory term.",
+                "target": "Men"
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult and stigmatizes on the basis of immorality.",
+                "target": "American women"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "The statement stereotypes women in a negative way.",
+                "target": "Women"
+            }
+        }
+    }
+}

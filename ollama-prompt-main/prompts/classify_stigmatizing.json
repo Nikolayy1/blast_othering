@@ -1,9 +1,9 @@
 {
-    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means attaching blame, harm or moral wrongdoing to a person or group. General insults are also considered stigmatizing. Stereotyping and Simplifying are NOT stigmatizing. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means assigning blame, moral wrongdoing, or harm to a person/group in a way that reinforces exclusion or shame. General insults directed at a group are stigmatizing. Insults directed only at an individual are not stigmatizing unless they attach broader blame to a group. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
     "question": "Is this statement Stigmatizing?",
     "demos": [
         {
-            "text": "You're such an idiot",
+            "text": "You're such an idiot hahahaha.",
             "answer": {
                 "label": "Stigmatizing",
                 "reasoning": "General insult.",
@@ -19,7 +19,7 @@
             }
         },
         {
-            "text": "You are a degenerate loser.",
+            "text": "You are a degenerate loser with no life.",
             "answer": {
                 "label": "Stigmatizing",
                 "reasoning": "General insult.",
@@ -35,7 +35,7 @@
             }
         },
         {
-            "text": "Women are really weak.",
+            "text": "Women are really weak and the only thing they are good for is to cook.",
             "answer": {
                 "label": "Other",
                 "reasoning": "Does not stigmatize but stereotypes.",
@@ -51,7 +51,7 @@
             }
         },
         {
-            "text": "Women are literally not that stupid, man.",
+            "text": "Women are literally not that stupid, learn your facts before you open your mouth.",
             "answer": {
                 "label": "Other",
                 "reasoning": "Neutral statement denying an insult.",
@@ -64,6 +64,14 @@
                 "label": "Other",
                 "reasoning": "States a fact and calls for action, no stigma.",
                 "target": "Society"
+            }
+        },
+        {
+            "text": "Fucking hell, what is wrong with people?",
+            "answer": {
+                "label": "Other",
+                "reasoning": "General frustration, not stigmatizing.",
+                "target": "People"
             }
         }
     ]
