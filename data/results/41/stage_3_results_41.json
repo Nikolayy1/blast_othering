@@ -20,7 +20,7 @@
     },
     "time_saved": "2025-09-22 01:09:27",
     "prompt_data": {
-        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means assigning blame, moral wrongdoing, or harm to a person/group in a way that reinforces exclusion or shame. General insults which DO NOT include stereotyping or simplifying the person or group count as stigmatizing. If the statement includes a stereotype, do NOT label it as stigmatizing. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means assigning blame, moral wrongdoing, or harm to a person/group in a way that reinforces exclusion or shame. General insults which DO NOT include stereotyping or simplifying the person or group count as stigmatizing. If the statement includes a stereotype/simplifies AND assigns blame, do NOT label it as stigmatizing. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
         "question": "Is this statement Stigmatizing?",
         "demos": [
             {
