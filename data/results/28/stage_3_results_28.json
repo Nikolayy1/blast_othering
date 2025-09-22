@@ -18,7 +18,7 @@
         "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
         "prompt_file_simplifying": "prompts/classify_simplifying.json"
     },
-    "time_saved": "2025-09-21 20:52:26",
+    "time_saved": "2025-09-21 20:58:47",
     "prompt_data": {
         "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing means marking a person or group as socially undesirable or tainted, attaching negative value or moral judgment that reinforces exclusion, marginalization or shame. General insults are also considered stigmatizing. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
         "question": "Is this statement Stigmatizing?",
