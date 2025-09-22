@@ -1,7 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as Stereotyping or Other. Only answer in JSON format with the key 'label' and value either 'Stereotyping' or 'Other'.",
+    "system_prompt": "You are an expert at classifying comments as stereotyping or not. Stereotyping means depicting a person or group through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual or group diversity. Answer in JSON format only with 'Stereotyping' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
     "question": "Is this statement Stereotyping?",
-    "demos": [
-        
-    ]
+    "demos": []
 }
