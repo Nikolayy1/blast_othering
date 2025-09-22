@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means depriving a person or group of positive human qualities. This includes comparing them to animals, diseases and objects. Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+    "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means depicating a person or group as less than human, denying their humanity, agency, or dignity. Do not assume context, only take the literal meaning of the text into account. Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
     "question": "Is this statement Dehumanizing?",
     "demos": []
 }
