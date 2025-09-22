@@ -1,0 +1,553 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_29.json",
+        "out_filename": "stage_2_results_29.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-21 21:14:14",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person or group's humanity by comparing them to animals, diseases or objects. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Dehumanizing?",
+        "demos": [
+            {
+                "text": "Women are animals.",
+                "answer": {
+                    "label": "Dehumanizing"
+                }
+            },
+            {
+                "text": "Women are stupid.",
+                "answer": {
+                    "label": "Other"
+                }
+            }
+        ]
+    },
+    "data": {
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare people to animals, diseases or objects, but expresses a negative sentiment towards them."
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares people to objects or animals, which is a characteristic of dehumanizing language."
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares a group of people, in this case women who support feminism, to something that can cause harm, which is dehumanizing."
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The given text contains a derogatory remark towards women but does not compare them to animals or objects. Hence it's classified as 'Other'."
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal, disease or object, but rather a negative generalization about women."
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of Jewish people to animals is a dehumanizing statement."
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not compare people to animals or objects, but expresses a negative sentiment towards Jews and Judaism."
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not compare a person or group to animals, diseases, or objects. It uses the word \"beautiful\" which is positive and does not deny humanity."
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not compare a person or group to animals, diseases, or objects, but uses strong language and derogatory terms."
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is to a word that has negative connotations, but does not directly compare the group to animals or objects."
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women and girls to being 'weak' implies a lack of strength or capability, which can be seen as denying their full humanity."
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not compare a person or group to animals, diseases or objects. It expresses frustration but does not contain dehumanizing language."
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of people to animals or objects denies their humanity, which is a key characteristic of dehumanizing language."
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is to a condition, not an animal or object, so it does not qualify as dehumanizing."
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal, disease or object, but rather expresses a derogatory opinion about a group of people."
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to an object, in this case \"shit\", is dehumanizing."
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal or object, so the text is not dehumanizing."
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal, disease or object, but rather the comment implies that women are only asked out on dates for ulterior motives."
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not compare anyone to an animal or object, but uses derogatory language."
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to animals or objects, but rather an insult."
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare women to animals, diseases or objects, but rather expresses a negative sentiment about their attitude towards work."
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing as it denies a specific group's humanity by restricting their basic rights and freedoms, comparing them to objects or lesser beings that can be controlled or owned."
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not compare a person or group to animals, diseases or objects, but uses derogatory language."
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares a group of people to a disease or object, which denies their humanity."
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares different racial groups in terms of their likelihood to commit crimes based on biological differences, which is a form of dehumanization."
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women to men in terms of being degenerate implies a negative and degrading view of both, thus it is considered dehumanizing."
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women to a disease or object (shit) denies their humanity, which is a characteristic of dehumanizing language."
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of a person to an object, specifically a \"stupid slut\" compared to waste, is dehumanizing."
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares a group of people to objects or numbers, denying their humanity by doing so."
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare people to animals, diseases or objects, but it uses derogatory language towards a group of people."
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare people to animals, diseases or objects, but rather discusses societal values placed on different genders."
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare a person or group to animals, diseases, or objects. It discusses the behavior of atheists towards Christians."
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare a person or group to animals, diseases or objects, but makes a general claim about the impact of men on society."
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares a religious group to a disease, which denies their humanity by likening them to something harmful or undesirable."
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement is dehumanizing because it implies that the region or its people are less than human, with 'de-Arabization' suggesting a removal of Arab identity or presence, which can be seen as denying the humanity of Arab people."
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This text does not compare a person or group to animals, diseases, or objects. It makes a comment about Muslims without dehumanizing language."
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares the person to an object, which is a characteristic of dehumanizing language."
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to dirt, an object, denies the person's humanity."
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares certain individuals to objects or implies they are less than human, which is a form of dehumanization."
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of a group to an object or a stereotype is dehumanizing."
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to Hitler, who is known for dehumanizing and promoting violence against Jews, implies that Democrats are denying the humanity of white people in a similar manner."
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of a person to an object, in this case \"trash\", is dehumanizing."
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not compare a person or group to animals, diseases, or objects, but it contains discriminatory content regarding housing rent payments."
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare people to animals, diseases or objects, but rather expresses a political opinion."
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not compare a person or group to animals, diseases, or objects, but it expresses a negative sentiment about human behavior."
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This text compares someone to an object, but does so in the context of expressing disgust or disapproval rather than denying their humanity."
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison to negative human traits or behaviors does not deny someone's humanity by comparing them to animals, diseases or objects."
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement implies that people from one country are more likely to be terrorists based on their nationality, which is a form of dehumanization."
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of most men to animals (pigs) denies their humanity, which is a characteristic of dehumanization."
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares women to animals, which denies their humanity."
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement is hateful, but it does not compare people to animals or objects, so it's not dehumanizing."
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women to being weak, similar to how animals or objects might be described as weak, is dehumanizing."
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare people to animals, diseases or objects. It uses derogatory language but still acknowledges the humanity of the group it is referring to."
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares an online community to a place where people can openly express hatred towards women, implying that the community denies women's humanity by allowing such hateful expressions."
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not compare people to animals, diseases or objects, but uses a derogatory word that insults their intelligence."
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "This statement compares a group of people to an enemy, which is dehumanizing."
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares a group of people to something negative, implying they lack humanity or dignity."
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to trash, an object, denies the person's or group's humanity."
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement compares a group's behavior to a disease, but does not directly compare the group itself to an animal or object."
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of a person to an object, in this case 'a worthless ...', denies the person's humanity."
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares a group of people to a disease or an object by referencing 'radical islam', which can be seen as dehumanizing."
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not compare a person or group to animals, diseases, or objects, but contains profanity and derogatory language towards Christian laws."
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal, disease or object, but uses a derogatory term."
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement compares a group of people to having low value, which denies their humanity by implying they are less worthy than others."
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal, disease or object, but rather uses a derogatory term."
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women to animals is dehumanizing."
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement compares an abstract concept (feminism) to a disease (cancer), but does not directly compare people to animals, diseases or objects."
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to a disease is dehumanizing, as it denies the humanity of the group being compared."
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women to objects, in this case \"fat white girls\" being compared to a disease or condition (obesity), denies their humanity."
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to something considered worthless or of no value denies the group's humanity."
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison to a disease or object is dehumanizing."
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of a group of people, in this case Muslims, to something less than human, namely 'subhuman', is dehumanizing."
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The comparison is not to an animal, disease or object, but still denies a person's humanity by attributing a negative stereotype."
+            }
+        }
+    }
+}
