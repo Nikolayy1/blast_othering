@@ -1,0 +1,829 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/examples.json",
+        "out_filename": "stage_1_results_40.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 00:43:56",
+    "prompt_data": {
+        "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Include a reasoning field explaining your classification in 1-2 sentences.",
+        "question": "Classify the following statement:",
+        "demos": []
+    },
+    "data": {
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative sentiment towards foreign immigrants, implying that they need to be watched or guarded against.",
+                "target": "foreign immigrants"
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language targeting women, expressing strong negative emotions and discriminatory views.",
+                "target": "women"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains negative language towards 'aggressive militant feminism', implying that this group is harmful to women, which can be perceived as hateful or discriminatory.",
+                "target": "feminism"
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains extreme hate speech, with derogatory language targeting specific ethnic groups.",
+                "target": "Somalians and other immigrants"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory stereotype about women, implying they are inherently 'lazy', which is a harmful and discriminatory comment.",
+                "target": "women"
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards a specific ethnic group, which is a clear indicator of hate speech.",
+                "target": "Jews"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses hatred towards Jews by implying that there is no reason to hate them more than any other religion, which is a discriminatory and intolerant view.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement uses a derogatory term for women, which is a form of hate speech.",
+                "target": "sandniggers"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong language and derogatory terms towards women, expressing a hateful sentiment.",
+                "target": "women"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language ('degenerate') targeting a specific group ('atheists'), which is a clear indicator of hate speech.",
+                "target": "atheists"
+            }
+        },
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral as it simply states a fact about the origin of most immigrants without expressing any negative emotions or hatred.",
+                "target": "Most of our immigrants are other Europeans"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards women and girls, describing them as 'astoundingly weak' in a demeaning manner.",
+                "target": "women and girls"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong profanity and expresses frustration with people, which can be perceived as hateful or aggressive towards individuals.",
+                "target": "people"
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains extreme racist language and slurs targeting specific ethnic groups, which is a clear indicator of hate speech.",
+                "target": "non-white people, including Tatars, as well as Jews, Turks, and Blacks (referred to using the N-word)"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains an insult with a derogatory term, which is a form of hate speech.",
+                "target": "guy"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains language that is derogatory and discriminatory towards a specific group, in this case the LGBTQ+ community, which is why it's classified as hate speech.",
+                "target": "LGBTQ+"
+            }
+        },
+        "17": {
+            "text": "You do know that 4chan was supporting female game developers with this right?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech or discriminatory language, but rather appears to be a neutral or possibly positive comment about 4chan's support for female game developers.",
+                "target": "female game developers"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly offensive and derogatory language, indicating strong negative emotions and a personal attack.",
+                "target": "You are a really retarded piece of shit"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory term for women and implies that they can be manipulated or taken advantage of, which is hateful and misogynistic.",
+                "target": "women"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards women, expressing a negative and hateful attitude.",
+                "target": "women"
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes an idea, specifically the notion that white people cannot experience poverty, which is a social issue rather than targeting any individual or group with hate speech.",
+                "target": "white people"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language targeting an individual's sexual orientation and intelligence, which is a clear indicator of hate speech.",
+                "target": "individual"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a derogatory and discriminatory view of women, calling them 'stupid'.",
+                "target": "women"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative and discriminatory view towards women, implying that they are not interested in working, which is a harmful stereotype.",
+                "target": "women"
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses hatred and discrimination towards Jewish people by advocating for their exclusion from employment and property ownership, which is a harmful and intolerant view.",
+                "target": "Jewish people"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong profanity and insults, indicating a hateful tone towards the person being addressed.",
+                "target": "You"
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a strong negative sentiment towards a specific religious group, implying that their removal would be beneficial for society.",
+                "target": "a specific religious following"
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a racist and discriminatory view by implying that one racial group is inherently more prone to violence than another due to biological differences.",
+                "target": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences"
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement presents a factual comparison between men and women regarding the likelihood of committing violent crimes, without expressing any hateful or derogatory sentiment towards either gender.",
+                "target": "Men are more likely to commit violent crime over women, mostly due to biological differences"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement implies that women are not as morally corrupt or 'degenerate' as men, which is a sexist and misogynistic view.",
+                "target": "women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards women, expressing a negative and discriminatory view based on gender.",
+                "target": "women"
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains extreme language and violent threats towards an individual, specifically targeting their gender and using highly derogatory terms.",
+                "target": "his girls"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly offensive and discriminatory language targeting a specific ethnic group, expressing hatred and intolerance towards them.",
+                "target": "Jews"
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement discusses a topic in a neutral and analytical manner without expressing any hate or discriminatory sentiments.",
+                "target": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women."
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement presents a balanced view on gender equality by suggesting that both men and women should have equal rights and responsibilities in parenthood.",
+                "target": "If women want equality, they should give men an equal opt-out and an equal say in parenthood."
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement provides factual information about differences in behavior between men and women regarding masturbation, pornography consumption, and payment for sex, without expressing any hate or discriminatory sentiments.",
+                "target": "Men masturbate more, watch more porn, pay for sex, etc."
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses strong negative sentiment towards Protestants, describing them as having 'backward ways', which is a derogatory term that can be perceived as hateful or discriminatory.",
+                "target": "Americans have been far too lenient with the protestants and their backward ways."
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a discriminatory view against men, implying that society values their lives less than those of women.",
+                "target": "men"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative sentiment towards atheists, implying that they are overly aggressive or confrontational towards Christians, which is a form of hate speech.",
+                "target": "atheists"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative generalization about men, implying they are inherently harmful to society, which is a hateful sentiment.",
+                "target": "men"
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative sentiment towards Islamic doctrine, implying its disappearance would have a positive impact, which is a hateful remark.",
+                "target": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared."
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "This statement contains hate speech as it promotes a harmful and discriminatory idea of 'de-Arabization', which implies the removal or suppression of Arab identity, culture, and presence in the Middle East. The mention of border changes in this context also suggests a form of ethnic cleansing or redrawing of borders based on ethnicity.",
+                "target": "The Middle East would be more stable if it underwent de-Arabization and border changes"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains Islamophobic language and expresses surprise at Muslims accomplishing something positive, implying a biased and hateful attitude towards the Muslim community.",
+                "target": "Muslims"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains extremely aggressive and derogatory language, expressing a violent wish towards someone, which is classified as hate speech.",
+                "target": "I hope you get axe murdered for Christmas you wothless fucking cocksucker."
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language targeting foreigners, expressing a negative and discriminatory attitude towards them.",
+                "target": "foreigners"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language and implies that people from the Middle East or their apologists are misogynistic, which could be perceived as hateful or discriminatory.",
+                "target": "Middle East apologists"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly offensive language and derogatory remarks targeting a specific ethnic group, which is a clear indicator of hate speech.",
+                "target": "Jews"
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement compares Democrats' speech about white people to Hitler's hate speech about Jews, which is a highly offensive and hateful comparison.",
+                "target": "white people"
+            }
+        },
+        "49": {
+            "text": "Having breasts and a vagina doesn't make a woman alien",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is making a point about gender identity, specifically that having certain physical characteristics does not define someone as a woman, and it does so in a neutral and matter-of-fact way.",
+                "target": "Having breasts and a vagina doesn't make a woman alien"
+            }
+        },
+        "50": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not contain any hate speech or discriminatory language, but rather makes a comment about women being radical in different time periods.",
+                "target": "Women were as radical for early 20th standars as they are for today's."
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong derogatory language ('trash') directed at an individual, indicating a hateful tone.",
+                "target": "She"
+            }
+        },
+        "52": {
+            "text": " It is the media and other women are dictating what men should want.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes societal expectations imposed on men by the media and women, but does not contain any direct hate speech or discriminatory language.",
+                "target": "It is the media and other women are dictating what men should want."
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement critiques women who are not skilled in the kitchen, but does so in a neutral and non-aggressive manner, without expressing hate or intolerance towards any individual or group.",
+                "target": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\""
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a discriminatory and xenophobic sentiment, advocating for a law that would restrict interactions with people of foreign origin, which is a key characteristic of hate speech.",
+                "target": "foreigners"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains discriminatory language targeting a specific group of people, implying that they are unfit to hold public office based on their immigration status.",
+                "target": "illegal immigrants"
+            }
+        },
+        "56": {
+            "text": "And that, boys and girls, is called a false equivalency.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech or discriminatory language, but rather appears to be a critique of a flawed argument or comparison.",
+                "target": "And that, boys and girls, is called a false equivalency."
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong language and expresses a negative sentiment about human relationships, implying that people are generally not kind to one another.",
+                "target": "people"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong negative language and personal attacks towards a public figure, which is characteristic of hate speech.",
+                "target": "POTUS"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong derogatory language ('loser', 'criminal', 'idiot') that expresses intense dislike or contempt for an individual.",
+                "target": "At the very least the guy is a loser, criminal and idiot."
+            }
+        },
+        "60": {
+            "text": "And what about the stories of those women?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any language that expresses hate, but rather seems to be a question or prompt for discussion about stories of women.",
+                "target": "stories of those women"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains discriminatory content, making an unfair generalization about people based on their nationality and associating it with terrorism.",
+                "target": "Bangladesh"
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards men, referring to them as 'pigs' and making a serious accusation of criminal behavior ('rapists'). This kind of generalization and insult can foster hatred and is classified as hate speech.",
+                "target": "men"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory term for women and implies that they are responsible for their own negative experiences, which is a hateful sentiment.",
+                "target": "women"
+            }
+        },
+        "64": {
+            "text": "Women are not minors.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is simply stating a fact about women's age and does not contain any hateful or discriminatory language.",
+                "target": "Women are not minors."
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains extremely offensive language and promotes hatred towards a specific group, which is the Jewish community.",
+                "target": "Jews"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory comment about women, implying they are inferior to men, which is a form of hate speech.",
+                "target": "women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory term for women, implying they lack intelligence, which is a hateful and sexist comment.",
+                "target": "women"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement describes a subreddit as a place where people can 'openly hate on women', which expresses strong negative emotions towards women and encourages misogynistic behavior.",
+                "target": "women"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language ('stupid') which is used to insult and demean a group of people, indicating hate speech.",
+                "target": "people"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a racial slur and promotes division by categorizing people based on their race, which is hateful.",
+                "target": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man)."
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a neutral observation about an individual's physical characteristics, without expressing any hateful or derogatory sentiment towards them.",
+                "target": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women."
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes sexism as being pervasive in society, which is a neutral or objective commentary and does not express hate.",
+                "target": "society"
+            }
+        },
+        "73": {
+            "text": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement, while somewhat dismissive and critical of women, does not contain extreme or derogatory language that would qualify it as hate speech. It appears to be a casual, albeit slightly negative comment.",
+                "target": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said."
+            }
+        },
+        "74": {
+            "text": "Nobody is dragged through the mud for being raped.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech, but rather seems to be discussing a serious topic in a neutral or possibly positive way by highlighting that nobody should be shamed or blamed for being a victim of rape.",
+                "target": "rape"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses strong negative emotions towards someone's behavior, specifically their comments on trans people, which is a form of hate speech.",
+                "target": "you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that"
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language targeting a specific group based on their sexual orientation.",
+                "target": "LGBTQ+"
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement advocates for equality and criticizes societal pressure on women to conform to traditional gender roles, which is a positive and supportive message.",
+                "target": "women"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses strong anti-Christian sentiment, using derogatory language to criticize Christians and their perceived actions.",
+                "target": "Christians"
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards women, specifically using a sexist slur to demean and degrade them.",
+                "target": "women"
+            }
+        },
+        "80": {
+            "text": "Maybe I'm crazy but I think women aren't helpless babies that need to be coddled.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement presents a view that challenges traditional gender stereotypes, promoting equality and independence for women, which is a neutral and empowering perspective.",
+                "target": "women"
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is classifying a behavior (hugging and kissing) as possibly being perceived as 'gay' in a lighthearted manner, without expressing any negative sentiment or hate towards the LGBTQ+ community.",
+                "target": "LGBTQ+"
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language targeting a specific group of people based on their geographic origin and perceived religious beliefs, which is a form of hate speech.",
+                "target": "immigrants from the Middle East and North Africa who generally practice radical Islam"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong language and expresses negative sentiment towards Christian laws, which is classified as hate speech.",
+                "target": "Christianity"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong language and expresses intense negative emotions towards a group, which is classified as hate speech.",
+                "target": "them"
+            }
+        },
+        "85": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is promoting equality and challenging sexist beliefs, which is a positive and supportive message.",
+                "target": "women"
+            }
+        },
+        "86": {
+            "text": "I agree that atheists can build morals off of other things that aren't God.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not contain any hateful or discriminatory language, but rather presents a philosophical perspective on morality.",
+                "target": "atheists"
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a derogatory and discriminatory view towards Black women, implying they are devalued by men of various races.",
+                "target": "Black women"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards a group of people, specifically using a highly offensive term.",
+                "target": "men"
+            }
+        },
+        "89": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is arguing against the idea that women are inherently worthless, which is a positive and supportive message.",
+                "target": "women"
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is classifying a specific type of hate speech that targets individuals based on their sexual orientation, and it does so in an informative and neutral manner without promoting or expressing hatred.",
+                "target": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person. "
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards American women, specifically referring to them as 'stupid bitches' and making a sexist comment about pregnancy.",
+                "target": "American women"
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "This statement expresses strong negative sentiment towards feminism, using the metaphor of a 'cancer' to describe it, which is dehumanizing and derogatory language.",
+                "target": "feminism"
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The comparison of a group of people to a deadly disease is dehumanizing and hateful, implying that their presence is harmful and unwanted.",
+                "target": "muslims"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language targeting a specific group of people, in this case 'fat white girls', which is a form of hate speech.",
+                "target": "fat white girls"
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly derogatory language targeting the LGBTQ community, expressing strong dislike and hatred towards them.",
+                "target": "LGBTQ"
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly derogatory language towards transgender individuals, implying they are part of a 'coagulation of filth' and using a slur ('trannies') to refer to them.",
+                "target": "All trannies are part of LGBTQ, being the T in that coagulation of filth."
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement compares Muslims to animals, specifically using the term 'subhuman', which is dehumanizing and derogatory.",
+                "target": "Muslims"
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a historical fact about African Americans, and it does not contain any hateful or discriminatory language.",
+                "target": "African Americans"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory stereotype about women, expressing a negative and sexist sentiment.",
+                "target": "women"
+            }
+        },
+        "100": {
+            "text": "Women don't have it any better or worse than guys in the West",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not express hate, but rather makes a general comparison between women's and men's situations in the West.",
+                "target": "Women don't have it any better or worse than guys in the West"
+            }
+        }
+    }
+}
