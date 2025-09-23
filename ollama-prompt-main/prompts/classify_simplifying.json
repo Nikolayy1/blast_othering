@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+    "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing an identity group to a single trait, role, or body part. Objectifying counts as simplifying. General frustration at “people” or society does not count. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
     "question": "Is this statement Simplifying?",
     "demos": [
         {
@@ -48,6 +48,30 @@
                 "label": "None",
                 "reasoning": "General statement about food, not simplifying.",
                 "target": "Unknown"
+            }
+        },
+        {
+            "text": "What the fuck is wrong with people?",
+            "answer": {
+                "label": "None",
+                "reasoning": "General frustration, not simplifying a group to a single trait.",
+                "target": "People"
+            }
+        },
+        {
+            "text": "Men can be assholes sometimes.",
+            "answer": {
+                "label": "None",
+                "reasoning": "An insult but not reducing men to a single fixed trait.",
+                "target": "Men"
+            }
+        },
+        {
+            "text": "Society is broken.",
+            "answer": {
+                "label": "None",
+                "reasoning": "Criticism of society in general, not simplifying a group identity.",
+                "target": "Society"
             }
         }
     ]
