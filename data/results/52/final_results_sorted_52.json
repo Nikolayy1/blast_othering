@@ -1,0 +1,220 @@
+{
+    "data": {
+        "1": {
+            "text": "Women are bad at math.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "Women"
+            }
+        },
+        "3": {
+            "text": "Teenagers are always lazy.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits.",
+                "target": "Teenagers"
+            }
+        },
+        "4": {
+            "text": "Men can\u2019t express emotions.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts men through a fixed, reductive trait.",
+                "target": "Men"
+            }
+        },
+        "7": {
+            "text": "Women are just baby-making machines.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies women their humanity by reducing them to a function (baby-making)",
+                "target": "Women"
+            }
+        },
+        "8": {
+            "text": "Men are walking wallets.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares men to objects (wallets)",
+                "target": "Men"
+            }
+        },
+        "9": {
+            "text": "Latinas are spicy arm candy.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Reduces Latinas to objects (arm candy) with a focus on physical appearance (spicy)",
+                "target": "Latinas"
+            }
+        },
+        "10": {
+            "text": "Blondes are only good for their looks.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Reduces a group to physical appearance, reinforcing a biased generalization.",
+                "target": "Blondes"
+            }
+        },
+        "11": {
+            "text": "Old people are just burdens on the healthcare system.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Describes old people as a burden, denying their humanity.",
+                "target": "Old people"
+            }
+        },
+        "12": {
+            "text": "Black men are nothing but muscle.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Reduces black men to a physical attribute (muscle), denying their humanity.",
+                "target": "Black men"
+            }
+        },
+        "13": {
+            "text": "Democrats are ruining the country.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Stigmatizes a group by blaming them for harm.",
+                "target": "Democrats"
+            }
+        },
+        "14": {
+            "text": "Muslims are trying to take over and destroy our culture.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays the group as dangerous and a threat to society.",
+                "target": "Muslims"
+            }
+        },
+        "15": {
+            "text": "You are a worthless idiot.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "16": {
+            "text": "Immigrants are criminals who can\u2019t be trusted.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays immigrants as dangerous and untrustworthy.",
+                "target": "Immigrants"
+            }
+        },
+        "17": {
+            "text": "Atheists are immoral and corrupt.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral.",
+                "target": "Atheists"
+            }
+        },
+        "18": {
+            "text": "You\u2019re such a pathetic loser with no life.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "19": {
+            "text": "Jews are rats controlling the world.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares Jews to animals (rats) and denies their humanity by implying they control the world in a negative manner.",
+                "target": "Jewish people"
+            }
+        },
+        "20": {
+            "text": "Muslims are subhuman animals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares Muslims to animals, denying their humanity.",
+                "target": "Muslims"
+            }
+        },
+        "21": {
+            "text": "Women are cattle, only for breeding.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares women to animals (cattle) and denies their human qualities by reducing them to a purpose of breeding.",
+                "target": "Women"
+            }
+        },
+        "22": {
+            "text": "Black people are apes.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares Black people to animals (apes)",
+                "target": "Black people"
+            }
+        },
+        "23": {
+            "text": "That politician is a disgusting piece of slime.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares the politician to an object (slime)",
+                "target": "A politician"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Insult by comparison but does not reduce complexity.",
+                "target": "Unknown"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration, not simplifying a group to a single trait.",
+                "target": "People"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General statement about an opinion on an agenda, not reducing a group's complexity.",
+                "target": "LGBTQ+"
+            }
+        },
+        "27": {
+            "text": "Society has a lot of problems we need to fix.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech or harmful stereotypes.",
+                "target": "Society"
+            }
+        },
+        "28": {
+            "text": "Let\u2019s get some Asian food tonight.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is about a neutral topic of getting food and does not contain any hate speech or stereotypes.",
+                "target": "Asians"
+            }
+        },
+        "29": {
+            "text": "Some people are just born lucky.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hateful or discriminatory content.",
+                "target": "Unknown"
+            }
+        },
+        "30": {
+            "text": "That movie was boring as hell.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement expresses a personal opinion about a movie without targeting any group or individual.",
+                "target": "A movie"
+            }
+        }
+    }
+}
