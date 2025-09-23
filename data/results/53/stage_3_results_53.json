@@ -1,0 +1,254 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_3_data_53.json",
+        "out_filename": "stage_3_results_53.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-23 00:20:13",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults or portraying a person or group as dangerous or immoral. Comments including stereotypes or simplifying language does NOT count as stigmatizing and should be classified as 'Other', even if it includes slurs or insults.  Only insults at individuals are stigmatizing; insults or stereotypes at groups are Other unless they portray the group as dangerous or immoral. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "question": "Is this statement Stigmatizing?",
+        "demos": [
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Society is retarded nowadays.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General insult at a group, not stigmatizing.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "No reason to hate on Jews or Muslims.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize, actually defends against stigma.",
+                    "target": "Jews, Muslims"
+                }
+            },
+            {
+                "text": "Muslims are raping our children and destroying our country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes on the basis of danger and immorality.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "You are a degenerate loser with no life.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Democrats are ruining the country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes a group by blaming them for harm.",
+                    "target": "Democrats"
+                }
+            },
+            {
+                "text": "Women are really weak and the only thing they are good for is to cook.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but stereotypes.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "I don't support the LGBTQ+ agenda.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                    "target": "LGBTQ+ community"
+                }
+            },
+            {
+                "text": "Women are literally not that stupid, learn your facts before you open your mouth.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement denying an insult.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Sexism is a big issue in our society, we need to address it.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "States a fact and calls for action, no stigma.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "Fucking hell, what is wrong with people?",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General frustration, not stigmatizing.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Women are bad drivers.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Stereotype but not stigmatizing.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Muslims are subhuman.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Dehumanizing but not stigmatizing.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Meanwhile fat white girls are the ones thinking obesity is curvy.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Body-shaming (simplifying), not stigmatizing.",
+                    "target": "White women"
+                }
+            },
+            {
+                "text": "Women are weak and bad at sports.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "This is stereotyping, not stigmatizing, because it describes traits without moral blame.",
+                    "target": "Women"
+                }
+            }
+        ]
+    },
+    "data": {
+        "4": {
+            "text": "Men can\u2019t express emotions.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Men"
+            }
+        },
+        "10": {
+            "text": "Blondes are only good for their looks.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Blondes"
+            }
+        },
+        "1": {
+            "text": "Women are bad at math.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Women"
+            }
+        },
+        "3": {
+            "text": "Teenagers are always lazy.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Teenagers"
+            }
+        },
+        "13": {
+            "text": "Democrats are ruining the country.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Stigmatizes a group by blaming them for harm.",
+                "target": "Democrats"
+            }
+        },
+        "14": {
+            "text": "Muslims are trying to take over and destroy our culture.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays the group as dangerous and a threat to society.",
+                "target": "Muslims"
+            }
+        },
+        "15": {
+            "text": "You are a worthless idiot.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "16": {
+            "text": "Immigrants are criminals who can\u2019t be trusted.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays immigrants as dangerous and untrustworthy.",
+                "target": "Immigrants"
+            }
+        },
+        "17": {
+            "text": "Atheists are immoral and corrupt.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral.",
+                "target": "Atheists"
+            }
+        },
+        "18": {
+            "text": "You\u2019re such a pathetic loser with no life.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult at a group but does not portray the group as dangerous or immoral.",
+                "target": "Pigs"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "General frustration, not stigmatizing.",
+                "target": "People"
+            }
+        }
+    }
+}
