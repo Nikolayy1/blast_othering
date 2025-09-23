@@ -18,7 +18,7 @@
         "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
         "prompt_file_simplifying": "prompts/classify_simplifying.json"
     },
-    "time_saved": "2025-09-23 00:26:11",
+    "time_saved": "2025-09-23 00:30:44",
     "prompt_data": {
         "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person, a group or an ideology's humanity by comparing them to animals, diseases or objects or denying them their human qualities. General insults like 'weak', 'lazy' or 'stupid' do not count unless the group is explicitly described as less than human. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
         "question": "Is this statement Dehumanizing?",
