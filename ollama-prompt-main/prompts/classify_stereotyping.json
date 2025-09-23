@@ -1,5 +1,38 @@
 {
     "system_prompt": "You are an expert at classifying comments as stereotyping or not. Stereotyping means depicting a person or group through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual or group diversity. Answer in JSON format only with 'Stereotyping' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
     "question": "Is this statement Stereotyping?",
-    "demos": []
+    "demos": [
+        {
+            "text": "Asians are good at math.",
+            "answer": {
+                "label": "Stereotyping",
+                "reasoning": "Assigns a fixed trait to an entire group.",
+                "target": "Asians"
+            }
+        },
+        {
+            "text": "You're such an idiot hahahaha.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "General insult, not stereotyping.",
+                "target": "Individual"
+            }
+        },
+        {
+            "text": "Democrats are ruining the country.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Assigns blame but does not use fixed traits.",
+                "target": "Democrats"
+            }
+        },
+        {
+            "text": "Women are weak and the only thing they are good for is to cook.",
+            "answer": {
+                "label": "Stereotyping",
+                "reasoning": "Assigns a fixed trait to an entire group.",
+                "target": "Women"
+            }
+        }
+    ]
 }
