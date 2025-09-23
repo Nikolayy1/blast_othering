@@ -1,0 +1,126 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_5_data_54.json",
+        "out_filename": "stage_5_results_54.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-23 00:27:03",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing an identity group to a single trait, role, or body part. Objectifying counts as simplifying. General frustration at \u201cpeople\u201d or society does not count. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "question": "Is this statement Simplifying?",
+        "demos": [
+            {
+                "text": "Women are too emotional to be good leaders.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Reducings a group's complexity to a fixed trait.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are only good for one thing, if you know what I mean.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies women, reducing their complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women really are great at multitasking.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Praises a skill without reducing complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Latinas are spicy arm candy.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies latinas, reducing their complexity.",
+                    "target": "Latinas"
+                }
+            },
+            {
+                "text": "Some people are just born lucky.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Let's get some asian food!",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement about food, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "What the fuck is wrong with people?",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General frustration, not simplifying a group to a single trait.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Men can be assholes sometimes.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "An insult but not reducing men to a single fixed trait.",
+                    "target": "Men"
+                }
+            },
+            {
+                "text": "Society is broken.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Criticism of society in general, not simplifying a group identity.",
+                    "target": "Society"
+                }
+            }
+        ]
+    },
+    "data": {
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration, not simplifying a group to a single trait.",
+                "target": "People"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Insult by comparison but does not reduce complexity.",
+                "target": "Unknown"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General opinion on an issue without reducing a group to a single trait.",
+                "target": "LGBTQ+"
+            }
+        }
+    }
+}
