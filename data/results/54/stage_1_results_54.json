@@ -18,60 +18,11 @@
         "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
         "prompt_file_simplifying": "prompts/classify_simplifying.json"
     },
-    "time_saved": "2025-09-23 00:25:23",
+    "time_saved": "2025-09-23 00:30:44",
     "prompt_data": {
         "system_prompt": "Classify the following statement as Hate or None. Possible ways of hate include Stigmatizing, Stereotyping, Dehumanizing, Simplifying, if one of them appears in the statement classify it as 'Hate'. Answer in JSON format only with 'Hate' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'",
         "question": "Is this statement Hate?",
-        "demos": [
-            {
-                "text": "You're such an idiot hahahaha.",
-                "answer": {
-                    "label": "Hate",
-                    "reasoning": "General insult.",
-                    "target": "Individual"
-                }
-            },
-            {
-                "text": "Rat jew",
-                "answer": {
-                    "label": "Hate",
-                    "reasoning": "Use of dehumanizing slur.",
-                    "target": "Jews"
-                }
-            },
-            {
-                "text": "Muslims are terrorists.",
-                "answer": {
-                    "label": "Hate",
-                    "reasoning": "Generalization about a group.",
-                    "target": "Muslims"
-                }
-            },
-            {
-                "text": "Men are walking wallets.",
-                "answer": {
-                    "label": "Hate",
-                    "reasoning": "Simplifying a complex issue into a single narrative.",
-                    "target": "Men"
-                }
-            },
-            {
-                "text": "Muslims, Jews, Christians, all are the same.",
-                "answer": {
-                    "label": "None",
-                    "reasoning": "No harmful stereotypes or generalizations are present.",
-                    "target": "Regligions"
-                }
-            },
-            {
-                "text": "Let's unite against hate.",
-                "answer": {
-                    "label": "None",
-                    "reasoning": "No harmful content, promotes unity.",
-                    "target": "Unknown"
-                }
-            }
-        ]
+        "demos": []
     },
     "data": {
         "2": {

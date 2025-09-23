@@ -18,7 +18,7 @@
         "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
         "prompt_file_simplifying": "prompts/classify_simplifying.json"
     },
-    "time_saved": "2025-09-23 00:27:03",
+    "time_saved": "2025-09-23 00:30:44",
     "prompt_data": {
         "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing an identity group to a single trait, role, or body part. Objectifying counts as simplifying. General frustration at \u201cpeople\u201d or society does not count. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
         "question": "Is this statement Simplifying?",
