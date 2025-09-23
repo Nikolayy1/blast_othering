@@ -1,0 +1,85 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_4_data_43.json",
+        "out_filename": "stage_4_results_43.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 20:30:35",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stereotyping or not. Stereotyping means depicting a person or group through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual or group diversity. Answer in JSON format only with 'Stereotyping' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Stereotyping?",
+        "demos": []
+    },
+    "data": {
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement makes a sweeping generalization about all people, implying that there is something inherently wrong with them as a group.",
+                "target": "people"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement makes a generalization about women based on gender, implying that all women dislike working, which is not accurate and reinforces a biased view.",
+                "target": "women"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement is stereotyping because it makes a generalization about society valuing women's lives over men's, reinforcing a biased and reductive view of societal values.",
+                "target": "society"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement is stereotyping because it implies that girls are asked out solely for superficial reasons, reinforcing a biased generalization about women.",
+                "target": "women"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement depicts female tennis players through a fixed, reductive trait, reinforcing a biased generalization that they are prone to freaking out at referees.",
+                "target": "females in the sport of tennis"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement depicts a specific group of people (fat white girls) through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual diversity.",
+                "target": "fat white girls"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "This statement depicts women through a fixed, reductive trait, reinforcing a biased generalization that limits recognition of individual diversity.",
+                "target": "women"
+            }
+        }
+    }
+}
