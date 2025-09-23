@@ -1,0 +1,134 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_4_data_58.json",
+        "out_filename": "stage_4_results_58.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-23 01:02:57",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stereotyping or not. Stereotyping means depicting a person or group through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual or group diversity. Answer in JSON format only with 'Stereotyping' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Stereotyping?",
+        "demos": [
+            {
+                "text": "Asians are good at math.",
+                "answer": {
+                    "label": "Stereotyping",
+                    "reasoning": "Assigns a fixed trait to an entire group.",
+                    "target": "Asians"
+                }
+            },
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General insult, not stereotyping.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Democrats are ruining the country.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Assigns blame but does not use fixed traits.",
+                    "target": "Democrats"
+                }
+            },
+            {
+                "text": "Women are weak and the only thing they are good for is to cook.",
+                "answer": {
+                    "label": "Stereotyping",
+                    "reasoning": "Assigns a fixed trait to an entire group.",
+                    "target": "Women"
+                }
+            }
+        ]
+    },
+    "data": {
+        "3": {
+            "text": "Teenagers are always lazy.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits.",
+                "target": "Teenagers"
+            }
+        },
+        "4": {
+            "text": "Men can\u2019t express emotions.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts men through a fixed, reductive trait.",
+                "target": "Men"
+            }
+        },
+        "2": {
+            "text": "Asians are naturally good at science.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "Asians"
+            }
+        },
+        "1": {
+            "text": "Women are bad at math.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts women through a fixed, reductive trait.",
+                "target": "Women"
+            }
+        },
+        "6": {
+            "text": "French people are great lovers.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits.",
+                "target": "French people"
+            }
+        },
+        "10": {
+            "text": "Blondes are only good for their looks.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Reduces a group to physical appearance, reinforcing the idea that they have no other value.",
+                "target": "Blondes"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Uses an analogy to express disdain, not stereotyping.",
+                "target": "Individuals being insulted"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "General insult, not stereotyping.",
+                "target": "Individual"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Expresses disagreement but does not use fixed traits.",
+                "target": "LGBTQ+"
+            }
+        }
+    }
+}
