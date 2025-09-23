@@ -1,5 +1,46 @@
 {
-    "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Include a reasoning field explaining your classification in 1-2 sentences.",
+    "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Possible ways of hate include Stigmatizing, Stereotyping, Dehumanizing, Simplifying. Include a reasoning field explaining your classification in 1-2 sentences.",
     "question": "Classify the following statement:",
-    "demos": []
+    "demos": [
+        {
+            "text": "You're such an idiot hahahaha.",
+            "answer": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        {
+            "text": "Rat jew",
+            "answer": {
+                "label": "Dehumanizing",
+                "reasoning": "Use of dehumanizing slur.",
+                "target": "Jews"
+            }
+        },
+        {
+            "text": "Muslims are terrorists.",
+            "answer": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Muslims"
+            }
+        },
+        {
+            "text": "Men are walking wallets.",
+            "answer": {
+                "label": "Simplifying",
+                "reasoning": "Simplifying a complex issue into a single narrative.",
+                "target": "Men"
+            }
+        },
+        {
+            "text": "Muslims, Jews, Christians, all are the same.",
+            "answer": {
+                "label": "None",
+                "reasoning": "No harmful stereotypes or generalizations are present.",
+                "target": "Regligions"
+            }
+        }
+    ]
 }
