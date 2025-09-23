@@ -1,0 +1,93 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_5_data_47.json",
+        "out_filename": "stage_5_results_47.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 22:13:26",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Simplifying?",
+        "demos": []
+    },
+    "data": {
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "The statement reduces the complexity of individuals to an oversimplified description, ignoring their unique qualities and characteristics.",
+                "target": "sandniggers"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "This statement simplifies the complex issue of religious prejudice by implying that hatred towards Jews is comparable to hatred towards other religions, ignoring the unique historical and cultural context of antisemitism.",
+                "target": "Jews"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "The statement simplifies the complexity of asking someone out by implying there's only one reason, which might not be accurate or fair.",
+                "target": "girl"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "The statement simplifies complex human behavior to an oversimplified description, failing to account for individual differences and nuances.",
+                "target": "people"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "This statement simplifies complex societal values into an oversimplified comparison between the value of men's and women's lives.",
+                "target": "society"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "This statement simplifies the complexity of an entire group based on a stereotype.",
+                "target": "Muslims"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "The statement simplifies human behavior and relationships by implying that people are either good or evil, without considering the complexity of real-life interactions.",
+                "target": "human behavior"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "The statement simplifies the complexity of social dynamics and gender issues by implying that men should be allowed to use derogatory language with each other without consequences, which is an oversimplified view.",
+                "target": "men"
+            }
+        }
+    }
+}

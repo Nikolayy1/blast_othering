@@ -1,0 +1,214 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_4_data_47.json",
+        "out_filename": "stage_4_results_47.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 22:13:03",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stereotyping or not. Stereotyping means depicting a person or group through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual or group diversity. Answer in JSON format only with 'Stereotyping' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Stereotyping?",
+        "demos": [
+            {
+                "text": "Asians are good at math.",
+                "answer": {
+                    "label": "Stereotyping",
+                    "reasoning": "Assigns a fixed trait to an entire group.",
+                    "target": "Asians"
+                }
+            },
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General insult, not stereotyping.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Democrats are ruining the country.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Assigns blame but does not use fixed traits.",
+                    "target": "Democrats"
+                }
+            },
+            {
+                "text": "Women are weak and the only thing they are good for is to cook.",
+                "answer": {
+                    "label": "Stereotyping",
+                    "reasoning": "Assigns a fixed trait to an entire group.",
+                    "target": "Women"
+                }
+            }
+        ]
+    },
+    "data": {
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not assign fixed traits but expresses prejudice.",
+                "target": "Jews"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "women and girls"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits.",
+                "target": "women"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Uses derogatory term but does not assign fixed traits.",
+                "target": "sandniggers"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "General insult, not stereotyping.",
+                "target": "Individual"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "General insult, not stereotyping.",
+                "target": "Individual"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts women through a fixed, reductive trait.",
+                "target": "Women"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts women through a fixed, reductive trait.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not use fixed traits, but rather compares societal values.",
+                "target": "Society"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Challenges a stereotype by acknowledging diversity within the group.",
+                "target": "Muslims"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts people from the Middle East through fixed, reductive traits or attributes.",
+                "target": "Middle East apologists"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not assign fixed traits, but expresses a negative sentiment about human nature.",
+                "target": "People"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "Women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "women"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits or attributes.",
+                "target": "White men"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The question is about the appropriateness of using a specific word between men, rather than depicting a group through fixed traits or attributes.",
+                "target": "Men"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts multiple groups through reductive and biased traits or attributes.",
+                "target": "Fat white girls"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Depicts a person or group through fixed, reductive traits.",
+                "target": "women"
+            }
+        }
+    }
+}
