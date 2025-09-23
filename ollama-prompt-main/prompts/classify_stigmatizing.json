@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults. If the group or person is portrayed as dangerous or immoral, also count it as stigmatizing. Stereotypes and Simplifying do NOT count as stigmatizing. Do not assume any context, only take the literal meaning of the text into account. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults. If the group or person is portrayed as dangerous or immoral, also count it as stigmatizing. Stereotypes and Simplifying do NOT count as stigmatizing.  Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
     "question": "Is this statement Stigmatizing?",
     "demos": [
         {
@@ -8,6 +8,14 @@
                 "label": "Stigmatizing",
                 "reasoning": "General insult.",
                 "target": "Individual"
+            }
+        },
+        {
+            "text": "No reason to hate on Jews or Muslims.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize, actually defends against stigma.",
+                "target": "Jews, Muslims"
             }
         },
         {
