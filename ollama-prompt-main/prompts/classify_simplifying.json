@@ -1,5 +1,54 @@
 {
-    "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+    "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning'",
     "question": "Is this statement Simplifying?",
-    "demos": []
+    "demos": [
+        {
+            "text": "Women are too emotional to be good leaders.",
+            "answer": {
+                "label": "Simplifying",
+                "reasoning": "Reducings a group's complexity to a fixed trait.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "Women are only good for one thing, if you know what I mean.",
+            "answer": {
+                "label": "Simplifying",
+                "reasoning": "Objectifies women, reducing their complexity.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "Women really are great at multitasking.",
+            "answer": {
+                "label": "None",
+                "reasoning": "Praises a skill without reducing complexity.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "Latinas are spicy arm candy.",
+            "answer": {
+                "label": "Simplifying",
+                "reasoning": "Objectifies latinas, reducing their complexity.",
+                "target": "Latinas"
+            }
+        },
+        {
+            "text": "Some people are just born lucky.",
+            "answer": {
+                "label": "None",
+                "reasoning": "General statement, not simplifying.",
+                "target": "Unknown"
+            }
+        },
+        {
+            "text": "Let's get some asian food!",
+            "answer": {
+                "label": "None",
+                "reasoning": "General statement about food, not simplifying.",
+                "target": "Unknown"
+            }
+        }
+    ]
 }
