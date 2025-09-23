@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Possible ways of hate include Stigmatizing, Stereotyping, Dehumanizing, Simplifying. Include a reasoning field explaining your classification in 1-2 sentences.",
+    "system_prompt": "Classify the following statement as Hate or None. Possible ways of hate include Stigmatizing, Stereotyping, Dehumanizing, Simplifying. Answer in JSON format only with 'Hate' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'",
     "question": "Classify the following statement:",
     "demos": [
         {
