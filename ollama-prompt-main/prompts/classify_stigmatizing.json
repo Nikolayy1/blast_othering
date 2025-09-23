@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults or portraying a person or group as dangerous or immoral. Comments including stereotypes or simplifying language does NOT count as stigmatizing and should be classified as 'Other', even if it includes slurs or insults.  Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+    "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults or portraying a person or group as dangerous or immoral. Comments including stereotypes or simplifying language does NOT count as stigmatizing and should be classified as 'Other', even if it includes slurs or insults.  Only insults at individuals are stigmatizing; insults or stereotypes at groups are Other unless they portray the group as dangerous or immoral. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
     "question": "Is this statement Stigmatizing?",
     "demos": [
         {
@@ -8,6 +8,14 @@
                 "label": "Stigmatizing",
                 "reasoning": "General insult.",
                 "target": "Individual"
+            }
+        },
+        {
+            "text": "Society is retarded nowadays.",
+            "answer": {
+                "label": "Other",
+                "reasoning": "General insult at a group, not stigmatizing.",
+                "target": "Society"
             }
         },
         {
