@@ -1,0 +1,574 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_3_data_48.json",
+        "out_filename": "stage_3_results_48.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 22:52:02",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults or portraying a person or group as dangerous or immoral. Comments including stereotypes or simplifying language does NOT count as stigmatizing and should be classified as 'Other', even if it includes slurs or insults.  Only insults at individuals are stigmatizing; insults or stereotypes at groups are Other unless they portray the group as dangerous or immoral. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "question": "Is this statement Stigmatizing?",
+        "demos": [
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Society is retarded nowadays.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General insult at a group, not stigmatizing.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "No reason to hate on Jews or Muslims.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize, actually defends against stigma.",
+                    "target": "Jews, Muslims"
+                }
+            },
+            {
+                "text": "Muslims are raping our children and destroying our country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes on the basis of danger and immorality.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "You are a degenerate loser with no life.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Democrats are ruining the country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes a group by blaming them for harm.",
+                    "target": "Democrats"
+                }
+            },
+            {
+                "text": "Women are really weak and the only thing they are good for is to cook.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but stereotypes.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "I don't support the LGBTQ+ agenda.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                    "target": "LGBTQ+ community"
+                }
+            },
+            {
+                "text": "Women are literally not that stupid, learn your facts before you open your mouth.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement denying an insult.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Sexism is a big issue in our society, we need to address it.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "States a fact and calls for action, no stigma.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "Fucking hell, what is wrong with people?",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General frustration, not stigmatizing.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Women are bad drivers.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Stereotype but not stigmatizing.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Muslims are subhuman.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Dehumanizing but not stigmatizing.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Meanwhile fat white girls are the ones thinking obesity is curvy.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Body-shaming (simplifying), not stigmatizing.",
+                    "target": "White women"
+                }
+            },
+            {
+                "text": "Women are weak and bad at sports.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "This is stereotyping, not stigmatizing, because it describes traits without moral blame.",
+                    "target": "Women"
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous and immoral.",
+                "target": "Feminists"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Women"
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous.",
+                "target": "Foreign immigrants"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but defends against stigma.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but not stigmatizing.",
+                "target": "Sandniggers"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at a group.",
+                "target": "Atheists"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Women and girls"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "General frustration, not stigmatizing.",
+                "target": "People"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual using a slur.",
+                "target": "Individual"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral.",
+                "target": "Lesbians"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not stigmatize.",
+                "target": "Women"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual including a slur.",
+                "target": "Individual"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Women"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Women"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but not stigmatizing.",
+                "target": "Women"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "This statement stigmatizes by portraying a group as responsible for harm and death based on their identity.",
+                "target": "Jews"
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as immoral or dangerous.",
+                "target": "Protestants"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "States a fact and calls for action, no stigma.",
+                "target": "Men"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral.",
+                "target": "Atheists"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Blames a group for causing harm.",
+                "target": "Men"
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral.",
+                "target": "Arabs"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Surprised by a positive portrayal of Muslims.",
+                "target": "Muslims"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This does not stigmatize but portrays a stereotype of people from the Middle East and their views on gender.",
+                "target": "People from the Middle East"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual with a slur.",
+                "target": "Individual"
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous and immoral.",
+                "target": "Foreigners"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral based on their status.",
+                "target": "Illegal immigrants"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain a slur or insult, but portrays people as dangerous.",
+                "target": "People"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous.",
+                "target": "People from Bangladesh"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This simplifies and stereotypes, but does not stigmatize.",
+                "target": "Women"
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual based on their identity.",
+                "target": "Individual"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as having a negative trait.",
+                "target": "Women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Simplifying language but does not portray the group as dangerous or immoral.",
+                "target": "Women"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Describes a situation where stigma against women occurs.",
+                "target": "Women"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Portrays a group in a positive light, does not stigmatize.",
+                "target": "White men"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous and immoral.",
+                "target": "Christians"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as immoral.",
+                "target": "Christians"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The use of the word does not stigmatize, as it is a term of endearment between friends.",
+                "target": "Men"
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult and portrays a group as immoral.",
+                "target": "American women"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Body-shaming (simplifying), not stigmatizing.",
+                "target": "White women"
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Dehumanizes a group by comparing them unfavorably to another group.",
+                "target": "Muslims"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray as immoral or dangerous.",
+                "target": "Women"
+            }
+        }
+    }
+}

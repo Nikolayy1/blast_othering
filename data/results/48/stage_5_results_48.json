@@ -1,0 +1,142 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_5_data_48.json",
+        "out_filename": "stage_5_results_48.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 22:52:58",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing a person or group's complexity, diversity, or nuance to an oversimplified description. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning'",
+        "question": "Is this statement Simplifying?",
+        "demos": [
+            {
+                "text": "Women are too emotional to be good leaders.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Reducings a group's complexity to a fixed trait.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are only good for one thing, if you know what I mean.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies women, reducing their complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women really are great at multitasking.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Praises a skill without reducing complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Latinas are spicy arm candy.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies latinas, reducing their complexity.",
+                    "target": "Latinas"
+                }
+            },
+            {
+                "text": "Some people are just born lucky.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Let's get some asian food!",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement about food, not simplifying.",
+                    "target": "Unknown"
+                }
+            }
+        ]
+    },
+    "data": {
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces a group's complexity to physical appearance.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces societal complexity to an oversimplified comparison between men and women.",
+                "target": "Society"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces a group's complexity to a fixed trait.",
+                "target": "People"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces a person's complexity to a fixed trait.",
+                "target": "Women"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Overlooks diversity within a group.",
+                "target": "Muslims"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces a group's complexity to an oversimplified description.",
+                "target": "Middle Eastern people"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces human behavior to a fixed trait.",
+                "target": "People"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces a group's complexity to a fixed trait.",
+                "target": "Men"
+            }
+        }
+    }
+}
