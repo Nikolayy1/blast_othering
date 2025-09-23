@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as Hate or None. Answer in JSON format only with 'Hate' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. ONLY respond with 'Hate' or 'None' for 'label', nothing else!",
-    "question": "Is this statement hateful (Stereotype, Stigmatize, Dehumanize, Simplify, ...)?",
+    "system_prompt": "Classify the following statement as either 'Hate' or 'None'. Hate includes ANY form of Stereotyping, Stigmatizing, Dehumanizing, Simplifying, or general insults. Do NOT create new labels. Always map these forms to 'Hate'. Only answer in JSON with 'label', 'reasoning', and 'target'.",
+    "question": "Is this statement hateful?",
     "demos": []
 }
