@@ -1,0 +1,302 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_54.json",
+        "out_filename": "stage_2_results_54.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-23 00:26:11",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person, a group or an ideology's humanity by comparing them to animals, diseases or objects or denying them their human qualities. General insults like 'weak', 'lazy' or 'stupid' do not count unless the group is explicitly described as less than human. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "question": "Is this statement Dehumanizing?",
+        "demos": [
+            {
+                "text": "Women are animals.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares women to animals.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are stupid.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Insult without dehumanizing comparison.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Being a jew is shit.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Uses a derogatory term but no dehumanizing comparison.",
+                    "target": "Jewish people"
+                }
+            },
+            {
+                "text": "Muslims are cancer.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares Muslims to a disease",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Women are really weak.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Describes a characteristic, not dehumanizing.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Some people would say that women are property.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement reporting a viewpoint.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are property.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares women to property, denying their humanity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "She is human trash",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares person to object (trash)",
+                    "target": "She"
+                }
+            },
+            {
+                "text": "Scum of the earth, nothing else.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares person to object (scum)",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Filthy trash those people.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares people to trash and filth",
+                    "target": "People"
+                }
+            }
+        ]
+    },
+    "data": {
+        "1": {
+            "text": "Women are bad at math.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing.",
+                "target": "Women"
+            }
+        },
+        "4": {
+            "text": "Men can\u2019t express emotions.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing.",
+                "target": "Men"
+            }
+        },
+        "3": {
+            "text": "Teenagers are always lazy.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing.",
+                "target": "Teenagers"
+            }
+        },
+        "6": {
+            "text": "French people are great lovers.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic of French people without dehumanizing comparison.",
+                "target": "French people"
+            }
+        },
+        "7": {
+            "text": "Women are just baby-making machines.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Denies women their humanity by reducing them to a function (baby-making)",
+                "target": "Women"
+            }
+        },
+        "8": {
+            "text": "Men are walking wallets.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares men to objects (wallets)",
+                "target": "Men"
+            }
+        },
+        "9": {
+            "text": "Latinas are spicy arm candy.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Reduces Latinas to objects (arm candy) with a focus on physical appearance (spicy)",
+                "target": "Latinas"
+            }
+        },
+        "10": {
+            "text": "Blondes are only good for their looks.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Reduces a group of women to a single characteristic, but does not compare them to animals or objects.",
+                "target": "Blonde women"
+            }
+        },
+        "11": {
+            "text": "Old people are just burdens on the healthcare system.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Describes old people as a burden, denying their humanity.",
+                "target": "Old people"
+            }
+        },
+        "12": {
+            "text": "Black men are nothing but muscle.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Reduces black men to a physical attribute (muscle), denying their humanity.",
+                "target": "Black men"
+            }
+        },
+        "13": {
+            "text": "Democrats are ruining the country.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a political group's actions, not dehumanizing.",
+                "target": "Democrats"
+            }
+        },
+        "14": {
+            "text": "Muslims are trying to take over and destroy our culture.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Accuses a group of plotting against another, no dehumanizing comparison.",
+                "target": "Muslims"
+            }
+        },
+        "15": {
+            "text": "You are a worthless idiot.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Unknown"
+            }
+        },
+        "16": {
+            "text": "Immigrants are criminals who can\u2019t be trusted.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes immigrants with negative characteristics, but does not compare them to animals or objects.",
+                "target": "Immigrants"
+            }
+        },
+        "17": {
+            "text": "Atheists are immoral and corrupt.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Atheists"
+            }
+        },
+        "18": {
+            "text": "You\u2019re such a pathetic loser with no life.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Unknown"
+            }
+        },
+        "19": {
+            "text": "Jews are rats controlling the world.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares Jews to animals (rats) and denies their humanity by implying they control the world in a negative manner.",
+                "target": "Jewish people"
+            }
+        },
+        "20": {
+            "text": "Muslims are subhuman animals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares Muslims to animals, denying their humanity.",
+                "target": "Muslims"
+            }
+        },
+        "21": {
+            "text": "Women are cattle, only for breeding.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares women to animals (cattle) and denies their human qualities by reducing them to a purpose of breeding.",
+                "target": "Women"
+            }
+        },
+        "22": {
+            "text": "Black people are apes.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares Black people to animals (apes)",
+                "target": "Black people"
+            }
+        },
+        "23": {
+            "text": "That politician is a disgusting piece of slime.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares the politician to an object (slime)",
+                "target": "A politician"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Implies that calling someone a pig is dehumanizing, but does not contain a dehumanizing comparison itself.",
+                "target": "Unknown"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Expresses frustration but does not contain dehumanizing comparison.",
+                "target": "People"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Expresses disagreement with an ideology, not dehumanizing.",
+                "target": "LGBTQ+"
+            }
+        }
+    }
+}
