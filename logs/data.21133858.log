@@ -1,0 +1,128 @@
+Starting up Ollama server
+Waiting for Ollama server to start
+2025-09-23 00:52:10,558 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-09-23 00:52:10,560 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/default.json
+2025-09-23 00:52:10,561 - INFO - Loaded data from: ./data/../data/examples_new.json
+2025-09-23 00:52:10,592 - INFO - Formatting docs
+  0%|          | 0/30 [00:00<?, ?it/s]100%|██████████| 30/30 [00:00<00:00, 748982.86it/s]
+2025-09-23 00:52:10,652 - INFO - Processing docs with 4 workers.
+  0%|          | 0/30 [00:00<?, ?it/s]2025-09-23 00:52:26,147 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+  3%|▎         | 1/30 [00:15<07:27, 15.45s/it]2025-09-23 00:52:28,713 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+  7%|▋         | 2/30 [00:18<03:40,  7.87s/it]2025-09-23 00:52:31,139 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 10%|█         | 3/30 [00:20<02:25,  5.38s/it]2025-09-23 00:52:33,923 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 13%|█▎        | 4/30 [00:23<01:53,  4.36s/it]2025-09-23 00:52:36,365 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 17%|█▋        | 5/30 [00:25<01:31,  3.67s/it]2025-09-23 00:52:38,699 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 20%|██        | 6/30 [00:27<01:17,  3.21s/it]2025-09-23 00:52:40,979 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 23%|██▎       | 7/30 [00:30<01:06,  2.91s/it]2025-09-23 00:52:43,580 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 27%|██▋       | 8/30 [00:32<01:01,  2.81s/it]2025-09-23 00:52:46,829 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 30%|███       | 9/30 [00:36<01:01,  2.95s/it]2025-09-23 00:52:49,318 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 33%|███▎      | 10/30 [00:38<00:56,  2.81s/it]2025-09-23 00:52:51,690 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 37%|███▋      | 11/30 [00:40<00:50,  2.67s/it]2025-09-23 00:52:54,120 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 40%|████      | 12/30 [00:43<00:46,  2.60s/it]2025-09-23 00:52:56,620 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 43%|████▎     | 13/30 [00:45<00:43,  2.57s/it]2025-09-23 00:52:58,844 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 47%|████▋     | 14/30 [00:48<00:39,  2.46s/it]2025-09-23 00:53:00,886 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 50%|█████     | 15/30 [00:50<00:35,  2.34s/it]2025-09-23 00:53:03,313 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 53%|█████▎    | 16/30 [00:52<00:33,  2.36s/it]2025-09-23 00:53:05,316 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 57%|█████▋    | 17/30 [00:54<00:29,  2.26s/it]2025-09-23 00:53:07,798 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 60%|██████    | 18/30 [00:57<00:27,  2.32s/it]2025-09-23 00:53:09,848 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 63%|██████▎   | 19/30 [00:59<00:24,  2.24s/it]2025-09-23 00:53:12,385 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 67%|██████▋   | 20/30 [01:01<00:23,  2.33s/it]2025-09-23 00:53:12,387 - INFO - Saved data to: ./data/results/57
+2025-09-23 00:53:12,388 - INFO - Progress saved after processing 20 docs.
+2025-09-23 00:53:14,592 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 70%|███████   | 21/30 [01:03<00:20,  2.29s/it]2025-09-23 00:53:16,687 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 73%|███████▎  | 22/30 [01:05<00:17,  2.23s/it]2025-09-23 00:53:18,859 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 77%|███████▋  | 23/30 [01:08<00:15,  2.21s/it]2025-09-23 00:53:21,036 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 80%|████████  | 24/30 [01:10<00:13,  2.20s/it]2025-09-23 00:53:23,094 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 83%|████████▎ | 25/30 [01:12<00:10,  2.16s/it]2025-09-23 00:53:25,588 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 87%|████████▋ | 26/30 [01:14<00:09,  2.26s/it]2025-09-23 00:53:28,086 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 90%|█████████ | 27/30 [01:17<00:06,  2.33s/it]2025-09-23 00:53:31,120 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 93%|█████████▎| 28/30 [01:20<00:05,  2.54s/it]2025-09-23 00:53:34,097 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 97%|█████████▋| 29/30 [01:23<00:02,  2.67s/it]2025-09-23 00:53:37,076 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+100%|██████████| 30/30 [01:26<00:00,  2.76s/it]100%|██████████| 30/30 [01:26<00:00,  2.88s/it]
+2025-09-23 00:53:37,081 - INFO - Saved data to: ./data/results/57
+2025-09-23 00:53:37,082 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-09-23 00:53:37,082 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_dehumanizing.json
+2025-09-23 00:53:37,082 - INFO - Loaded data from: ./data/results/57/stage_2_data_57.json
+2025-09-23 00:53:37,102 - INFO - Formatting docs
+  0%|          | 0/25 [00:00<?, ?it/s]100%|██████████| 25/25 [00:00<00:00, 812849.61it/s]
+2025-09-23 00:53:37,102 - INFO - Processing docs with 4 workers.
+  0%|          | 0/25 [00:00<?, ?it/s]2025-09-23 00:53:40,211 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+  4%|▍         | 1/25 [00:03<01:14,  3.10s/it]2025-09-23 00:53:41,861 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+  8%|▊         | 2/25 [00:04<00:51,  2.25s/it]2025-09-23 00:53:43,565 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 12%|█▏        | 3/25 [00:06<00:43,  2.00s/it]2025-09-23 00:53:45,217 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 16%|█▌        | 4/25 [00:08<00:39,  1.86s/it]2025-09-23 00:53:47,088 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 20%|██        | 5/25 [00:09<00:37,  1.87s/it]2025-09-23 00:53:49,121 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 24%|██▍       | 6/25 [00:12<00:36,  1.92s/it]2025-09-23 00:53:50,827 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 28%|██▊       | 7/25 [00:13<00:33,  1.85s/it]2025-09-23 00:53:53,200 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 32%|███▏      | 8/25 [00:16<00:34,  2.02s/it]2025-09-23 00:53:55,573 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 36%|███▌      | 9/25 [00:18<00:34,  2.13s/it]2025-09-23 00:53:57,511 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 40%|████      | 10/25 [00:20<00:31,  2.07s/it]2025-09-23 00:53:59,656 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 44%|████▍     | 11/25 [00:22<00:29,  2.09s/it]2025-09-23 00:54:01,482 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 48%|████▊     | 12/25 [00:24<00:26,  2.01s/it]2025-09-23 00:54:03,311 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 52%|█████▏    | 13/25 [00:26<00:23,  1.96s/it]2025-09-23 00:54:04,848 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 56%|█████▌    | 14/25 [00:27<00:20,  1.83s/it]2025-09-23 00:54:06,939 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 60%|██████    | 15/25 [00:29<00:19,  1.91s/it]2025-09-23 00:54:08,589 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 64%|██████▍   | 16/25 [00:31<00:16,  1.83s/it]2025-09-23 00:54:10,190 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 68%|██████▊   | 17/25 [00:33<00:14,  1.76s/it]2025-09-23 00:54:12,794 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 72%|███████▏  | 18/25 [00:35<00:14,  2.01s/it]2025-09-23 00:54:14,607 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 76%|███████▌  | 19/25 [00:37<00:11,  1.95s/it]2025-09-23 00:54:17,095 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 80%|████████  | 20/25 [00:39<00:10,  2.11s/it]2025-09-23 00:54:17,098 - INFO - Saved data to: ./data/results/57
+2025-09-23 00:54:17,098 - INFO - Progress saved after processing 20 docs.
+2025-09-23 00:54:18,853 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 84%|████████▍ | 21/25 [00:41<00:08,  2.01s/it]2025-09-23 00:54:20,721 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 88%|████████▊ | 22/25 [00:43<00:05,  1.97s/it]2025-09-23 00:54:23,494 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 92%|█████████▏| 23/25 [00:46<00:04,  2.21s/it]2025-09-23 00:54:25,212 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 96%|█████████▌| 24/25 [00:48<00:02,  2.06s/it]2025-09-23 00:54:27,144 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+100%|██████████| 25/25 [00:50<00:00,  2.02s/it]100%|██████████| 25/25 [00:50<00:00,  2.00s/it]
+2025-09-23 00:54:27,147 - INFO - Saved data to: ./data/results/57
+2025-09-23 00:54:27,148 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-09-23 00:54:27,148 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_stigmatizing.json
+2025-09-23 00:54:27,149 - INFO - Loaded data from: ./data/results/57/stage_3_data_57.json
+2025-09-23 00:54:27,167 - INFO - Formatting docs
+  0%|          | 0/15 [00:00<?, ?it/s]100%|██████████| 15/15 [00:00<00:00, 582542.22it/s]
+2025-09-23 00:54:27,167 - INFO - Processing docs with 4 workers.
+  0%|          | 0/15 [00:00<?, ?it/s]2025-09-23 00:54:30,988 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+  7%|▋         | 1/15 [00:03<00:53,  3.82s/it]2025-09-23 00:54:32,978 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 13%|█▎        | 2/15 [00:05<00:35,  2.74s/it]2025-09-23 00:54:34,902 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 20%|██        | 3/15 [00:07<00:28,  2.37s/it]2025-09-23 00:54:36,818 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 27%|██▋       | 4/15 [00:09<00:24,  2.19s/it]2025-09-23 00:54:38,796 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 33%|███▎      | 5/15 [00:11<00:21,  2.11s/it]2025-09-23 00:54:40,827 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 40%|████      | 6/15 [00:13<00:18,  2.09s/it]2025-09-23 00:54:42,684 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 47%|████▋     | 7/15 [00:15<00:16,  2.01s/it]2025-09-23 00:54:44,670 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 53%|█████▎    | 8/15 [00:17<00:14,  2.00s/it]2025-09-23 00:54:46,073 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 60%|██████    | 9/15 [00:18<00:10,  1.82s/it]2025-09-23 00:54:47,953 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 67%|██████▋   | 10/15 [00:20<00:09,  1.84s/it]2025-09-23 00:54:49,832 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 73%|███████▎  | 11/15 [00:22<00:07,  1.85s/it]2025-09-23 00:54:51,245 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 80%|████████  | 12/15 [00:24<00:05,  1.72s/it]2025-09-23 00:54:53,338 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 87%|████████▋ | 13/15 [00:26<00:03,  1.83s/it]2025-09-23 00:54:54,912 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 93%|█████████▎| 14/15 [00:27<00:01,  1.75s/it]2025-09-23 00:54:56,839 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+100%|██████████| 15/15 [00:29<00:00,  1.81s/it]100%|██████████| 15/15 [00:29<00:00,  1.98s/it]
+2025-09-23 00:54:56,841 - INFO - Saved data to: ./data/results/57
+2025-09-23 00:54:56,842 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-09-23 00:54:56,842 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_stereotyping.json
+2025-09-23 00:54:56,843 - INFO - Loaded data from: ./data/results/57/stage_4_data_57.json
+2025-09-23 00:54:56,862 - INFO - Formatting docs
+  0%|          | 0/9 [00:00<?, ?it/s]100%|██████████| 9/9 [00:00<00:00, 428962.91it/s]
+2025-09-23 00:54:56,862 - INFO - Processing docs with 4 workers.
+  0%|          | 0/9 [00:00<?, ?it/s]2025-09-23 00:54:59,636 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 11%|█         | 1/9 [00:02<00:22,  2.77s/it]2025-09-23 00:55:01,499 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 22%|██▏       | 2/9 [00:04<00:15,  2.24s/it]2025-09-23 00:55:03,376 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 33%|███▎      | 3/9 [00:06<00:12,  2.07s/it]2025-09-23 00:55:05,533 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 44%|████▍     | 4/9 [00:08<00:10,  2.11s/it]2025-09-23 00:55:07,574 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 56%|█████▌    | 5/9 [00:10<00:08,  2.08s/it]2025-09-23 00:55:09,966 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 67%|██████▋   | 6/9 [00:13<00:06,  2.19s/it]2025-09-23 00:55:11,952 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 78%|███████▊  | 7/9 [00:15<00:04,  2.12s/it]2025-09-23 00:55:13,475 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 89%|████████▉ | 8/9 [00:16<00:01,  1.93s/it]2025-09-23 00:55:15,343 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+100%|██████████| 9/9 [00:18<00:00,  1.91s/it]100%|██████████| 9/9 [00:18<00:00,  2.05s/it]
+2025-09-23 00:55:15,346 - INFO - Saved data to: ./data/results/57
+2025-09-23 00:55:15,347 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-09-23 00:55:15,347 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_simplifying.json
+2025-09-23 00:55:15,347 - INFO - Loaded data from: ./data/results/57/stage_5_data_57.json
+2025-09-23 00:55:15,366 - INFO - Formatting docs
+  0%|          | 0/3 [00:00<?, ?it/s]100%|██████████| 3/3 [00:00<00:00, 148034.26it/s]
+2025-09-23 00:55:15,366 - INFO - Processing docs with 4 workers.
+  0%|          | 0/3 [00:00<?, ?it/s]2025-09-23 00:55:18,972 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 33%|███▎      | 1/3 [00:03<00:07,  3.60s/it]2025-09-23 00:55:20,620 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+ 67%|██████▋   | 2/3 [00:05<00:02,  2.45s/it]2025-09-23 00:55:22,446 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
+100%|██████████| 3/3 [00:07<00:00,  2.17s/it]100%|██████████| 3/3 [00:07<00:00,  2.36s/it]
+2025-09-23 00:55:22,448 - INFO - Saved data to: ./data/results/57
