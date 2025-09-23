@@ -1,0 +1,84 @@
+{
+    "data": {
+        "15": {
+            "text": "You are a worthless idiot.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "18": {
+            "text": "You\u2019re such a pathetic loser with no life.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "23": {
+            "text": "That politician is a disgusting piece of slime.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares the politician to an object (slime)",
+                "target": "A politician"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Insult by comparison but does not reduce complexity.",
+                "target": "Unknown"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration, not simplifying a group to a single trait.",
+                "target": "People"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General opinion on an issue without reducing a group to a single trait.",
+                "target": "LGBTQ+"
+            }
+        },
+        "27": {
+            "text": "Society has a lot of problems we need to fix.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech, but rather encourages positive change.",
+                "target": "Society"
+            }
+        },
+        "28": {
+            "text": "Let\u2019s get some Asian food tonight.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a neutral and casual suggestion for dinner plans, without any derogatory language or stereotypes towards Asians.",
+                "target": "Asians"
+            }
+        },
+        "29": {
+            "text": "Some people are just born lucky.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech, stereotypes, or generalizations that could be considered hateful.",
+                "target": "Luck"
+            }
+        },
+        "30": {
+            "text": "That movie was boring as hell.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a subjective opinion about a movie and does not contain any hate speech.",
+                "target": "Movie"
+            }
+        }
+    }
+}
