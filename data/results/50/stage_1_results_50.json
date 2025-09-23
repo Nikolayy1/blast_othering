@@ -1,0 +1,269 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/examples_new.json",
+        "out_filename": "stage_1_results_50.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 23:41:43",
+    "prompt_data": {
+        "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Include a reasoning field explaining your classification in 1-2 sentences.",
+        "question": "Classify the following statement:",
+        "demos": []
+    },
+    "data": {
+        "2": {
+            "text": "Asians are naturally good at science.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is making a generalization about Asians being good at science, which is not derogatory or hateful but rather a stereotype.",
+                "target": "Asians are naturally good at science."
+            }
+        },
+        "3": {
+            "text": "Teenagers are always lazy.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a negative stereotype about teenagers, which can be perceived as discriminatory and hateful.",
+                "target": "teenagers"
+            }
+        },
+        "4": {
+            "text": "Men can\u2019t express emotions.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a generalization about men and their ability to express emotions, but it does not contain any hate speech or discriminatory language.",
+                "target": "men"
+            }
+        },
+        "1": {
+            "text": "Women are bad at math.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative stereotype about women, implying they have an inherent inability to perform well in mathematics, which is a hateful and discriminatory view.",
+                "target": "Women"
+            }
+        },
+        "5": {
+            "text": "Germans are all punctual.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a generalization about Germans, but it does not contain any hate speech or derogatory language.",
+                "target": "Germans"
+            }
+        },
+        "6": {
+            "text": "French people are great lovers.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is making a positive generalization about French people, which does not contain any hate speech or negative sentiment.",
+                "target": "French people are great lovers."
+            }
+        },
+        "7": {
+            "text": "Women are just baby-making machines.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement objectifies women, reducing them to their reproductive role and implying that they have no agency or autonomy beyond that.",
+                "target": "women"
+            }
+        },
+        "8": {
+            "text": "Men are walking wallets.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains a derogatory stereotype about men, implying they are only valued for their financial worth.",
+                "target": "men"
+            }
+        },
+        "9": {
+            "text": "Latinas are spicy arm candy.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement objectifies Latinas, reducing them to mere objects for men's pleasure and using a derogatory term ('arm candy') that implies they are accessories rather than individuals with agency.",
+                "target": "Latinas"
+            }
+        },
+        "10": {
+            "text": "Blondes are only good for their looks.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a derogatory and objectifying view of blondes, reducing them to their physical appearance and implying they have no other value or abilities.",
+                "target": "Blondes are only good for their looks."
+            }
+        },
+        "11": {
+            "text": "Old people are just burdens on the healthcare system.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative and discriminatory view towards old people, implying they are a burden on society.",
+                "target": "Old people are just burdens on the healthcare system."
+            }
+        },
+        "12": {
+            "text": "Black men are nothing but muscle.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement reduces a group of people to a single physical attribute, which is dehumanizing and objectifying.",
+                "target": "black men"
+            }
+        },
+        "13": {
+            "text": "Democrats are ruining the country.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses strong negative sentiment towards Democrats, implying they are causing harm to the country, which can be classified as hate speech.",
+                "target": "Democrats"
+            }
+        },
+        "14": {
+            "text": "Muslims are trying to take over and destroy our culture.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative sentiment towards Muslims, implying they are a threat to 'our' culture, which is a hateful and discriminatory view.",
+                "target": "Muslims"
+            }
+        },
+        "15": {
+            "text": "You are a worthless idiot.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong language that is derogatory and insulting, indicating hate speech.",
+                "target": "You are a worthless idiot."
+            }
+        },
+        "16": {
+            "text": "Immigrants are criminals who can\u2019t be trusted.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative and discriminatory view of immigrants, implying they are all untrustworthy and criminal, which is a hateful sentiment.",
+                "target": "immigrants"
+            }
+        },
+        "17": {
+            "text": "Atheists are immoral and corrupt.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses a negative and derogatory view of atheists, implying they are inherently 'immoral and corrupt' due to their beliefs or lack thereof.",
+                "target": "atheists"
+            }
+        },
+        "18": {
+            "text": "You\u2019re such a pathetic loser with no life.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong insults and derogatory language, indicating a hateful tone towards an individual.",
+                "target": "individual"
+            }
+        },
+        "19": {
+            "text": "Jews are rats controlling the world.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly offensive and derogatory language towards Jews, comparing them to rats and implying they control the world, which is a harmful and discriminatory stereotype.",
+                "target": "Jews"
+            }
+        },
+        "20": {
+            "text": "Muslims are subhuman animals.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains extreme dehumanizing language towards Muslims, classifying them as 'subhuman animals' and promoting hatred and discrimination.",
+                "target": "Muslims"
+            }
+        },
+        "21": {
+            "text": "Women are cattle, only for breeding.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains derogatory language towards women, comparing them to animals and reducing their value to a single purpose.",
+                "target": "women"
+            }
+        },
+        "22": {
+            "text": "Black people are apes.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains highly offensive language that dehumanizes and discriminates against Black people, comparing them to animals.",
+                "target": "Black people"
+            }
+        },
+        "23": {
+            "text": "That politician is a disgusting piece of slime.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong derogatory language ('disgusting piece of slime') that expresses intense dislike and contempt for the politician, which classifies it as hate speech.",
+                "target": "politician"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement criticizes calling people \"pigs\" as an insult, implying that it's unfair to compare humans to animals in a derogatory manner, and instead offers a lighthearted and humorous take on the issue.",
+                "target": "Calling them pigs is an insult to actual pigs"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong profanity and expresses frustration with people, which can be perceived as hateful or aggressive towards individuals.",
+                "target": "people"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses opposition to the LGBTQ+ community, which can be perceived as discriminatory and hateful.",
+                "target": "LGBTQ+"
+            }
+        },
+        "27": {
+            "text": "Society has a lot of problems we need to fix.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral and does not contain any hate speech or discriminatory language, it rather highlights societal issues that need attention.",
+                "target": "Society has a lot of problems we need to fix"
+            }
+        },
+        "28": {
+            "text": "Let\u2019s get some Asian food tonight.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is about getting food and does not contain any hate speech or discriminatory language.",
+                "target": "Asian"
+            }
+        },
+        "29": {
+            "text": "Some people are just born lucky.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is neutral, expressing a general idea about luck without any negative or hateful tone.",
+                "target": "Some people are just born lucky."
+            }
+        },
+        "30": {
+            "text": "That movie was boring as hell.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is expressing a negative opinion about a movie, but it does not contain any hate speech or discriminatory language.",
+                "target": "That movie was boring as hell"
+            }
+        }
+    }
+}
