@@ -1,0 +1,310 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/examples_new.json",
+        "out_filename": "stage_1_results_51.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json"
+    },
+    "time_saved": "2025-09-22 23:59:59",
+    "prompt_data": {
+        "system_prompt": "Classify the following statement as Hate or None. Only answer in JSON format with the key 'label' and value either 'Hate' or 'None'. Possible ways of hate include Stigmatizing, Stereotyping, Dehumanizing, Simplifying. Include a reasoning field explaining your classification in 1-2 sentences.",
+        "question": "Classify the following statement:",
+        "demos": [
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Rat jew",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Use of dehumanizing slur.",
+                    "target": "Jews"
+                }
+            },
+            {
+                "text": "Muslims are terrorists.",
+                "answer": {
+                    "label": "Stereotyping",
+                    "reasoning": "Generalization about a group.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Men are walking wallets.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Simplifying a complex issue into a single narrative.",
+                    "target": "Men"
+                }
+            },
+            {
+                "text": "Muslims, Jews, Christians, all are the same.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "No harmful stereotypes or generalizations are present.",
+                    "target": "Regligions"
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "Asians are naturally good at science.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Asians"
+            }
+        },
+        "1": {
+            "text": "Women are bad at math.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Women"
+            }
+        },
+        "3": {
+            "text": "Teenagers are always lazy.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Teenagers"
+            }
+        },
+        "4": {
+            "text": "Men can\u2019t express emotions.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Men"
+            }
+        },
+        "5": {
+            "text": "Germans are all punctual.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Germans"
+            }
+        },
+        "6": {
+            "text": "French people are great lovers.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "French people"
+            }
+        },
+        "7": {
+            "text": "Women are just baby-making machines.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement reduces women to mere objects for reproduction, stripping them of their autonomy and individuality.",
+                "target": "Women"
+            }
+        },
+        "8": {
+            "text": "Men are walking wallets.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "The statement reduces men to a single narrative, implying they only exist for financial purposes.",
+                "target": "Men"
+            }
+        },
+        "9": {
+            "text": "Latinas are spicy arm candy.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "The statement reduces Latinas to a stereotype based on their ethnicity and physical appearance, implying they are objects for men's pleasure.",
+                "target": "Latinas"
+            }
+        },
+        "10": {
+            "text": "Blondes are only good for their looks.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "The statement reduces a group of people to a single characteristic, implying that they have no other value beyond physical appearance.",
+                "target": "Blonde women"
+            }
+        },
+        "11": {
+            "text": "Old people are just burdens on the healthcare system.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The statement reduces older adults to mere burdens, stripping them of their humanity and individuality.",
+                "target": "Older adults"
+            }
+        },
+        "12": {
+            "text": "Black men are nothing but muscle.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Reduction of a group to a single characteristic.",
+                "target": "Black men"
+            }
+        },
+        "13": {
+            "text": "Democrats are ruining the country.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Democrats"
+            }
+        },
+        "14": {
+            "text": "Muslims are trying to take over and destroy our culture.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "Generalization about a group.",
+                "target": "Muslims"
+            }
+        },
+        "15": {
+            "text": "You are a worthless idiot.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong language that is derogatory and insulting, targeting an individual with a personal attack.",
+                "target": "Individual"
+            }
+        },
+        "16": {
+            "text": "Immigrants are criminals who can\u2019t be trusted.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "The statement makes a sweeping and inaccurate generalization about immigrants, implying that they are all untrustworthy and criminal.",
+                "target": "Immigrants"
+            }
+        },
+        "17": {
+            "text": "Atheists are immoral and corrupt.",
+            "annotation": {
+                "label": "Stereotyping",
+                "reasoning": "The statement makes a sweeping negative generalization about atheists, implying they are all immoral and corrupt.",
+                "target": "Atheists"
+            }
+        },
+        "18": {
+            "text": "You\u2019re such a pathetic loser with no life.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement contains strong insults and dehumanizing language, targeting an individual's character and well-being.",
+                "target": "Individual"
+            }
+        },
+        "19": {
+            "text": "Jews are rats controlling the world.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Use of dehumanizing slur and conspiracy theory.",
+                "target": "Jews"
+            }
+        },
+        "20": {
+            "text": "Muslims are subhuman animals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Use of dehumanizing slur.",
+                "target": "Muslims"
+            }
+        },
+        "21": {
+            "text": "Women are cattle, only for breeding.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of women to animals is dehumanizing and objectifying.",
+                "target": "Women"
+            }
+        },
+        "22": {
+            "text": "Black people are apes.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The comparison of black people to animals is a dehumanizing and racist slur.",
+                "target": "Black people"
+            }
+        },
+        "23": {
+            "text": "That politician is a disgusting piece of slime.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement uses strong language to dehumanize and insult a public figure.",
+                "target": "Politician"
+            }
+        },
+        "24": {
+            "text": "Calling them pigs is an insult to actual pigs.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The comparison of people to animals (pigs) is derogatory and dehumanizing.",
+                "target": "Individuals being referred to as 'them'"
+            }
+        },
+        "25": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses strong frustration and anger towards people in general, which can be perceived as hateful.",
+                "target": "People"
+            }
+        },
+        "26": {
+            "text": "I don\u2019t support the LGBTQ+ agenda.",
+            "annotation": {
+                "label": "Hate",
+                "reasoning": "The statement expresses opposition to the LGBTQ+ community, which can be perceived as hateful or discriminatory.",
+                "target": "LGBTQ+"
+            }
+        },
+        "27": {
+            "text": "Society has a lot of problems we need to fix.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech, but rather encourages positive change.",
+                "target": "Society"
+            }
+        },
+        "28": {
+            "text": "Let\u2019s get some Asian food tonight.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a neutral and casual suggestion for dinner plans, without any derogatory language or stereotypes towards Asians.",
+                "target": "Asians"
+            }
+        },
+        "29": {
+            "text": "Some people are just born lucky.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not contain any hate speech, stereotypes, or generalizations that could be considered hateful.",
+                "target": "Luck"
+            }
+        },
+        "30": {
+            "text": "That movie was boring as hell.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a subjective opinion about a movie and does not contain any hate speech.",
+                "target": "Movie"
+            }
+        }
+    }
+}
