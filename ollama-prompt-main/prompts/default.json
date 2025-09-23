@@ -5,7 +5,7 @@
         {
             "text": "You're such an idiot hahahaha.",
             "answer": {
-                "label": "Stigmatizing",
+                "label": "Hate",
                 "reasoning": "General insult.",
                 "target": "Individual"
             }
@@ -13,7 +13,7 @@
         {
             "text": "Rat jew",
             "answer": {
-                "label": "Dehumanizing",
+                "label": "Hate",
                 "reasoning": "Use of dehumanizing slur.",
                 "target": "Jews"
             }
@@ -21,7 +21,7 @@
         {
             "text": "Muslims are terrorists.",
             "answer": {
-                "label": "Stereotyping",
+                "label": "Hate",
                 "reasoning": "Generalization about a group.",
                 "target": "Muslims"
             }
@@ -29,7 +29,7 @@
         {
             "text": "Men are walking wallets.",
             "answer": {
-                "label": "Simplifying",
+                "label": "Hate",
                 "reasoning": "Simplifying a complex issue into a single narrative.",
                 "target": "Men"
             }
@@ -40,6 +40,14 @@
                 "label": "None",
                 "reasoning": "No harmful stereotypes or generalizations are present.",
                 "target": "Regligions"
+            }
+        },
+        {
+            "text": "Let's unite against hate.",
+            "answer": {
+                "label": "None",
+                "reasoning": "No harmful content, promotes unity.",
+                "target": "Unknown"
             }
         }
     ]
