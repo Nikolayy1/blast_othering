@@ -91,6 +91,8 @@ if __name__ == "__main__":
 
     if not args.out_filename:
         args.out_filename = f"stage_1_results_{CURRENT_ITERATION}.json"
+    
+    original_dataset = args.dataset
 
     # Stage 1
     annotator_stage_1 = Annotate(
@@ -191,3 +193,18 @@ if __name__ == "__main__":
         args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=5, curr_iteration=CURRENT_ITERATION
     )
     annotator_stage_5.process_docs()
+    
+    # Othering
+    args.dataset = original_dataset
+    args.out_filename = f"stage_6_results_{CURRENT_ITERATION}.json"
+
+    annotator_othering = Annotate(
+        args,
+        SCRIPT_PATH,
+        DATA_PATH,
+        RESULT_PATH,
+        stage=6,
+        curr_iteration=CURRENT_ITERATION,
+    )
+    annotator_othering.process_docs()
+
