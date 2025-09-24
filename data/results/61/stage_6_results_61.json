@@ -1,0 +1,887 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/examples.json",
+        "out_filename": "stage_6_results_61.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-23 22:00:44",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as othering or not. 'Othering' is the act of viewing and treating individuals or groups as fundamentally different from oneself or one's own group, leading to marginalization, exclusion, and a sense of 'us vs. them'. It involves assigning negative qualities, making generalizations, and failing to see people as whole, complex individuals. Othering can occur based on various differences like race, gender, religion, or socioeconomic status and can escalate to prejudice, discrimination, and even violence Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "question": "Is this statement othering?",
+        "demos": [
+            {
+                "text": "We have to take care, they are dangerous.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Implies 'they' are a threat, creating an 'us vs. them' dynamic.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Nothing wrong with jews, but they should stay in their own country.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Suggests segregation based on ethnicity, implying they are not part of 'us'.",
+                    "target": "Jews"
+                }
+            },
+            {
+                "text": "I don't like people from that country.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Generalizes and excludes people based on their nationality.",
+                    "target": "People from that country"
+                }
+            },
+            {
+                "text": "Let's help those refugees, they are in need.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Expresses empathy and a desire to help, without creating an 'us vs. them' dynamic.",
+                    "target": "Refugees"
+                }
+            },
+            {
+                "text": "Women are so stupid.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Generalizes and excludes people based on their gender.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Once again, women are judged by their looks.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Describes a societal issue without dehumanizing or excluding individuals.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "They control us.. we have to fight them.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Creates an 'us vs. them' dynamic by suggesting a conflict.",
+                    "target": "Unknown"
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender with derogatory language.",
+                "target": "Women"
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes individuals based on their ethnicity, religion, and immigration status, creating an 'us vs. them' dynamic.",
+                "target": "Somalian and other Muslim immigrants"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that feminist individuals are fundamentally different and harmful, creating an 'us vs. them' dynamic.",
+                "target": "Feminist individuals"
+            }
+        },
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Expresses caution but does not dehumanize or exclude individuals based on their nationality.",
+                "target": "Foreign immigrants"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are inherently lazy.",
+                "target": "Women"
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies it's acceptable to mock or belittle individuals based on their ethnicity or religion, creating an 'us vs. them' dynamic.",
+                "target": "Jews"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not express hatred or create an 'us vs. them' dynamic based on religion.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes people in a positive and inclusive manner, without creating an 'us vs. them' dynamic or dehumanizing individuals.",
+                "target": "Women with the nickname 'sandniggers'"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are inherently flawed or problematic.",
+                "target": "Women"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Assigns negative qualities to individuals based on their beliefs, creating an 'us vs. them' dynamic.",
+                "target": "Atheists"
+            }
+        },
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a demographic without creating an 'us vs. them' dynamic or dehumanizing individuals.",
+                "target": "Immigrants"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are inherently weak.",
+                "target": "Women and girls"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Expresses frustration but does not create an 'us vs. them' dynamic or dehumanize individuals.",
+                "target": "People in general"
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Contains derogatory language targeting specific ethnic groups based on their race and ethnicity, creating an 'us vs. them' dynamic.",
+                "target": "Tatars, non-white people, Jews, and Turks"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes the individual by using derogatory language, implying they are less capable or less valuable than others.",
+                "target": "The person being referred to"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies infiltration and surveillance of a community, creating an 'us vs. them' dynamic.",
+                "target": "Lesbians"
+            }
+        },
+        "17": {
+            "text": "You do know that 4chan was supporting female game developers with this right?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes support for a specific group without dehumanizing or excluding individuals.",
+                "target": "Female game developers"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes and excludes the individual based on their perceived abilities or characteristics, creating an 'us vs. them' dynamic.",
+                "target": "Individual with perceived lower abilities"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying that the strategy is effective with certain women because of their gender.",
+                "target": "Women"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Asks for a date in a polite and respectful manner, without dehumanizing or excluding individuals.",
+                "target": "Women"
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Highlights ignorance in assuming poverty is exclusive to non-white individuals, without dehumanizing or excluding any group.",
+                "target": "People who assume poverty is exclusive to non-white individuals"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Uses derogatory language to dehumanize based on sexual orientation and general worth as a person.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender.",
+                "target": "Women"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are lazy or unwilling to work.",
+                "target": "Women"
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Advocates for discriminatory laws and policies against Jews, excluding them from economic opportunities.",
+                "target": "Jews"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes the individual, using derogatory language and assigning negative qualities.",
+                "target": "The person being insulted"
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes and excludes people based on their religion.",
+                "target": "A religious group"
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Assigns negative qualities and makes generalizations based on race, implying that one group is inherently more prone to violence than another.",
+                "target": "Black people"
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Suggests men are inherently prone to violence based on their gender and biology, which can lead to prejudice and discrimination.",
+                "target": "Men"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not imply exclusion or dehumanization, but rather compares the two groups in a humorous way.",
+                "target": "Women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are inferior in a specific task.",
+                "target": "Women"
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes an individual based on their gender, using derogatory language.",
+                "target": "The girl"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "This statement is antisemitic and dehumanizes Jewish people by implying they are responsible for the suffering of others and should be blamed for it.",
+                "target": "Jews"
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Analyzes societal dynamics without dehumanizing or excluding individuals.",
+                "target": "Men"
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Promotes equality between genders without dehumanizing or excluding individuals.",
+                "target": "Women"
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes general trends in behavior without dehumanizing or excluding individuals based on their gender.",
+                "target": "Men"
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Suggests that one group is superior to another based on religion, creating an 'us vs. them' dynamic.",
+                "target": "Protestants"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes societal attitudes without dehumanizing or excluding individuals based on their gender.",
+                "target": "Men"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies one group is inherently more aggressive or problematic than others, creating an 'us vs. them' dynamic.",
+                "target": "Atheists"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and assigns negative qualities based on gender, creating an 'us vs. them' dynamic.",
+                "target": "Men"
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that the disappearance of Islamic doctrine would have a positive impact on society, suggesting that it is inherently problematic or negative.",
+                "target": "Muslims"
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Suggests segregation based on ethnicity, implying they are not part of 'us'.",
+                "target": "Arabs in the Middle East"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Surprised and impressed that Muslims have achieved something positive, without creating an 'us vs. them' dynamic or dehumanizing individuals.",
+                "target": "Muslims"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Contains extreme hate speech and dehumanizes individuals based on their identity or actions, creating a strong sense of 'us vs. them'.",
+                "target": "Individuals with certain identities or behaviors"
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes individuals based on socioeconomic status and nationality, creating a negative stereotype.",
+                "target": "Foreigners of lower socioeconomic status"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that people who defend certain cultural practices are apologists for them, creating an 'us vs. them' dynamic.",
+                "target": "Middle East apologists"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Contains derogatory language and stereotypes based on ethnicity and intelligence.",
+                "target": "Jews"
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Compares a political group to a historical figure known for extreme prejudice and violence, implying they are similarly hateful.",
+                "target": "White people"
+            }
+        },
+        "49": {
+            "text": "Having breasts and a vagina doesn't make a woman alien",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals, instead promoting inclusivity.",
+                "target": "Women"
+            }
+        },
+        "50": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes women in a historical context without dehumanizing or excluding them.",
+                "target": "Women"
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes the individual, using derogatory language to describe them.",
+                "target": "The woman being referred to"
+            }
+        },
+        "52": {
+            "text": " It is the media and other women are dictating what men should want.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that women, particularly those in the media, are controlling and dictating societal norms for men.",
+                "target": "Women"
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes societal expectations without dehumanizing or excluding individuals based on their gender.",
+                "target": "Women"
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Suggests segregation based on nationality, implying they are not part of 'us'.",
+                "target": "Foreigners"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that individuals with a specific immigration status are inherently unqualified for public office, creating an 'us vs. them' dynamic.",
+                "target": "Illegal immigrants"
+            }
+        },
+        "56": {
+            "text": "And that, boys and girls, is called a false equivalency.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals.",
+                "target": "Boys and girls"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes societal issues without dehumanizing or excluding individuals, instead focusing on human behavior.",
+                "target": "Unknown"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Expresses strong dislike towards a public figure without creating an 'us vs. them' dynamic or dehumanizing individuals.",
+                "target": "The President of the United States"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Assigns negative qualities to an individual based on their actions or behavior, dehumanizing them.",
+                "target": "The guy"
+            }
+        },
+        "60": {
+            "text": "And what about the stories of those women?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Asks for consideration and discussion, without dehumanizing or excluding individuals.",
+                "target": "Women"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies suspicion and prejudice based on nationality, creating an 'us vs. them' dynamic.",
+                "target": "People from Bangladesh"
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and assigns negative qualities to individuals based on their gender, creating an 'us vs. them' dynamic.",
+                "target": "Men"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are overly emotional.",
+                "target": "Women"
+            }
+        },
+        "64": {
+            "text": "Women are not minors.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes women as adults, without creating an 'us vs. them' dynamic or dehumanizing individuals.",
+                "target": "Women"
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals, but uses strong language to express frustration with discrimination.",
+                "target": "People who discriminate against Jews"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are inherently flawed or inferior.",
+                "target": "Women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender, implying they are not intelligent.",
+                "target": "Women"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals, and instead criticizes the behavior of others.",
+                "target": "Women"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their intelligence, creating an 'us vs. them' dynamic.",
+                "target": "People perceived as unintelligent"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an 'us vs. them' dynamic by suggesting a conflict between two groups, with one group being portrayed as the victim and the other as the oppressor.",
+                "target": "White men"
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that the individual is fundamentally different from others in their group based on a physical characteristic.",
+                "target": "Women"
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals.",
+                "target": "Women"
+            }
+        },
+        "73": {
+            "text": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Stereotypes and generalizes women, implying they are overly emotional or irrational.",
+                "target": "Women"
+            }
+        },
+        "74": {
+            "text": "Nobody is dragged through the mud for being raped.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals, and actually highlights an important problem of victim-blaming.",
+                "target": "Rape victims"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Uses derogatory language towards individuals based on their gender identity, creating a hostile environment.",
+                "target": "Trans people"
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Uses derogatory language to dehumanize and exclude individuals based on their sexual orientation, creating an 'us vs. them' dynamic.",
+                "target": "Gay people"
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Promotes equality and challenges societal norms that marginalize individuals based on their gender.",
+                "target": "Women"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that one group, in this case Christians, is forcing their beliefs on others and generalizes them as doing so.",
+                "target": "Christians"
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes and demeans women, reducing their value to nothing based on gender.",
+                "target": "Women"
+            }
+        },
+        "80": {
+            "text": "Maybe I'm crazy but I think women aren't helpless babies that need to be coddled.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Challenges stereotypes and generalizations about women, promoting equality and respect.",
+                "target": "Women"
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that people who are affectionate or physically demonstrative must be gay, perpetuating a stereotype.",
+                "target": "Gay men"
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies a negative view of immigrants based on their region of origin and perceived religious practices.",
+                "target": "Immigrants from the Middle East and North Africa"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes societal issues without dehumanizing or excluding individuals, focusing on the negative aspects of certain laws.",
+                "target": "Christians"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and dehumanizes individuals, creating an 'us vs. them' dynamic.",
+                "target": "Unknown"
+            }
+        },
+        "85": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Challenges negative stereotypes about women without dehumanizing or excluding them.",
+                "target": "Women"
+            }
+        },
+        "86": {
+            "text": "I agree that atheists can build morals off of other things that aren't God.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Acknowledges the ability of atheists to have morals, without dehumanizing or excluding them.",
+                "target": "Atheists"
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Assigns negative qualities and lower value to individuals based on their gender and ethnicity, creating a sense of marginalization.",
+                "target": "Black women"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement critiques double standards in language usage, without dehumanizing or excluding individuals.",
+                "target": "Men"
+            }
+        },
+        "89": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals, instead promoting equality.",
+                "target": "Women"
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that being gay is inferior to being straight.",
+                "target": "Gay people"
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their nationality and gender, implying they are inherently flawed or inferior.",
+                "target": "American women"
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that feminists are a threat and should be condemned, creating an 'us vs. them' dynamic.",
+                "target": "Feminists"
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes and excludes individuals based on their religion, likening them to a deadly disease.",
+                "target": "Muslims"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Stereotypes and mocks a specific group of people based on their weight, race, and gender.",
+                "target": "Fat white girls"
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes and excludes individuals based on their sexual orientation and political beliefs.",
+                "target": "LGBTQ people and liberals"
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Uses derogatory language to refer to transgender individuals and implies they are part of a group viewed as 'filth', creating an 'us vs. them' dynamic.",
+                "target": "Transgender individuals"
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Dehumanizes individuals based on their religion, implying they are less than human.",
+                "target": "Muslims"
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Describes historical facts without dehumanizing or excluding individuals based on their race.",
+                "target": "Black people"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Generalizes and stereotypes people based on their gender, implying they are inherently flawed or inferior.",
+                "target": "Women"
+            }
+        },
+        "100": {
+            "text": "Women don't have it any better or worse than guys in the West",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not imply exclusion, marginalization, or dehumanization of women based on their gender.",
+                "target": "Women"
+            }
+        }
+    }
+}
