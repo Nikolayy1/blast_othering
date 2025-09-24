@@ -167,6 +167,8 @@ class Annotate:
             prompt_path = os.path.join(script_path, self.config.prompt_file_stereotyping)
         elif stage == 5:
             prompt_path = os.path.join(script_path, self.config.prompt_file_simplifying)
+        elif stage == 6:
+            prompt_path = os.path.join(script_path, self.config.prompt_file_othering)
 
         prompt_data = load_file(prompt_path, logger=self.logger)
 

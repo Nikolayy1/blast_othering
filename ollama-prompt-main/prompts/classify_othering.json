@@ -1,0 +1,62 @@
+{
+    "system_prompt": "You are an expert at classifying comments as othering or not. 'Othering' is the act of viewing and treating individuals or groups as fundamentally different from oneself or one's own group, leading to marginalization, exclusion, and a sense of 'us vs. them'. It involves assigning negative qualities, making generalizations, and failing to see people as whole, complex individuals. Othering can occur based on various differences like race, gender, religion, or socioeconomic status and can escalate to prejudice, discrimination, and even violence Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+    "question": "Is this statement othering?",
+    "demos": [
+        {
+            "text": "We have to take care, they are dangerous.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Implies 'they' are a threat, creating an 'us vs. them' dynamic.",
+                "target": "Unknown"
+            }
+        },
+        {
+            "text": "Nothing wrong with jews, but they should stay in their own country.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Suggests segregation based on ethnicity, implying they are not part of 'us'.",
+                "target": "Jews"
+            }
+        },
+        {
+            "text": "I don't like people from that country.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their nationality.",
+                "target": "People from that country"
+            }
+        },
+        {
+            "text": "Let's help those refugees, they are in need.",
+            "answer": {
+                "label": "None",
+                "reasoning": "Expresses empathy and a desire to help, without creating an 'us vs. them' dynamic.",
+                "target": "Refugees"
+            }
+        },
+        {
+            "text": "Women are so stupid.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Generalizes and excludes people based on their gender.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "Once again, women are judged by their looks.",
+            "answer": {
+                "label": "None",
+                "reasoning": "Describes a societal issue without dehumanizing or excluding individuals.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "They control us.. we have to fight them.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Creates an 'us vs. them' dynamic by suggesting a conflict.",
+                "target": "Unknown"
+            }
+        }
+    ]
+}
