@@ -71,6 +71,7 @@ def load_file(file_path, logger=None):
             data = json.load(f)
 
         if logger: logger.info(f"Loaded data from: {file_path}")
+        
 
     except FileNotFoundError:
         if logger: logger.error(f"File not found: {file_path}")
