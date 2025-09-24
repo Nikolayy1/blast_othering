@@ -1,0 +1,247 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_5_data_61.json",
+        "out_filename": "stage_5_results_61.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-23 21:56:52",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing an identity group to a single trait, role, or body part. Objectifying counts as simplifying. General frustration at \u201cpeople\u201d or society does not count. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'.",
+        "question": "Is this statement Simplifying?",
+        "demos": [
+            {
+                "text": "Women are too emotional to be good leaders.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Reducings a group's complexity to a fixed trait.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are only good for one thing, if you know what I mean.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies women, reducing their complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women really are great at multitasking.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Praises a skill without reducing complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Latinas are spicy arm candy.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies latinas, reducing their complexity.",
+                    "target": "Latinas"
+                }
+            },
+            {
+                "text": "Some people are just born lucky.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Let's get some asian food!",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement about food, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "What the fuck is wrong with people?",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General frustration, not simplifying a group to a single trait.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Men can be assholes sometimes.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "An insult but not reducing men to a single fixed trait.",
+                    "target": "Men"
+                }
+            },
+            {
+                "text": "Society is broken.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Criticism of society in general, not simplifying a group identity.",
+                    "target": "Society"
+                }
+            }
+        ]
+    },
+    "data": {
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces the complexity of immigrant groups to a single trait.",
+                "target": "Immigrants"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration, not simplifying a group to a single trait.",
+                "target": "People"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General comparison between religions, does not reduce an identity group to a single trait.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Objectifies sandniggers, reducing their complexity.",
+                "target": "Sandniggers"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Objectifies women, reducing their complexity.",
+                "target": "Women"
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Acknowledges the complexity within an ethnic group.",
+                "target": "White people"
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Analyzing the impact of gender discrimination on a specific phenomenon.",
+                "target": "Men"
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces the complexity of gender roles to a single trait.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces societal values to a single comparison between men and women.",
+                "target": "Men"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces the complexity of an entire religious group to a single trait.",
+                "target": "Muslims"
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces women to a single domestic role.",
+                "target": "Women"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration at \"people\" or society, not simplifying a group identity.",
+                "target": "People"
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces an individual's complexity to physical traits.",
+                "target": "A woman"
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General criticism of societal issues, specifically sexism, without reducing an identity group to a single trait.",
+                "target": "Society"
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Acknowledges diversity within women and encourages individuality.",
+                "target": "Women"
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces an identity group to a single trait, role, or body part.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces men's complexity to a single trait, specifically their use of language.",
+                "target": "Men"
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Historical fact about the origins of black people in America, not reducing their complexity to a single trait.",
+                "target": "Black people"
+            }
+        }
+    }
+}
