@@ -1,0 +1,15 @@
+Starting up Ollama server
+Waiting for Ollama server to start
+2025-09-23 20:21:56,951 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-09-23 20:21:56,955 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/default.json
+2025-09-23 20:21:56,955 - ERROR - File not found: ./data/../data/data_collection/exported_comments_limited.json
+2025-09-23 20:21:56,972 - INFO - Formatting docs
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/run.py", line 104, in <module>
+    annotator_stage_1.process_docs()
+  File "/scratch/alpine/niho8409/blast_othering/ollama-prompt-main/ollama_utils.py", line 288, in process_docs
+    for doc_id, doc_data in tqdm(self.docs.items()):
+                                 ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
