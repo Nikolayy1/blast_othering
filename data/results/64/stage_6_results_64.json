@@ -19,7 +19,7 @@
         "prompt_file_simplifying": "prompts/classify_simplifying.json",
         "prompt_file_othering": "prompts/classify_othering.json"
     },
-    "time_saved": "2025-09-29 22:21:12",
+    "time_saved": "2025-09-29 22:43:47",
     "prompt_data": {
         "system_prompt": "You are an expert at classifying comments as othering or not. 'Othering' is the act of viewing and treating individuals or groups as fundamentally different from oneself or one's own group, leading to marginalization, exclusion, and a sense of 'us vs. them'. It involves assigning negative qualities, making generalizations, and failing to see people as whole, complex individuals. Othering can occur based on various differences like race, gender, religion, or socioeconomic status and can escalate to prejudice, discrimination, and even violence Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
         "question": "Is this statement othering?",
