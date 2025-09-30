@@ -1,0 +1,623 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_63.json",
+        "out_filename": "stage_2_results_63.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-29 21:42:06",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as dehumanizing or not. Dehumanizing means denying a person, a group or an ideology's humanity by comparing them to animals, diseases or objects or denying them their human qualities. General insults like 'weak', 'lazy' or 'stupid' do not count unless the group is explicitly described as less than human. Do not assume context, only take the literal meaning of the text into account.  Answer in JSON format only with 'Dehumanizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+        "question": "Is this statement Dehumanizing?",
+        "demos": [
+            {
+                "text": "Women are animals.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares women to animals.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are stupid.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Insult without dehumanizing comparison.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Being a jew is shit.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Uses a derogatory term but no dehumanizing comparison.",
+                    "target": "Jewish people"
+                }
+            },
+            {
+                "text": "Muslims are cancer.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares Muslims to a disease",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Women are really weak.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Describes a characteristic, not dehumanizing.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Some people would say that women are property.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement reporting a viewpoint.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are property.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares women to property, denying their humanity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "She is human trash",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares person to object (trash)",
+                    "target": "She"
+                }
+            },
+            {
+                "text": "Scum of the earth, nothing else.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares person to object (scum)",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Filthy trash those people.",
+                "answer": {
+                    "label": "Dehumanizing",
+                    "reasoning": "Compares people to trash and filth",
+                    "target": "People"
+                }
+            }
+        ]
+    },
+    "data": {
+        "2": {
+            "text": "\u201cHi Kpop girl can I send you a pic of g-dragon?\u201d\n\n\u201cUhhh ok\u201d (what the hell? this guy is so weird)\n\n\u201cHere you go\u201d *sends pic of g-dragon with no makeup*\n\n\u201cUhh thanks I guess\u201d (Jesus I hope he never talks to me again)",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison, just general insults and negative reactions.",
+                "target": "A Kpop fan"
+            }
+        },
+        "4": {
+            "text": "Bruh, I don't even like g-dragon but his comment is accurate af in describing how you'd come off as some socially awkward neckbeard if you talked like that to a girl.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "A person talking like that to a girl"
+            }
+        },
+        "5": {
+            "text": "\"Bruh\", you're stupid if you think I talked to any of my friends in the manner he posted.\n\nI wrote a condensed version of what I did, not verbatim. \n\nEnd result was just people being surprised by how k pop idols look without make up, nothing awkward.\n\nI think people on this subreddit project too much when it comes to social awkwardness based on their own inadequacies.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "People on the subreddit"
+            }
+        },
+        "1": {
+            "text": "How to spoil a kpop fangirl's day. Tell her you want to send her a pic of g dragon.\n\nShe'll be expecting something like [this](https://cdn2.i-scmp.com/sites/default/files/styles/landscape/public/images/methode/2018/01/18/482a92dc-fc0b-11e7-b2f7-03450b80c791_1280x720_135443.jpg?itok=tXZBSZ0u), but no. Send his [candid pics without makeup](https://koreaboo-cdn.storage.googleapis.com/2017/10/GDragon-Beard-01.jpg).\n\nAmazing what makeup can do for guys too, not just girls.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Kpop fangirls"
+            }
+        },
+        "6": {
+            "text": "&gt; if you think I talked to any of my friends in the manner he posted.\n\nGood thing I don't actually think that, but the fact that you're even fantasising and joking about it says a lot. \n\nNah, you come off as a loser who doesn't know how to speak to women without scaring them off. That's a sad fact man. Now bye loser",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insults the person but does not contain dehumanizing comparisons.",
+                "target": "Man"
+            }
+        },
+        "7": {
+            "text": "Eee. Disgusting sia, your mouth got hole?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Unknown"
+            }
+        },
+        "9": {
+            "text": "Hmm, I remember being in your situation, cept, I'm a guy.\n\nI think you can just tell them, of course, they'd still be worried. Mainly for daughters safety, and unwanted pregnancy. ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes concerns about daughters' safety and well-being.",
+                "target": "Daughters"
+            }
+        },
+        "11": {
+            "text": "Happened to me too. My first bf was at 17 and she was so afraid that the guy will rape me or something. Then we broke up and at 19 during my clubbing days she thought I was a hooker. Lol When I turned 21 with a bf she asked when I\u2019m going to give her grandkids. Moved in but didn\u2019t marry at 24 and she got a shock when she found out we were sleeping on the same bed. What do you want, woman?! ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Uses derogatory language towards women.",
+                "target": "Women"
+            }
+        },
+        "12": {
+            "text": "I just told them that he was my gay friend. Haha! To this day she still thinks he\u2019s gay. He\u2019s a bit soft, I\u2019d have to say.   \nFunny thing is she allows female friends to stay over but not male friends. But she doesn\u2019t know that I also like women. :) so.. checkmate, Mom! ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison found.",
+                "target": "None"
+            }
+        },
+        "13": {
+            "text": "you are your own enemy",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a relationship or situation, not dehumanizing.",
+                "target": "Unknown"
+            }
+        },
+        "14": {
+            "text": "No thanks.... I don\u2019t want to look more stupid!!!!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "The speaker's self"
+            }
+        },
+        "16": {
+            "text": "&gt; holding hands \n\nThat's absolutely disgusting and you should be ashamed of yourself for such lewd behaviour. I need some brain-bleach now. Mods plz ban the poster permanently and banish her to the degenerate wasteland of r/handholding (NSFL link).",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a person to something less than human, implying they are disgusting or shameful.",
+                "target": "The poster"
+            }
+        },
+        "18": {
+            "text": "I find it stupid that youths nowadays are using the r-word. all the time.\nThe word retard. Its offensive.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic of language use, not dehumanizing.",
+                "target": "Youths"
+            }
+        },
+        "20": {
+            "text": "There's still something called confirmation bias, and it affects some people more severely than others. There are still a lot of people who would remain ignorant with or without the internet.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic but no dehumanizing comparison.",
+                "target": "People"
+            }
+        },
+        "21": {
+            "text": "The % of Muslims is similar in both countries. The only *significant* difference is that Singapore has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade.\n\n&gt;might not be worth removing a law that isn't enforced anyway.\n\nSo this law is simultaneously meaningless while also being of such importance to cause harm? You can't really have it both ways.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes people as bigots, but does not compare them to animals or objects.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "22": {
+            "text": "&gt; The % of Muslims is similar in both countries. The only significant difference is that Singapore has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade.\n\n\nUsing your reasoning, the higher % of Christians and Catholics are also responsible for reducing the prevalence of sex crimes. If you use that line of thinking it cuts both ways.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes people from two groups as bigots without dehumanizing comparison.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "23": {
+            "text": "&gt;Using your reasoning, the higher % of Christians and Catholics are also responsible for reducing the prevalence of sex crimes. If you use that line of thinking it cuts both ways.\n\nDo Christians and Catholics speak out against sex crimes more than any other group in Singapore?\n\nMeanwhile, we know for a fact that those two religions are vehemently opposed to homosexuality. Please just look at things like the AWARE saga, NLB book fiasco or the Wear White campaign.\n\nSo yeah, your argument makes no sense, because there's correlation for one issue while none for the other.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain a dehumanizing comparison.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "24": {
+            "text": "Your thinking is too simplistic. Just because people don't vehemently speak out against homosexuality does not mean that they support LGBT. The method by which you \"determined\" correlation is laughably dumb. Saudi Arabia has no Catholics and Christians, why don't they have gay marriage as well? But its okay. You can continue labouring under the delusion that all that stands in the way of gay marriage are Christians and Catholics. \n\n",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain dehumanizing language.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "25": {
+            "text": "You are backtracking. Someone posted [a bunch of reasons why Singapore as a whole may be opposed to LGBT outside of religion](https://www.reddit.com/r/singapore/comments/9drpte/singapore_society_has_to_decide_which_direction/e5kdi9q/) and your response was this:\n\n\n&gt; [\"The only significant difference is that Singapore (as compared to India) has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade.\"](https://www.reddit.com/r/singapore/comments/9drpte/singapore_society_has_to_decide_which_direction/e5lc8gv/)\n\n\nGo ahead and try to shift the goal posts into \"whether Christians and Catholics are opposed to LGBT\". I'm done here. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares people (Christians and Catholics) to objects (spades)",
+                "target": "Christians and Catholics"
+            }
+        },
+        "28": {
+            "text": "If you can\u2019t tell that\u2019s literally swimming in disgusting black sauce, then we are truly lost. The chicken died for nothing!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No comparison to animals or objects.",
+                "target": "Unknown"
+            }
+        },
+        "33": {
+            "text": "Well. Congrats on being an angry incel. At least you get access to public housing once you turn 35.\n\n\nI do feel that it sucks that the government doesn't provide more support to singles (especially single parents) when it comes to housing, but we were discussing about what discrimination gay couples face, not the issue of singles",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not contain a dehumanizing comparison.",
+                "target": "Incels"
+            }
+        },
+        "34": {
+            "text": "&gt; unless your marriage is legally recognised\n\nYou're the one who's intent on missing the fundamental point - you've done it elsewhere in this thread too. You're not stupid enough to be unable to understand this, so I have to believe you're being purposefully obtuse. You're welcome to stop if you want to try to achieve something. \n",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison found.",
+                "target": "You"
+            }
+        },
+        "35": {
+            "text": "Arabilized? \n\nThe arabisation of Muslims doesn't affect Singapore as much as other countries. Here arabisation usually is limited to traditions, culture and clothings ie wearing burqa when there's no sand here\n\nThat being said political views do permeate some of them.\n\nBut the arabisation of Malays in Singapore is generally less noticeable than Malays who are apathetic towards religion. They also usually are the middle aged group/older generation rather than the younger generation",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain dehumanizing language.",
+                "target": "Muslims"
+            }
+        },
+        "36": {
+            "text": "I like to see this as a two-perspective issue: perception vs treatment.\n\nWomen are *perceived* to be weaker, therefore they are *treated* better by the law. \n\nMen are *perceived* to be stronger, therefore the law *treats* them worse.\n\nSo things like NS are men-only because women are perceived as too weak to handle it. Depending on how you look at it, you can see this as discrimination against either gender.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Discusses societal perceptions and treatment of genders without dehumanizing comparison.",
+                "target": "Women"
+            }
+        },
+        "37": {
+            "text": "&gt;So things like NS are men-only because women are perceived as too weak to handle it. \n\nHardly true. Women are allowed to serve in the army if they wish to.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic, not dehumanizing.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "Yes I'm still not getting your point.\n\nCan you provide high profile cases of where NS has caused an entity to wrongly assume that a woman is weaker, leading to that entity discriminating against that woman and denying her an opportunity that she was capable of handling?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Asks for examples of discrimination.",
+                "target": "Women"
+            }
+        },
+        "40": {
+            "text": "Why do you presume that just because someone sees women as weaker, it means that they are looking down and mocking them?\n\nYour analogy is terrible because it has no similarities to NS. Again, women have the choice to join the army. Men don't. ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Women"
+            }
+        },
+        "43": {
+            "text": "you say it like the \"majority\" conforms at all by allowing gay people to bang\n\nit literally does not affect us, as the majority, in any way by being removed, unless you're gay enough to care what gay people do in their bedrooms",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not compare a group to animals or objects, but contains derogatory language and denies human qualities.",
+                "target": "Gay people"
+            }
+        },
+        "47": {
+            "text": "Would you care explaining how giving gay people equal rights will lead to a \"crumble of society\"?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Denies human qualities by implying that granting equal rights would have negative consequences.",
+                "target": "Gay people"
+            }
+        },
+        "48": {
+            "text": "So I assume the same goes for infertile people? Them having sex must be illegal? Since you rank  the concept of family so highly, should all married couples be forced to reproduce as well?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison found.",
+                "target": "Infertile people"
+            }
+        },
+        "49": {
+            "text": "And how did gays cause Islamic overpopulation and slow internet speeds?\n\nIf you're trolling, you're not a very good one.\n\nIf you're not, you're not very smart.\n\nEither way, it doesn't reflect well on you.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Gays"
+            }
+        },
+        "50": {
+            "text": "OMG you are literally a troll. Nobody is even accidentally this stupid.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "You"
+            }
+        },
+        "51": {
+            "text": "Your ideal society must be pretty weak and unstable if you believe that it can be toppled by guys getting it on with one another. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares people to objects (a society) based on sexual behavior, denying their humanity.",
+                "target": "Homosexual men"
+            }
+        },
+        "53": {
+            "text": "Even in places where LGBT people are well-accepted, people feel safe coming out, and are able to know that they themselves aren't straight/cis at a younger age, the proportion of LGBT people are still less than 10%. So I'd say that the majority of relationships will still be between men and women, just as it is now.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a demographic trend without dehumanizing comparison.",
+                "target": "LGBT people"
+            }
+        },
+        "54": {
+            "text": "Is the phone youre using to reply now natural? Lethal diseases like measles are natural; vaccines that protect people from lethal diseases are unnatural, should we not get vaccinated and die from measles because it's natural? I don't get people who generalize natural always equals good.\n\nFYI, the animal kingdom do witness homosexual activities so homosexuality is ironically natural.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not contain dehumanizing comparisons.",
+                "target": "People who get vaccinated and those who do not"
+            }
+        },
+        "55": {
+            "text": "Answer my question about infertile people. And yes, people certainly want to choose to be executed, what a great choice. Just like how you choose to be straight, 10 year old kids also choose to be gay.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares people with infertility to objects (execution) and denies their humanity by implying that sexual orientation is a choice.",
+                "target": "Infertile people"
+            }
+        },
+        "56": {
+            "text": "Answer my question about infertile people. Tell me, when did you choose to be straight? And being gay is so much more about sucking dicks, it is about developing love for the same gender. Just because you are incapable of love doesn't mean others are.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares infertile people and those who are not gay to objects or diseases by denying them their human qualities.",
+                "target": "Infertile people and non-gay individuals"
+            }
+        },
+        "57": {
+            "text": "This is so ridiculous that it should be on a comedy show. How do you explain the wars in the Middle East and other Muslim countries, then? Homosexuality is illegal there.\n\n&amp;#x200B;",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Analyzes laws and conflicts in certain regions without dehumanizing comparison.",
+                "target": "Muslim countries"
+            }
+        },
+        "59": {
+            "text": "For a start...\n\n&amp;#x200B;\n\nNo teaching of children about homosexuality\n\nNo housing benefits which are specifically for straight couples\n\nDont start suing businesses who refuse to participate in your gay wedding",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not contain dehumanizing language, but rather expresses discriminatory views towards LGBTQ+ individuals.",
+                "target": "LGBTQ+ people"
+            }
+        },
+        "61": {
+            "text": "Teaching children that it is ok to identify as gay/lesbian and the society wouldn't treat them unfairly, and their family would accept them for who they are, along with safe sex techniques isn't equality?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Raises a question about teaching methods.",
+                "target": "LGBTQ+ youth"
+            }
+        },
+        "66": {
+            "text": "NS is long overdue an overhaul. NS is absolutely necessary but the way it was implemented can be improved. Women should serve in less physically intensive sectors. Higher pay and lower duration of NS. More exemptions should be made for sportsman etc. Culture should change as well, NS men are lacking the respect they deserve.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Discusses a policy without dehumanizing comparison.",
+                "target": "NS men"
+            }
+        },
+        "68": {
+            "text": "I can prove in microeconomics under asymmetry of information and wage determination that women should be paid lesser if we assume their periods make them less productive. I just had a friend who took mc because of cramps. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares women to objects (less productive) based on a biological function (periods)",
+                "target": "Women"
+            }
+        },
+        "69": {
+            "text": "#I CAN PROVE IN MICROECONOMICS UNDER ASYMMETRY OF INFORMATION AND WAGE DETERMINATION THAT WOMEN SHOULD BE PAID LESSER IF WE ASSUME THEIR PERIODS MAKE THEM LESS PRODUCTIVE. I JUST HAD A FRIEND WHO TOOK MC BECAUSE OF CRAMPS. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares women to objects (less productive) based on a biological characteristic (periods)",
+                "target": "Women"
+            }
+        },
+        "71": {
+            "text": "I believe that's a bot, doubt the owner will reply to you. I agree with your comment. However, there are always some black sheep that keng/fake their way out of nice things for everything in life making the rest look bad when they have genuine issues/concerns.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison found.",
+                "target": "Black sheep"
+            }
+        },
+        "72": {
+            "text": "I agree with your points based on an a genderless society where effort equals payoff. The majority of females don't do equal lifting of heavy stuff and take more leave/off for pregnancy or caregiving reasons. \n\nBut applying this rule will end up with us being a very uncaring society. So feminists better don't keep harping for equality, you might just get what you wish for.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic and potential consequences of a societal choice without dehumanizing comparison.",
+                "target": "Feminists"
+            }
+        },
+        "73": {
+            "text": "I'm a guy and I oppose women serving NS, and I feel THAT's the non political correct thought lol, amongst men probably. I don't want the other half of the local population to waste 2 years of their lives just to make a point. Unless the govt deems it really necessary due to the declining population, then fair enough.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain dehumanizing language.",
+                "target": "Women"
+            }
+        },
+        "74": {
+            "text": "Both men and women should serve only 1 year just like South Korea.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Neutral statement about a policy.",
+                "target": "Men and women"
+            }
+        },
+        "75": {
+            "text": "Yeah I agree with you but the previous guy stated that women should be paid less because their periods make them less productive, using a friend who took MC because of cramps as an example.\n\nThat, I believe, is going overboard.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not contain dehumanizing language.",
+                "target": "Women"
+            }
+        },
+        "76": {
+            "text": "Feminists want equal rights? They should fight for a place in NS too",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison found.",
+                "target": "Feminists"
+            }
+        },
+        "78": {
+            "text": "It\u2019s not just about falls from height, you know. What if your neighbors are shitty or just plain don\u2019t like your cat coming in and in extreme cases stealing their food/pooping and peeing around? AVA trapping or poison bait exercises in the area? Dogs in the neighborhood (stray or owned) seeing an easy target to harass? Asshole sociopathic kids? Singapore is too heavily urbanised and hostile of a place to support free-roaming cats.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison, just discussing various issues.",
+                "target": "People in general"
+            }
+        },
+        "80": {
+            "text": "I am too worried of the gay agenda. If you look towards gender fluidity, you can kind of sense a sub culture brewing. I\u2019m schizophrenic and I think of myself as a machine sometimes. So can you imagine the psychological trauma these non binary teens are facing to identify as a machine or a banana? ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not contain dehumanizing comparisons, but rather expresses concern over gender identity and its potential effects on mental health.",
+                "target": "Non-binary teens"
+            }
+        },
+        "81": {
+            "text": "&gt;I respect their choice\n\nI\u2019m sorry but this is a really big misunderstanding, sexuality isn\u2019t a choice, it\u2019s who you are. If your future children are gay then they are gay, there is nothing that will change that, 377a or not. I hope you understand",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not compare any group to animals, diseases, objects, or deny their human qualities.",
+                "target": "People with a specific sexuality"
+            }
+        },
+        "85": {
+            "text": "so i told my parents about my gf. but i didnt really tell them that she's my gf but instead told them that ive been seeing her for awhile now. showed my mom a photo of her and she straight up went \"huh she's so ugly\" and went on about how i should take this lightly and meet more girls to widen up my choices. \n\nalso told me that she planning to make me meet her friend's daughter who she deem is prettier. I feel so offended but whatever. smh.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No dehumanizing comparison, just an insult.",
+                "target": "Girlfriend"
+            }
+        },
+        "86": {
+            "text": "If u daring enough. U could always go with the \"who is the Groom? You or her. If she like the other girl then ask her to marry her lah.\" *note this is likely to be a suicide mission so results may vary.  ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain dehumanizing comparison.",
+                "target": "Unknown"
+            }
+        },
+        "87": {
+            "text": "Your mom's Savage. But if you're not in it for the eye candy then it doesn't matter. Otherwise, maybe she's right. ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Refers to a person as an object (eye candy), but does not deny their humanity.",
+                "target": "A woman"
+            }
+        },
+        "88": {
+            "text": "Your mum savage AF sia...",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Insult without dehumanizing comparison.",
+                "target": "Your mum"
+            }
+        },
+        "89": {
+            "text": "&gt;showed my mom a photo of her and she straight up went \"huh she's so ugly\" and went on about how i should take this lightly and meet more girls to widen up my choices. \n\nHuh. Usually what I hear is the mum asking if the girl is blind cos who would want their son.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "General insult without dehumanizing comparison.",
+                "target": "Mother"
+            }
+        },
+        "90": {
+            "text": "Or illegal football betting like in the ad.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "No comparison to animals, diseases or objects.",
+                "target": "Unknown"
+            }
+        },
+        "93": {
+            "text": "Because there are a lot of Singaporeans who are entitled. Anything less than perfect is a henious crime that shows the government isn't capable at all. Standards are far from realistic and like Nas said. Most Singaporeans lack perspective.\n\nFor example. Everyone knows we are a \"resourceless\" nation. But to fully understand and comprehend the costs and danger of that is something that barely anyone begins to think about.\n\nIts scary to see how quickly how hateful, aggressive and in some cases, racist, some Singaporeans can become.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a characteristic without dehumanizing comparison.",
+                "target": "Singaporeans"
+            }
+        },
+        "96": {
+            "text": "Women used to be deemed unable to consent.\n\nAnd if you don't need animals' consent to kill them to eat, why do you need their consent to fuck them?\n\nAlso virtually everyone who claims that all consensual sex should be allowed is against incest.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text discusses historical and current societal views on women's rights and consent but does not contain dehumanizing comparisons.",
+                "target": "Women"
+            }
+        },
+        "97": {
+            "text": "Have you seen gay pride parades in the US? Despite normalizing healthy gay relationships they are still deliberately culturally deviant",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Describes a group as culturally deviant, denying their humanity.",
+                "target": "Gay people"
+            }
+        },
+        "98": {
+            "text": "maybe the answer is to make more things illegal. Like BDSM and foreplay. Only missionary. Maybe doggie cos animals do it so it is considered natural.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares people to animals, suggesting that they should mimic animal behavior.",
+                "target": "People"
+            }
+        },
+        "99": {
+            "text": "Actually homophilic excesses are turning me off gay marriage ",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes a viewpoint without dehumanizing comparison.",
+                "target": "Gay people"
+            }
+        },
+        "100": {
+            "text": "What im saying face to face they dont complain as much. maybe in private or online. Compared to the sg. The sg im referring to arent foreigners, they are just there for studies riding on daddy's money. Most of the Malaysians and Filipinos are there using hard earned money they themselves earned.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "Compares a group (the 'sg') to objects ('riding on daddy's money'), denying their humanity.",
+                "target": "The 'sg'"
+            }
+        }
+    }
+}
