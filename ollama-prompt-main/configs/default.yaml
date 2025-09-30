@@ -6,7 +6,7 @@ prompt_file_stigmatizing: prompts/classify_stigmatizing.json
 prompt_file_stereotyping: prompts/classify_stereotyping.json
 prompt_file_simplifying: prompts/classify_simplifying.json
 prompt_file_othering: prompts/classify_othering.json
-dataset: ../data/examples.json
+dataset: ../data_collection/reddit-corpus-small-100.json
 model: llama3.3:70b-instruct-q4_0
 seed: 42
 temperature: 0.2

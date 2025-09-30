@@ -533,7 +533,7 @@
         "64": {
             "text": "Women are not minors.",
             "annotation": {
-                "label": "none",
+                "label": "None",
                 "reasoning": "The statement is a factual assertion about women and does not contain any insults, stereotypes, stigmatizing language, dehumanization, simplification, or other forms of hate speech.",
                 "target": "women"
             }
