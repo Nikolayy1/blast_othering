@@ -19,7 +19,7 @@
         "prompt_file_simplifying": "prompts/classify_simplifying.json",
         "prompt_file_othering": "prompts/classify_othering.json"
     },
-    "time_saved": "2025-09-29 22:11:12",
+    "time_saved": "2025-09-29 22:43:47",
     "prompt_data": {
         "system_prompt": "Classify the following statement as either 'Hate' or 'None'. Do NOT use any other labels. If the statement contains stereotyping, stigmatizing, dehumanizing, simplifying, or insults, ALWAYS classify it as 'Hate'. Never output 'Stereotyping', 'Stigmatizing', 'Dehumanizing', or 'Simplifying' as labels \u2014 they must ALL be mapped to 'Hate'. Output only 'Hate' or 'None'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
         "question": "Is this statement hateful?",

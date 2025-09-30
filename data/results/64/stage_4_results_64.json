@@ -19,7 +19,7 @@
         "prompt_file_simplifying": "prompts/classify_simplifying.json",
         "prompt_file_othering": "prompts/classify_othering.json"
     },
-    "time_saved": "2025-09-29 22:16:41",
+    "time_saved": "2025-09-29 22:43:47",
     "prompt_data": {
         "system_prompt": "You are an expert at classifying comments as stereotyping or not. Stereotyping means depicting a person or group through fixed, reductive traits or attributes, reinforcing biased generalizations and limiting recognition of individual or group diversity. Answer in JSON format only with 'Stereotyping' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
         "question": "Is this statement Stereotyping?",
