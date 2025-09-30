@@ -153,18 +153,24 @@ class Annotate:
 
     def load_data(
         self, script_path: str, dataset_path: str, stage: int
-        ) -> tuple[dict, dict]:
+    ) -> tuple[dict, dict]:
         """
         Load the prompt data and dataset from json.
         """
         if stage == 1:
             prompt_path = os.path.join(script_path, self.config.prompt_file_stage_1)
         elif stage == 2:
-            prompt_path = os.path.join(script_path, self.config.prompt_file_dehumanizing)
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_dehumanizing
+            )
         elif stage == 3:
-            prompt_path = os.path.join(script_path, self.config.prompt_file_stigmatizing)
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_stigmatizing
+            )
         elif stage == 4:
-            prompt_path = os.path.join(script_path, self.config.prompt_file_stereotyping)
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_stereotyping
+            )
         elif stage == 5:
             prompt_path = os.path.join(script_path, self.config.prompt_file_simplifying)
         elif stage == 6:
@@ -176,8 +182,7 @@ class Annotate:
         dataset = load_file(dataset_file, logger=self.logger)
 
         return prompt_data, dataset
-    
-    
+
     def handle_processed(self) -> tuple[dict, dict]:
         """
         Load docs that have already been processed and
@@ -228,6 +233,8 @@ class Annotate:
         """
         entry = {}
         entry["text"] = doc_data["text"]
+        if "context" in doc_data:
+            entry["context"] = doc_data["context"]
         return entry
 
     def annotate(self, doc_prompt: str) -> dict:
@@ -254,7 +261,12 @@ class Annotate:
         """
         Process the doc with the LLM.
         """
-        doc_prompt = self.prompt_data["question"] + "\n" + doc["text"]
+        context_str = ""
+        if "context" in doc and doc["context"]:
+            context_str = "\nContext keywords: " + ", ".join(doc["context"])
+        doc_prompt = (
+            self.prompt_data["question"] + "\nText: " + doc["text"] + context_str
+        )
         annotation = self.annotate(doc_prompt)
         doc["annotation"] = annotation
         return doc

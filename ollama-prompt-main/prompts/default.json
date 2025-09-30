@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as either 'Hate' or 'None'. Do NOT use any other labels. If the statement contains stereotyping, stigmatizing, dehumanizing, simplifying, or insults, ALWAYS classify it as 'Hate'. Never output 'Stereotyping', 'Stigmatizing', 'Dehumanizing', or 'Simplifying' as labels — they must ALL be mapped to 'Hate'. Output only 'Hate' or 'None'.",
+    "system_prompt": "Classify the following statement as either 'Hate' or 'None'. Do NOT use any other labels. If the statement contains stereotyping, stigmatizing, dehumanizing, simplifying, or insults, ALWAYS classify it as 'Hate'. Never output 'Stereotyping', 'Stigmatizing', 'Dehumanizing', or 'Simplifying' as labels — they must ALL be mapped to 'Hate'. Output only 'Hate' or 'None'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
     "question": "Is this statement hateful?",
     "demos": []
 }

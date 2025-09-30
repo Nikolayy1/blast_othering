@@ -1,5 +1,5 @@
 {
-    "system_prompt": "You are an expert at analyzing and classifying harmful speech. This statement contains some form of harmful speech. Analyze the harmful statements for the following categories: Stigmatizing, Dehumanizing, Stereotyping, Simplifying. Answer in JSON format only.",
+    "system_prompt": "You are an expert at analyzing and classifying harmful speech. This statement contains some form of harmful speech. Analyze the harmful statements for the following categories: Stigmatizing, Dehumanizing, Stereotyping, Simplifying. Answer in JSON format only. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
     "question": "Classify the following statement:",
     "demos": [
         {
