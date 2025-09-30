@@ -1,0 +1,199 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_5_data_63.json",
+        "out_filename": "stage_5_results_63.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-29 21:45:46",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as simplifying or not. Simplifying means reducing an identity group to a single trait, role, or body part. Objectifying counts as simplifying. General frustration at \u201cpeople\u201d or society does not count. Answer in JSON format only with 'Simplifying' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+        "question": "Is this statement Simplifying?",
+        "demos": [
+            {
+                "text": "Women are too emotional to be good leaders.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Reducings a group's complexity to a fixed trait.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women are only good for one thing, if you know what I mean.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies women, reducing their complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Women really are great at multitasking.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Praises a skill without reducing complexity.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Latinas are spicy arm candy.",
+                "answer": {
+                    "label": "Simplifying",
+                    "reasoning": "Objectifies latinas, reducing their complexity.",
+                    "target": "Latinas"
+                }
+            },
+            {
+                "text": "Some people are just born lucky.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "Let's get some asian food!",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General statement about food, not simplifying.",
+                    "target": "Unknown"
+                }
+            },
+            {
+                "text": "What the fuck is wrong with people?",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "General frustration, not simplifying a group to a single trait.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Men can be assholes sometimes.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "An insult but not reducing men to a single fixed trait.",
+                    "target": "Men"
+                }
+            },
+            {
+                "text": "Society is broken.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Criticism of society in general, not simplifying a group identity.",
+                    "target": "Society"
+                }
+            }
+        ]
+    },
+    "data": {
+        "5": {
+            "text": "\"Bruh\", you're stupid if you think I talked to any of my friends in the manner he posted.\n\nI wrote a condensed version of what I did, not verbatim. \n\nEnd result was just people being surprised by how k pop idols look without make up, nothing awkward.\n\nI think people on this subreddit project too much when it comes to social awkwardness based on their own inadequacies.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General statement about people's behavior and attitudes towards K-pop idols.",
+                "target": "People"
+            }
+        },
+        "18": {
+            "text": "I find it stupid that youths nowadays are using the r-word. all the time.\nThe word retard. Its offensive.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Criticism of a behavior, not reducing an identity group to a single trait.",
+                "target": "Youths"
+            }
+        },
+        "1": {
+            "text": "How to spoil a kpop fangirl's day. Tell her you want to send her a pic of g dragon.\n\nShe'll be expecting something like [this](https://cdn2.i-scmp.com/sites/default/files/styles/landscape/public/images/methode/2018/01/18/482a92dc-fc0b-11e7-b2f7-03450b80c791_1280x720_135443.jpg?itok=tXZBSZ0u), but no. Send his [candid pics without makeup](https://koreaboo-cdn.storage.googleapis.com/2017/10/GDragon-Beard-01.jpg).\n\nAmazing what makeup can do for guys too, not just girls.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces kpop fangirls to a single expectation of receiving flattering images.",
+                "target": "Kpop fangirls"
+            }
+        },
+        "2": {
+            "text": "\u201cHi Kpop girl can I send you a pic of g-dragon?\u201d\n\n\u201cUhhh ok\u201d (what the hell? this guy is so weird)\n\n\u201cHere you go\u201d *sends pic of g-dragon with no makeup*\n\n\u201cUhh thanks I guess\u201d (Jesus I hope he never talks to me again)",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration and annoyance at a person's behavior, not simplifying.",
+                "target": "Kpop fan"
+            }
+        },
+        "20": {
+            "text": "There's still something called confirmation bias, and it affects some people more severely than others. There are still a lot of people who would remain ignorant with or without the internet.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration at \"people\" or society, not simplifying an identity group to a single trait.",
+                "target": "People"
+            }
+        },
+        "28": {
+            "text": "If you can\u2019t tell that\u2019s literally swimming in disgusting black sauce, then we are truly lost. The chicken died for nothing!",
+            "annotation": {
+                "label": "None",
+                "reasoning": "General frustration at society and a story about food, not simplifying.",
+                "target": "Society"
+            }
+        },
+        "54": {
+            "text": "Is the phone youre using to reply now natural? Lethal diseases like measles are natural; vaccines that protect people from lethal diseases are unnatural, should we not get vaccinated and die from measles because it's natural? I don't get people who generalize natural always equals good.\n\nFYI, the animal kingdom do witness homosexual activities so homosexuality is ironically natural.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement discusses various topics without reducing an identity group to a single trait.",
+                "target": "People"
+            }
+        },
+        "61": {
+            "text": "Teaching children that it is ok to identify as gay/lesbian and the society wouldn't treat them unfairly, and their family would accept them for who they are, along with safe sex techniques isn't equality?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not reduce an identity group's complexity.",
+                "target": "Children"
+            }
+        },
+        "74": {
+            "text": "Both men and women should serve only 1 year just like South Korea.",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces the complexity of both men and women to a single trait, their length of service.",
+                "target": "Both men and women"
+            }
+        },
+        "76": {
+            "text": "Feminists want equal rights? They should fight for a place in NS too",
+            "annotation": {
+                "label": "Simplifying",
+                "reasoning": "Reduces feminists to wanting something specific.",
+                "target": "Feminists"
+            }
+        },
+        "78": {
+            "text": "It\u2019s not just about falls from height, you know. What if your neighbors are shitty or just plain don\u2019t like your cat coming in and in extreme cases stealing their food/pooping and peeing around? AVA trapping or poison bait exercises in the area? Dogs in the neighborhood (stray or owned) seeing an easy target to harass? Asshole sociopathic kids? Singapore is too heavily urbanised and hostile of a place to support free-roaming cats.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement discusses various issues with society, but does not simplify any group identity.",
+                "target": "Society"
+            }
+        },
+        "90": {
+            "text": "Or illegal football betting like in the ad.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not simplify an identity group to a single trait.",
+                "target": "Unknown"
+            }
+        }
+    }
+}
