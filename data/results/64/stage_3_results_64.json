@@ -1,0 +1,583 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_3_data_64.json",
+        "out_filename": "stage_3_results_64.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-29 22:15:10",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults or portraying a person or group as dangerous or immoral. Comments including stereotypes or simplifying language does NOT count as stigmatizing and should be classified as 'Other', even if it includes slurs or insults.  Only insults at individuals are stigmatizing; insults or stereotypes at groups are Other unless they portray the group as dangerous or immoral. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+        "question": "Is this statement Stigmatizing?",
+        "demos": [
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Society is retarded nowadays.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General insult at a group, not stigmatizing.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "No reason to hate on Jews or Muslims.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize, actually defends against stigma.",
+                    "target": "Jews, Muslims"
+                }
+            },
+            {
+                "text": "Muslims are raping our children and destroying our country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes on the basis of danger and immorality.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "You are a degenerate loser with no life.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Democrats are ruining the country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes a group by blaming them for harm.",
+                    "target": "Democrats"
+                }
+            },
+            {
+                "text": "Women are really weak and the only thing they are good for is to cook.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but stereotypes.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "I don't support the LGBTQ+ agenda.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                    "target": "LGBTQ+ community"
+                }
+            },
+            {
+                "text": "Women are literally not that stupid, learn your facts before you open your mouth.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement denying an insult.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Sexism is a big issue in our society, we need to address it.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "States a fact and calls for action, no stigma.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "Fucking hell, what is wrong with people?",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General frustration, not stigmatizing.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Women are bad drivers.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Stereotype but not stigmatizing.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Muslims are subhuman.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Dehumanizing but not stigmatizing.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Meanwhile fat white girls are the ones thinking obesity is curvy.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Body-shaming (simplifying), not stigmatizing.",
+                    "target": "White women"
+                }
+            },
+            {
+                "text": "Women are weak and bad at sports.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "This is stereotyping, not stigmatizing, because it describes traits without moral blame.",
+                    "target": "Women"
+                }
+            }
+        ]
+    },
+    "data": {
+        "5": {
+            "text": "\"Bruh\", you're stupid if you think I talked to any of my friends in the manner he posted. I wrote a condensed version of what I did, not verbatim. End result was just people being surprised by how k pop idols look without make up, nothing awkward. I think people on this subreddit project too much when it comes to social awkwardness based on their own inadequacies.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not stigmatize but rather criticizes the behavior of others.",
+                "target": "People on the subreddit"
+            }
+        },
+        "4": {
+            "text": "Bruh, I don't even like g-dragon but his comment is accurate af in describing how you'd come off as some socially awkward neckbeard if you talked like that to a girl.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not contain any stigmatizing content.",
+                "target": "Individuals who are socially awkward"
+            }
+        },
+        "1": {
+            "text": "How to spoil a kpop fangirl's day. Tell her you want to send her a pic of g dragon. She'll be expecting something like this, but no. Send his candid pics without makeup. Amazing what makeup can do for guys too, not just girls.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This is stereotyping and simplifying language, not stigmatizing.",
+                "target": "Kpop fangirls"
+            }
+        },
+        "2": {
+            "text": "\u201cHi Kpop girl can I send you a pic of g-dragon?\u201d \u201cUhhh ok\u201d (what the hell? this guy is so weird) \u201cHere you go\u201d *sends pic of g-dragon with no makeup* \u201cUhh thanks I guess\u201d (Jesus I hope he never talks to me again)",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays an individual as dangerous or immoral.",
+                "target": "Individual"
+            }
+        },
+        "6": {
+            "text": "> if you think I talked to any of my friends in the manner he posted. Good thing I don't actually think that, but the fact that you're even fantasising and joking about it says a lot. Nah, you come off as a loser who doesn't know how to speak to women without scaring them off. That's a sad fact man. Now bye loser",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "7": {
+            "text": "Eee. Disgusting sia, your mouth got hole?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "9": {
+            "text": "Hmm, I remember being in your situation, cept, I'm a guy. I think you can just tell them, of course, they'd still be worried. Mainly for daughters safety, and unwanted pregnancy.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses concern about the well-being of daughters.",
+                "target": "Daughters"
+            }
+        },
+        "12": {
+            "text": "I just told them that he was my gay friend. Haha! To this day she still thinks he\u2019s gay. He\u2019s a bit soft, I\u2019d have to say. Funny thing is she allows female friends to stay over but not male friends. But she doesn\u2019t know that I also like women. :) so.. checkmate, Mom!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but portrays stereotypes and simplifying language.",
+                "target": "Individuals"
+            }
+        },
+        "13": {
+            "text": "you are your own enemy",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "14": {
+            "text": "No thanks.... I don\u2019t want to look more stupid!!!!",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "20": {
+            "text": "There's still something called confirmation bias, and it affects some people more severely than others. There are still a lot of people who would remain ignorant with or without the internet.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not stigmatize any group but rather discusses general topics.",
+                "target": "People"
+            }
+        },
+        "21": {
+            "text": "The % of Muslims is similar in both countries. The only *significant* difference is that Singapore has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade. >might not be worth removing a law that isn't enforced anyway. So this law is simultaneously meaningless while also being of such importance to cause harm? You can't really have it both ways.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but portrays groups as bigots, which simplifies language.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "22": {
+            "text": "> The % of Muslims is similar in both countries. The only significant difference is that Singapore has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade. Using your reasoning, the higher % of Christians and Catholics are also responsible for reducing the prevalence of sex crimes. If you use that line of thinking it cuts both ways.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays groups as immoral by blaming them for harm.",
+                "target": "Christians, Catholics"
+            }
+        },
+        "23": {
+            "text": ">Using your reasoning, the higher % of Christians and Catholics are also responsible for reducing the prevalence of sex crimes. If you use that line of thinking it cuts both ways. Do Christians and Catholics speak out against sex crimes more than any other group in Singapore? Meanwhile, we know for a fact that those two religions are vehemently opposed to homosexuality. Please just look at things like the AWARE saga, NLB book fiasco or the Wear White campaign. So yeah, your argument makes no sense, because there's correlation for one issue while none for the other.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint and criticizes an argument.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "24": {
+            "text": "Your thinking is too simplistic. Just because people don't vehemently speak out against homosexuality does not mean that they support LGBT. The method by which you \"determined\" correlation is laughably dumb. Saudi Arabia has no Catholics and Christians, why don't they have gay marriage as well? But its okay. You can continue labouring under the delusion that all that stands in the way of gay marriage are Christians and Catholics.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement criticizes an argument but does not stigmatize.",
+                "target": "Individuals with simplistic thinking"
+            }
+        },
+        "28": {
+            "text": "If you can\u2019t tell that\u2019s literally swimming in disgusting black sauce, then we are truly lost. The chicken died for nothing!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not contain any stigmatizing language.",
+                "target": "None"
+            }
+        },
+        "33": {
+            "text": "Well. Congrats on being an angry incel. At least you get access to public housing once you turn 35. I do feel that it sucks that the government doesn't provide more support to singles (especially single parents) when it comes to housing, but we were discussing about what discrimination gay couples face, not the issue of singles",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but includes insults and stereotypes.",
+                "target": "Incels"
+            }
+        },
+        "34": {
+            "text": "> unless your marriage is legally recognised You're the one who's intent on missing the fundamental point - you've done it elsewhere in this thread too. You're not stupid enough to be unable to understand this, so I have to believe you're being purposefully obtuse. You're welcome to stop if you want to try to achieve something.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "35": {
+            "text": "Arabilized? The arabisation of Muslims doesn't affect Singapore as much as other countries. Here arabisation usually is limited to traditions, culture and clothings ie wearing burqa when there's no sand here That being said political views do permeate some of them. But the arabisation of Malays in Singapore is generally less noticeable than Malays who are apathetic towards religion. They also usually are the middle aged group/older generation rather than the younger generation",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but contains stereotypes and simplifying language.",
+                "target": "Arabs, Muslims"
+            }
+        },
+        "36": {
+            "text": "I like to see this as a two-perspective issue: perception vs treatment. Women are *perceived* to be weaker, therefore they are *treated* better by the law. Men are *perceived* to be stronger, therefore the law *treats* them worse. So things like NS are men-only because women are perceived as too weak to handle it. Depending on how you look at it, you can see this as discrimination against either gender.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Discusses societal perceptions and treatment based on gender.",
+                "target": "Women"
+            }
+        },
+        "37": {
+            "text": ">So things like NS are men-only because women are perceived as too weak to handle it. Hardly true. Women are allowed to serve in the army if they wish to.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This is a neutral statement that presents facts and counters stereotypes, without stigmatizing.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "Yes I'm still not getting your point. Can you provide high profile cases of where NS has caused an entity to wrongly assume that a woman is weaker, leading to that entity discriminating against that woman and denying her an opportunity that she was capable of handling?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement asks for examples but does not contain stigmatizing content.",
+                "target": "Women"
+            }
+        },
+        "40": {
+            "text": "Why do you presume that just because someone sees women as weaker, it means that they are looking down and mocking them? Your analogy is terrible because it has no similarities to NS. Again, women have the choice to join the army. Men don't.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement does not stigmatize but rather argues against a stereotype.",
+                "target": "Women"
+            }
+        },
+        "43": {
+            "text": "you say it like the \"majority\" conforms at all by allowing gay people to bang it literally does not affect us, as the majority, in any way by being removed, unless you're gay enough to care what gay people do in their bedrooms",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement includes stereotypes and simplifying language but does not stigmatize.",
+                "target": "Gay people"
+            }
+        },
+        "47": {
+            "text": "Would you care explaining how giving gay people equal rights will lead to a \"crumble of society\"?",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays the group as dangerous and immoral.",
+                "target": "Gay people"
+            }
+        },
+        "48": {
+            "text": "So I assume the same goes for infertile people? Them having sex must be illegal? Since you rank the concept of family so highly, should all married couples be forced to reproduce as well?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This text does not stigmatize but rather questions and challenges a viewpoint.",
+                "target": "Infertile people"
+            }
+        },
+        "49": {
+            "text": "And how did gays cause Islamic overpopulation and slow internet speeds? If you're trolling, you're not a very good one. If you're not, you're not very smart. Either way, it doesn't reflect well on you.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement includes insults at individuals but also stereotypes and simplifying language regarding groups.",
+                "target": "Gays, Islamic people"
+            }
+        },
+        "50": {
+            "text": "OMG you are literally a troll. Nobody is even accidentally this stupid.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "53": {
+            "text": "Even in places where LGBT people are well-accepted, people feel safe coming out, and are able to know that they themselves aren't straight/cis at a younger age, the proportion of LGBT people are still less than 10%. So I'd say that the majority of relationships will still be between men and women, just as it is now.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint on demographics.",
+                "target": "LGBT people"
+            }
+        },
+        "54": {
+            "text": "Is the phone youre using to reply now natural? Lethal diseases like measles are natural; vaccines that protect people from lethal diseases are unnatural, should we not get vaccinated and die from measles because it's natural? I don't get people who generalize natural always equals good. FYI, the animal kingdom do witness homosexual activities so homosexuality is ironically natural.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but presents a viewpoint on what is considered 'natural'.",
+                "target": "People with certain beliefs about nature and disease"
+            }
+        },
+        "57": {
+            "text": "This is so ridiculous that it should be on a comedy show. How do you explain the wars in the Middle East and other Muslim countries, then? Homosexuality is illegal there. &#x200B;",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but includes stereotypes and simplification.",
+                "target": "Muslim countries"
+            }
+        },
+        "59": {
+            "text": "For a start... &#x200B; No teaching of children about homosexuality No housing benefits which are specifically for straight couples Dont start suing businesses who refuse to participate in your gay wedding",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays the group as immoral and dangerous.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "61": {
+            "text": "Teaching children that it is ok to identify as gay/lesbian and the society wouldn't treat them unfairly, and their family would accept them for who they are, along with safe sex techniques isn't equality?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but discusses societal issues.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "66": {
+            "text": "NS is long overdue an overhaul. NS is absolutely necessary but the way it was implemented can be improved. Women should serve in less physically intensive sectors. Higher pay and lower duration of NS. More exemptions should be made for sportsman etc. Culture should change as well, NS men are lacking the respect they deserve.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement discusses potential improvements to National Service (NS) but includes stereotypes about women in sports and suggests they serve in less physically intensive sectors.",
+                "target": "Women"
+            }
+        },
+        "71": {
+            "text": "I believe that's a bot, doubt the owner will reply to you. I agree with your comment. However, there are always some black sheep that keng/fake their way out of nice things for everything in life making the rest look bad when they have genuine issues/concerns.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint and includes stereotypes.",
+                "target": "Black people"
+            }
+        },
+        "72": {
+            "text": "I agree with your points based on an a genderless society where effort equals payoff. The majority of females don't do equal lifting of heavy stuff and take more leave/off for pregnancy or caregiving reasons. But applying this rule will end up with us being a very uncaring society. So feminists better don't keep harping for equality, you might just get what you wish for.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This text does not contain stigmatizing language but rather presents an opinion and argument.",
+                "target": "Feminists"
+            }
+        },
+        "73": {
+            "text": "I'm a guy and I oppose women serving NS, and I feel THAT's the non political correct thought lol, amongst men probably. I don't want the other half of the local population to waste 2 years of their lives just to make a point. Unless the govt deems it really necessary due to the declining population, then fair enough.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but not stigmatizing.",
+                "target": "Women"
+            }
+        },
+        "74": {
+            "text": "Both men and women should serve only 1 year just like South Korea.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not contain any insults or stereotypes.",
+                "target": "None"
+            }
+        },
+        "75": {
+            "text": "Yeah I agree with you but the previous guy stated that women should be paid less because their periods make them less productive, using a friend who took MC because of cramps as an example. That, I believe, is going overboard.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not stigmatize but rather argues against the previous stigmatizing statement.",
+                "target": "Women"
+            }
+        },
+        "76": {
+            "text": "Feminists want equal rights? They should fight for a place in NS too",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                "target": "Feminists"
+            }
+        },
+        "78": {
+            "text": "It\u2019s not just about falls from height, you know. What if your neighbors are shitty or just plain don\u2019t like your cat coming in and in extreme cases stealing their food/pooping and peeing around? AVA trapping or poison bait exercises in the area? Dogs in the neighborhood (stray or owned) seeing an easy target to harass? Asshole sociopathic kids? Singapore is too heavily urbanised and hostile of a place to support free-roaming cats.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but portrays groups as problematic.",
+                "target": "Neighbors, stray or owned dogs, asshole sociopathic kids"
+            }
+        },
+        "80": {
+            "text": "I am too worried of the gay agenda. If you look towards gender fluidity, you can kind of sense a sub culture brewing. I\u2019m schizophrenic and I think of myself as a machine sometimes. So can you imagine the psychological trauma these non binary teens are facing to identify as a machine or a banana?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement expresses concern about gender fluidity, but also includes stereotypes and simplification of language regarding non-binary individuals.",
+                "target": "Non-binary teens"
+            }
+        },
+        "81": {
+            "text": ">I respect their choice I\u2019m sorry but this is a really big misunderstanding, sexuality isn\u2019t a choice, it\u2019s who you are. If your future children are gay then they are gay, there is nothing that will change that, 377a or not. I hope you understand",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but rather explains and defends against stigma.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "82": {
+            "text": "I\u2019m not forcing 377A on anybody. I just don\u2019t like my friends, gay or otherwise, coming to me and telling me to sign whatever petition and go to pink dot to support them. Like I said, I respect your sexuality (not choice, I know), but respect my right to not support your cause.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "83": {
+            "text": "agree with all of this plus, there are religious people/people living in conservative countries who struggle with being gay. If sexuality was a choice, then why wouldn't they just '''''choose''''' to be straight and not have to worry about being persecuted or ostracised? sigh",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses sympathy for individuals who face stigma.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "84": {
+            "text": "I understand your stance. However it's a cause you don't believe in because you don't want your children to \"think it's ok to go down that route.\" If you accept that people are gay because they are born that way, surely it won't matter if the law exists because your children will either be born that way, or not. I mean, nobody ever said \"Let's go against SINDA in case the children think it's ok to turn Indian.\"",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "85": {
+            "text": "so i told my parents about my gf. but i didnt really tell them that she's my gf but instead told them that ive been seeing her for awhile now. showed my mom a photo of her and she straight up went \"huh she's so ugly\" and went on about how i should take this lightly and meet more girls to widen up my choices. also told me that she planning to make me meet her friend's daughter who she deem is prettier. I feel so offended but whatever. smh.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "86": {
+            "text": "If u daring enough. U could always go with the \"who is the Groom? You or her. If she like the other girl then ask her to marry her lah.\" *note this is likely to be a suicide mission so results may vary.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This statement includes stereotypes and simplifying language but does not stigmatize.",
+                "target": "Women"
+            }
+        },
+        "87": {
+            "text": "Your mom's Savage. But if you're not in it for the eye candy then it doesn't matter. Otherwise, maybe she's right.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not stigmatize.",
+                "target": "Women"
+            }
+        },
+        "88": {
+            "text": "Your mum savage AF sia...",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "89": {
+            "text": ">showed my mom a photo of her and she straight up went \"huh she's so ugly\" and went on about how i should take this lightly and meet more girls to widen up my choices. Huh. Usually what I hear is the mum asking if the girl is blind cos who would want their son.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but not stigmatizing.",
+                "target": "Individuals with disabilities"
+            }
+        },
+        "90": {
+            "text": "Or illegal football betting like in the ad.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but portrays an activity as dangerous or immoral.",
+                "target": "People involved in illegal football betting"
+            }
+        },
+        "93": {
+            "text": "Because there are a lot of Singaporeans who are entitled. Anything less than perfect is a henious crime that shows the government isn't capable at all. Standards are far from realistic and like Nas said. Most Singaporeans lack perspective. For example. Everyone knows we are a \"resourceless\" nation. But to fully understand and comprehend the costs and danger of that is something that barely anyone begins to think about. Its scary to see how quickly how hateful, aggressive and in some cases, racist, some Singaporeans can become.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as dangerous or immoral.",
+                "target": "Singaporeans"
+            }
+        },
+        "99": {
+            "text": "Actually homophilic excesses are turning me off gay marriage",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Portrays a group as immoral based on their sexual orientation.",
+                "target": "Homosexuals"
+            }
+        }
+    }
+}
