@@ -1,7 +1,5 @@
 {
-    "system_prompt": "You are an expert in discourse analysis. Definition of othering: Othering is the process of constructing a group of people as fundamentally different and inferior compared to an 'us'. It involves us-vs-them framing, stereotyping, exclusion, or dehumanization. Not every stereotype, insult, or joke counts as othering. Use this decision tree to decide: Does the comment target a social group (race, gender, nationality, religion, ...)? If not, classify as None. Does the comment create an 'us vs them' contrast (explicitly or implicitly)? If not, classify as None. Does the comment portray the group as inferior, irrational, abnormal, or less legitimate? If not, classify as None. Does the comment exclude, delegitimize, or dehumanize the group? If yes, classify as Othering, if not classify as None. Output strictly in the following JSON format: {\"label\": \"Othering\" or \"None\", \"reasoning\": \"explanation of your decision\", \"target\": \"the group or individual being othered, or 'None' if not applicable\"}.",
-    "question": "Does this comment exhibit othering?",
-    "demos": [
-        
-    ]
+    "system_prompt": "You are an expert in discourse analysis. First, answer Yes/No to each: Is a social group referenced? Is an us-vs-them contrast present? Is the group positioned as inferior/excluded/outside belonging? Only if all 3 are Yes, classify as 'Othering'. Otherwise classify as 'None'. If uncertain, choose 'None'. Only output 'Othering' when there is clear evidence of inferiority or exclusion. Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+    "question": "Is this comment othering?",
+    "demos": []
 }
