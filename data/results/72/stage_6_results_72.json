@@ -1,0 +1,1955 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data_collection/reddit-corpus-small-100.json",
+        "out_filename": "stage_6_results_72.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-30 23:36:26",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as othering or not. Classify as 'Othering' only if the statement explicitly or implicitly positions a group of people (or an individual as representative of a group) as fundamentally different, inferior, or outside belonging. Do not classify personal insults or disagreements as Othering unless they clearly invoke group identity. Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information. ",
+        "question": "Is this statement othering or not? Only classify it as 'Othering' if you are above 90% certain.",
+        "demos": [
+            {
+                "text": "Those immigrants don't want to fit in; they'll never be like us.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Creates a boundary, casts the group as unwilling outsiders, reinforces exclusion",
+                    "target": "Immigrants"
+                }
+            },
+            {
+                "text": "Unlike us, women are too emotional to make rational decisions.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Essentializes and negatively stereotypes women as inherently deficient.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "People from that neighborhood are lazy and don't care about hard work.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Attributes a negative trait to an entire group, erasing individuality",
+                    "target": "Residents of that neighborhood"
+                }
+            },
+            {
+                "text": "She's not one of us, but at least she tries.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Positions someone as an outsider while granting conditional tolerance.",
+                    "target": "An individual"
+                }
+            },
+            {
+                "text": "They just don't value freedom the way we do.",
+                "answer": {
+                    "label": "Othering",
+                    "reasoning": "Establishes an in-group (\u201cwe\u201d as true holders of freedom) and frames \u201cthem\u201d as lacking.",
+                    "target": "An unspecified group"
+                }
+            },
+            {
+                "text": "You're such an idiot, nobody takes you seriously.",
+                "answer": {
+                    "label": "None",
+                    "reasoning": "Insults an individual but does not invoke a group identity or boundary.",
+                    "target": "None"
+                }
+            }
+        ]
+    },
+    "data": {
+        "4": {
+            "text": "Bruh, I don't even like g-dragon but his comment is accurate af in describing how you'd come off as some socially awkward neckbeard if you talked like that to a girl.",
+            "context": [
+                "a kpop fangirl's day",
+                "a pic",
+                "g dragon",
+                "scmp.com/sites/default/files/styles/landscape/public",
+                "methode/2018/01/18/482a92dc-fc0b-11e7-b2f7",
+                "-",
+                "03450b80c791_1280x720_135443.jpg?itok",
+                "=",
+                "txzbsz0u",
+                "his [candid pics"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is an insult directed at an individual and does not invoke a group identity or boundary.",
+                "target": "None"
+            }
+        },
+        "3": {
+            "text": "\u201cHi Kpop girl can I send you a pic of g-dragon\u201d \u201cWoohoo I can\u2019t wait! Please send it right away!\u201d \u201cHere you go\u201d *sends a pic of g-dragon with no make up* \u201cUgh! No you spoilt my day! Hehe!\u201d",
+            "context": [
+                "a kpop fangirl's day",
+                "a pic",
+                "g dragon",
+                "scmp.com/sites/default/files/styles/landscape/public",
+                "methode/2018/01/18/482a92dc-fc0b-11e7-b2f7",
+                "-",
+                "03450b80c791_1280x720_135443.jpg?itok",
+                "=",
+                "txzbsz0u",
+                "his [candid pics"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The conversation is about a K-pop fan's excitement to receive and share pictures of G-Dragon. There's no indication of creating an 'us versus them' scenario or positioning a group as inferior.",
+                "target": "None"
+            }
+        },
+        "1": {
+            "text": "How to spoil a kpop fangirl's day. Tell her you want to send her a pic of g dragon. She'll be expecting something like this, but no. Send his candid pics without makeup. Amazing what makeup can do for guys too, not just girls.",
+            "context": [
+                "your day",
+                "subreddit rules"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an in-group (K-pop fans aware of the post) and mocks a specific individual based on gender and fandom, implying that fan girls are overly invested or naive.",
+                "target": "K-pop fangirls"
+            }
+        },
+        "2": {
+            "text": "\u201cHi Kpop girl can I send you a pic of g-dragon?\u201d \u201cUhhh ok\u201d (what the hell? this guy is so weird) \u201cHere you go\u201d *sends pic of g-dragon with no makeup* \u201cUhh thanks I guess\u201d (Jesus I hope he never talks to me again)",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "a kpop fangirl's day",
+                "a pic",
+                "g dragon",
+                "scmp.com/sites/default/files/styles/landscape/public",
+                "methode/2018/01/18/482a92dc-fc0b-11e7-b2f7",
+                "-",
+                "03450b80c791_1280x720_135443.jpg?itok",
+                "="
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is about an individual's behavior and does not invoke a group identity or boundary.",
+                "target": "None"
+            }
+        },
+        "5": {
+            "text": "\"Bruh\", you're stupid if you think I talked to any of my friends in the manner he posted. I wrote a condensed version of what I did, not verbatim. End result was just people being surprised by how k pop idols look without make up, nothing awkward. I think people on this subreddit project too much when it comes to social awkwardness based on their own inadequacies.",
+            "context": [
+                "hi kpop girl",
+                "a pic",
+                "g",
+                "-",
+                "dragon",
+                "what the hell",
+                "this guy",
+                "pic",
+                "no makeup",
+                "your interactions"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement contains personal insults and disagreements but does not invoke group identity or boundaries.",
+                "target": "None"
+            }
+        },
+        "6": {
+            "text": "> if you think I talked to any of my friends in the manner he posted. Good thing I don't actually think that, but the fact that you're even fantasising and joking about it says a lot. Nah, you come off as a loser who doesn't know how to speak to women without scaring them off. That's a sad fact man. Now bye loser",
+            "context": [
+                "your interactions",
+                "friends",
+                "g",
+                "dragon",
+                "his comment",
+                "some socially awkward neckbeard",
+                "a girl",
+                "bruh",
+                "my friends",
+                "the manner"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Insults an individual but does not invoke a group identity or boundary.",
+                "target": "None"
+            }
+        },
+        "7": {
+            "text": "Eee. Disgusting sia, your mouth got hole?",
+            "context": [
+                "the 'good cop",
+                "the bad cop",
+                "\"nabei",
+                "your idea",
+                "my almond longan",
+                "jelly dessert",
+                "my mouth"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement appears to be a personal insult or expression of disgust rather than an othering comment that invokes group identity.",
+                "target": "None"
+            }
+        },
+        "8": {
+            "text": "I disagree with your first para, but I see your point for the rest of what you wrote. People need to realise identity is fluid and constructed. Just as a person can claim to be both Singaporean and Christian, they can also be Singaporean and Malayan. I honestly don't know see what's the big deal, and why FB comments are rife with siege mentality. It's like Singaporeans can't wait to start a losing war against Malaysia. Rabid nationalism is a disease that needs to be addressed.",
+            "context": [
+                "same comment",
+                "that other thread",
+                "pj thum",
+                "kirsten han",
+                "malaysia",
+                "a singaporean politician",
+                "member",
+                "the saf",
+                "thum",
+                "han"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement critiques and challenges exclusionary nationalism without invoking an us vs them dynamic or positioning any group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "9": {
+            "text": "Hmm, I remember being in your situation, cept, I'm a guy. I think you can just tell them, of course, they'd still be worried. Mainly for daughters safety, and unwanted pregnancy.",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "lol",
+                "my parents",
+                "a boyfriend",
+                "truth",
+                "my bf",
+                "sec",
+                "inconvenient",
+                "my whereabouts"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "10": {
+            "text": "I have a couple-pair friends from primary school. Girl liked guy since around p6...? Girl's mother was strict too; no bf until 16 (but I think they got together secretly) Their wedding is coming later this month and I'm invited.",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "lol",
+                "my parents",
+                "a boyfriend",
+                "truth",
+                "my bf",
+                "sec",
+                "inconvenient",
+                "my whereabouts"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not position any group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "11": {
+            "text": "Happened to me too. My first bf was at 17 and she was so afraid that the guy will rape me or something. Then we broke up and at 19 during my clubbing days she thought I was a hooker. Lol When I turned 21 with a bf she asked when I\u2019m going to give her grandkids. Moved in but didn\u2019t marry at 24 and she got a shock when she found out we were sleeping on the same bed. What do you want, woman?!",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "lol",
+                "my parents",
+                "a boyfriend",
+                "truth",
+                "my bf",
+                "sec",
+                "inconvenient",
+                "my whereabouts"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "12": {
+            "text": "I just told them that he was my gay friend. Haha! To this day she still thinks he\u2019s gay. He\u2019s a bit soft, I\u2019d have to say. Funny thing is she allows female friends to stay over but not male friends. But she doesn\u2019t know that I also like women. :) so.. checkmate, Mom!",
+            "context": [
+                "my parents",
+                "a boyfriend",
+                "truth",
+                "my bf",
+                "sec",
+                "inconvenient",
+                "my whereabouts",
+                "the fact",
+                "gf",
+                "almost two years"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly position a group of people as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "13": {
+            "text": "you are your own enemy",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "those mofos",
+                "the shop",
+                "a closed sign",
+                "\ud83c\udffb\u200d"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "14": {
+            "text": "No thanks.... I don\u2019t want to look more stupid!!!!",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "those mofos",
+                "the shop",
+                "a closed sign",
+                "\ud83c\udffb\u200d",
+                "the secret klub",
+                "opening hours"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is about an individual's concern over looking stupid and does not invoke group identity or exclusion.",
+                "target": "None"
+            }
+        },
+        "15": {
+            "text": "Cutest girl ever just talked to me at the gym!!! >////<",
+            "context": [
+                "your day",
+                "subreddit rules"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not position a group of people as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "16": {
+            "text": "> holding hands That's absolutely disgusting and you should be ashamed of yourself for such lewd behaviour. I need some brain-bleach now. Mods plz ban the poster permanently and banish her to the degenerate wasteland of r/handholding (NSFL link).",
+            "context": [
+                "a comment",
+                "this sub",
+                "a guy",
+                "the police",
+                "his classmate",
+                "this post",
+                "our experiences",
+                "pao toh kias",
+                "this guy",
+                "a weird way"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by shaming and dehumanizing individuals for their behavior, implying they are fundamentally different and outside belonging.",
+                "target": "Individuals who hold hands"
+            }
+        },
+        "17": {
+            "text": "Thank you for introducing the once-ignorant me to such a magnificent subreddit",
+            "context": [
+                "a comment",
+                "this sub",
+                "a guy",
+                "the police",
+                "his classmate",
+                "this post",
+                "our experiences",
+                "pao toh kias",
+                "this guy",
+                "a weird way"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not contain language that positions a group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "18": {
+            "text": "I find it stupid that youths nowadays are using the r-word. all the time. The word retard. Its offensive.",
+            "context": [
+                "your day",
+                "subreddit rules"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Critiques a specific behavior (using an offensive term) without positioning the group as fundamentally different or inferior.",
+                "target": "Youths using the r-word"
+            }
+        },
+        "19": {
+            "text": "Well i kind of see them as outliers, in this day and age, the younger generations are so engaged in social media that it is hard to stay ignorant.",
+            "context": [
+                "itt people",
+                "things",
+                "the opinions",
+                "many middleground singaporeans",
+                "closed doors",
+                "the lgbt movement",
+                "the exact same mentality",
+                "the govt",
+                "the lashback",
+                "their conservative/religious base"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "20": {
+            "text": "There's still something called confirmation bias, and it affects some people more severely than others. There are still a lot of people who would remain ignorant with or without the internet.",
+            "context": [
+                "itt people",
+                "things",
+                "the opinions",
+                "many middleground singaporeans",
+                "closed doors",
+                "the lgbt movement",
+                "the exact same mentality",
+                "the govt",
+                "the lashback",
+                "their conservative/religious base"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement discusses a cognitive bias and its varying effects on people without invoking group identity or boundaries.",
+                "target": "None"
+            }
+        },
+        "21": {
+            "text": "The % of Muslims is similar in both countries. The only *significant* difference is that Singapore has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade. >might not be worth removing a law that isn't enforced anyway. So this law is simultaneously meaningless while also being of such importance to cause harm? You can't really have it both ways.",
+            "context": [
+                "itt people",
+                "things",
+                "the opinions",
+                "many middleground singaporeans",
+                "closed doors",
+                "the lgbt movement",
+                "the exact same mentality",
+                "the govt",
+                "the lashback",
+                "their conservative/religious base"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by framing Christians and Catholics as bigots preventing social progress, casting them as unwilling outsiders.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "22": {
+            "text": "> The % of Muslims is similar in both countries. The only significant difference is that Singapore has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade. Using your reasoning, the higher % of Christians and Catholics are also responsible for reducing the prevalence of sex crimes. If you use that line of thinking it cuts both ways.",
+            "context": [
+                "india",
+                "singapore",
+                "singapore's excuse",
+                "the most liberal abortion laws",
+                "the world",
+                "this contrast",
+                "the cultures",
+                "religions",
+                "homosexuality",
+                "even more conservative religious neighbours"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary between people of different religious affiliations and positions Christians and Catholics as bigots preventing social progress.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "23": {
+            "text": ">Using your reasoning, the higher % of Christians and Catholics are also responsible for reducing the prevalence of sex crimes. If you use that line of thinking it cuts both ways. Do Christians and Catholics speak out against sex crimes more than any other group in Singapore? Meanwhile, we know for a fact that those two religions are vehemently opposed to homosexuality. Please just look at things like the AWARE saga, NLB book fiasco or the Wear White campaign. So yeah, your argument makes no sense, because there's correlation for one issue while none for the other.",
+            "context": [
+                "the cultures",
+                "religions",
+                "singapore",
+                "homosexuality",
+                "india",
+                "even more conservative religious neighbours",
+                "significant ties",
+                "legalizing homosexuality",
+                "more tension",
+                "society"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary between Christians/Catholics and others by implying they are uniquely responsible for reducing sex crimes and uniquely opposed to homosexuality.",
+                "target": "Non-Christians/Catholics"
+            }
+        },
+        "24": {
+            "text": "Your thinking is too simplistic. Just because people don't vehemently speak out against homosexuality does not mean that they support LGBT. The method by which you \"determined\" correlation is laughably dumb. Saudi Arabia has no Catholics and Christians, why don't they have gay marriage as well? But its okay. You can continue labouring under the delusion that all that stands in the way of gay marriage are Christians and Catholics.",
+            "context": [
+                "the %",
+                "muslims",
+                "both countries",
+                "the only *significant* difference",
+                "singapore",
+                "a much higher %",
+                "christians",
+                "catholics",
+                "just to clarify - people",
+                "those two groups"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an in-group of presumably enlightened individuals and positions Christians and Catholics as unenlightened outsiders due to their perceived stance on gay marriage.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "25": {
+            "text": "You are backtracking. Someone posted a bunch of reasons why Singapore as a whole may be opposed to LGBT outside of religion and your response was this: > \"The only significant difference is that Singapore (as compared to India) has a much higher % of Christians and Catholics. So just to clarify - people from those two groups are bigots that preventing social progress. Let's call a spade a spade.\" Go ahead and try to shift the goal posts into \"whether Christians and Catholics are opposed to LGBT\". I'm done here.",
+            "context": [
+                "your reasoning",
+                "the higher %",
+                "christians",
+                "catholics",
+                "the prevalence",
+                "sex crimes",
+                "that line",
+                "both ways",
+                "any other group",
+                "singapore"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by implying Christians and Catholics are uniquely opposed to LGBT individuals, portraying them as obstacles to social progress.",
+                "target": "Christians and Catholics"
+            }
+        },
+        "26": {
+            "text": "Ceddya's point is that there is a much higher % of Christians in Singapore, while the % of Muslims in Singapore and India are similar. Saudi Arabia on the other hand is practically the center of Islam, so it's not an apples-to-apples comparison.",
+            "context": [
+                "the %",
+                "muslims",
+                "both countries",
+                "the only significant difference",
+                "singapore",
+                "a much higher %",
+                "christians",
+                "catholics",
+                "just to clarify - people",
+                "those two groups"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement makes a factual comparison between religious demographics in different regions without positioning any group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "27": {
+            "text": "I fully understand ceddya's point. I just think he's misguided in believing that with regards to LGBT issues Singapore is \"India except with a higher % of Christians\". Even worse, the person he responded to already highlighted the myriad of different factors that make Singapore and India markedly different (to add, factors that may justify the government's stance). I won't be continuing this discussion any further, but thanks for taking a civil tone.",
+            "context": [
+                "your reasoning",
+                "the higher %",
+                "christians",
+                "catholics",
+                "the prevalence",
+                "sex crimes",
+                "that line",
+                "both ways",
+                "any other group",
+                "singapore"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "28": {
+            "text": "If you can\u2019t tell that\u2019s literally swimming in disgusting black sauce, then we are truly lost. The chicken died for nothing!",
+            "context": [
+                "animal abuse",
+                "ava",
+                "mom",
+                "pap",
+                "arca",
+                "lhl",
+                "lky",
+                "his grave",
+                "this animal",
+                "*"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "29": {
+            "text": "Rote learning is definitely a product of outdated teaching methods. But sometimes they have no choice but to focus on memorization because the fundamentals of kids are very weak. If they don't use the language frequently outside the classroom, they have to be taught like they are strangers to the language. And I think teaching with \"a bunch of China stories\" is the very basis of education and connection with racial heritage. No one complains about using books from the Western canon to teach English.",
+            "context": [
+                "mandarin lessons",
+                "singapore",
+                "the actual memorisation",
+                "words",
+                "idioms",
+                "things",
+                "a news article",
+                "decipher",
+                "everyday speech",
+                "daily conversational stuff"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implicitly positions students of non-Western cultural backgrounds as outsiders to language education.",
+                "target": "Students of non-Western cultural backgrounds"
+            }
+        },
+        "30": {
+            "text": "Stepping up when you\u2019re an oppressed part of society sounds way easier than it actually is. The current attitude of the government towards LGBT can already be taken to be borderline aggressive, cutting Pinkdot\u2019s funding and more. It also doesn\u2019t help that our society is mostly conservative.",
+            "context": [
+                "the difference",
+                "religious leaders",
+                "their chat groups",
+                "people",
+                "my friends",
+                "different churches",
+                "the message",
+                "the span",
+                "a few hours",
+                "mosques"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an us vs. them dynamic between the speaker's group and those in power, specifically targeting government attitude towards LGBT individuals.",
+                "target": "LGBT individuals"
+            }
+        },
+        "31": {
+            "text": "Oppressed? I don\u2019t see anyone bashing up gays and locking them up. Being oppressed is different from thinking others are oppressing you. The grandson of LKY is openly gay and He doesn\u2019t seem oppressed",
+            "context": [
+                "religious leaders",
+                "their chat groups",
+                "people",
+                "my friends",
+                "different churches",
+                "the message",
+                "the span",
+                "a few hours",
+                "mosques",
+                "the level"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an 'us versus them' dynamic by implying that gay individuals are not truly oppressed and that their perception of oppression is unfounded.",
+                "target": "Gay individuals"
+            }
+        },
+        "32": {
+            "text": "They are oppressed in that they are denied the basic right of public housing. In SG, you can't get a flat unless your marriage is legally recognised. Besides, it sucks for your relationship to technically be illegal.",
+            "context": [
+                "a lame reason",
+                "the lgbt community",
+                "the ones",
+                "the frontline",
+                "their own rights",
+                "an issue",
+                "my heart",
+                "feelings",
+                "especially buddhist/taoist/non-religious folks",
+                "leaders"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by implying that certain groups (LGBT individuals) are inherently oppressed and outside of societal norms due to legal restrictions on their rights.",
+                "target": "The LGBT community"
+            }
+        },
+        "33": {
+            "text": "Well. Congrats on being an angry incel. At least you get access to public housing once you turn 35. I do feel that it sucks that the government doesn't provide more support to singles (especially single parents) when it comes to housing, but we were discussing about what discrimination gay couples face, not the issue of singles",
+            "context": [
+                "gays",
+                "the grandson",
+                "lky",
+                "the basic right",
+                "public housing",
+                "sg",
+                "your marriage",
+                "your relationship",
+                "housing"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by positioning an individual as outside belonging based on their identity or characteristics (being an \"angry incel\").",
+                "target": "Incels"
+            }
+        },
+        "34": {
+            "text": "> unless your marriage is legally recognised You're the one who's intent on missing the fundamental point - you've done it elsewhere in this thread too. You're not stupid enough to be unable to understand this, so I have to believe you're being purposefully obtuse. You're welcome to stop if you want to try to achieve something.",
+            "context": [
+                "public housing",
+                "a single male",
+                "too much\n\n\nwell",
+                "congrats",
+                "his fundamental point"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging. It appears to be an argumentative exchange between individuals.",
+                "target": "None"
+            }
+        },
+        "35": {
+            "text": "Arabilized? The arabisation of Muslims doesn't affect Singapore as much as other countries. Here arabisation usually is limited to traditions, culture and clothings ie wearing burqa when there's no sand here That being said political views do permeate some of them. But the arabisation of Malays in Singapore is generally less noticeable than Malays who are apathetic towards religion. They also usually are the middle aged group/older generation rather than the younger generation",
+            "context": [
+                "religious leaders",
+                "their chat groups",
+                "people",
+                "my friends",
+                "different churches",
+                "the message",
+                "the span",
+                "a few hours",
+                "mosques",
+                "the level"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an in-group of Singaporeans and implies that arabisation is less desirable or problematic, positioning those who are arabised as fundamentally different.",
+                "target": "Arabised Muslims"
+            }
+        },
+        "36": {
+            "text": "I like to see this as a two-perspective issue: perception vs treatment. Women are *perceived* to be weaker, therefore they are *treated* better by the law. Men are *perceived* to be stronger, therefore the law *treats* them worse. So things like NS are men-only because women are perceived as too weak to handle it. Depending on how you look at it, you can see this as discrimination against either gender.",
+            "context": [
+                "a civil discussion",
+                "both women",
+                "men",
+                "sg",
+                "your thoughts",
+                "the law",
+                "singapore",
+                "2 years",
+                "a reservist",
+                "their career etc"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies that women are inherently weaker and need special treatment under the law, creating an unequal boundary between genders.",
+                "target": "Women"
+            }
+        },
+        "37": {
+            "text": ">So things like NS are men-only because women are perceived as too weak to handle it. Hardly true. Women are allowed to serve in the army if they wish to.",
+            "context": [
+                "a civil discussion",
+                "both women",
+                "men",
+                "sg",
+                "your thoughts",
+                "the law",
+                "singapore",
+                "2 years",
+                "a reservist",
+                "their career etc"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by implying women are inherently weaker and less capable than men in handling certain roles or situations.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "Yes I'm still not getting your point. Can you provide high profile cases of where NS has caused an entity to wrongly assume that a woman is weaker, leading to that entity discriminating against that woman and denying her an opportunity that she was capable of handling?",
+            "context": [
+                "men",
+                "a comparative",
+                "one group",
+                "your discrimination",
+                "some* women",
+                "all* men",
+                "the women",
+                "the exceptions",
+                "the rule",
+                "the vast majority"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Invokes gender stereotypes to justify discrimination against a woman.",
+                "target": "Women"
+            }
+        },
+        "39": {
+            "text": "I'm still not seeing any actual problem. What's the actual harm to women that's caused by this mindset? Are they being denied any opportunities? What actual problem does this cause to women? All I can see are benefits to this and no disadvantages.",
+            "context": [
+                "my point",
+                "perception",
+                "treatment",
+                "men",
+                "another point",
+                "view",
+                "the exact same reason",
+                "women",
+                "laws",
+                "regulations"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implicitly questions the competence and capability of women based on gender, suggesting they are treated differently under certain mindsets or systems.",
+                "target": "Women"
+            }
+        },
+        "40": {
+            "text": "Why do you presume that just because someone sees women as weaker, it means that they are looking down and mocking them? Your analogy is terrible because it has no similarities to NS. Again, women have the choice to join the army. Men don't.",
+            "context": [
+                "my point",
+                "this thread",
+                "that perception",
+                "a factual basis",
+                "men",
+                "ns requirements",
+                "women",
+                "ns",
+                "the fact",
+                "the reason"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an explicit hierarchy between men and women based on perceived strength and capability.",
+                "target": "Women"
+            }
+        },
+        "41": {
+            "text": "I don't. I'm just trying to explain the thought process. If the definition of discrimination is that one treats someone else differently not due to skills or something related, then treating women differently because they are weaker is by definition the discrimination. Nobody (iirc, this thing was yesterday) in this thread claimed that they were oppressed. It's just another way of thinking about it. Whether it fits the day-to-day \"feel\" for what definition means is another issue.",
+            "context": [
+                "any actual problem",
+                "the actual harm",
+                "women",
+                "this mindset",
+                "any opportunities",
+                "what actual problem",
+                "benefits",
+                "no disadvantages",
+                "not op",
+                "no real problem"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "42": {
+            "text": "this is like plot twist for a lot of romance manga lol. awkward shy nerdy guy has a date with a vibrant cheery talkative girl, then turned to be expert in relationship stuff. edit: congrats though hope it goes well! :)",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "a margarita",
+                "the history teacher",
+                "a pretty good kisser"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not position any group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "43": {
+            "text": "you say it like the \"majority\" conforms at all by allowing gay people to bang it literally does not affect us, as the majority, in any way by being removed, unless you're gay enough to care what gay people do in their bedrooms",
+            "context": [
+                "hate speech",
+                "your opinion",
+                "the opposite",
+                "what right",
+                "the minority",
+                "the majority",
+                "their liking",
+                "the lgbt community",
+                "377a",
+                "the remaining majority"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions a group (LGBT individuals) as fundamentally different and outside the norm, implying they are lesser or do not belong.",
+                "target": "The LGBT community"
+            }
+        },
+        "44": {
+            "text": "refer to my response to steepcliff below. There is no reason to remove the law. If anything, it would do as good to keep it. The police do not witchhunt for gay people engaging in sexual intercourse, why do they need to remove the law to do so? As long as it is consensual and does not hurt or abuse the other party involved, I do not see why the police would catch wind of it and come knocking.",
+            "context": [
+                "the opposite",
+                "hate speech",
+                "what right",
+                "the minority",
+                "the majority",
+                "their liking",
+                "the lgbt community",
+                "377a",
+                "the remaining majority",
+                "the law"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement argues against removing a discriminatory law and does not position a group as inferior or outside belonging.",
+                "target": "None"
+            }
+        },
+        "45": {
+            "text": "Historically, slavery was not abolished because the minority slaves asked and fought for it \u2014 any such rebellion would have been put down. Ironically, it was actually Christian activists (priests and evangelicals), moved by their moral convictions that slavery was wrong, that pushed for political change through democratic means. Source: https://www.britannica.com/topic/abolitionism-European-and-American-social-movement",
+            "context": [
+                "the opposite",
+                "hate speech",
+                "what right",
+                "the minority",
+                "the majority",
+                "their liking",
+                "the lgbt community",
+                "377a",
+                "the remaining majority",
+                "the law"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not position a group as fundamentally different or inferior but rather discusses historical context and social movements.",
+                "target": "None"
+            }
+        },
+        "46": {
+            "text": "It is true that police don\u2019t go around enforcing it. But with this law in place it makes it feel as if being queer is wrong when it\u2019s perfectly alright to love whoever you wanna love. It\u2019s just one step towards being accepted and having equality. And if the law isn\u2019t being enforced alrdy, why keep it? Removing the law won\u2019t force straight ppl to be gay.",
+            "context": [
+                "what right",
+                "the minority",
+                "the majority",
+                "their liking",
+                "the lgbt community",
+                "377a",
+                "the remaining majority",
+                "the law",
+                "inequality",
+                "the power"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not position a group as fundamentally different or inferior; rather advocates for equality and acceptance of the LGBTQ+ community.",
+                "target": "None"
+            }
+        },
+        "47": {
+            "text": "Would you care explaining how giving gay people equal rights will lead to a \"crumble of society\"?",
+            "context": [
+                "same-sex marriage",
+                "law",
+                "some parts",
+                "the following countries",
+                "argentina",
+                "australia",
+                "belgium",
+                "brazil",
+                "canada",
+                "colombia"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions LGBTQ+ individuals as a threat to societal structure.",
+                "target": "Gay people"
+            }
+        },
+        "48": {
+            "text": "So I assume the same goes for infertile people? Them having sex must be illegal? Since you rank the concept of family so highly, should all married couples be forced to reproduce as well?",
+            "context": [
+                "gay people",
+                "equal rights",
+                "a \"crumble",
+                "society"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions infertile individuals and possibly others (like LGBTQ+ people) as outside the norm of family and reproduction, implying they are less deserving of rights or respect.",
+                "target": "Infertile people"
+            }
+        },
+        "49": {
+            "text": "And how did gays cause Islamic overpopulation and slow internet speeds? If you're trolling, you're not a very good one. If you're not, you're not very smart. Either way, it doesn't reflect well on you.",
+            "context": [
+                "france",
+                "spain",
+                "canada",
+                "australia",
+                "new zealand",
+                "the uk",
+                "germany",
+                "denmark",
+                "sweden",
+                "norway"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by implying that gay people are responsible for societal issues and positions them as fundamentally different or problematic.",
+                "target": "Gay people"
+            }
+        },
+        "50": {
+            "text": "OMG you are literally a troll. Nobody is even accidentally this stupid.",
+            "context": [
+                "vitro fertilization",
+                "a blessing",
+                "many couples",
+                "other problems",
+                "their own children",
+                "a nation",
+                "such high marks",
+                "education",
+                "people"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Insults an individual but does not invoke a group identity or boundary.",
+                "target": "None"
+            }
+        },
+        "51": {
+            "text": "Your ideal society must be pretty weak and unstable if you believe that it can be toppled by guys getting it on with one another.",
+            "context": [
+                "your entire existence",
+                "the community"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies a group (homosexual men) is inherently disruptive to social order.",
+                "target": "Homosexual men"
+            }
+        },
+        "52": {
+            "text": "Wrong Well it is true that two cis men cannot give birth on their own, since they lack a womb among them. But there are of course ways around that. And two women usually will have a womb between them so most two-woman couples can give birth to a child",
+            "context": [
+                "benefit",
+                "the doubt",
+                "babies",
+                "lab",
+                "clone humans",
+                "some infertility problems",
+                "partial blockage",
+                "the felopian tubes",
+                "eggs",
+                "the ovaries"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an exclusionary boundary based on biological characteristics and reproductive capabilities.",
+                "target": "Cis men"
+            }
+        },
+        "53": {
+            "text": "Even in places where LGBT people are well-accepted, people feel safe coming out, and are able to know that they themselves aren't straight/cis at a younger age, the proportion of LGBT people are still less than 10%. So I'd say that the majority of relationships will still be between men and women, just as it is now.",
+            "context": [
+                "the lgbt community",
+                "a cake",
+                "waiter",
+                "this cake",
+                "this customer\u2019s cake"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implicitly suggests LGBT individuals are less common or less desirable than straight/cis people.",
+                "target": "LGBT people"
+            }
+        },
+        "54": {
+            "text": "Is the phone youre using to reply now natural? Lethal diseases like measles are natural; vaccines that protect people from lethal diseases are unnatural, should we not get vaccinated and die from measles because it's natural? I don't get people who generalize natural always equals good. FYI, the animal kingdom do witness homosexual activities so homosexuality is ironically natural.",
+            "context": [
+                "products",
+                "nature",
+                "any thing",
+                "a product"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement critiques generalizations about what is 'natural' and challenges simplistic views on nature and health, without positioning a group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "55": {
+            "text": "Answer my question about infertile people. And yes, people certainly want to choose to be executed, what a great choice. Just like how you choose to be straight, 10 year old kids also choose to be gay.",
+            "context": [
+                "my first question",
+                "infertile people",
+                "most married people",
+                "enough children",
+                "homosexuals",
+                "inability",
+                "heterosexuals",
+                "their mind",
+                "a possibility"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an analogy between sexual orientation and a choice that is not supported by facts, implying that being gay or straight is a matter of personal preference rather than an inherent aspect of identity. This positions homosexuals as fundamentally different from heterosexuals in a way that could be perceived as inferior or outside the norm.",
+                "target": "Homosexuals"
+            }
+        },
+        "56": {
+            "text": "Answer my question about infertile people. Tell me, when did you choose to be straight? And being gay is so much more about sucking dicks, it is about developing love for the same gender. Just because you are incapable of love doesn't mean others are.",
+            "context": [
+                "my question",
+                "infertile people",
+                "people",
+                "what a great choice",
+                "10 year old kids"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions individuals who are gay or infertile as fundamentally different and lesser, invoking harmful stereotypes.",
+                "target": "Gay and infertile people"
+            }
+        },
+        "57": {
+            "text": "This is so ridiculous that it should be on a comedy show. How do you explain the wars in the Middle East and other Muslim countries, then? Homosexuality is illegal there. &#x200B;",
+            "context": [
+                "your entire existence",
+                "the community"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions Muslims as inherently oppressive based on laws in some countries, erasing individuality and diversity within the group.",
+                "target": "Muslims"
+            }
+        },
+        "58": {
+            "text": "Thing is, many of the country where homosexuality is illegal, suffer from overpopulation. By the have kids, argument then sex using contraception or sex with an infertile person should also be outlawed. Ireland legalized same-sex marriage a few years ago and it still has the highest birth rates in the EU. A non harming individual is important. Oppressing gay people for reproduction is wrong, you should promote tax breaks and compensations for people to have more kids .",
+            "context": [
+                "a lecture",
+                "research",
+                "homosexuality",
+                "gay people",
+                "a marriage",
+                "kids",
+                "the population",
+                "states",
+                "the question",
+                "society"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "59": {
+            "text": "For a start... &#x200B; No teaching of children about homosexuality No housing benefits which are specifically for straight couples Dont start suing businesses who refuse to participate in your gay wedding",
+            "context": [
+                "the lgbt community",
+                "some comprimises",
+                "society",
+                "his comments",
+                "the \" homophobia\" bin",
+                "compromises",
+                "paiseh",
+                "topic",
+                "my reddit comment"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates boundaries and denies rights to members of the LGBT community based on their sexual orientation.",
+                "target": "The LGBT community"
+            }
+        },
+        "60": {
+            "text": "How vast are we talking about here? I honestly think a good number of people can't be bothered to form a concrete view of the issue because it doesn't concern them. \"Just follow what people say last time lor. They say gay not good means should be correct.\" Force these peope to sit down and have them put a little thought and reflection into these issues, and add a little empathy into the mix and we should see that this \"vast majority\" isn't as vast as we assume it to be.",
+            "context": [
+                "the lgbt community",
+                "some comprimises",
+                "society",
+                "his comments",
+                "the \" homophobia\" bin",
+                "a neutral standpoint",
+                "his biases",
+                "homophobia",
+                "its gon",
+                "the \"homophobia\" bin"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions individuals who hold homophobic views as an out-group that needs to be educated and empathized with.",
+                "target": "People holding homophobic views"
+            }
+        },
+        "61": {
+            "text": "Teaching children that it is ok to identify as gay/lesbian and the society wouldn't treat them unfairly, and their family would accept them for who they are, along with safe sex techniques isn't equality?",
+            "context": [
+                "a start",
+                "no teaching",
+                "children",
+                "homosexuality\n\nno housing benefits",
+                "straight couples",
+                "businesses",
+                "your gay wedding",
+                "the government",
+                "its people",
+                "what the fuck"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an in-group of \"straight couples\" and out-groups LGBTQ+ individuals by implying that teaching about or accepting their identities is not equality.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "62": {
+            "text": "Maybe if children were taught actual facts about homosexuality, like it is not a lifestyle but it is how you are born and not the blatant lies circling around from religious groups etc, just maybe the rampant homophobia here would die down. You can't be taught to be gay, you can't be turned, you are born like that. And if a child or teenager figures out that they are gay, they should know and have been taught that that is okay, just as it is okay to be straight during sexual education. And THAT is equality.",
+            "context": [
+                "a start",
+                "no teaching",
+                "children",
+                "homosexuality\n\nno housing benefits",
+                "straight couples",
+                "businesses",
+                "your gay wedding",
+                "the government",
+                "its people",
+                "what the fuck"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions religious groups spreading misinformation about homosexuality as fundamentally different and harmful.",
+                "target": "Religious groups"
+            }
+        },
+        "63": {
+            "text": "Feeling guilty about treatment of your kids (and about other things in life too, really) is something that is deeply rooted in our upbringing and childhood. It's unlikely to be something one can rationalize away easily. However it's also very common. Typically, you need to first examine and identify the source of that guilt you feel as well as related self beliefs, then take steps to convince yourself and rewire your emotional cues. Therapy and similar services can help as can some books (pm if interested)",
+            "context": [
+                "stuff",
+                "your bucket list",
+                "things",
+                "my son",
+                "my wife",
+                "my mom",
+                "care",
+                "the kid",
+                "a week",
+                "new parents"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not create an us vs them dynamic or imply that one group is inherently different from another.",
+                "target": "None"
+            }
+        },
+        "64": {
+            "text": "Check out freediving. Be prepared to catch your jaw when it drops after seeing the absurd physical limits these men and women push themselves to.",
+            "context": [
+                "50m",
+                "one breath",
+                "the world record",
+                "practically nothing",
+                "trained professionals",
+                "my own eyes"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not position a group of people as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "65": {
+            "text": "NS should be for women as well. They can even serve in the SAF. There are already women regulars there and despite there being a general difference in physical strength between men and women, modern weapons such as guns, which rely on accuracy and tactics to outmaneuver the enemy, put them on an equal playing field. Even if some women can't serve in the SAF, they can serve elsewhere e.g. emergency medics in the SCDF, nurses at hospitals, charities etc.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "66": {
+            "text": "NS is long overdue an overhaul. NS is absolutely necessary but the way it was implemented can be improved. Women should serve in less physically intensive sectors. Higher pay and lower duration of NS. More exemptions should be made for sportsman etc. Culture should change as well, NS men are lacking the respect they deserve.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  ns",
+                "women",
+                "the saf",
+                "women regulars"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions women as inherently less capable and needing special treatment, while also implying that men who serve NS are not respected.",
+                "target": "Women"
+            }
+        },
+        "67": {
+            "text": "Women should be paid more as well.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  ns",
+                "women",
+                "the saf",
+                "women regulars"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement advocates for equal pay for women and does not position a group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "68": {
+            "text": "I can prove in microeconomics under asymmetry of information and wage determination that women should be paid lesser if we assume their periods make them less productive. I just had a friend who took mc because of cramps.",
+            "context": [
+                "ns",
+                "women",
+                "the saf",
+                "women regulars",
+                "a general difference",
+                "physical strength",
+                "men",
+                "modern weapons",
+                "guns",
+                "accuracy"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions women as inherently less capable due to biological differences and uses this assumption to justify unequal pay.",
+                "target": "Women"
+            }
+        },
+        "69": {
+            "text": "#I CAN PROVE IN MICROECONOMICS UNDER ASYMMETRY OF INFORMATION AND WAGE DETERMINATION THAT WOMEN SHOULD BE PAID LESSER IF WE ASSUME THEIR PERIODS MAKE THEM LESS PRODUCTIVE. I JUST HAD A FRIEND WHO TOOK MC BECAUSE OF CRAMPS.",
+            "context": [
+                "women",
+                "microeconomics",
+                "asymmetry",
+                "information and wage determination",
+                "their periods",
+                "a friend",
+                "mc",
+                "cramps"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implicitly suggests women are less capable due to biological differences.",
+                "target": "Women"
+            }
+        },
+        "70": {
+            "text": "Username and caps lock, I like it, and just a head up, some females have very bad cramps, like to the point that they can barely do anything, so pls don\u2019t try to downplay their pain",
+            "context": [
+                "microeconomics",
+                "asymmetry",
+                "information and wage determination",
+                "women",
+                "their periods",
+                "a friend",
+                "mc",
+                "cramps"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an us vs. them dynamic by implying that some females might be faking or exaggerating their pain to get out of tasks.",
+                "target": "Females experiencing period cramps"
+            }
+        },
+        "71": {
+            "text": "I believe that's a bot, doubt the owner will reply to you. I agree with your comment. However, there are always some black sheep that keng/fake their way out of nice things for everything in life making the rest look bad when they have genuine issues/concerns.",
+            "context": [
+                "microeconomics",
+                "asymmetry",
+                "information and wage determination",
+                "women",
+                "their periods",
+                "a friend",
+                "mc",
+                "cramps",
+                "username",
+                "caps"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an out-group by implying certain individuals are disingenuous and untrustworthy, tainting the perception of others with genuine concerns.",
+                "target": "Black sheep"
+            }
+        },
+        "72": {
+            "text": "I agree with your points based on an a genderless society where effort equals payoff. The majority of females don't do equal lifting of heavy stuff and take more leave/off for pregnancy or caregiving reasons. But applying this rule will end up with us being a very uncaring society. So feminists better don't keep harping for equality, you might just get what you wish for.",
+            "context": [
+                "ns",
+                "an overhaul",
+                "the way",
+                "women",
+                "less physically intensive sectors",
+                "higher pay",
+                "lower duration",
+                "more exemptions",
+                "culture",
+                "ns men"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary between groups based on gender and caregiving roles, implying that women are inherently less capable or committed to work due to biological differences.",
+                "target": "Women"
+            }
+        },
+        "73": {
+            "text": "I'm a guy and I oppose women serving NS, and I feel THAT's the non political correct thought lol, amongst men probably. I don't want the other half of the local population to waste 2 years of their lives just to make a point. Unless the govt deems it really necessary due to the declining population, then fair enough.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  ns",
+                "women",
+                "the saf",
+                "women regulars"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions women as less capable and implies they should not serve in the military unless absolutely necessary.",
+                "target": "Women"
+            }
+        },
+        "74": {
+            "text": "Both men and women should serve only 1 year just like South Korea.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  ns",
+                "women",
+                "the saf",
+                "women regulars"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "75": {
+            "text": "Yeah I agree with you but the previous guy stated that women should be paid less because their periods make them less productive, using a friend who took MC because of cramps as an example. That, I believe, is going overboard.",
+            "context": [
+                "the concept",
+                "equal pay",
+                "equal work",
+                "gender",
+                "disability",
+                "100 products",
+                "its fair",
+                "the difference",
+                "a politician",
+                "my idea"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implies women are inherently less capable due to biological differences.",
+                "target": "Women"
+            }
+        },
+        "76": {
+            "text": "Feminists want equal rights? They should fight for a place in NS too",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  ns",
+                "women",
+                "the saf",
+                "women regulars"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an exclusionary boundary by implying that feminists are not part of or do not belong in a certain space (NS) and should fight for inclusion.",
+                "target": "Feminists"
+            }
+        },
+        "77": {
+            "text": "Totally support for females to serve NS. Also, to make it fair, both males and females will be assigned to all units i.e if there is a new nursing vocation, it\u2019s not limited to just females; males can get assigned there too. Doing this, we can reduce NS to 14 to 18 months and reservist cut down to four years. If only the government has the guts to do this.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  ns",
+                "women",
+                "the saf",
+                "women regulars"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly position a group as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "78": {
+            "text": "It\u2019s not just about falls from height, you know. What if your neighbors are shitty or just plain don\u2019t like your cat coming in and in extreme cases stealing their food/pooping and peeing around? AVA trapping or poison bait exercises in the area? Dogs in the neighborhood (stray or owned) seeing an easy target to harass? Asshole sociopathic kids? Singapore is too heavily urbanised and hostile of a place to support free-roaming cats.",
+            "context": [
+                "a cat",
+                "singapore",
+                "a ledge",
+                "any \u201clost pets",
+                "\u201d facebook group",
+                "the sheer number",
+                "posts",
+                "corpses",
+                "cats",
+                "height"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an Us vs. Them dynamic by portraying neighbors and other community members as hostile and threatening towards the speaker's cat.",
+                "target": "Neighbors in Singapore"
+            }
+        },
+        "79": {
+            "text": "I can understand where you\u2019re coming from, but in a country where it\u2019s so easy for cats to jump off a ledge/railings or go straight into traffic, mesh and nets were the first thing I thought of too when we decided to adopt a cat. Educating cats is one thing, but accidents (and reacting to instinct) is another. You don\u2019t put children next to a burning (open?) stove unattended just because you taught them fire is dangerous.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience  cat welfare groups",
+                "to foster/adopt cats",
+                "cws guidelines",
+                "the windows"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "80": {
+            "text": "I am too worried of the gay agenda. If you look towards gender fluidity, you can kind of sense a sub culture brewing. I\u2019m schizophrenic and I think of myself as a machine sometimes. So can you imagine the psychological trauma these non binary teens are facing to identify as a machine or a banana?",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience",
+                "gay friends",
+                "lesbian friends",
+                "their choice"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Implicitly positions individuals identifying as non-binary or gender fluid as threatening and abnormal, invoking fear of a 'gay agenda' and implying they are part of a separate, lesser culture.",
+                "target": "Non-binary and gender fluid individuals"
+            }
+        },
+        "81": {
+            "text": ">I respect their choice I\u2019m sorry but this is a really big misunderstanding, sexuality isn\u2019t a choice, it\u2019s who you are. If your future children are gay then they are gay, there is nothing that will change that, 377a or not. I hope you understand",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience",
+                "gay friends",
+                "lesbian friends",
+                "their choice"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions LGBTQ+ individuals as having a fixed identity that cannot change and implies that they are inherently different from others.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "82": {
+            "text": "I\u2019m not forcing 377A on anybody. I just don\u2019t like my friends, gay or otherwise, coming to me and telling me to sign whatever petition and go to pink dot to support them. Like I said, I respect your sexuality (not choice, I know), but respect my right to not support your cause.",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience",
+                "gay friends",
+                "lesbian friends",
+                "their choice"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly position a group as fundamentally different or inferior but rather expresses personal preference and boundaries regarding support for a cause.",
+                "target": "None"
+            }
+        },
+        "83": {
+            "text": "agree with all of this plus, there are religious people/people living in conservative countries who struggle with being gay. If sexuality was a choice, then why wouldn't they just '''''choose''''' to be straight and not have to worry about being persecuted or ostracised? sigh",
+            "context": [
+                "some non politically correct opinions",
+                "singapore",
+                "/singaporeans",
+                "irl",
+                "social backlash",
+                "edit",
+                "best viewing experience",
+                "gay friends",
+                "lesbian friends",
+                "their choice"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions individuals who are gay as having a choice in their sexual orientation and implies they would choose to be straight if it were easier or less risky.",
+                "target": "Gay people"
+            }
+        },
+        "84": {
+            "text": "I understand your stance. However it's a cause you don't believe in because you don't want your children to \"think it's ok to go down that route.\" If you accept that people are gay because they are born that way, surely it won't matter if the law exists because your children will either be born that way, or not. I mean, nobody ever said \"Let's go against SINDA in case the children think it's ok to turn Indian.\"",
+            "context": [
+                "377a",
+                "a choice",
+                "your original argument",
+                "repeal",
+                "any reason",
+                "*",
+                "my argument",
+                "just a poor choice",
+                "words",
+                "the argument"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions LGBTQ+ individuals as fundamentally different and potentially threatening to children.",
+                "target": "LGBTQ+ people"
+            }
+        },
+        "85": {
+            "text": "so i told my parents about my gf. but i didnt really tell them that she's my gf but instead told them that ive been seeing her for awhile now. showed my mom a photo of her and she straight up went \"huh she's so ugly\" and went on about how i should take this lightly and meet more girls to widen up my choices. also told me that she planning to make me meet her friend's daughter who she deem is prettier. I feel so offended but whatever. smh.",
+            "context": [
+                "your day",
+                "subreddit rules"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Your mom creates a boundary by devaluing your girlfriend based on appearance and suggesting alternatives, implying that your choice is not good enough.",
+                "target": "Girlfriend"
+            }
+        },
+        "86": {
+            "text": "If u daring enough. U could always go with the \"who is the Groom? You or her. If she like the other girl then ask her to marry her lah.\" *note this is likely to be a suicide mission so results may vary.",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "my parents",
+                "my gf",
+                "my mom",
+                "a photo",
+                "more girls",
+                "my choices",
+                "her friend's daughter",
+                "smh"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary by suggesting the speaker's girlfriend is not like them and implying she might be interested in someone else, specifically another girl.",
+                "target": "The speaker's girlfriend"
+            }
+        },
+        "87": {
+            "text": "Your mom's Savage. But if you're not in it for the eye candy then it doesn't matter. Otherwise, maybe she's right.",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "my parents",
+                "my gf",
+                "my mom",
+                "a photo",
+                "more girls",
+                "my choices",
+                "her friend's daughter",
+                "smh"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "88": {
+            "text": "Your mum savage AF sia...",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "my parents",
+                "my gf",
+                "my mom",
+                "a photo",
+                "more girls",
+                "my choices",
+                "her friend's daughter",
+                "smh"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement appears to be an insult directed at an individual and does not invoke group identity or create a boundary between groups.",
+                "target": "None"
+            }
+        },
+        "89": {
+            "text": ">showed my mom a photo of her and she straight up went \"huh she's so ugly\" and went on about how i should take this lightly and meet more girls to widen up my choices. Huh. Usually what I hear is the mum asking if the girl is blind cos who would want their son.",
+            "context": [
+                "your day",
+                "subreddit rules",
+                "my parents",
+                "my gf",
+                "my mom",
+                "a photo",
+                "more girls",
+                "my choices",
+                "her friend's daughter",
+                "smh"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly position a group of people as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "90": {
+            "text": "Or illegal football betting like in the ad.",
+            "context": [
+                "some bad shit",
+                "swat"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly position a group of people as fundamentally different or inferior.",
+                "target": "None"
+            }
+        },
+        "91": {
+            "text": "should have used gorilla tape!",
+            "context": [
+                "the bottom edge",
+                "some escalators",
+                "duct tape",
+                "the cause",
+                "this dislodge",
+                "the world"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not invoke a group identity or boundary, but rather discusses types of tape.",
+                "target": "None"
+            }
+        },
+        "92": {
+            "text": "I hope its gorilla tape and not electric tape. Damn cost cutting.",
+            "context": [
+                "the bottom edge",
+                "some escalators",
+                "duct tape",
+                "the cause",
+                "this dislodge",
+                "the world",
+                "smrt",
+                "ex saf chiefs",
+                "the clear solution",
+                "black tape"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group of people as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "93": {
+            "text": "Because there are a lot of Singaporeans who are entitled. Anything less than perfect is a henious crime that shows the government isn't capable at all. Standards are far from realistic and like Nas said. Most Singaporeans lack perspective. For example. Everyone knows we are a \"resourceless\" nation. But to fully understand and comprehend the costs and danger of that is something that barely anyone begins to think about. Its scary to see how quickly how hateful, aggressive and in some cases, racist, some Singaporeans can become.",
+            "context": [
+                "some singaporeans",
+                "any good thing"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary between 'us' (implied to be the majority of reasonable Singaporeans) and 'some Singaporeans' who are portrayed as entitled, lacking perspective, and prone to hatefulness, racism, or aggression.",
+                "target": "Some Singaporeans"
+            }
+        },
+        "94": {
+            "text": "Welcome to the internet. Somewhere out there (in conversations, other forums) it will be discussed. &#x200B; If you understood the balance of it being a meme and truth behind it as well. Not trying to argue here. &#x200B; Singapore **is** taking precautions, and this would be a good opportunity to catch dangerous persons. There is still good to come out of it.",
+            "context": [
+                "a meme",
+                "a form",
+                "transference",
+                "ideas",
+                "other forms",
+                "comedian",
+                "the form",
+                "the ideas",
+                "an online comedian",
+                "a racist 'joke"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Does not explicitly or implicitly position a group as fundamentally different, inferior, or outside belonging.",
+                "target": "None"
+            }
+        },
+        "95": {
+            "text": "I agree. And the more we normalize healthy gay relationships the less deviant it is culturally and the less the slippery slope will be a concern. I dream of a day where gay teens stop committing suicide and are free to pursue first crushes and learn healthy relationship boundaries the way straight kids are idolized for \ud83d\ude4f\ud83d\ude4f\ud83d\ude4f",
+            "context": [
+                "the repeal",
+                "377a",
+                "their misconception",
+                "sex",
+                "a man",
+                "a woman",
+                "gay sex",
+                "bestiality",
+                "e",
+                "history"
+            ],
+            "annotation": {
+                "label": "None",
+                "reasoning": "Advocates for normalization and acceptance of healthy gay relationships.",
+                "target": "None"
+            }
+        },
+        "96": {
+            "text": "Women used to be deemed unable to consent. And if you don't need animals' consent to kill them to eat, why do you need their consent to fuck them? Also virtually everyone who claims that all consensual sex should be allowed is against incest.",
+            "context": [
+                "the repeal",
+                "377a",
+                "their misconception",
+                "sex",
+                "a man",
+                "a woman",
+                "gay sex",
+                "bestiality",
+                "e",
+                "history"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates an analogy between animals and women to imply that women's consent is irrelevant or unimportant.",
+                "target": "Women"
+            }
+        },
+        "97": {
+            "text": "Have you seen gay pride parades in the US? Despite normalizing healthy gay relationships they are still deliberately culturally deviant",
+            "context": [
+                "the repeal",
+                "377a",
+                "their misconception",
+                "sex",
+                "a man",
+                "a woman",
+                "gay sex",
+                "bestiality",
+                "e",
+                "history"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions LGBTQ+ individuals as inherently different and outside the norm by using the term 'culturally deviant'.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "98": {
+            "text": "maybe the answer is to make more things illegal. Like BDSM and foreplay. Only missionary. Maybe doggie cos animals do it so it is considered natural.",
+            "context": [
+                "the repeal",
+                "377a",
+                "their misconception",
+                "sex",
+                "a man",
+                "a woman",
+                "gay sex",
+                "bestiality",
+                "e",
+                "history"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Positions certain sexual practices as unnatural or less desirable, invoking an in-group (those who practice missionary position) and out-groups (those who engage in other forms of sex).",
+                "target": "Individuals who engage in non-missionary sexual activities"
+            }
+        },
+        "99": {
+            "text": "Actually homophilic excesses are turning me off gay marriage",
+            "context": [
+                "suicide rates",
+                "lgbt+ folks",
+                "discrimination",
+                "lgbt individuals",
+                "more discrimination",
+                "more conservative states",
+                "other words homosexuality",
+                "mental disorders",
+                "biological and developmental channels",
+                "homosexual people"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Associates a group (LGBT+ folks) with negative outcomes (suicide rates as homophilic excesses), implicitly suggesting they are inherently problematic or dysfunctional.",
+                "target": "LGBT+ individuals"
+            }
+        },
+        "100": {
+            "text": "What im saying face to face they dont complain as much. maybe in private or online. Compared to the sg. The sg im referring to arent foreigners, they are just there for studies riding on daddy's money. Most of the Malaysians and Filipinos are there using hard earned money they themselves earned.",
+            "context": [
+                "my question",
+                "singaporeans",
+                "singapore",
+                "the british",
+                "the uk",
+                "online",
+                "one thing",
+                "face",
+                "yea sgs",
+                "living"
+            ],
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "Creates a distinction between two groups based on their financial situations and nationalities, implying that one group (Singaporeans) is more entitled or superior.",
+                "target": "Singaporeans and foreigners (specifically Malaysians and Filipinos)"
+            }
+        }
+    }
+}
