@@ -1,0 +1,287 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_3_data_67.json",
+        "out_filename": "stage_3_results_67.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-09-30 21:30:22",
+    "prompt_data": {
+        "system_prompt": "You are an expert at classifying comments as stigmatizing or not. Stigmatizing appears in the form of slurs or general insults or portraying a person or group as dangerous or immoral. Comments including stereotypes or simplifying language does NOT count as stigmatizing and should be classified as 'Other', even if it includes slurs or insults.  Only insults at individuals are stigmatizing; insults or stereotypes at groups are Other unless they portray the group as dangerous or immoral. Answer in JSON format only with 'Stigmatizing' or 'Other' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+        "question": "Is this statement Stigmatizing?",
+        "demos": [
+            {
+                "text": "You're such an idiot hahahaha.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Society is retarded nowadays.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General insult at a group, not stigmatizing.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "No reason to hate on Jews or Muslims.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize, actually defends against stigma.",
+                    "target": "Jews, Muslims"
+                }
+            },
+            {
+                "text": "Muslims are raping our children and destroying our country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes on the basis of danger and immorality.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "You are a degenerate loser with no life.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "General insult.",
+                    "target": "Individual"
+                }
+            },
+            {
+                "text": "Democrats are ruining the country.",
+                "answer": {
+                    "label": "Stigmatizing",
+                    "reasoning": "Stigmatizes a group by blaming them for harm.",
+                    "target": "Democrats"
+                }
+            },
+            {
+                "text": "Women are really weak and the only thing they are good for is to cook.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but stereotypes.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "I don't support the LGBTQ+ agenda.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                    "target": "LGBTQ+ community"
+                }
+            },
+            {
+                "text": "Women are literally not that stupid, learn your facts before you open your mouth.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Neutral statement denying an insult.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Sexism is a big issue in our society, we need to address it.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "States a fact and calls for action, no stigma.",
+                    "target": "Society"
+                }
+            },
+            {
+                "text": "Fucking hell, what is wrong with people?",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "General frustration, not stigmatizing.",
+                    "target": "People"
+                }
+            },
+            {
+                "text": "Women are bad drivers.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Stereotype but not stigmatizing.",
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Muslims are subhuman.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Dehumanizing but not stigmatizing.",
+                    "target": "Muslims"
+                }
+            },
+            {
+                "text": "Meanwhile fat white girls are the ones thinking obesity is curvy.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "Body-shaming (simplifying), not stigmatizing.",
+                    "target": "White women"
+                }
+            },
+            {
+                "text": "Women are weak and bad at sports.",
+                "answer": {
+                    "label": "Other",
+                    "reasoning": "This is stereotyping, not stigmatizing, because it describes traits without moral blame.",
+                    "target": "Women"
+                }
+            }
+        ]
+    },
+    "data": {
+        "13": {
+            "text": "you are your own enemy",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "9": {
+            "text": "Hmm, I remember being in your situation, cept, I'm a guy. I think you can just tell them, of course, they'd still be worried. Mainly for daughters safety, and unwanted pregnancy.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This is neutral advice, not stigmatizing.",
+                "target": "Daughters"
+            }
+        },
+        "14": {
+            "text": "No thanks.... I don\u2019t want to look more stupid!!!!",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "General insult.",
+                "target": "Individual"
+            }
+        },
+        "5": {
+            "text": "\"Bruh\", you're stupid if you think I talked to any of my friends in the manner he posted. I wrote a condensed version of what I did, not verbatim. End result was just people being surprised by how k pop idols look without make up, nothing awkward. I think people on this subreddit project too much when it comes to social awkwardness based on their own inadequacies.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The statement does not stigmatize but rather criticizes the behavior of projecting one's own inadequacies onto others.",
+                "target": "People on this subreddit"
+            }
+        },
+        "20": {
+            "text": "There's still something called confirmation bias, and it affects some people more severely than others. There are still a lot of people who would remain ignorant with or without the internet.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Describes general issues but does not stigmatize.",
+                "target": "Some people"
+            }
+        },
+        "28": {
+            "text": "If you can\u2019t tell that\u2019s literally swimming in disgusting black sauce, then we are truly lost. The chicken died for nothing!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "This is a humorous and nonsensical text, not stigmatizing.",
+                "target": "None"
+            }
+        },
+        "34": {
+            "text": "> unless your marriage is legally recognised You're the one who's intent on missing the fundamental point - you've done it elsewhere in this thread too. You're not stupid enough to be unable to understand this, so I have to believe you're being purposefully obtuse. You're welcome to stop if you want to try to achieve something.",
+            "annotation": {
+                "label": "Stigmatizing",
+                "reasoning": "Insult at an individual.",
+                "target": "Individual"
+            }
+        },
+        "54": {
+            "text": "Is the phone youre using to reply now natural? Lethal diseases like measles are natural; vaccines that protect people from lethal diseases are unnatural, should we not get vaccinated and die from measles because it's natural? I don't get people who generalize natural always equals good. FYI, the animal kingdom do witness homosexual activities so homosexuality is ironically natural.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but presents a viewpoint on what is considered 'natural'.",
+                "target": "People with certain beliefs about nature and health"
+            }
+        },
+        "61": {
+            "text": "Teaching children that it is ok to identify as gay/lesbian and the society wouldn't treat them unfairly, and their family would accept them for who they are, along with safe sex techniques isn't equality?",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but discusses a complex issue.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "71": {
+            "text": "I believe that's a bot, doubt the owner will reply to you. I agree with your comment. However, there are always some black sheep that keng/fake their way out of nice things for everything in life making the rest look bad when they have genuine issues/concerns.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint and includes stereotypes.",
+                "target": "Black people"
+            }
+        },
+        "74": {
+            "text": "Both men and women should serve only 1 year just like South Korea.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                "target": "Men, Women"
+            }
+        },
+        "76": {
+            "text": "Feminists want equal rights? They should fight for a place in NS too",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Stereotype but does not portray the group as dangerous or immoral.",
+                "target": "Feminists"
+            }
+        },
+        "81": {
+            "text": ">I respect their choice I\u2019m sorry but this is a really big misunderstanding, sexuality isn\u2019t a choice, it\u2019s who you are. If your future children are gay then they are gay, there is nothing that will change that, 377a or not. I hope you understand",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but rather explains and defends against stigma.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "82": {
+            "text": "I\u2019m not forcing 377A on anybody. I just don\u2019t like my friends, gay or otherwise, coming to me and telling me to sign whatever petition and go to pink dot to support them. Like I said, I respect your sexuality (not choice, I know), but respect my right to not support your cause.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses a viewpoint.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "83": {
+            "text": "agree with all of this plus, there are religious people/people living in conservative countries who struggle with being gay. If sexuality was a choice, then why wouldn't they just '''''choose''''' to be straight and not have to worry about being persecuted or ostracised? sigh",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but expresses understanding for the struggles of LGBTQ+ individuals.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "90": {
+            "text": "Or illegal football betting like in the ad.",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "Does not stigmatize but portrays an activity as dangerous or immoral.",
+                "target": "People involved in illegal activities"
+            }
+        },
+        "91": {
+            "text": "should have used gorilla tape!",
+            "annotation": {
+                "label": "Other",
+                "reasoning": "The text does not contain any insults or stereotypes.",
+                "target": "None"
+            }
+        }
+    }
+}
