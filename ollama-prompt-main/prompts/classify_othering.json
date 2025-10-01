@@ -1,7 +1,46 @@
 {
-    "system_prompt": "You are an expert at classifying comments as othering or not. Othering is a social and structural process by which groups are framed as fundamentally different from a dominant “we.” It involves assigning negative or reductive attributes, reinforcing boundaries, and positioning the “others” as inferior, alien, or outside belonging. Othering operates at interpersonal, cultural, and institutional levels, and functions to stabilize the identity and power of the dominant group while producing marginality, exclusion, and inequality for those who are othered. Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
-    "question": "Is this statement othering or not? Only classify it as 'Othering' if you are above 80% certain.",
+    "system_prompt": "You are an expert at classifying comments as othering or not. Othering is a social and structural process by which individuals or groups are framed as fundamentally different from a dominant “we.” It involves assigning negative or reductive attributes, reinforcing boundaries, and positioning the “others” as inferior, alien, or outside belonging. Othering operates at interpersonal, cultural, and institutional levels, and functions to stabilize the identity and power of the dominant group while producing marginality, exclusion, and inequality for those who are othered. Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+    "question": "Is this statement othering or not? Only classify it as 'Othering' if you are above 90% certain.",
     "demos": [
-       
+        {
+            "text": "Those immigrants don't want to fit in; they'll never be like us.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Creates a boundary, casts the group as unwilling outsiders, reinforces exclusion",
+                "target": "Immigrants"
+            }
+        },
+        {
+            "text": "Unlike us, women are too emotional to make rational decisions.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Essentializes and negatively stereotypes women as inherently deficient.",
+                "target": "Women"
+            }
+        },
+        {
+            "text": "People from that neighborhood are lazy and don't care about hard work.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Attributes a negative trait to an entire group, erasing individuality",
+                "target": "Residents of that neighborhood"
+            }
+        },
+        {
+            "text": "She's not one of us, but at least she tries.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Positions someone as an outsider while granting conditional tolerance.",
+                "target": "An individual"
+            }
+        },
+        {
+            "text": "They just don't value freedom the way we do.",
+            "answer": {
+                "label": "Othering",
+                "reasoning": "Establishes an in-group (“we” as true holders of freedom) and frames “them” as lacking.",
+                "target": "An unspecified group"
+            }
+        }
     ]
 }
