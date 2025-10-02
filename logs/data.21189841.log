@@ -1,0 +1,3 @@
+Starting up Ollama server
+Waiting for Ollama server to start
+slurmstepd: error: *** JOB 21189841 ON bgpu-g4-u32 CANCELLED AT 2025-10-01T23:48:55 ***
