@@ -1,0 +1,830 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/examples.json",
+        "out_filename": "stage_6_results_78.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.2,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 1,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-10-01 20:22:39",
+    "prompt_data": {
+        "system_prompt": "You are an expert in discourse analysis. You have the role of a white male, read the comment and decide if it the mentioned group is framed as 'other'. First, answer Yes/No to each: Is a social group referenced? Is an us-vs-them contrast present? Is the group positioned as inferior/excluded/outside belonging? Only if all 3 are Yes, classify as 'Othering'. Otherwise classify as 'None'. If uncertain, choose 'None'. Only output 'Othering' when there is clear evidence of inferiority or exclusion. Answer in JSON format only with 'Othering' or 'None' for 'label' and a short sentence explaining your decision process in 'reasoning' and identify the target group in 'target'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
+        "question": "Is this comment othering?",
+        "demos": []
+    },
+    "data": {
+        "1": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that 'foreign immigrants' are a group that needs to be looked out for, suggesting they might be a threat or a problem, thus positioning them as inferior or outside the norm.",
+                "target": "foreign immigrants"
+            }
+        },
+        "4": {
+            "text": "Instead they get ass raped by somalian and other mudslime immigrants.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a clear us-vs-them contrast and positions the mentioned group as inferior, with dehumanizing language.",
+                "target": "Somalian and other Muslim immigrants"
+            }
+        },
+        "3": {
+            "text": "yet another example of aggressive militant feminism hurting women more than it helps them.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment creates an us-vs-them contrast by portraying 'aggressive militant feminism' as a harmful and opposing force to the well-being of women, implying that this group is acting against the interests of women.",
+                "target": "feminists"
+            }
+        },
+        "2": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment expresses a strong negative sentiment towards women, framing them as inferior and excluded.",
+                "target": "women"
+            }
+        },
+        "5": {
+            "text": "Why are women so lazy?",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that women are inherently lazy, which is a negative stereotype that can be perceived as inferiorizing or excluding them.",
+                "target": "women"
+            }
+        },
+        "6": {
+            "text": "It is still OK to make fun of other species tho, like Jews",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment makes a joke at the expense of a specific ethnic group, implying that it's acceptable to mock them.",
+                "target": "Jews"
+            }
+        },
+        "7": {
+            "text": "you mean, no reason to hate jews more than any other religion.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that Jews are a group that can be hated, which positions them as inferior or excluded.",
+                "target": "Jews"
+            }
+        },
+        "8": {
+            "text": "sandniggers are just as beautiful as any other women",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The term 'sandniggers' is a racial slur and derogatory term, implying that the group being referred to is inferior or outside the norm.",
+                "target": "women of Middle Eastern or North African descent"
+            }
+        },
+        "9": {
+            "text": "Fuck women and their socialistic scumshitlord ways of objectifying men.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment expresses a strong negative sentiment towards women, positioning them as inferior and excluded.",
+                "target": "women"
+            }
+        },
+        "10": {
+            "text": "degenerate atheists",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment uses a derogatory term to describe a group of people, implying they are inferior or morally corrupt.",
+                "target": "atheists"
+            }
+        },
+        "11": {
+            "text": "Most of our immigrants are other Europeans.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not imply inferiority or exclusion of the mentioned group, but rather provides a factual description of the origin of most immigrants.",
+                "target": "immigrants from other European countries"
+            }
+        },
+        "12": {
+            "text": "It applies to both women and girls, and they're both astoundingly weak",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment explicitly states that a group is 'astoundingly weak', which positions them as inferior.",
+                "target": "women and girls"
+            }
+        },
+        "13": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment expresses frustration with people in general, but does not specify a particular group or create an us-vs-them contrast.",
+                "target": "people"
+            }
+        },
+        "14": {
+            "text": "Anyway tatar are non-white scum like niggers, jews and Turks.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a clear us-vs-them contrast by using derogatory language to refer to multiple ethnic groups, positioning them as inferior.",
+                "target": "non-white people, including Tatars, Jews, Turks, and black people"
+            }
+        },
+        "15": {
+            "text": "That guy's just retarded.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment uses a derogatory term to describe someone, implying inferiority or exclusion.",
+                "target": "a male with intellectual disability"
+            }
+        },
+        "16": {
+            "text": "And feeling like some behind-enemy-lines spy going into the lesbian chat room!",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment positions lesbians as 'other' by using a military metaphor that implies infiltration or spying, suggesting an us-vs-them contrast and exclusion.",
+                "target": "lesbians"
+            }
+        },
+        "17": {
+            "text": "You do know that 4chan was supporting female game developers with this right?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame the mentioned group as 'other'. It actually presents a positive action taken by 4chan in support of female game developers, which suggests inclusivity rather than exclusion or inferiority.",
+                "target": "female game developers"
+            }
+        },
+        "18": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains derogatory language targeting an individual or group, implying inferiority and exclusion.",
+                "target": "a white male"
+            }
+        },
+        "19": {
+            "text": "It's stupid, but it works with some women.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The statement implies that a particular approach is effective only with certain women, framing them as a group that can be manipulated or taken advantage of, which positions them as inferior or 'other'.",
+                "target": "some women"
+            }
+        },
+        "20": {
+            "text": "I mean what other #!%@ing reason do you ask a girl to a dinner?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame the mentioned group as 'other'. It appears to be a casual, possibly humorous remark about asking someone out on a date.",
+                "target": "girl"
+            }
+        },
+        "21": {
+            "text": "It's ignorant as fuck to believe that white people can't be poor.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other' or position them as inferior/excluded, but rather argues against such framing.",
+                "target": "white people"
+            }
+        },
+        "22": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains derogatory language targeting an individual based on their sexual orientation and perceived intelligence or worth, creating an us-vs-them contrast.",
+                "target": "gay people"
+            }
+        },
+        "23": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment clearly expresses a negative and discriminatory view of women, framing them as inferior and excluded.",
+                "target": "women"
+            }
+        },
+        "24": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The statement makes a generalization about women based on gender, implying they are less willing to work, which can be seen as positioning them as inferior or less capable.",
+                "target": "Women"
+            }
+        },
+        "25": {
+            "text": "make it illegal for Jews to hold jobs/own land.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment explicitly targets and excludes a specific social group, Jews, from participating in the economy and owning property, which is a clear indication of inferiority and exclusion.",
+                "target": "Jews"
+            }
+        },
+        "26": {
+            "text": "Fuck. You are so fucking stupid.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not reference a specific social group and is an insult directed at an individual.",
+                "target": "an individual"
+            }
+        },
+        "27": {
+            "text": "If their entire religious following was removed from this planet, we wouldnt lose a single thing except a threat to civilized culture.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment frames the mentioned group as a threat to civilized culture and implies that their removal would not be a loss, which positions them as inferior and outside belonging.",
+                "target": "the religious following"
+            }
+        },
+        "28": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that one racial group is inherently more prone to violence than another due to biological differences, which positions the mentioned groups as inferior and excluded.",
+                "target": "Blacks"
+            }
+        },
+        "29": {
+            "text": "Men are more likely to commit violent crime over women, mostly due to biological differences",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that men are inherently more prone to violence than women due to biological differences, positioning men as a group with a higher likelihood of committing violent crimes. This framing can be seen as 'othering' because it creates an us-vs-them contrast between men and women, with men being portrayed as more aggressive or violent.",
+                "target": "men"
+            }
+        },
+        "30": {
+            "text": "Cracks me up that women think they're as degenerate as men",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that women are trying to be as 'degenerate' as men, which positions them as inferior and outside the norm of expected behavior.",
+                "target": "women"
+            }
+        },
+        "31": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment clearly expresses a derogatory and discriminatory view towards women, framing them as inferior in driving abilities.",
+                "target": "Women"
+            }
+        },
+        "32": {
+            "text": "But on the other hand his girls a stupid slut and needs to be set on fire and drowned in sewage.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The target group 'his girl' is positioned as inferior, with extremely derogatory language used to describe them.",
+                "target": "females, specifically the girlfriend of someone"
+            }
+        },
+        "33": {
+            "text": "Cuz Jews print the news, fuck the other 6 million that died who were not Jews.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a clear us-vs-them contrast by mentioning 'the other' in relation to Jewish people and implying inferiority or exclusion of non-Jewish people who died, which is evidence of othering.",
+                "target": "non-Jewish people"
+            }
+        },
+        "34": {
+            "text": "I think the effects of this are increased through gender discrimination however, and men favoring other men would happen less often than men favoring women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment discusses gender discrimination and its impact on social dynamics, but does not frame any group as inferior or excluded.",
+                "target": "men"
+            }
+        },
+        "35": {
+            "text": "If women want equality, they should give men an equal opt-out and an equal say in parenthood.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame the mentioned group as 'other'. It discusses a social issue related to gender equality and suggests that both men and women should have equal rights and responsibilities, particularly in the context of parenthood.",
+                "target": "women"
+            }
+        },
+        "36": {
+            "text": "Men masturbate more, watch more porn, pay for sex, etc.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement provides a comparison between men and their behaviors without expressing inferiority or exclusion of the mentioned group.",
+                "target": "men"
+            }
+        },
+        "37": {
+            "text": "Americans have been far too lenient with the protestants and their backward ways.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment positions Protestants as an outgroup by describing them as having 'backward ways', implying they are inferior or less advanced than others, specifically Americans.",
+                "target": "Protestants"
+            }
+        },
+        "38": {
+            "text": "Society places a far higher value on the life of a woman than that of a man.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that society values women's lives more than men's, positioning men as inferior or less valued.",
+                "target": "men"
+            }
+        },
+        "39": {
+            "text": "atheists spend more time antagonizing Christians than any other religious groups",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that atheists are overly critical and hostile towards Christians, creating an us-vs-them contrast and positioning atheists as inferior or outside the norm.",
+                "target": "atheists"
+            }
+        },
+        "40": {
+            "text": "Men harm society more than women.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The statement implies that men are more harmful to society than women, which positions men as inferior and excluded from the rest of society.",
+                "target": "Men"
+            }
+        },
+        "41": {
+            "text": "In today's world, the overall net effect would be positive if Islamic doctrine disappeared.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that the disappearance of Islamic doctrine would have a positive effect, positioning Islam as inferior or problematic.",
+                "target": "Islamic doctrine and its followers"
+            }
+        },
+        "42": {
+            "text": "The Middle East would be more stable if it underwent de-Arabization and border changes",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment suggests that the Middle East would be more stable if it underwent significant changes, including de-Arabization, which implies that Arab identity or presence is a problem to be solved. This framing positions Arabs as 'other' and inferior, implying that their existence or cultural identity is a barrier to stability in the region.",
+                "target": "Arabs"
+            }
+        },
+        "43": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment frames Muslims as 'other' and positions them as inferior by expressing surprise that they have accomplished something positive, implying that their typical behavior is violent.",
+                "target": "Muslims"
+            }
+        },
+        "44": {
+            "text": "I hope you get axe murdered for Christmas you wothless fucking cocksucker.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a clear us-vs-them contrast, with the target group being positioned as inferior and excluded, using derogatory language.",
+                "target": "white male"
+            }
+        },
+        "45": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a derogatory term for foreigners, implying they are poor and dirty, which positions them as inferior and outside belonging.",
+                "target": "foreigners"
+            }
+        },
+        "46": {
+            "text": "You sound like those Middle East apologists who think treating women as property is a valid cultural difference.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that people from the Middle East or those who apologize for its culture are inferior and outside of what is considered acceptable, framing them as 'other'. The mention of 'treating women as property' creates an us-vs-them contrast by implying that this behavior is specific to the mentioned group and is not a valid cultural difference.",
+                "target": "Middle East apologists"
+            }
+        },
+        "47": {
+            "text": "Fuck youre so stupid, I thought you jews had high verbal iq",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a derogatory slur and stereotype targeting a specific ethnic/religious group, implying their inferiority.",
+                "target": "Jewish people"
+            }
+        },
+        "48": {
+            "text": "Democrats speak about white people the way Hitler spoke of the jews.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment compares Democrats' speech about white people to Hitler's speech about Jews, implying an us-vs-them contrast and positioning white people as inferior or excluded.",
+                "target": "white people"
+            }
+        },
+        "49": {
+            "text": "Having breasts and a vagina doesn't make a woman alien",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is about women and their bodies, emphasizing that having certain physical characteristics does not make them 'alien', which implies being unusual or outside the norm. It does not frame women as inferior or excluded.",
+                "target": "women"
+            }
+        },
+        "50": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not frame women as 'other' but rather compares their level of radicalness across different time periods, suggesting a sense of continuity and equality.",
+                "target": "women"
+            }
+        },
+        "51": {
+            "text": "She sounds like inconsiderate trash",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment uses derogatory language to describe someone, positioning them as inferior and outside belonging.",
+                "target": "the person being referred to as 'she'"
+            }
+        },
+        "52": {
+            "text": " It is the media and other women are dictating what men should want.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame the mentioned group as inferior or excluded, but rather positions them as having control over another group.",
+                "target": "men"
+            }
+        },
+        "53": {
+            "text": "Women who don't know their way around a kitchen isn't \"breaking gender stereotypes\"",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement critiques women who are inexperienced in the kitchen, but does not imply inferiority or exclusion of women as a group. Instead, it challenges the idea that being unfamiliar with cooking is a way to break gender stereotypes.",
+                "target": "Women"
+            }
+        },
+        "54": {
+            "text": "It should be illegal *nationwide* to pay housing rent to foreigners.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment suggests that it should be illegal for foreigners to receive housing rent, which positions them as inferior or outside the norm, creating an us-vs-them contrast.",
+                "target": "foreigners"
+            }
+        },
+        "55": {
+            "text": "I will never support illegal immigrants holding public office.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that 'illegal immigrants' are inherently unqualified or unfit for public office, which positions them as inferior and excluded from belonging.",
+                "target": "illegal immigrants"
+            }
+        },
+        "56": {
+            "text": "And that, boys and girls, is called a false equivalency.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not frame 'boys and girls' as inferior or excluded, but rather addresses them directly.",
+                "target": "boys and girls"
+            }
+        },
+        "57": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a specific social group as 'other'. It appears to be a general statement about human nature, suggesting that people often need an enemy or adversary because they cannot get along with each other.",
+                "target": "people in general"
+            }
+        },
+        "58": {
+            "text": "that is a disgusting piece of slime that should never have been allowed to become POTUS",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment expresses strong negative feelings towards the current President of the United States, using dehumanizing language and implying they are unfit for office.",
+                "target": "the current President of the United States"
+            }
+        },
+        "59": {
+            "text": "At the very least the guy is a loser, criminal and idiot.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains strong negative language directed at an individual, framing them as inferior and outside belonging due to their actions and perceived character.",
+                "target": "a male person referred to with derogatory terms"
+            }
+        },
+        "60": {
+            "text": "And what about the stories of those women?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other'. It rather inquires about and shows interest in the stories of women, without creating an us-vs-them contrast or positioning them as inferior.",
+                "target": "women"
+            }
+        },
+        "61": {
+            "text": "You'll suspect someone from Bangladesh of terrorism before someone from Turkey.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies a suspicion of terrorism based on nationality, creating an us-vs-them contrast and positioning people from Bangladesh as potentially inferior or dangerous.",
+                "target": "people from Bangladesh"
+            }
+        },
+        "62": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment makes a sweeping generalization about men, framing them as inherently bad and criminal, which can be seen as 'othering' by creating an us-vs-them contrast.",
+                "target": "men"
+            }
+        },
+        "63": {
+            "text": "If women's tennis is known as the \"sport where chicks freak out at the refs\" then it's her fault.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The text contains a derogatory statement about women's tennis, framing female players in a negative and stereotypical way.",
+                "target": "Women"
+            }
+        },
+        "64": {
+            "text": "Women are not minors.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is asserting a fact about women and does not imply inferiority or exclusion.",
+                "target": "Women"
+            }
+        },
+        "65": {
+            "text": "Fuck you and your normalization of hating Jews",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a direct attack on a specific group (Jews) and uses derogatory language, implying inferiority or exclusion.",
+                "target": "Jews"
+            }
+        },
+        "66": {
+            "text": "Turns out women are weak huh.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that women are inherently inferior to men due to their perceived weakness, creating an us-vs-them contrast and positioning women as outside the dominant group.",
+                "target": "women"
+            }
+        },
+        "67": {
+            "text": "most women aren't that stupid",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that most women lack intelligence, which is a negative and exclusionary framing.",
+                "target": "women"
+            }
+        },
+        "68": {
+            "text": "This sub is just becoming a place for people to openly hate on women.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment frames the mentioned group (women) as being hated on, implying inferiority or exclusion.",
+                "target": "Women"
+            }
+        },
+        "69": {
+            "text": "Those people are stupid",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that a certain group of people is inferior due to their lack of intelligence.",
+                "target": "Those people"
+            }
+        },
+        "70": {
+            "text": "They have chosen one side as \"the good guys\", the oppressed victims who need protection from the enemy (White Man).",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The text creates an us-vs-them contrast by portraying 'White Man' as 'the enemy', positioning this group as a threat to be protected against, thus framing it as 'other'.",
+                "target": "White Man"
+            }
+        },
+        "71": {
+            "text": "Ofc she has advantage, she still has higher testosterone levels, making her stronger and faster than other women.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame the mentioned group as 'other' but rather compares them to other women in a specific context.",
+                "target": "women with lower testosterone levels"
+            }
+        },
+        "72": {
+            "text": "Sexism is everywhere, it's baked into our society.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment discusses sexism as a societal issue without referencing or positioning a specific group as 'other'. It does not create an us-vs-them contrast or imply inferiority/exclusion of any group.",
+                "target": "society"
+            }
+        },
+        "73": {
+            "text": "Women get jealous over dumb stuff like this when there's other things to be concerned about like what you've said.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment references a social group, women, and implies an us-vs-them contrast by stating they get jealous over 'dumb stuff'. However, it does not clearly position the group as inferior or excluded, but rather criticizes their behavior in a specific context.",
+                "target": "women"
+            }
+        },
+        "74": {
+            "text": "Nobody is dragged through the mud for being raped.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not frame a social group as 'other'. It appears to be making a point about how victims of rape should not be blamed or shamed.",
+                "target": "rape victims"
+            }
+        },
+        "75": {
+            "text": "lol you have been nothing but absolutely shitty about trans people and are somehow still stupid enough to say things like that",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other' because it is criticizing the behavior of an individual towards trans people, rather than positioning the group itself as inferior or excluded.",
+                "target": "Individuals who are shitty about trans people"
+            }
+        },
+        "76": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a derogatory term for gay people, implying they are inferior or worthless.",
+                "target": "gay people"
+            }
+        },
+        "77": {
+            "text": "People really have to stop treating women like they have to be the same as men.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other'. Instead, it argues against treating women as if they must conform to societal expectations of men.",
+                "target": "women"
+            }
+        },
+        "78": {
+            "text": "I'm beyond sick of Christians shoving their shit down other Americans' throats.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment expresses strong negative feelings towards a specific group, framing them as imposing their beliefs on others and positioning them as an out-group.",
+                "target": "Christians"
+            }
+        },
+        "79": {
+            "text": "A worthless whore like that one is not worth it",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a derogatory term for a woman and implies she is worthless, positioning her as inferior.",
+                "target": "sex workers"
+            }
+        },
+        "80": {
+            "text": "Maybe I'm crazy but I think women aren't helpless babies that need to be coddled.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment challenges a stereotype about women, positioning them as strong and independent rather than weak or helpless.",
+                "target": "women"
+            }
+        },
+        "81": {
+            "text": "You'd think we're all gay with the amount of hugging and kissing on the cheek we do lol.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other'. It appears to be a lighthearted, self-deprecating remark about affectionate behavior among friends, rather than an exclusionary or derogatory statement.",
+                "target": "gay people"
+            }
+        },
+        "82": {
+            "text": "I was trying to be politically correct, but what I was really referring to are immigrants from the Middle East and North Africa who generally practice radical islam.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The text frames a specific group as 'other' by implying that they are more likely to practice radical Islam, which may be perceived as inferior or dangerous.",
+                "target": "immigrants from the Middle East and North Africa who practice radical Islam"
+            }
+        },
+        "83": {
+            "text": "a bunch of other stupid bullshit christian laws",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains derogatory language towards Christian laws, framing Christians as 'other' and positioning them in an us-vs-them contrast.",
+                "target": "Christians"
+            }
+        },
+        "84": {
+            "text": "Most of them are fucking crazy.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not specify a particular social group and uses a general term 'them' without clear context, making it difficult to determine if any specific group is being referenced or excluded.",
+                "target": "Unspecified group"
+            }
+        },
+        "85": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment challenges a negative stereotype about women and asserts their worth, promoting inclusion and equality.",
+                "target": "women"
+            }
+        },
+        "86": {
+            "text": "I agree that atheists can build morals off of other things that aren't God.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other'. It presents an agreement with the idea that atheists can develop morals based on non-religious principles, without expressing any us-vs-them contrast or positioning the group as inferior.",
+                "target": "atheists"
+            }
+        },
+        "87": {
+            "text": "Black women have the lowest value in the eyes of men of pretty much any race.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment frames black women as having low value, which positions them as inferior and excluded.",
+                "target": "black women"
+            }
+        },
+        "88": {
+            "text": "Would it not then be ridiculous for men to not be allowed call each other cunt?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The comment does not frame a social group as 'other' but rather discusses the use of a specific word among men, without implying inferiority or exclusion.",
+                "target": "men"
+            }
+        },
+        "89": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not frame a social group as 'other'. Instead, it argues against the idea that women are inherently worthless, promoting equality and rejecting negative stereotypes about women.",
+                "target": "women"
+            }
+        },
+        "90": {
+            "text": "When you call someone a faggot, you're not just using a dirty word, you're saying what being gay makes you a lesser person.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not frame the mentioned group as 'other'. Instead, it highlights how a derogatory term can be used to imply inferiority or exclusion of individuals based on their sexual orientation.",
+                "target": "gay people"
+            }
+        },
+        "91": {
+            "text": "American women are the only stupid bitches getting pregnant at 40",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a derogatory statement targeting a specific group, American women, implying they are inferior or stupid for getting pregnant at 40.",
+                "target": "American women"
+            }
+        },
+        "92": {
+            "text": "The cancer of feminism won't be stopped until it's universally condemned.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment frames feminism as a 'cancer', implying that it is harmful and should be condemned, creating an us-vs-them contrast between those who support feminism and those who do not.",
+                "target": "feminists"
+            }
+        },
+        "93": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment uses a metaphor that compares radical Muslims to Ebola, framing them as a deadly and destructive force in Europe, creating an us-vs-them contrast.",
+                "target": "radical Muslims"
+            }
+        },
+        "94": {
+            "text": "Meanwhile fat white girls are the ones thinking obesity is \"curvy\".",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment implies that a specific group, 'fat white girls', are ignorant or misguided about their body shape and health, positioning them as inferior to others.",
+                "target": "fat white girls"
+            }
+        },
+        "95": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment expresses strong negative feelings and exclusion towards the LGBTQ group, positioning them as inferior and outside belonging.",
+                "target": "LGBTQ"
+            }
+        },
+        "96": {
+            "text": "All trannies are part of LGBTQ, being the T in that coagulation of filth.",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment contains a derogatory term and positions transgender individuals as inferior and outside belonging.",
+                "target": "Transgender people"
+            }
+        },
+        "97": {
+            "text": "Calling Muslims 'subhuman' is an insult to subhumans",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment positions Muslims as inferior by comparing them unfavorably to another group, implying that they are less worthy or less human.",
+                "target": "Muslims"
+            }
+        },
+        "98": {
+            "text": "blacks in America came here voluntarily as immigrants",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement is a factual and neutral description of historical migration patterns.",
+                "target": "black people"
+            }
+        },
+        "99": {
+            "text": "Why are women so whiny?",
+            "annotation": {
+                "label": "Othering",
+                "reasoning": "The comment positions women as inferior by using a derogatory term and making a generalization about their behavior.",
+                "target": "women"
+            }
+        },
+        "100": {
+            "text": "Women don't have it any better or worse than guys in the West",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not frame women as 'other' but rather compares their situation to that of men, suggesting equality.",
+                "target": "women"
+            }
+        }
+    }
+}
