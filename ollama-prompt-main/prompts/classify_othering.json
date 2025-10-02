@@ -17,6 +17,14 @@
                 "reasoning": "The comment references a social group and implies they are untrustworthy, creating an us-vs-them contrast and positioning the group as inferior.",
                 "target": "Women"
             }
+        },
+        {
+            "text": "I have a daughter and a wife and I am broke as fuck. Women love shopping too much.",
+            "answer": {
+                "label": "None",
+                "reasoning": "The comment references a social group but does not create an us-vs-them contrast or position the group as inferior, as it is a joke but no exclusion is implied.",
+                "target": "Women"
+            }
         }
     ]
 }
