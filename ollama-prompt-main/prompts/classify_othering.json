@@ -1,29 +1,5 @@
 {
-    "system_prompt": "You are an expert in discourse analysis. Classify a comment as 'Othering' only if ALL of these are true: 1. A social group is explicitly referenced as a group identity (not just an individual or abstract idea). 2. The comment sets up an us-vs-them contrast. 3. The group is positioned as inferior, excluded, or outside belonging. If any of these is missing, classify as 'None'. Insults toward an individual or criticism of an idea/belief are 'None'. Sarcasm, jokes, or mentions of groups that do not frame them as inferior = 'None'. If uncertain, choose 'None'. Answer strictly in JSON with: - 'label': 'Othering' or 'None' - 'reasoning': short explanation of decision. 'target': the social group if 'Othering', else 'None'","question": "Is this comment othering?",
-    "demos": [
-        {
-            "text": "She is dangerous. I would not want her in my country.",
-            "answer": {
-                "label": "None",
-                "reasoning": "The comment does not reference a social group but an individual.",
-                "target": "None"
-            }
-        },
-        {
-            "text": "Like all of those women can be trusted? No way.",
-            "answer": {
-                "label": "Othering",
-                "reasoning": "The comment references a social group and implies they are untrustworthy, creating an us-vs-them contrast and positioning the group as inferior.",
-                "target": "Women"
-            }
-        },
-        {
-            "text": "I have a daughter and a wife and I am broke as fuck. Women love shopping too much.",
-            "answer": {
-                "label": "None",
-                "reasoning": "The comment references a social group but does not create an us-vs-them contrast or position the group as inferior, as it is a joke but no exclusion is implied.",
-                "target": "Women"
-            }
-        }
-    ]
+    "system_prompt": "Othering is splitting 2 subgroups (Females, Males) from a unified group (Gender) and placing them in an adversarial relationship leading to marginalization, exclusion, and a sense of 'us vs. them'. Can be explicit (states 2 groups in the comment) or implicit (implies the group is othered, but does not state that author is part of any group). Notes: It is also possible to classify comments as othering which do not include harmful langauge; Statements that divide people into arbitrary or situational categories (e.g., “People who read all their texts are evil”) do not constitute “othering,” even though they describe two contrasting sets of people. The key criterion is that the groups must correspond to established social identities — not merely behavioral or preference-based distinctions. Examples (but not limited to): Gender, Sexual orientation, Religion, Ethnicity, Nationality, National/Cultural Group (countries)",
+    "question": "Is this comment othering?",
+    "demos": []
 }

@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Classify the following statement as either 'Hate' or 'None'. Do NOT use any other labels. If the statement contains stereotyping, stigmatizing, dehumanizing, simplifying, or insults, ALWAYS classify it as 'Hate'. Never output 'Stereotyping', 'Stigmatizing', 'Dehumanizing', or 'Simplifying' as labels — they must ALL be mapped to 'Hate'. Output only 'Hate' or 'None'. Context keywords should help you understand the meaning of the text, but do not assume any additional information.",
-    "question": "Is this statement hateful?",
+    "system_prompt": "You are an expert in harmful language detection. Decide whether the following text contains harmful, offensive, or discriminatory language toward a social group. Harmful language includes hate speech, dehumanization, stereotyping, or any content that marginalizes people based on social identity (e.g., gender, religion, nationality, ethnicity, sexuality, disability, political group). Return output strictly in valid JSON with exactly these keys: 'label': 'Hate' or 'None', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
+    "question": "Is this comment harmful?",
     "demos": []
 }
