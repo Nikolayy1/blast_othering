@@ -1,0 +1,686 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_2_data_87.json",
+        "out_filename": "stage_2_results_87.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-10-16 22:12:54",
+    "prompt_data": {
+        "system_prompt": "You are an expert in harmful language detection. Decide whether the following text contains dehumanizing language toward a social group. Definition: Language that explicitly reduces people or groups to animals, objects, or diseases. It denies or diminishes their humanity. Return output strictly in valid JSON with exactly these keys: 'label': 'Dehumanizing' or 'None', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
+        "question": "Is this statement Dehumanizing?",
+        "demos": []
+    },
+    "data": {
+        "5": {
+            "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains dehumanizing language, referring to a country with a derogatory term.",
+                "target": "Iran"
+            }
+        },
+        "2": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group, 'Americans', to an object by attributing a negative characteristic, 'lazy', which denies or diminishes their humanity.",
+                "target": "Americans"
+            }
+        },
+        "1": {
+            "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces men to animals by comparing them to predators.",
+                "target": "men"
+            }
+        },
+        "4": {
+            "text": "Americans are so lazy. No wonder half the country is obese.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group (Americans) to an object or disease by implying they are inherently lazy and prone to obesity, thus denying their humanity.",
+                "target": "Americans"
+            }
+        },
+        "6": {
+            "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces young girls to their physical appearance, specifically the development of their breasts, which denies or diminishes their humanity.",
+                "target": "young girls"
+            }
+        },
+        "7": {
+            "text": "Every women is a potential child killer.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces all women to potential killers of children, denying their humanity and implying they are inherently violent.",
+                "target": "women"
+            }
+        },
+        "8": {
+            "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces women to objects, implying they can be acquired or possessed like commodities.",
+                "target": "women"
+            }
+        },
+        "9": {
+            "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group to an entity that can be invaded and convicted for crimes, denying their humanity.",
+                "target": "Christians"
+            }
+        },
+        "10": {
+            "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text uses derogatory language and slurs towards a specific religious group, reducing them to an object of ridicule.",
+                "target": "Mormons"
+            }
+        },
+        "12": {
+            "text": "From my point of view people who read all their texts are evil!",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a group of people to an object, in this case 'evil', which denies or diminishes their humanity.",
+                "target": "people who read all their texts"
+            }
+        },
+        "13": {
+            "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases, but rather makes a general statement about men's behavior on dating profiles.",
+                "target": "None"
+            }
+        },
+        "14": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares a human group to a disease, explicitly reducing them to something harmful and denying their humanity.",
+                "target": "muslims"
+            }
+        },
+        "15": {
+            "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces men in groups to animals by comparing them to having an 'animalistic cult mentality', thus denying or diminishing their humanity.",
+                "target": "Men"
+            }
+        },
+        "16": {
+            "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces gay men to their sexual orientation and implies that they are less deserving of respect or dignity, which denies their humanity.",
+                "target": "Gay men"
+            }
+        },
+        "17": {
+            "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that immigrants are avoiding interaction with others due to some inherent or cultural difference, which can be seen as reducing them to a separate entity or 'other', thus denying their full humanity.",
+                "target": "immigrants"
+            }
+        },
+        "18": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces women to a stereotype, implying they are inherently lazy and unwilling to work, which denies their humanity.",
+                "target": "Women"
+            }
+        },
+        "19": {
+            "text": "All women cheat after 10 years of marriage",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces all women to cheaters based on their gender and marital status, denying them individuality and humanity.",
+                "target": "women"
+            }
+        },
+        "20": {
+            "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that immigrants are a replacement for existing societies, reducing them to objects or diseases.",
+                "target": "Immigrants"
+            }
+        },
+        "21": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares a social group to something undesirable and worthless, denying their humanity.",
+                "target": "LGBTQ"
+            }
+        },
+        "22": {
+            "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces people (women and men) to their roles as victims or oppressors, implying that these categories define their entire humanity.",
+                "target": "Women and Men"
+            }
+        },
+        "23": {
+            "text": "Ugly girls don\u2019t deserve attention ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text denies certain individuals (ugly girls) their humanity by implying they are unworthy of attention, reducing them to objects based on physical appearance.",
+                "target": "Girls perceived as ugly"
+            }
+        },
+        "24": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases, but rather expresses a need to protect them.",
+                "target": "None"
+            }
+        },
+        "25": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text explicitly reduces a social group (women) to something less than human by calling them 'stupid', denying their intelligence and dignity.",
+                "target": "women"
+            }
+        },
+        "26": {
+            "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces academics to objects (\"ivory towers\") and denies them understanding of \"real life\", thus diminishing their humanity.",
+                "target": "academics"
+            }
+        },
+        "28": {
+            "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group (men) to objects (feminists), denying their humanity by using derogatory language.",
+                "target": "Men"
+            }
+        },
+        "29": {
+            "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases, it rather discusses differences in religious beliefs.",
+                "target": "None"
+            }
+        },
+        "31": {
+            "text": "Lol wow the media really brainwashed you folks. It is shitty in the Arab world but not close to what you have been shown. Kuwait is not Afghanistan for fuck's sake.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not contain language that explicitly reduces people or groups to animals, objects, or diseases.",
+                "target": "None"
+            }
+        },
+        "33": {
+            "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a group of people (fat bearded men) to less than human by comparing them unfavorably to animals and implying that they lack courage.",
+                "target": "men with fat beards"
+            }
+        },
+        "34": {
+            "text": "Refugees are like rats, swarming into the country.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares refugees to animals (rats), which denies their humanity.",
+                "target": "Refugees"
+            }
+        },
+        "35": {
+            "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text explicitly reduces a social group (Mormons) to objects by expressing happiness about them being 'shot down', which denies or diminishes their humanity.",
+                "target": "Mormons"
+            }
+        },
+        "36": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text explicitly denies the worth of a specific social group, namely women.",
+                "target": "women"
+            }
+        },
+        "40": {
+            "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces women to objects by using derogatory language ('prick') and implies they are all the same in their behavior towards men's pain.",
+                "target": "women"
+            }
+        },
+        "44": {
+            "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces people (bishops) to animals or objects (predators), denying their humanity.",
+                "target": "Bishops"
+            }
+        },
+        "46": {
+            "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares people to diseases ('cancer'), which denies or diminishes their humanity.",
+                "target": "Political opponents"
+            }
+        },
+        "47": {
+            "text": "Obese women are disgusting.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text explicitly reduces a specific group of people to objects by using derogatory language.",
+                "target": "obese women"
+            }
+        },
+        "48": {
+            "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The statement does not explicitly reduce people or groups to animals, objects, or diseases, but rather discusses potential biases and stereotypes held by white people towards Chinese individuals.",
+                "target": "None"
+            }
+        },
+        "50": {
+            "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that being gay is something undesirable or shameful, which denies the humanity of LGBTQ+ individuals by suggesting they should change who they are.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "51": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a person to an object by using derogatory language, implying they are less than human due to their socioeconomic status and nationality.",
+                "target": "foreigner"
+            }
+        },
+        "52": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases, but rather expresses frustration with human behavior.",
+                "target": "None"
+            }
+        },
+        "53": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a large portion of men to animals (pigs) and associates them with a serious crime (rapists), denying their humanity.",
+                "target": "men"
+            }
+        },
+        "54": {
+            "text": "Women are more emotional than men",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that women are less rational and more prone to emotions, which could be seen as diminishing their humanity by reducing them to a single characteristic.",
+                "target": "Women"
+            }
+        },
+        "55": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains a broad and intense criticism of people as a whole, which can be seen as reducing them to something less than human.",
+                "target": "people"
+            }
+        },
+        "56": {
+            "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that explicitly reduces people or groups to objects, denying or diminishing their humanity by comparing them to a cult and making serious accusations without evidence.",
+                "target": "Mormons"
+            }
+        },
+        "57": {
+            "text": "The media like reddit seems to be mostly SJW liberals. They are like sheep following whatever the media says about Trump and failing to see the good things hes done for our country. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares people to 'sheep', which is an animal, thus reducing them to objects.",
+                "target": "Liberals"
+            }
+        },
+        "58": {
+            "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces people, specifically women (and also mentions men), to objects ('a horde') and denies their humanity by implying they are inherently 'evil' and 'lying'.",
+                "target": "women"
+            }
+        },
+        "59": {
+            "text": "Bwahahahah, conservative white males are so fucking stupid.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text explicitly reduces a specific social group to objects of ridicule and denies their intelligence, which is a form of dehumanization.",
+                "target": "conservative white males"
+            }
+        },
+        "61": {
+            "text": "women prefer family and raising children to working in business.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases; it simply states a preference of women.",
+                "target": "None"
+            }
+        },
+        "62": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares a gay person to trash, which is dehumanizing language that denies or diminishes their humanity.",
+                "target": "gay people"
+            }
+        },
+        "63": {
+            "text": "Christians are all judgmental hypocrites.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a specific religious group to negative stereotypes, denying their humanity by implying they are inherently flawed.",
+                "target": "Christians"
+            }
+        },
+        "64": {
+            "text": "Jesus, Democrats are fucking evil.  They know they control big tech &amp; the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules: https://pbs.twimg.com/media/Ckrkh2EVEAEmGs1.jpg\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 &amp; voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that denies or diminishes the humanity of Democrats, referring to them as 'evil' and stating they 'disgust' the speaker.",
+                "target": "Democrats"
+            }
+        },
+        "65": {
+            "text": "Immigrants just come here to take our jobs.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that immigrants are coming to the country solely for economic gain, reducing them to their perceived role in the job market.",
+                "target": "immigrants"
+            }
+        },
+        "66": {
+            "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not contain language that explicitly reduces people or groups to animals, objects, or diseases.",
+                "target": "None"
+            }
+        },
+        "67": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that explicitly reduces a social group (women) to objects and denies their humanity by using derogatory terms.",
+                "target": "women"
+            }
+        },
+        "68": {
+            "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that reduces a social group (Europeans) to objects with negative attributes, denying their humanity.",
+                "target": "Europeans"
+            }
+        },
+        "69": {
+            "text": "So.. women are allowed to but men aren't?",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases.",
+                "target": "None"
+            }
+        },
+        "70": {
+            "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that reduces women to objects and denies them their humanity by suggesting they can be molested in public.",
+                "target": "women"
+            }
+        },
+        "71": {
+            "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.  ",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases, but rather criticizes and dismisses feminist ideas.",
+                "target": "None"
+            }
+        },
+        "72": {
+            "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that. ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares people to 'voracious locusts', which is an animalistic and dehumanizing comparison.",
+                "target": "Chinese people"
+            }
+        },
+        "73": {
+            "text": "Women only want one thing and its disgusting ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces women to a single, negative desire, denying their humanity and individuality.",
+                "target": "Women"
+            }
+        },
+        "74": {
+            "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.  \n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.   ",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares liberals to 'snowflakes', a term often used in a derogatory manner, which can be seen as reducing people to objects or lessening their humanity.",
+                "target": "Liberals"
+            }
+        },
+        "75": {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that young women are not capable of teaching boys due to the boys' impending puberty, which denies or diminishes their humanity based on age and gender.",
+                "target": "women under 30"
+            }
+        },
+        "76": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that explicitly reduces the person to an object, denying their humanity.",
+                "target": "person with intellectual or developmental disability"
+            }
+        },
+        "78": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group to a stereotype of violence, denying their humanity and accomplishments.",
+                "target": "Muslims"
+            }
+        },
+        "79": {
+            "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group (women) to an object or stereotype by implying they complain excessively, which denies their humanity.",
+                "target": "women"
+            }
+        },
+        "80": {
+            "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that compares a country to 'trash', which can be seen as reducing the people of that country to something worthless or less than human.",
+                "target": "people of other countries"
+            }
+        },
+        "81": {
+            "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order. ",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not contain language that explicitly reduces people or groups to animals, objects, or diseases.",
+                "target": "None"
+            }
+        },
+        "83": {
+            "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that a particular racial group, black men, may be more inclined towards criminal behavior due to their inherent nature, which is a form of dehumanization.",
+                "target": "black men"
+            }
+        },
+        "84": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that reduces people to their biology and implies a hierarchy of humanity based on race, which is dehumanizing.",
+                "target": "Blacks"
+            }
+        },
+        "85": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that explicitly reduces an individual to less than human by using derogatory terms and implying they are worthless.",
+                "target": "LGBTQ+ individuals"
+            }
+        },
+        "86": {
+            "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces people to objects by using derogatory language ('scum') and denies their humanity.",
+                "target": "communists"
+            }
+        },
+        "87": {
+            "text": "So torturing people who live in evil and worship false gods is ok, right?",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that certain groups of people are less than human because they 'live in evil and worship false gods', which denies or diminishes their humanity.",
+                "target": "People who live in evil and worship false gods"
+            }
+        },
+        "88": {
+            "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares Mormonism to a disease, which denies or diminishes the humanity of its followers.",
+                "target": "Mormonism"
+            }
+        },
+        "89": {
+            "text": "So the implication here is that only atheists should be in office? ",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases.",
+                "target": "None"
+            }
+        },
+        "90": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains a derogatory and degrading statement toward women, reducing them to an object or less.",
+                "target": "Women"
+            }
+        },
+        "91": {
+            "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that women in Saudi Arabia are oppressed and unable to organize or advocate for their rights, which denies them their humanity.",
+                "target": "women in Saudi Arabia"
+            }
+        },
+        "92": {
+            "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that reduces a person, specifically a woman, to an object and denies her humanity by using derogatory terms.",
+                "target": "women"
+            }
+        },
+        "93": {
+            "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text contains language that reduces people or groups to objects by using derogatory terms and profanity towards specific social groups, including Americans, Founding Fathers, plantation owners, contractors, and white women voters.",
+                "target": "Americans, Founding Fathers, plantation owners, contractors, and white women voters"
+            }
+        },
+        "94": {
+            "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group to something 'disgusting' and 'revolting', denying their humanity by expressing strong disgust towards their behavior.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "96": {
+            "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text implies that the hatred towards a specific group, in this case white Western Christians, is not significant or does not matter, which can be seen as diminishing their humanity.",
+                "target": "white Western Christians"
+            }
+        },
+        "97": {
+            "text": "Change what dangerous/hateful means, and you'll control the world.",
+            "annotation": {
+                "label": "None",
+                "reasoning": "The text does not explicitly reduce people or groups to animals, objects, or diseases.",
+                "target": "None"
+            }
+        },
+        "98": {
+            "text": "Ohh... we meant whale as in obese women.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text compares a specific group of people (obese women) to an animal (whale), which is a form of dehumanization.",
+                "target": "obese women"
+            }
+        },
+        "99": {
+            "text": "Lesbians all hate men.",
+            "annotation": {
+                "label": "Dehumanizing",
+                "reasoning": "The text reduces a social group to an object by implying that all members of the group share the same hatred towards another group.",
+                "target": "men"
+            }
+        }
+    }
+}
