@@ -1,0 +1,29 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_4_data_87.json",
+        "out_filename": "stage_4_results_87.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-10-16 22:12:54",
+    "prompt_data": {
+        "system_prompt": "You are an expert in harmful language detection. Decide whether the following text contains dehumanizing language toward a social group. Definition: Assigning a trait, behavior, or quality (positive or negative) to all members of a social group. Return output strictly in valid JSON with exactly these keys: 'label': 'Stereotyping' or 'None', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
+        "question": "Is this statement Stereotyping?",
+        "demos": []
+    },
+    "data": {}
+}
