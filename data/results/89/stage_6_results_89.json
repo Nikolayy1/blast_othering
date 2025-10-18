@@ -1,0 +1,822 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/annotations_100.json",
+        "out_filename": "stage_6_results_89.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json"
+    },
+    "time_saved": "2025-10-17 22:55:01",
+    "prompt_data": {
+        "system_prompt": "Othering is splitting 2 subgroups (Females, Males) from a unified group (Gender) and placing them in an adversarial relationship leading to marginalization, exclusion, and a sense of 'us vs. them'. Can be explicit (states 2 groups in the comment) or implicit (implies the group is othered, but does not state that author is part of any group). Return output strictly in valid JSON with exactly these keys: 'score': '<Your confidence score (float) that this comment includes othering from 0-1>', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
+        "question": "Is this comment othering?",
+        "demos": []
+    },
+    "data": {
+        "1": {
+            "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies an 'us vs. them' dynamic between men and women, portraying men as potential predators and molesters based on the actions of one individual.",
+                "target": "Males"
+            }
+        },
+        "2": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that Americans are lazy for not wanting to use manuals, which could be seen as othering by placing them in an adversarial relationship with the rest of the world based on a stereotype.",
+                "target": "Americans"
+            }
+        },
+        "4": {
+            "text": "Americans are so lazy. No wonder half the country is obese.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment makes a sweeping generalization about Americans, implying that they are all lazy and prone to obesity, which can be seen as othering by creating an 'us vs. them' dynamic between Americans and non-Americans.",
+                "target": "Americans"
+            }
+        },
+        "3": {
+            "text": "Then Christian bakeries should have to make cakes for gay weddings",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that Christian bakeries are a distinct group with their own beliefs and practices, which may be in conflict with the LGBTQ+ community, thus creating an 'us vs. them' dynamic.",
+                "target": "Christian bakeries"
+            }
+        },
+        "5": {
+            "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment contains a derogatory term for countries and implies an adversarial relationship between them, which is a form of othering.",
+                "target": "Iran"
+            }
+        },
+        "6": {
+            "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies an adversarial relationship between two groups (Catholic priests and young females) based on the priests' alleged preference for prepubescent girls.",
+                "target": "young females"
+            }
+        },
+        "7": {
+            "text": "Every women is a potential child killer.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment makes a sweeping and derogatory statement about all women, implying they are all potential child killers, which is an example of othering by creating an adversarial relationship between the speaker's group and the targeted group (women).",
+                "target": "Women"
+            }
+        },
+        "8": {
+            "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies a sequence of actions where getting a woman is an objective or prize to be obtained after acquiring power, which can be seen as objectifying and othering women.",
+                "target": "Women"
+            }
+        },
+        "9": {
+            "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment expresses strong anti-Christian sentiment, implying that the speaker has a negative view of Christianity and its followers, which could lead to marginalization and exclusion of Christians.",
+                "target": "Christians"
+            }
+        },
+        "10": {
+            "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment expresses a strong negative sentiment towards Mormons, using derogatory language and implying they are undesirable or 'crazy', which is a form of othering.",
+                "target": "Mormons"
+            }
+        },
+        "11": {
+            "text": "That's how they get women to be \"cool\" with their shitty behaviour, by telling us we have no sense of humour, can't take a joke, being bitchy, etc. \n\nSad thing is, it works with a lot of women. They force a strained laugh to fit in and tell themselves it's just \"Boys being boys.\"",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that men are othered by stating they exhibit 'shitty behaviour' and use tactics like telling women they have no sense of humour or can't take a joke to manipulate them into accepting this behaviour.",
+                "target": "Males"
+            }
+        },
+        "12": {
+            "text": "From my point of view people who read all their texts are evil!",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that a specific subgroup (people who read all their texts) is inherently bad or 'evil', which can lead to marginalization and exclusion.",
+                "target": "People who read all their texts"
+            }
+        },
+        "13": {
+            "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that men who complain about not getting matches on dating platforms are likely to be lazy and unattractive, which could lead to marginalization and exclusion of this group.",
+                "target": "Males"
+            }
+        },
+        "14": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment compares a subgroup (radical Muslims) to a disease (ebola), implying that they are harmful and unwanted in Europe, thus othering them.",
+                "target": "Radical muslims"
+            }
+        },
+        "15": {
+            "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that men in groups can exhibit a 'cult mentality' and engage in harmful behavior towards women, thus othering them.",
+                "target": "Males"
+            }
+        },
+        "16": {
+            "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that gay men may be more likely to invade women's personal space or touch their bodies without consent, which is a harmful stereotype and contributes to othering.",
+                "target": "Gay men"
+            }
+        },
+        "17": {
+            "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that immigrants are a separate group from the rest of society, leading to an 'us vs. them' mentality and potentially marginalizing or excluding them.",
+                "target": "Immigrants"
+            }
+        },
+        "18": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that all women do not like to work, which is a broad generalization and can be seen as marginalizing or excluding them from the workforce.",
+                "target": "Women"
+            }
+        },
+        "19": {
+            "text": "All women cheat after 10 years of marriage",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment makes a sweeping generalization about all women based on gender, implying that they are inherently untrustworthy and prone to cheating, which is an example of othering.",
+                "target": "Women"
+            }
+        },
+        "20": {
+            "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that immigrants are a threat to society, which is an example of othering as it creates an 'us vs. them' dynamic between the implied in-group (native citizens) and the out-group (immigrants).",
+                "target": "Immigrants"
+            }
+        },
+        "21": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment explicitly expresses hatred and dehumanization towards the LGBTQ community, placing them in an adversarial relationship with the rest of society.",
+                "target": "LGBTQ"
+            }
+        },
+        "22": {
+            "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states that women are victims and men are oppressors, creating an 'us vs. them' dynamic between the two genders.",
+                "target": "Males"
+            }
+        },
+        "23": {
+            "text": "Ugly girls don\u2019t deserve attention ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that females who are perceived as unattractive do not merit attention, thus marginalizing and excluding them from a social group based on their appearance.",
+                "target": "Females perceived as ugly"
+            }
+        },
+        "24": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that the speaker is part of a group (presumably native citizens) and is looking out for 'those' foreign immigrants, which creates an 'us vs. them' dynamic.",
+                "target": "foreign immigrants"
+            }
+        },
+        "25": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states a negative stereotype about a specific gender group, implying that all women are unintelligent and should be viewed with suspicion or disdain.",
+                "target": "Females"
+            }
+        },
+        "26": {
+            "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that academics are disconnected from reality and do not understand the challenges of everyday life, thus placing them in an 'other' category.",
+                "target": "Academics"
+            }
+        },
+        "27": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "score": 0.0,
+                "reasoning": "The comment does not imply an adversarial relationship between two subgroups and instead argues against the marginalization of a specific group.",
+                "target": "None"
+            }
+        },
+        "28": {
+            "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that men who act in support of feminist ideals are being mocked or belittled, creating an 'us vs. them' dynamic between men and women.",
+                "target": "Feminists"
+            }
+        },
+        "29": {
+            "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that Christians are different from Muslims and Jews in terms of their beliefs about God, creating an 'us vs. them' dynamic.",
+                "target": "Christians"
+            }
+        },
+        "30": {
+            "text": "As an outsider looking in I disagree. Religion seems to creep into everything. Ever had an atheist president or even more than a handful of congress that admit to being so? ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that religious individuals are overrepresented and overly influential in politics, which could lead to the marginalization of non-religious individuals.",
+                "target": "Religious people"
+            }
+        },
+        "31": {
+            "text": "Lol wow the media really brainwashed you folks. It is shitty in the Arab world but not close to what you have been shown. Kuwait is not Afghanistan for fuck's sake.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that people are being misled by the media and creates a sense of 'us vs. them' between those who are aware of the truth and those who are brainwashed.",
+                "target": "Arabs"
+            }
+        },
+        "32": {
+            "text": "Yes, for those moments they feel they have power over us. Power to make us uncomfortable, afraid, and in some cases, the power to act in a way that confirms the fear we feel.  It's a moment when they feel totally in control of someone else's reality. Disgusting.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies an adversarial relationship between two groups where one group has power over the other, leading to feelings of discomfort and fear.",
+                "target": "Males"
+            }
+        },
+        "33": {
+            "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that American men who hunt are cowardly and lack bravery, thus othering them.",
+                "target": "American men"
+            }
+        },
+        "34": {
+            "text": "Refugees are like rats, swarming into the country.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comparison of refugees to rats is a dehumanizing and derogatory statement that implies they are pests or vermin, leading to marginalization and exclusion.",
+                "target": "Refugees"
+            }
+        },
+        "35": {
+            "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment expresses strong negative feelings towards Mormons and implies a sense of satisfaction when their beliefs are not made into law, which is an example of othering.",
+                "target": "Mormons"
+            }
+        },
+        "36": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that some people might view women as inherently worthless based on historical events, which could lead to marginalization or exclusion of women.",
+                "target": "Women"
+            }
+        },
+        "37": {
+            "text": "My neighbor is Muslim and he invited me over for dinner.",
+            "annotation": {
+                "score": 0.0,
+                "reasoning": "The comment does not express any form of othering, but rather describes a positive social interaction between two individuals of different religious backgrounds.",
+                "target": "None"
+            }
+        },
+        "38": {
+            "text": "Immigrants are good for the economy in the long run, especially in a relatively low population country like ours. That aging population that you refer to needs to be replaced, and most of us aren't having enough kids. ",
+            "annotation": {
+                "score": 0.2,
+                "reasoning": "The comment discusses immigrants as beneficial for the economy without expressing any negative sentiments or creating an 'us vs. them' dynamic.",
+                "target": "None"
+            }
+        },
+        "39": {
+            "text": "You might want to spread that word to a lot of other fellow Christians. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that the speaker is part of the group 'Christians' and is addressing others who are also part of this group, creating an 'us vs. them' dynamic with those who do not identify as Christian.",
+                "target": "Non-Christians"
+            }
+        },
+        "40": {
+            "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that all women the author has interacted with have been dismissive of men's pain, creating an 'us vs. them' dynamic and marginalizing women based on this perceived behavior.",
+                "target": "women"
+            }
+        },
+        "41": {
+            "text": "Where in the world is history NOT massively whitewashed? China? Russia? Africa? South America? It happens everywhere. And not mentioning many of the great women in the history of various cultures as they do their male counterparts? Sadly it is something that has happened for centuries all over the place.",
+            "annotation": {
+                "score": 0.0,
+                "reasoning": "The comment discusses historical inaccuracies and biases towards women across different cultures, but does not imply an adversarial relationship between any groups.",
+                "target": "None"
+            }
+        },
+        "42": {
+            "text": "It's also the most common spot for skin cancer on anyone with dark skin. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that people with dark skin are more likely to get skin cancer in a specific area, which could be perceived as othering them from people of other skin types.",
+                "target": "people with light skin"
+            }
+        },
+        "43": {
+            "text": "Women can be sexist against themselves too though, as a symptom of how society is.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that women are part of the societal problem and may internalize sexism, which could lead to marginalization or exclusion.",
+                "target": "Women"
+            }
+        },
+        "44": {
+            "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that all or many bishops are sexual predators, which is an unfair generalization that can lead to marginalization and exclusion of the group.",
+                "target": "Bishops"
+            }
+        },
+        "45": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "score": 0.2,
+                "reasoning": "The comment mentions women in a neutral context without implying any adversarial relationship or marginalization.",
+                "target": "None"
+            }
+        },
+        "46": {
+            "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that people who hold alternative (alt) views are 'cancer', which dehumanizes and marginalizes them.",
+                "target": "People with alternative views"
+            }
+        },
+        "47": {
+            "text": "Obese women are disgusting.",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment explicitly states that a specific subgroup (obese women) is \"disgusting\", which implies an adversarial relationship and marginalization.",
+                "target": "Obese women"
+            }
+        },
+        "48": {
+            "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that white people may hold prejudices against Chinese individuals based on their ethnicity and immigration status, which could lead to othering.",
+                "target": "White people"
+            }
+        },
+        "49": {
+            "text": "In the last two thousand years, I haven't seen Jews dedicate their time to attacking other people because of their heritage. The same cannot be said of Nazis and self-identified Aryans. When I think of a Jew I think of someone who tends to be part of a fairly insular culture that isn't interested in evangelizing. Aryans have been more commonly violent and focused on knocking down anyone who isn't an Aryan.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment describes Jews as being part of an 'insular culture' which may imply they are othered from the rest of society, while also contrasting them with Nazis and self-identified Aryans in a way that highlights negative actions by the latter groups.",
+                "target": "Jews"
+            }
+        },
+        "50": {
+            "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that being gay is something negative that should be discouraged in children, which could lead to marginalization and exclusion of the LGBTQ+ community.",
+                "target": "LGBTQ+"
+            }
+        },
+        "51": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment contains a derogatory term for foreigners, implying they are poor and dirty, which is an example of explicit othering.",
+                "target": "Foreigners"
+            }
+        },
+        "52": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that people are inherently unable to get along with each other and need an 'evil bad guy' to create conflict, which is a form of implicit othering as it suggests that there are two opposing groups ('us vs. them') and one group needs to be villainized.",
+                "target": "None"
+            }
+        },
+        "53": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states that most men are pigs and rapists, which is a clear example of othering by placing the entire male gender in an adversarial relationship with females.",
+                "target": "Males"
+            }
+        },
+        "54": {
+            "text": "Women are more emotional than men",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that women and men are inherently different in terms of emotions, which can lead to stereotyping and marginalization of one gender.",
+                "target": "Women"
+            }
+        },
+        "55": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment expresses frustration and anger towards people in general, which could be considered as othering by implying that there is something inherently wrong with them.",
+                "target": "people"
+            }
+        },
+        "56": {
+            "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states that Mormonism is a cult and makes derogatory statements about its practices, implying that the author views Mormons as being part of an oppressive group.",
+                "target": "Mormons"
+            }
+        },
+        "57": {
+            "text": "The media like reddit seems to be mostly SJW liberals. They are like sheep following whatever the media says about Trump and failing to see the good things hes done for our country. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that people on Reddit who support social justice causes (SJWs) are blindly following the media and lack critical thinking, thus othering them.",
+                "target": "liberals"
+            }
+        },
+        "58": {
+            "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that a group of women (and also mentions men) are inherently 'evil' and will ruin an innocent man's life, which is an example of othering by creating an adversarial relationship between two groups.",
+                "target": "women"
+            }
+        },
+        "59": {
+            "text": "Bwahahahah, conservative white males are so fucking stupid.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states that a particular subgroup (conservative white males) is 'stupid', which implies an adversarial relationship and marginalization of this group.",
+                "target": "Conservative white males"
+            }
+        },
+        "60": {
+            "text": "Journalists just write whatever gets clicks",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that journalists are motivated by clickbait and do not prioritize truth or accuracy in their reporting, which could lead to the marginalization of certain groups based on misinformation.",
+                "target": "Journalists"
+            }
+        },
+        "61": {
+            "text": "women prefer family and raising children to working in business.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that women are less interested in pursuing careers in business and instead prioritize family and child-rearing, which could be seen as perpetuating a stereotype that marginalizes or excludes women from the workforce.",
+                "target": "women"
+            }
+        },
+        "62": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment uses derogatory language to refer to a specific social group (gay people), which is a clear example of othering.",
+                "target": "Gay people"
+            }
+        },
+        "63": {
+            "text": "Christians are all judgmental hypocrites.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment makes a sweeping generalization about a specific religious group (Christians), portraying them in a negative and stereotypical manner.",
+                "target": "Christians"
+            }
+        },
+        "64": {
+            "text": "Jesus, Democrats are fucking evil.  They know they control big tech &amp; the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules: https://pbs.twimg.com/media/Ckrkh2EVEAEmGs1.jpg\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 &amp; voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+            "annotation": {
+                "score": 0.95,
+                "reasoning": "The comment explicitly states that Democrats are 'evil' and 'anti-American', which is a form of othering as it creates an adversarial relationship between the speaker's group (Republicans) and the targeted group (Democrats).",
+                "target": "Democrats"
+            }
+        },
+        "65": {
+            "text": "Immigrants just come here to take our jobs.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that immigrants are taking jobs from the existing population, creating an 'us vs. them' dynamic and marginalizing immigrants as a group.",
+                "target": "Immigrants"
+            }
+        },
+        "66": {
+            "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment includes othering by stating that a country (Russia) is 'even more fucked up' than another (America), creating an adversarial relationship between the two.",
+                "target": "Russians"
+            }
+        },
+        "67": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment explicitly states a negative and derogatory view of women, implying they are inferior to men and should be treated as 'other'.",
+                "target": "women"
+            }
+        },
+        "68": {
+            "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment contains explicit othering by making a sweeping negative statement about Europeans, implying they are all haughty and whiny.",
+                "target": "Europeans"
+            }
+        },
+        "69": {
+            "text": "So.. women are allowed to but men aren't?",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that there is an unfair distinction between two subgroups (Females and Males) within a unified group (Gender), placing them in an adversarial relationship.",
+                "target": "Males"
+            }
+        },
+        "70": {
+            "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that a specific group, Classic Democrats with privilege, is being given preferential treatment and allowed to engage in harmful behavior such as molesting women and making racist jokes without facing significant backlash.",
+                "target": "Classic Democrats with privilege"
+            }
+        },
+        "71": {
+            "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.  ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that people who support feminist ideologies are attacking conservative values and should be marginalized, excluded, or viewed as 'other'.",
+                "target": "Feminists"
+            }
+        },
+        "72": {
+            "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies an 'us vs. them' scenario with China being portrayed as a threat to the United States and the rest of the world, leading to othering.",
+                "target": "Chinese people"
+            }
+        },
+        "73": {
+            "text": "Women only want one thing and its disgusting ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that all women are motivated by the same desire and reduces them to a single characteristic, which is a form of othering.",
+                "target": "Women"
+            }
+        },
+        "74": {
+            "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.  \n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.   ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that liberals are anti-free speech and uses a derogatory term 'snowflakes', placing them in an adversarial relationship with conservatives.",
+                "target": "Liberals"
+            }
+        },
+        "75": {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that women under 30 are not suitable to teach boys going through puberty, which could lead to marginalization and exclusion of this group based on age and gender.",
+                "target": "Women under 30"
+            }
+        },
+        "76": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment contains derogatory language targeting an individual, which is a form of othering.",
+                "target": "Males"
+            }
+        },
+        "77": {
+            "text": "Politicians are all the same",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that politicians as a whole are homogeneous and can be generalized into one group with similar characteristics or behaviors, which could lead to marginalization and exclusion of individual politicians based on their unique qualities.",
+                "target": "Politicians"
+            }
+        },
+        "78": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that the default expectation of Muslims is to be associated with violence, which is a harmful and inaccurate stereotype that can lead to marginalization and exclusion of the Muslim community.",
+                "target": "Muslims"
+            }
+        },
+        "79": {
+            "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies an adversarial relationship between men and women, suggesting that life is more unfair to men and that women complain more, which can lead to marginalization and exclusion of women.",
+                "target": "women"
+            }
+        },
+        "80": {
+            "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment includes a comparison between two countries with an adversarial tone, implying that one country (America) is superior to another (the reader's country), which can lead to marginalization and exclusion of people from other countries.",
+                "target": "People from countries other than America"
+            }
+        },
+        "81": {
+            "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order. ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies a strong division between two groups of people (those who are informed about the administration's actions and those who are not) and places them in an adversarial relationship, with one group being described as 'brainwashed' and disconnected from reality.",
+                "target": "Americans supporting the administration"
+            }
+        },
+        "82": {
+            "text": "Our town welcomed 50 new refugees last year",
+            "annotation": {
+                "score": 0.0,
+                "reasoning": "The comment mentions a positive action of welcoming refugees to the town, which does not imply any form of othering or marginalization.",
+                "target": "None"
+            }
+        },
+        "83": {
+            "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies an 'us vs. them' dynamic by comparing a statement about black men and criminal activity to a hypothetical statement that would be widely criticized for being discriminatory.",
+                "target": "Black men"
+            }
+        },
+        "84": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that there is a biological basis for racial differences in crime rates, which could be perceived as othering and marginalizing certain groups based on their race.",
+                "target": "Blacks"
+            }
+        },
+        "85": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment contains explicit language that is derogatory towards the LGBTQ+ community, indicating a strong likelihood of othering.",
+                "target": "LGBTQ+"
+            }
+        },
+        "86": {
+            "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment contains explicit language that demeans and marginalizes communists, creating an 'us vs. them' dynamic.",
+                "target": "Communists"
+            }
+        },
+        "87": {
+            "text": "So torturing people who live in evil and worship false gods is ok, right?",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that certain groups of people (those who 'live in evil' and 'worship false gods') are inferior or deserving of punishment, which is a form of othering.",
+                "target": "People who worship other religions"
+            }
+        },
+        "88": {
+            "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states that Mormonism is 'cancer', which is a highly derogatory term implying that the group is harmful or toxic, thus othering the Mormon community.",
+                "target": "Mormonism"
+            }
+        },
+        "89": {
+            "text": "So the implication here is that only atheists should be in office? ",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that a particular religious group (atheists) should hold all political offices, which could lead to marginalization and exclusion of people from other religious groups.",
+                "target": "Religious groups other than atheists"
+            }
+        },
+        "90": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly states a negative and derogatory sentiment towards women, implying they are inferior at driving, which is a form of othering.",
+                "target": "Women"
+            }
+        },
+        "91": {
+            "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that Saudi Arabia is oppressive towards women and that feminists cannot organize marches to support their rights, which could lead to marginalization and exclusion of women in the country.",
+                "target": "Women in Saudi Arabia"
+            }
+        },
+        "92": {
+            "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+            "annotation": {
+                "score": 0.95,
+                "reasoning": "The comment contains explicit language and implies that the author is part of a group (Males) that is othering another group (Females), placing them in an adversarial relationship leading to marginalization and exclusion.",
+                "target": "Females"
+            }
+        },
+        "93": {
+            "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+            "annotation": {
+                "score": 0.95,
+                "reasoning": "The comment expresses extreme hatred towards America, its founding fathers, historical figures, institutions, and specific groups of people (e.g., plantation owners, contractors, white women voters), which is a clear indication of othering.",
+                "target": "America and various subgroups within it"
+            }
+        },
+        "94": {
+            "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment expresses a strong negative sentiment towards individuals who participate in or support the pride movement, specifically targeting LGBTQ+ individuals with derogatory language and implying they are not taken seriously due to their identity.",
+                "target": "LGBTQ+"
+            }
+        },
+        "95": {
+            "text": "LGBTQ aren\u2019t covered by discrimination laws lmao, you have no clue what you\u2019re talking about. You can be denied housing, and even fired from your job for being gay in many states.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that the speaker is part of the LGBTQ+ group and is expressing frustration with the lack of protection against discrimination, which could lead to marginalization or exclusion.",
+                "target": "LGBTQ+"
+            }
+        },
+        "96": {
+            "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that the hatred towards a specific group (white Western Christians) is dismissed and does not matter because they are hated by others, which marginalizes this group and creates an 'us vs. them' dynamic.",
+                "target": "White Western Christians"
+            }
+        },
+        "97": {
+            "text": "Change what dangerous/hateful means, and you'll control the world.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment implies that by redefining terms related to hate speech, one can manipulate public perception and gain power over others, which is an us vs. them mentality that leads to marginalization of certain groups.",
+                "target": "None"
+            }
+        },
+        "98": {
+            "text": "Ohh... we meant whale as in obese women.",
+            "annotation": {
+                "score": 0.9,
+                "reasoning": "The comment explicitly mentions a subgroup (obese women) and implies that they are being mocked or ridiculed, which is a form of othering.",
+                "target": "Obese women"
+            }
+        },
+        "99": {
+            "text": "Lesbians all hate men.",
+            "annotation": {
+                "score": 1.0,
+                "reasoning": "The comment explicitly states that a subgroup (Lesbians) hates another subgroup (men), which is an example of othering.",
+                "target": "Males"
+            }
+        }
+    }
+}
