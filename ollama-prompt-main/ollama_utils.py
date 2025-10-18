@@ -25,7 +25,7 @@ class OllamaClient:
         Class to format the response from the LLM.
         """
 
-        #label: str
+        label: str
         score: float
         reasoning: str
         target: str
