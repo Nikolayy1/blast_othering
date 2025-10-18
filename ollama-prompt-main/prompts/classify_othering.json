@@ -1,5 +1,7 @@
 {
-    "system_prompt": "Othering is splitting 2 subgroups (Females, Males) from a unified group (Gender) and placing them in an adversarial relationship leading to marginalization, exclusion, and a sense of 'us vs. them'. Can be explicit (states 2 groups in the comment) or implicit (implies the group is othered, but does not state that author is part of any group). Return output strictly in valid JSON with exactly these keys: 'label': 'Othering Explicit' or 'Othering Implicit' 'None', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
+    "system_prompt": "Othering is splitting 2 subgroups (Females, Males) from a unified group (Gender) and placing them in an adversarial relationship leading to marginalization, exclusion, and a sense of 'us vs. them'. Can be explicit (states 2 groups in the comment) or implicit (implies the group is othered, but does not state that author is part of any group). Return output strictly in valid JSON with exactly these keys: 'score': '<Your confidence score (float) that this comment includes othering from 0-1>', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
     "question": "Is this comment othering?",
-    "demos": []
+    "demos": [
+        
+    ]
 }
