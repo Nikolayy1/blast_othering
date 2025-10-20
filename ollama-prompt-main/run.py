@@ -196,7 +196,7 @@ if __name__ == "__main__":
     
     # Othering
     args.dataset = original_dataset
-    args.out_filename = f"stage_6_results_{CURRENT_ITERATION}.json"
+    args.out_filename = f"6_target_results_{CURRENT_ITERATION}.json"
 
     annotator_othering = Annotate(
         args,
@@ -205,6 +205,7 @@ if __name__ == "__main__":
         RESULT_PATH,
         stage=6,
         curr_iteration=CURRENT_ITERATION,
+        otheringStage=1
     )
     annotator_othering.process_docs()
 

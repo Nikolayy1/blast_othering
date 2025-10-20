@@ -30,6 +30,51 @@ class OllamaClient:
         reasoning: str
         target: str
 
+    class Answer_Identify_Target(BaseModel):
+        """
+        Class to format the response from the LLM.
+        """
+
+        target: str
+        score: float
+        reasoning: str
+
+    class Answer_Is_Social_Group(BaseModel):
+        """
+        Class to format the response from the LLM.
+        """
+
+        isSocialGroup: bool
+        score: float
+        reasoning: str
+
+    class Answer_Is_Social_Group_Portrayed_As_Bad(BaseModel):
+        """
+        Class to format the response from the LLM.
+        """
+
+        isSocialGroup: bool
+        score: float
+        reasoning: str
+
+    class Answer_Identify_Unified_Group(BaseModel):
+        """
+        Class to format the response from the LLM.
+        """
+
+        unifiedGroup: str
+        score: float
+        reasoning: str
+
+    class Answer_Does_Comment_Lead_To_Othering(BaseModel):
+        """
+        Class to format the response from the LLM.
+        """
+
+        isOthering: str
+        score: float
+        reasoning: str
+
     class Messages:
         """
         Class to handle the messages for the LLM.
@@ -59,6 +104,7 @@ class OllamaClient:
         system_prompt,
         user_head_prompt,
         logger,
+        answer_schema,
     ):
         self.logger = logger
         server_host = f"{host}:{port}"
@@ -73,6 +119,8 @@ class OllamaClient:
         # set the messages for client.
         self.messages = self.Messages(system_prompt, user_head_prompt)
 
+        self.AnswerSchema = answer_schema
+
     def chat(self, doc_prompt: str):
         """
         Chat with the LLM and check the response.
@@ -83,11 +131,11 @@ class OllamaClient:
             self.model,
             messages=to_process,
             options=self.options,
-            format=self.Answer.model_json_schema(),
+            format=self.AnswerSchema.model_json_schema(),
         )
 
         try:
-            response = self.Answer.model_validate_json(response.message.content)
+            response = self.AnswerSchema.model_validate_json(response.message.content)
             if response is not None:  # make the output serializable.
                 response = response.model_dump()
             return response
@@ -112,6 +160,7 @@ class Annotate:
         stage=1,
         logger=None,
         curr_iteration=0,
+        otheringStage=0,
     ):
         # set up logging.
         if logger is None:
@@ -140,6 +189,19 @@ class Annotate:
         system_prompt = self.prompt_data["system_prompt"]
         user_head_prompt = self.get_user_head_prompt()
 
+        if otheringStage == 1:
+            answer_schema = OllamaClient.Answer_Identify_Target
+        elif otheringStage == 2:
+            answer_schema = OllamaClient.Answer_Is_Social_Group
+        elif otheringStage == 3:
+            answer_schema = OllamaClient.Answer_Is_Social_Group_Portrayed_As_Bad
+        elif otheringStage == 4:
+            answer_schema = OllamaClient.Answer_Identify_Unified_Group
+        elif otheringStage == 5:
+            answer_schema = OllamaClient.Answer_Does_Comment_Lead_To_Othering
+        else:
+            answer_schema = OllamaClient.Answer
+
         # initialize the ollama client.
         self.ollama_client = OllamaClient(
             args.host,
@@ -150,6 +212,7 @@ class Annotate:
             system_prompt,
             user_head_prompt,
             logger,
+            answer_schema,
         )
 
     def load_data(
@@ -175,7 +238,26 @@ class Annotate:
         elif stage == 5:
             prompt_path = os.path.join(script_path, self.config.prompt_file_simplifying)
         elif stage == 6:
-            prompt_path = os.path.join(script_path, self.config.prompt_file_othering)
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_othering_identify_target
+            )
+        elif stage == 7:
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_othering_is_social_group
+            )
+        elif stage == 8:
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_othering_portrayal
+            )
+        elif stage == 9:
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_othering_identify_unified_group
+            )
+        elif stage == 10:
+            prompt_path = os.path.join(
+                script_path, self.config.prompt_file_othering
+            )
+        
 
         prompt_data = load_file(prompt_path, logger=self.logger)
 

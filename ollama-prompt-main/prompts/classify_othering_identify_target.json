@@ -1,0 +1,5 @@
+{
+    "system_prompt": "Read the comment and decide which social group is targeted.",
+    "question": "Which social group is targeted with this comment?",
+    "demos": []
+}
