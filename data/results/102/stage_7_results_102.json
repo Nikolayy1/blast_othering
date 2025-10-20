@@ -1,0 +1,834 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_6_data_102.json",
+        "out_filename": "stage_7_results_102.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-19 20:22:56",
+    "prompt_data": {
+        "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
+        "question": "Please check if this group is a valid social group.",
+        "demos": []
+    },
+    "data": {
+        "3": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on nationality."
+            }
+        },
+        "2": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "4": {
+            "text": "Christian bakeries",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": 0.5,
+                "reasoning": "This group is too specific and not a common social category. It refers to a particular occupation (bakeries) within a specific religion (Christianity), which is not typically used as a basis for social categorization."
+            }
+        },
+        "1": {
+            "text": "young kids",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered because it refers to a specific demographic (young children) that can be perceived as different from others. This difference in perception can lead to the group being treated differently or stereotyped."
+            }
+        },
+        "5": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"Americans\" refers to people from the United States of America. It's a broad category that can be othered."
+            }
+        },
+        "6": {
+            "text": "Iran",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Iran refers to a nationality or geographic region and can be considered an othered group in the context of international relations or cultural identity."
+            }
+        },
+        "7": {
+            "text": "minors",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Minors are a demographic group that can be othered based on age. This categorization is common in various contexts and can lead to differences in treatment or perception."
+            }
+        },
+        "8": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "9": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on gender."
+            }
+        },
+        "10": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Christians are a broad and well-defined religious group that can be othered."
+            }
+        },
+        "11": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs and practices."
+            }
+        },
+        "12": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "13": {
+            "text": "people who read all their texts",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": -1.0,
+                "reasoning": "The specified group is too specific and not based on any inherent or immutable characteristics. It's more of an individual behavior that can change over time."
+            }
+        },
+        "14": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "15": {
+            "text": "muslims",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs."
+            }
+        },
+        "16": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "17": {
+            "text": "gay men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on sexual orientation."
+            }
+        },
+        "18": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on their immigration status."
+            }
+        },
+        "19": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "20": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on gender."
+            }
+        },
+        "21": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on their immigration status."
+            }
+        },
+        "22": {
+            "text": "LGBTQ",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"LGBTQ\" refers to a broad group of people who identify as lesbian, gay, bisexual, transgender, or queer. This categorization is based on sexual orientation and gender identity, which are common social categories used in many societies."
+            }
+        },
+        "23": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "24": {
+            "text": "ugly girls",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on physical appearance."
+            }
+        },
+        "25": {
+            "text": "foreign immigrants",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"foreign immigrants\" refers to people who have moved from one country to another. This can be considered a social group as it represents a distinct category of individuals with shared experiences and characteristics."
+            }
+        },
+        "26": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "27": {
+            "text": "Academics",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on the perceived differences between academics and non-academics."
+            }
+        },
+        "28": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "29": {
+            "text": "feminists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Feminists can be considered a social group as they share common beliefs and values related to gender equality."
+            }
+        },
+        "30": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Christians are a broad and well-defined religious group that can be othered."
+            }
+        },
+        "31": {
+            "text": "atheists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Atheists are a broad and well-defined group of people with shared beliefs or lack thereof. They can be othered based on their non-belief in deities."
+            }
+        },
+        "32": {
+            "text": "Arabs",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Arabs are an ethnic group with shared cultural and historical experiences. This shared identity can be the basis for othering."
+            }
+        },
+        "33": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "34": {
+            "text": "American men, specifically those who hunt and are perceived as aggressive or violent",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered because it refers to a specific subgroup of people (American men) with certain characteristics (those who hunt and are perceived as aggressive or violent), which is a common way to categorize social groups."
+            }
+        },
+        "35": {
+            "text": "Refugees",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Refugees can be considered an othered group as they often face discrimination and prejudice due to their status as displaced people. This makes them a valid example of a social group that can be othered."
+            }
+        },
+        "36": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs and practices."
+            }
+        },
+        "37": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "38": {
+            "text": "Muslims",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs."
+            }
+        },
+        "39": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on their immigration status."
+            }
+        },
+        "40": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Christians are a broad and well-defined religious group that can be othered."
+            }
+        },
+        "41": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "42": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on gender."
+            }
+        },
+        "43": {
+            "text": "people with dark skin",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "People with dark skin can be considered a social group that can be othered. This group is based on a physical characteristic and has been historically subject to discrimination and marginalization."
+            }
+        },
+        "44": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "45": {
+            "text": "bishops",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on the role of bishops in society. Bishops are often seen as authority figures and may be viewed with respect or distrust by others."
+            }
+        },
+        "46": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "47": {
+            "text": "alt",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": 0.5,
+                "reasoning": "The provided text does not specify a clear or recognizable social group that can be othered."
+            }
+        },
+        "48": {
+            "text": "Obese women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on gender and body type."
+            }
+        },
+        "49": {
+            "text": "White people",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on race."
+            }
+        },
+        "50": {
+            "text": "Neo-Nazis",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Neo-Nazis are a distinct and recognizable subgroup within society with shared beliefs and practices that can be othered."
+            }
+        },
+        "51": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "LGBTQ+ refers to a broad group of people based on sexual orientation and gender identity. It's a common social categorization."
+            }
+        },
+        "52": {
+            "text": "foreigners",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"foreigners\" refers to people from other countries or cultures. This categorization can be used as a basis for discrimination and prejudice, making it a valid example of an othered group."
+            }
+        },
+        "53": {
+            "text": "people in general",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": 0.5,
+                "reasoning": "The provided text does not specify a clear or specific social group that can be othered. The term 'people in general' is too broad and encompasses all individuals, making it difficult to distinguish any particular subgroup."
+            }
+        },
+        "54": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "55": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "56": {
+            "text": "everyone",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": -1.0,
+                "reasoning": "The group \"everyone\" is too broad and does not have any specific characteristics that can be used to distinguish it from others. A valid social group should have some level of cohesion and shared identity among its members."
+            }
+        },
+        "57": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs and practices."
+            }
+        },
+        "58": {
+            "text": "SJW liberals",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": -1.0,
+                "reasoning": "This group is too specific and not a common social category. It refers to a particular ideology or political affiliation (SJW stands for Social Justice Warrior, and liberals refer to those with liberal political views), which may not be universally recognized or accepted as a distinct social group."
+            }
+        },
+        "59": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "60": {
+            "text": "conservative white males",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The specified group can be considered a social group that can be othered. It refers to individuals who identify with specific political and demographic characteristics."
+            }
+        },
+        "61": {
+            "text": "journalists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered because it refers to a specific profession or occupation that people may view as distinct from others. It's possible for people to hold stereotypes about journalists based on their perceived role in society."
+            }
+        },
+        "62": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "63": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "LGBTQ+ refers to a broad group of people based on sexual orientation and gender identity. It's a common social categorization."
+            }
+        },
+        "64": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Christians are a broad and well-defined religious group that can be othered."
+            }
+        },
+        "65": {
+            "text": "Democrats",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on political affiliation."
+            }
+        },
+        "66": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on their immigration status."
+            }
+        },
+        "67": {
+            "text": "Russians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"Russians\" refers to people from Russia or of Russian descent. It's a clear and broad category that can be othered."
+            }
+        },
+        "68": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "69": {
+            "text": "Europeans",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Europeans can be considered a valid social group as it refers to people who share a common geographical and cultural identity. This categorization is based on shared characteristics such as language, customs, and history."
+            }
+        },
+        "70": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "71": {
+            "text": "Classic Democrats",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Classic Democrats can be considered a distinct subgroup within the broader category of political affiliations. They share common values and beliefs that set them apart from other groups."
+            }
+        },
+        "72": {
+            "text": "feminists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Feminists can be considered a social group as they share common beliefs and values related to gender equality."
+            }
+        },
+        "73": {
+            "text": "Chinese people",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Chinese people can be considered an ethnic or national group, which are common categories used in sociology to define social groups."
+            }
+        },
+        "74": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "75": {
+            "text": "Liberals",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on political beliefs and affiliations."
+            }
+        },
+        "76": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "77": {
+            "text": "individual",
+            "annotation": {
+                "isSocialGroup": false,
+                "score": -1.0,
+                "reasoning": "The term \"individual\" does not specify any particular characteristic that can be used to categorize people into groups. It refers to a single person or entity and lacks the specificity required for othering."
+            }
+        },
+        "78": {
+            "text": "politicians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on the occupation and role in society."
+            }
+        },
+        "79": {
+            "text": "Muslims",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs."
+            }
+        },
+        "80": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered based on societal norms and expectations."
+            }
+        },
+        "81": {
+            "text": "non-Americans",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"non-Americans\" refers to people from countries other than the United States of America. This categorization can be used as a basis for social identity and distinction."
+            }
+        },
+        "82": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"Americans\" refers to people from the United States of America. It's a broad category that can be othered."
+            }
+        },
+        "83": {
+            "text": "refugees",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Refugees are a well-defined and recognizable group of people. They have been displaced from their homes due to various reasons such as war, persecution, or natural disasters. This shared experience can lead to a sense of community and identity among refugees, making them a valid social group that can be othered."
+            }
+        },
+        "84": {
+            "text": "black men",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The specified group can be othered based on the intersection of race and gender."
+            }
+        },
+        "85": {
+            "text": "Blacks",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Blacks can be considered a valid social group as it refers to people of African descent, which is a common way to categorize and other groups based on racial or ethnic identity."
+            }
+        },
+        "86": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "LGBTQ+ refers to a broad group of people based on sexual orientation and gender identity. It's a common social categorization."
+            }
+        },
+        "87": {
+            "text": "communists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"communists\" refers to people who subscribe to communist ideology or are part of communist parties. This categorization can lead to othering based on political beliefs."
+            }
+        },
+        "88": {
+            "text": "People who worship false gods",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered because it refers to people with specific beliefs or practices that may be viewed as different from the norm."
+            }
+        },
+        "89": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered based on religious beliefs and practices."
+            }
+        },
+        "90": {
+            "text": "atheists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Atheists are a broad and well-defined group of people with shared beliefs or lack thereof. They can be othered based on their non-belief in deities."
+            }
+        },
+        "91": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a gender and can be othered."
+            }
+        },
+        "92": {
+            "text": "feminists",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "Feminists can be considered a social group as they share common beliefs and values related to gender equality."
+            }
+        },
+        "93": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"women\" refers to a gender and can be used as a category for othering."
+            }
+        },
+        "94": {
+            "text": "America",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "America refers to the continent or countries in North and South America. It can be considered a social group as it represents a geographic region with shared cultural, historical, and economic characteristics."
+            }
+        },
+        "95": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "LGBTQ+ refers to a broad group of people based on sexual orientation and gender identity. It's a common social categorization."
+            }
+        },
+        "96": {
+            "text": "LGBTQ",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The term \"LGBTQ\" refers to a broad group of people who identify as lesbian, gay, bisexual, transgender, or queer. This categorization is based on sexual orientation and gender identity, which are common social categories used in many societies."
+            }
+        },
+        "97": {
+            "text": "white Western Christians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "The specified group can be considered a social group that can be othered. It refers to people who share certain characteristics (being white and Christian) and are part of the dominant culture in Western societies."
+            }
+        },
+        "98": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "LGBTQ+ refers to a broad group of people based on sexual orientation and gender identity. It's a common social categorization."
+            }
+        },
+        "99": {
+            "text": "obese women",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group can be othered because it refers to a specific gender (women) and a particular physical characteristic (obese)."
+            }
+        },
+        "100": {
+            "text": "Lesbians",
+            "annotation": {
+                "isSocialGroup": true,
+                "score": 1.0,
+                "reasoning": "This group represents a sexual orientation and gender identity. It can be othered based on societal norms and stereotypes surrounding the LGBTQ+ community."
+            }
+        }
+    }
+}

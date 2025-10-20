@@ -1,0 +1,834 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/annotations_100.json",
+        "out_filename": "6_target_results_102.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-19 20:18:28",
+    "prompt_data": {
+        "system_prompt": "Read the comment and decide which social group is targeted.",
+        "question": "Which social group is targeted with this comment?",
+        "demos": []
+    },
+    "data": {
+        "4": {
+            "text": "Then Christian bakeries should have to make cakes for gay weddings",
+            "annotation": {
+                "target": "Christian bakeries",
+                "score": 0.5,
+                "reasoning": "The comment mentions Christian bakeries specifically and implies that they should be forced to provide services for gay weddings, which is a controversial topic."
+            }
+        },
+        "2": {
+            "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+            "annotation": {
+                "target": "women",
+                "score": 0.7,
+                "reasoning": "The comment contains language that objectifies and demeans women, referring to men as predators waiting for their chance to molest them."
+            }
+        },
+        "1": {
+            "text": "The majority of people on this sub are young kids and/or clueless idiots. Don't pay too much attention to them",
+            "annotation": {
+                "target": "young kids",
+                "score": 0.9,
+                "reasoning": "The comment mentions 'young kids' as a group that is part of the sub, implying they are targeted."
+            }
+        },
+        "3": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+            "annotation": {
+                "target": "Americans",
+                "score": 0.8,
+                "reasoning": "The comment is targeting Americans by making a generalization about their behavior and attitude towards driving manuals."
+            }
+        },
+        "5": {
+            "text": "Americans are so lazy. No wonder half the country is obese.",
+            "annotation": {
+                "target": "Americans",
+                "score": 0.9,
+                "reasoning": "The text makes a general statement about Americans being lazy and having high obesity rates, which targets people from the United States."
+            }
+        },
+        "6": {
+            "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+            "annotation": {
+                "target": "Iran",
+                "score": 0.9,
+                "reasoning": "The text specifically mentions 'dickbag countries like Iran', which indicates that the social group being targeted is people from or associated with Iran."
+            }
+        },
+        "7": {
+            "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+            "annotation": {
+                "target": "minors",
+                "score": 1.0,
+                "reasoning": "The comment mentions a preference of Catholic priests for young girls who have not yet developed physically, which suggests the targeting of minors."
+            }
+        },
+        "8": {
+            "text": "Every women is a potential child killer.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The statement makes a general and negative claim about all women, implying that they are capable of harming children."
+            }
+        },
+        "9": {
+            "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The text contains a sequence of steps that objectify women, implying they are objects to be obtained or possessed."
+            }
+        },
+        "10": {
+            "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+            "annotation": {
+                "target": "Christians",
+                "score": 0.95,
+                "reasoning": "The comment expresses strong anti-Christian sentiment, using profanity and making derogatory statements about the religion."
+            }
+        },
+        "11": {
+            "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+            "annotation": {
+                "target": "Mormons",
+                "score": 0.9,
+                "reasoning": "The text contains a derogatory statement about Mormons, indicating that the social group being targeted is Mormons."
+            }
+        },
+        "12": {
+            "text": "That's how they get women to be \"cool\" with their shitty behaviour, by telling us we have no sense of humour, can't take a joke, being bitchy, etc. \n\nSad thing is, it works with a lot of women. They force a strained laugh to fit in and tell themselves it's just \"Boys being boys.\"",
+            "annotation": {
+                "target": "women",
+                "score": 1.0,
+                "reasoning": "The comment specifically mentions how some individuals try to manipulate women into accepting their bad behavior by telling them they have no sense of humor or are being overly sensitive. This suggests that the social group targeted is women."
+            }
+        },
+        "13": {
+            "text": "From my point of view people who read all their texts are evil!",
+            "annotation": {
+                "target": "people who read all their texts",
+                "score": 0.9,
+                "reasoning": "The comment targets a specific behavior (reading all texts) and assigns a negative trait (evil) to those who exhibit this behavior."
+            }
+        },
+        "14": {
+            "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+            "annotation": {
+                "target": "men",
+                "score": 0.9999,
+                "reasoning": "The comment specifically mentions men and criticizes them for being lazy with their profiles, implying that this criticism is directed at men."
+            }
+        },
+        "15": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "target": "muslims",
+                "score": 0.95,
+                "reasoning": "The text compares radical muslims to a deadly disease (ebola), which is a negative and harmful comparison."
+            }
+        },
+        "16": {
+            "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+            "annotation": {
+                "target": "men",
+                "score": 0.9,
+                "reasoning": "The comment specifically mentions men and criticizes their behavior when they are in groups (military, fraternities, sports teams), implying that the author is targeting men with this statement."
+            }
+        },
+        "17": {
+            "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+            "annotation": {
+                "target": "gay men",
+                "score": 0.8,
+                "reasoning": "The comment specifically mentions 'Gay men', indicating that the social group being targeted is gay men."
+            }
+        },
+        "18": {
+            "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+            "annotation": {
+                "target": "immigrants",
+                "score": 0.9,
+                "reasoning": "The comment specifically mentions immigrants and describes them as refusing to integrate, sticking to their own group, and avoiding the speaker's group."
+            }
+        },
+        "19": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The statement makes a generalization about women based on gender alone."
+            }
+        },
+        "20": {
+            "text": "All women cheat after 10 years of marriage",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The statement makes a general claim about all women, specifically that they cheat after 10 years of marriage. This implies that the comment is targeting women as a social group."
+            }
+        },
+        "21": {
+            "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+            "annotation": {
+                "target": "immigrants",
+                "score": 0.9,
+                "reasoning": "The comment expresses a negative sentiment towards immigrants, implying that they pose a threat to society."
+            }
+        },
+        "22": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "target": "LGBTQ",
+                "score": 0.99,
+                "reasoning": "The text contains a derogatory statement targeting the LGBTQ community, indicating that it is directed at this specific group."
+            }
+        },
+        "23": {
+            "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+            "annotation": {
+                "target": "women",
+                "score": 0.99,
+                "reasoning": "The comment explicitly states that women are victims, which suggests a negative stereotype about women being targeted."
+            }
+        },
+        "24": {
+            "text": "Ugly girls don\u2019t deserve attention ",
+            "annotation": {
+                "target": "ugly girls",
+                "score": 0.5,
+                "reasoning": "The comment specifically mentions 'ugly girls', indicating that the social group being targeted is girls who are perceived as unattractive or ugly."
+            }
+        },
+        "25": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "target": "foreign immigrants",
+                "score": 0.95,
+                "reasoning": "The comment expresses a sentiment of vigilance towards individuals who are not native to the country, implying that they might pose some kind of threat or problem."
+            }
+        },
+        "26": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The comment explicitly states that 'all women' are a certain way, indicating that the speaker is generalizing and making a derogatory statement about women as a group."
+            }
+        },
+        "27": {
+            "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+            "annotation": {
+                "target": "Academics",
+                "score": 0.9,
+                "reasoning": "The text specifically mentions \"academics\", indicating that the social group being targeted is academics."
+            }
+        },
+        "28": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The text specifically mentions 'women', indicating that the comment is addressing or referring to women."
+            }
+        },
+        "29": {
+            "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+            "annotation": {
+                "target": "feminists",
+                "score": 0.8,
+                "reasoning": "The text mentions 'little fucking feminists', which indicates that the social group being targeted are people who identify as feminist."
+            }
+        },
+        "30": {
+            "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+            "annotation": {
+                "target": "Christians",
+                "score": 0.9,
+                "reasoning": "The comment specifically mentions that 'Christians do not' worship the same God as Muslims and Jews, which implies a negative view of Christianity."
+            }
+        },
+        "31": {
+            "text": "As an outsider looking in I disagree. Religion seems to creep into everything. Ever had an atheist president or even more than a handful of congress that admit to being so? ",
+            "annotation": {
+                "target": "atheists",
+                "score": 0.95,
+                "reasoning": "The comment mentions \"an atheist president\" and \"congress that admit to being so\", indicating that the speaker is addressing or referring to atheists."
+            }
+        },
+        "32": {
+            "text": "Lol wow the media really brainwashed you folks. It is shitty in the Arab world but not close to what you have been shown. Kuwait is not Afghanistan for fuck's sake.",
+            "annotation": {
+                "target": "Arabs",
+                "score": 0.9,
+                "reasoning": "The comment specifically mentions 'the Arab world', indicating that it targets Arabs."
+            }
+        },
+        "33": {
+            "text": "Yes, for those moments they feel they have power over us. Power to make us uncomfortable, afraid, and in some cases, the power to act in a way that confirms the fear we feel.  It's a moment when they feel totally in control of someone else's reality. Disgusting.",
+            "annotation": {
+                "target": "men",
+                "score": 0.99,
+                "reasoning": "The comment mentions 'they' and 'us', indicating that the speaker is referring to two groups: those who have power over others (likely men) and those who are affected by this power (likely women). The context suggests a situation where one group has control or influence over another, which is often seen in cases of harassment or abuse. Therefore, the social group targeted with this comment appears to be men."
+            }
+        },
+        "34": {
+            "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+            "annotation": {
+                "target": "American men, specifically those who hunt and are perceived as aggressive or violent",
+                "score": 0.95,
+                "reasoning": "The comment targets a specific subgroup of American men based on their behavior (hunting) and perceived characteristics (aggressive or violent). The language used is critical and stereotyping, implying that these men engage in hunting due to a lack of courage to fight animals with their bare fists."
+            }
+        },
+        "35": {
+            "text": "Refugees are like rats, swarming into the country.",
+            "annotation": {
+                "target": "Refugees",
+                "score": 0.95,
+                "reasoning": "The text compares refugees to rats, which is a derogatory and dehumanizing comparison. This suggests that the comment is targeting refugees."
+            }
+        },
+        "36": {
+            "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+            "annotation": {
+                "target": "Mormons",
+                "score": 1.0,
+                "reasoning": "The text specifically mentions 'mormons' and expresses a negative sentiment towards them."
+            }
+        },
+        "37": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The statement specifically mentions 'women', indicating that the comment is addressing or referring to this particular social group."
+            }
+        },
+        "38": {
+            "text": "My neighbor is Muslim and he invited me over for dinner.",
+            "annotation": {
+                "target": "Muslims",
+                "score": 0.8,
+                "reasoning": "The text mentions a specific individual who is Muslim, indicating that the comment targets Muslims."
+            }
+        },
+        "39": {
+            "text": "Immigrants are good for the economy in the long run, especially in a relatively low population country like ours. That aging population that you refer to needs to be replaced, and most of us aren't having enough kids. ",
+            "annotation": {
+                "target": "immigrants",
+                "score": 0.8,
+                "reasoning": "The comment discusses the economic benefits of immigrants in a low-population country, indicating that the speaker is addressing or referring to immigrants."
+            }
+        },
+        "40": {
+            "text": "You might want to spread that word to a lot of other fellow Christians. ",
+            "annotation": {
+                "target": "Christians",
+                "score": 0.9999,
+                "reasoning": "The text explicitly mentions spreading the word to fellow Christians, indicating that the target social group is Christians."
+            }
+        },
+        "41": {
+            "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The comment mentions 'women' and makes general statements about them, indicating that the target group is women."
+            }
+        },
+        "42": {
+            "text": "Where in the world is history NOT massively whitewashed? China? Russia? Africa? South America? It happens everywhere. And not mentioning many of the great women in the history of various cultures as they do their male counterparts? Sadly it is something that has happened for centuries all over the place.",
+            "annotation": {
+                "target": "women",
+                "score": 0.8,
+                "reasoning": "The comment mentions 'the great women in the history of various cultures' and criticizes how they are often not mentioned as much as their male counterparts."
+            }
+        },
+        "43": {
+            "text": "It's also the most common spot for skin cancer on anyone with dark skin. ",
+            "annotation": {
+                "target": "people with dark skin",
+                "score": 0.5,
+                "reasoning": "The text specifically mentions people with dark skin as being more susceptible to a particular health issue (skin cancer), indicating that the comment is targeting this demographic group."
+            }
+        },
+        "44": {
+            "text": "Women can be sexist against themselves too though, as a symptom of how society is.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The text specifically mentions women and their potential to exhibit sexism against themselves, indicating that the comment is targeting this demographic."
+            }
+        },
+        "45": {
+            "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+            "annotation": {
+                "target": "bishops",
+                "score": 0.99,
+                "reasoning": "The comment specifically mentions \"a lot of bishops\" being targeted as \"predators and perves\", indicating that the social group being referred to is bishops."
+            }
+        },
+        "46": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "target": "women",
+                "score": 0.8,
+                "reasoning": "The statement mentions women specifically and compares their level of radicalism between two time periods."
+            }
+        },
+        "47": {
+            "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+            "annotation": {
+                "target": "alt",
+                "score": 0.8,
+                "reasoning": "The comment mentions 'the alt' and criticizes its behavior, indicating that the target social group is likely those who identify with or support the alt-right ideology."
+            }
+        },
+        "48": {
+            "text": "Obese women are disgusting.",
+            "annotation": {
+                "target": "Obese women",
+                "score": 1.0,
+                "reasoning": "The comment specifically targets obese women, expressing a negative sentiment towards them."
+            }
+        },
+        "49": {
+            "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+            "annotation": {
+                "target": "White people",
+                "score": 0.7,
+                "reasoning": "The comment mentions 'white people' specifically, indicating they are being targeted with a stereotype about their inability to differentiate between Chinese and other East-Asians."
+            }
+        },
+        "50": {
+            "text": "In the last two thousand years, I haven't seen Jews dedicate their time to attacking other people because of their heritage. The same cannot be said of Nazis and self-identified Aryans. When I think of a Jew I think of someone who tends to be part of a fairly insular culture that isn't interested in evangelizing. Aryans have been more commonly violent and focused on knocking down anyone who isn't an Aryan.",
+            "annotation": {
+                "target": "Neo-Nazis",
+                "score": 0.99,
+                "reasoning": "The comment targets Neo-Nazis by contrasting them with Jews, implying that the former are more likely to be violent and focused on attacking others due to their heritage."
+            }
+        },
+        "51": {
+            "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+            "annotation": {
+                "target": "LGBTQ+",
+                "score": 0.99,
+                "reasoning": "The comment mentions telling a kid 'not to be gay', which suggests that the speaker is targeting individuals who identify as LGBTQ+, specifically gay people."
+            }
+        },
+        "52": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "target": "foreigners",
+                "score": 0.9,
+                "reasoning": "The comment contains a derogatory term for foreigners, indicating that the speaker holds prejudices against people from other countries."
+            }
+        },
+        "53": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "target": "people in general",
+                "score": 0.5,
+                "reasoning": "The comment mentions \"people\" and expresses a sentiment that is applicable to all individuals."
+            }
+        },
+        "54": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "target": "men",
+                "score": 0.9,
+                "reasoning": "The text makes a general statement about most men being pigs and rapists."
+            }
+        },
+        "55": {
+            "text": "Women are more emotional than men",
+            "annotation": {
+                "target": "women",
+                "score": 0.7,
+                "reasoning": "The statement makes a generalization about women being more emotional than men, which could be perceived as sexist or stereotyping."
+            }
+        },
+        "56": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "target": "everyone",
+                "score": 0.8,
+                "reasoning": "The phrase \"What the fuck is wrong with people\" is a general statement that expresses frustration or annoyance towards people in general, without specifying any particular group."
+            }
+        },
+        "57": {
+            "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+            "annotation": {
+                "target": "Mormons",
+                "score": 0.9999958658536586,
+                "reasoning": "The comment specifically mentions Mormonism and its practices, such as wearing magic underwear, having multiple wives, and controlling people through religion. The tone is critical and disapproving of the Mormon faith."
+            }
+        },
+        "58": {
+            "text": "The media like reddit seems to be mostly SJW liberals. They are like sheep following whatever the media says about Trump and failing to see the good things hes done for our country. ",
+            "annotation": {
+                "target": "SJW liberals",
+                "score": 0.95,
+                "reasoning": "The comment targets a specific group of people, namely SJW (Social Justice Warrior) liberals who use online platforms like Reddit to discuss and share their views on politics, particularly about Trump."
+            }
+        },
+        "59": {
+            "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+            "annotation": {
+                "target": "men",
+                "score": 0.9999951174418605,
+                "reasoning": "The comment is referring to \"a completely innocent man\" and expressing anticipation for his life being ruined by \"evil lying women (or men!)\". This indicates that the social group targeted with this comment is men."
+            }
+        },
+        "60": {
+            "text": "Bwahahahah, conservative white males are so fucking stupid.",
+            "annotation": {
+                "target": "conservative white males",
+                "score": 0.95,
+                "reasoning": "The given text contains a statement that targets a specific demographic group, namely \"conservative white males\", with a derogatory comment."
+            }
+        },
+        "61": {
+            "text": "Journalists just write whatever gets clicks",
+            "annotation": {
+                "target": "journalists",
+                "score": 0.8,
+                "reasoning": "The comment targets journalists by stating that they only write for the purpose of getting clicks, implying that their primary motivation is to attract readers rather than to provide accurate and informative content."
+            }
+        },
+        "62": {
+            "text": "women prefer family and raising children to working in business.",
+            "annotation": {
+                "target": "women",
+                "score": 0.99,
+                "reasoning": "The statement makes a generalization about the preferences of women, implying that they prioritize family and child-rearing over careers in business."
+            }
+        },
+        "63": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "target": "LGBTQ+",
+                "score": 0.8,
+                "reasoning": "The text contains a derogatory term for the LGBTQ+ community."
+            }
+        },
+        "64": {
+            "text": "Christians are all judgmental hypocrites.",
+            "annotation": {
+                "target": "Christians",
+                "score": 0.9999,
+                "reasoning": "The text specifically mentions 'Christians', indicating that the comment targets this particular religious group."
+            }
+        },
+        "65": {
+            "text": "Jesus, Democrats are fucking evil.  They know they control big tech & the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules.\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 & voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+            "annotation": {
+                "target": "Democrats",
+                "score": 1.0,
+                "reasoning": "The comment is targeting the social group of Democrats, expressing strong negative sentiments towards them."
+            }
+        },
+        "66": {
+            "text": "Immigrants just come here to take our jobs.",
+            "annotation": {
+                "target": "immigrants",
+                "score": 0.9,
+                "reasoning": "The statement makes a generalization about immigrants coming to the country for the purpose of taking jobs from others, which is a negative stereotype often associated with anti-immigrant sentiment."
+            }
+        },
+        "67": {
+            "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+            "annotation": {
+                "target": "Russians",
+                "score": 0.8,
+                "reasoning": "The comment mentions 'Russia, where you're probably posting from', indicating that the speaker believes the person they are addressing is likely from Russia."
+            }
+        },
+        "68": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "target": "women",
+                "score": 0.95,
+                "reasoning": "The comment contains a derogatory statement about women, indicating that the target social group is women."
+            }
+        },
+        "69": {
+            "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+            "annotation": {
+                "target": "Europeans",
+                "score": 0.9999,
+                "reasoning": "The comment makes a sweeping negative statement about Europeans as a group, using derogatory language."
+            }
+        },
+        "70": {
+            "text": "So.. women are allowed to but men aren't?",
+            "annotation": {
+                "target": "men",
+                "score": 0.6,
+                "reasoning": "The comment mentions a comparison between the rights of women and men, implying that men are being restricted or discriminated against in some way."
+            }
+        },
+        "71": {
+            "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+            "annotation": {
+                "target": "Classic Democrats",
+                "score": 0.9999,
+                "reasoning": "The comment is about \"Classic Democrat Privilege\", which suggests that it is targeting a specific group within the Democratic party."
+            }
+        },
+        "72": {
+            "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.",
+            "annotation": {
+                "target": "feminists",
+                "score": 0.9999,
+                "reasoning": "The comment is attacking feminist values and ideology, indicating that the target social group is feminists."
+            }
+        },
+        "73": {
+            "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that.",
+            "annotation": {
+                "target": "Chinese people",
+                "score": 0.95,
+                "reasoning": "The comment makes a comparison between China and the United States in terms of population size, and also mentions China's potential influence on Africa. The language used is neutral and informative, without any derogatory or discriminatory tone."
+            }
+        },
+        "74": {
+            "text": "Women only want one thing and its disgusting",
+            "annotation": {
+                "target": "women",
+                "score": 0.99,
+                "reasoning": "The text explicitly mentions 'Women', indicating that the comment is specifically about women."
+            }
+        },
+        "75": {
+            "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.\n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.",
+            "annotation": {
+                "target": "Liberals",
+                "score": 0.9,
+                "reasoning": "The comment targets liberals by stating that they are anti-free speech snowflakes."
+            }
+        },
+        "76": {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "annotation": {
+                "target": "women",
+                "score": 0.9,
+                "reasoning": "The statement specifically mentions 'women under 30', indicating that the social group being targeted is young women."
+            }
+        },
+        "77": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "target": "individual",
+                "score": 0.9,
+                "reasoning": "The language used in the text is derogatory and insulting towards an individual."
+            }
+        },
+        "78": {
+            "text": "Politicians are all the same",
+            "annotation": {
+                "target": "politicians",
+                "score": 0.8,
+                "reasoning": "The text makes a general statement about politicians being the same, implying that they share certain characteristics or behaviors."
+            }
+        },
+        "79": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "target": "Muslims",
+                "score": 0.9999,
+                "reasoning": "The comment mentions Muslims and their accomplishments in a specific context."
+            }
+        },
+        "80": {
+            "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+            "annotation": {
+                "target": "men",
+                "score": 0.8,
+                "reasoning": "The text explicitly states that \"life is more unfair to men\" and compares the situation of men with that of women, implying a contrast between the two groups."
+            }
+        },
+        "81": {
+            "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+            "annotation": {
+                "target": "non-Americans",
+                "score": 0.9,
+                "reasoning": "The comment compares America favorably to the reader's home country, implying that non-American countries are inferior."
+            }
+        },
+        "82": {
+            "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order.",
+            "annotation": {
+                "target": "Americans",
+                "score": 0.8,
+                "reasoning": "The comment mentions 'Americans' specifically, implying that the speaker is addressing or referring to Americans as a group."
+            }
+        },
+        "83": {
+            "text": "Our town welcomed 50 new refugees last year",
+            "annotation": {
+                "target": "refugees",
+                "score": 0.99,
+                "reasoning": "The comment mentions \"refugees\", indicating that the social group being discussed or targeted are people who have been forced to leave their countries to seek safety elsewhere."
+            }
+        },
+        "84": {
+            "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+            "annotation": {
+                "target": "black men",
+                "score": 0.9,
+                "reasoning": "The text compares a statement about black men being more prone to criminal activity to a racist comment, indicating that the target group is black men."
+            }
+        },
+        "85": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "target": "Blacks",
+                "score": 0.9,
+                "reasoning": "The text makes a comparison between the likelihood of committing violent crimes among Blacks and East Asians, suggesting that Blacks are more likely to commit such crimes than East Asians, based on biological differences."
+            }
+        },
+        "86": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "target": "LGBTQ+",
+                "score": 0.99,
+                "reasoning": "The comment contains derogatory language targeting individuals based on their sexual orientation or gender identity."
+            }
+        },
+        "87": {
+            "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+            "annotation": {
+                "target": "communists",
+                "score": 0.9,
+                "reasoning": "The text specifically mentions 'communist scum', indicating that the target group is communists."
+            }
+        },
+        "88": {
+            "text": "So torturing people who live in evil and worship false gods is ok, right?",
+            "annotation": {
+                "target": "People who worship false gods",
+                "score": 0.75,
+                "reasoning": "The text implies that people who worship false gods are being targeted for torture."
+            }
+        },
+        "89": {
+            "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+            "annotation": {
+                "target": "Mormons",
+                "score": 0.95,
+                "reasoning": "The text contains a derogatory statement about Mormonism, indicating that the social group being targeted is likely Mormons."
+            }
+        },
+        "90": {
+            "text": "So the implication here is that only atheists should be in office?",
+            "annotation": {
+                "target": "atheists",
+                "score": 0.9999,
+                "reasoning": "The text implies that only atheists should hold public offices, which suggests that it targets atheists."
+            }
+        },
+        "91": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "target": "Women",
+                "score": 0.9,
+                "reasoning": "The text contains a derogatory statement about women's driving abilities, which is a stereotype often used to discriminate against them."
+            }
+        },
+        "92": {
+            "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+            "annotation": {
+                "target": "feminists",
+                "score": 0.85,
+                "reasoning": "The comment mentions feminists and their lack of presence in Saudi Arabia, indicating that the social group being targeted is feminists."
+            }
+        },
+        "93": {
+            "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+            "annotation": {
+                "target": "women",
+                "score": 0.99,
+                "reasoning": "The comment contains a derogatory term for women and is generally aggressive towards them."
+            }
+        },
+        "94": {
+            "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+            "annotation": {
+                "target": "America",
+                "score": 0.95,
+                "reasoning": "The comment expresses strong anti-American sentiment, criticizing various aspects of American society, history, and politics. The language used is profane and aggressive, indicating a clear intent to target America as a whole."
+            }
+        },
+        "95": {
+            "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+            "annotation": {
+                "target": "LGBTQ+",
+                "score": 0.99,
+                "reasoning": "The comment expresses strong negative feelings towards the LGBTQ+ community, specifically mentioning pride events and same-sex relationships in a derogatory manner."
+            }
+        },
+        "96": {
+            "text": "LGBTQ aren\u2019t covered by discrimination laws lmao, you have no clue what you\u2019re talking about. You can be denied housing, and even fired from your job for being gay in many states.",
+            "annotation": {
+                "target": "LGBTQ",
+                "score": 1.0,
+                "reasoning": "The comment discusses the lack of protection against discrimination that LGBTQ individuals face, specifically mentioning that they can be denied housing or fired from their jobs due to their sexual orientation in many states."
+            }
+        },
+        "97": {
+            "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+            "annotation": {
+                "target": "white Western Christians",
+                "score": 0.8,
+                "reasoning": "The comment specifically mentions 'white Western Christians' as the target of hatred."
+            }
+        },
+        "98": {
+            "text": "Change what dangerous/hateful means, and you'll control the world.",
+            "annotation": {
+                "target": "LGBTQ+",
+                "score": 0.75,
+                "reasoning": "The language used in the text suggests a desire to manipulate or control societal norms and values, which could be particularly harmful for marginalized groups such as LGBTQ+. The phrase 'control the world' implies a sense of power and dominance, which is often associated with oppressive attitudes towards minority groups."
+            }
+        },
+        "99": {
+            "text": "Ohh... we meant whale as in obese women.",
+            "annotation": {
+                "target": "obese women",
+                "score": 1.0,
+                "reasoning": "The text explicitly mentions that the word 'whale' refers to 'obese women', indicating a direct and derogatory reference to this group."
+            }
+        },
+        "100": {
+            "text": "Lesbians all hate men.",
+            "annotation": {
+                "target": "Lesbians",
+                "score": 0.9,
+                "reasoning": "The statement makes a generalization about lesbians hating men."
+            }
+        }
+    }
+}
