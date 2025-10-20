@@ -237,6 +237,7 @@ if __name__ == "__main__":
 
     stage_7_out_path = os.path.join(RESULT_PATH, args.out_filename)
     stage_7_results = load_file(stage_7_out_path)
+    original_data = load_file(os.path.join(DATA_PATH, original_dataset))["data"]
 
     possible_cases_ids = [
         doc_id
@@ -249,9 +250,9 @@ if __name__ == "__main__":
     ]
 
     possible_cases = {
-        doc_id: {"text": original_dataset[doc_id]["text"]}
+        doc_id: {"text": original_data[doc_id]["text"]}
         for doc_id in possible_cases_ids
-        if doc_id in original_dataset
+        if doc_id in original_data
     }
 
     stage7_dataset = f"stage_7_data_{CURRENT_ITERATION}.json"
