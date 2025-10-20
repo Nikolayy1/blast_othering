@@ -227,7 +227,7 @@ if __name__ == "__main__":
     annotator_othering = Annotate(
         args,
         SCRIPT_PATH,
-        DATA_PATH,
+        os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
         RESULT_PATH,
         stage=7,
         curr_iteration=CURRENT_ITERATION,
