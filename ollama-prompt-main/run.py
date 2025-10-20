@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
     if not args.out_filename:
         args.out_filename = f"stage_1_results_{CURRENT_ITERATION}.json"
-    
+
     original_dataset = args.dataset
 
     # Stage 1
@@ -127,7 +127,6 @@ if __name__ == "__main__":
     #     args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=2, curr_iteration=CURRENT_ITERATION
     # )
     # annotator_stage_2.process_docs()
-    
 
     # # Load Stage 2 results
     # stage_2_out_path = os.path.join(RESULT_PATH, args.out_filename)
@@ -141,7 +140,7 @@ if __name__ == "__main__":
     # # Save filtered data for Stage 3
     # stage3_dataset = f"stage_3_data_{CURRENT_ITERATION}.json"
     # save_file(other_only, RESULT_PATH, stage3_dataset)
-    
+
     # # Stage 3
     # args.dataset = stage3_dataset
     # args.out_filename = f"stage_3_results_{CURRENT_ITERATION}.json"
@@ -150,7 +149,7 @@ if __name__ == "__main__":
     #     args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=3, curr_iteration=CURRENT_ITERATION
     # )
     # annotator_stage_3.process_docs()
-    
+
     # # Load Stage 2 results
     # stage_2_out_path = os.path.join(RESULT_PATH, args.out_filename)
     # stage_2_results = load_file(stage_2_out_path)
@@ -185,7 +184,7 @@ if __name__ == "__main__":
     # # Save filtered data for Stage 5
     # stage5_dataset = f"stage_5_data_{CURRENT_ITERATION}.json"
     # save_file(other_only, RESULT_PATH, stage5_dataset)
-    
+
     # # Stage 5
     # args.dataset = stage5_dataset
     # args.out_filename = f"stage_5_results_{CURRENT_ITERATION}.json"
@@ -193,7 +192,7 @@ if __name__ == "__main__":
     #     args, SCRIPT_PATH, os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"), RESULT_PATH, stage=5, curr_iteration=CURRENT_ITERATION
     # )
     # annotator_stage_5.process_docs()
-    
+
     # Othering
     args.dataset = original_dataset
     args.out_filename = f"6_target_results_{CURRENT_ITERATION}.json"
@@ -205,7 +204,16 @@ if __name__ == "__main__":
         RESULT_PATH,
         stage=6,
         curr_iteration=CURRENT_ITERATION,
-        otheringStage=1
+        otheringStage=1,
     )
     annotator_othering.process_docs()
 
+    stage_6_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    stage_6_results = load_file(stage_6_out_path)
+
+    targets_only = {
+        doc_id: {"target": doc["annotation"]["target"]}
+        for doc_id, doc in stage_6_results["data"].items()
+        if doc.get("annotation") and "target" in doc["annotation"]
+    }
+    save_file({"data": targets_only}, RESULT_PATH, "targets_only.json")
