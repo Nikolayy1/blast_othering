@@ -2,6 +2,8 @@ import os
 import json
 from dotenv import load_dotenv
 import logging
+import statistics
+from collections import Counter
 
 """
 Utility functions used across the project, including:
@@ -78,3 +80,47 @@ def load_file(file_path, logger=None):
         return None
 
     return data
+
+
+def annotate_with_self_consistency(self, doc_prompt: str, n_samples: int = 5):
+    """
+    Run multiple samples with different seeds / temperatures
+    and return the majority-voted label.
+    """
+    results = []
+    scores = []
+    reasonings = []
+
+    base_temp = self.config.temperature or 0.7
+    base_seed = self.config.seed or 42
+
+    for i in range(n_samples):
+        # Slightly vary temperature and seed for diversity
+        temp = base_temp + (0.05 * i)
+        seed = base_seed + i
+
+        # temporarily override client options
+        self.ollama_client.options["temperature"] = temp
+        self.ollama_client.options["seed"] = seed
+
+        result = self.ollama_client.chat(doc_prompt)
+        if result and "label" in result:
+            results.append(result["label"].strip().lower())
+            scores.append(result.get("score", None))
+            reasonings.append(result.get("reasoning", ""))
+    
+    if not results:
+        return None
+
+    # Majority vote
+    final_label = Counter(results).most_common(1)[0][0]
+
+    # Optional average score (if provided)
+    avg_score = statistics.mean([s for s in scores if s is not None]) if any(scores) else None
+
+    return {
+        "final_label": final_label,
+        "votes": results,
+        "avg_score": avg_score,
+        "reasonings": reasonings
+    }
