@@ -218,7 +218,7 @@ if __name__ == "__main__":
     }
 
     stage6_dataset = f"stage_6_data_{CURRENT_ITERATION}.json"
-    save_file({"data": targets_only}, RESULT_PATH, stage6_dataset)
+    save_file(targets_only, RESULT_PATH, stage6_dataset)
 
     # Is Social Group?
     args.dataset = stage6_dataset
