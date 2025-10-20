@@ -237,7 +237,7 @@ if __name__ == "__main__":
 
     stage_7_out_path = os.path.join(RESULT_PATH, args.out_filename)
     stage_7_results = load_file(stage_7_out_path)
-    original_data = load_file(os.path.join(DATA_PATH, original_dataset))["data"]
+    original_data = load_file(os.path.join(DATA_PATH, original_dataset))
 
     possible_cases_ids = [
         doc_id
