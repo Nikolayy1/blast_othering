@@ -193,7 +193,7 @@ if __name__ == "__main__":
     # )
     # annotator_stage_5.process_docs()
 
-    # Othering
+    # Target Group
     args.dataset = original_dataset
     args.out_filename = f"6_target_results_{CURRENT_ITERATION}.json"
 
@@ -216,4 +216,21 @@ if __name__ == "__main__":
         for doc_id, doc in stage_6_results["data"].items()
         if doc.get("annotation") and "target" in doc["annotation"]
     }
-    save_file({"data": targets_only}, RESULT_PATH, "targets_only.json")
+
+    stage6_dataset = f"stage_6_data_{CURRENT_ITERATION}.json"
+    save_file({"data": targets_only}, RESULT_PATH, stage6_dataset)
+
+    # Is Social Group?
+    args.dataset = stage6_dataset
+    args.out_filename = f"stage_7_results_{CURRENT_ITERATION}.json"
+
+    annotator_othering = Annotate(
+        args,
+        SCRIPT_PATH,
+        DATA_PATH,
+        RESULT_PATH,
+        stage=7,
+        curr_iteration=CURRENT_ITERATION,
+        otheringStage=2,
+    )
+    annotator_othering.process_docs()
