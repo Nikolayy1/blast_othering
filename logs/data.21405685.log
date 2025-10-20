@@ -1,0 +1,9 @@
+Starting up Ollama server
+Waiting for Ollama server to start
+2025-10-20 00:28:36,169 - INFO - Setting Annotator variables and initializing Ollama client.
+2025-10-20 00:28:36,176 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_identify_target.json
+2025-10-20 00:28:36,192 - INFO - Loaded data from: ./data/../data/annotations_100.json
+2025-10-20 00:28:36,210 - INFO - Formatting docs
+  0%|          | 0/100 [00:00<?, ?it/s]100%|██████████| 100/100 [00:00<00:00, 1121471.66it/s]
+2025-10-20 00:28:36,341 - INFO - Processing docs with 4 workers.
+  0%|          | 0/100 [00:00<?, ?it/s]slurmstepd: error: *** JOB 21405685 ON bgpu-g4-u32 CANCELLED AT 2025-10-20T00:28:57 ***
