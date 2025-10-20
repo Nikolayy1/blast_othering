@@ -4,37 +4,37 @@
     "demos": [
         {
             "text": "Americans",
-            "annotation": {
+            "answer": {
                 "isSocialGroup": true
             }
         },
         {
             "text": "Liberals",
-            "annotation": {
+            "answer": {
                 "isSocialGroup": true
             }
         },
         {
             "text": "Women",
-            "annotation": {
+            "answer": {
                 "isSocialGroup": true
             }
         },
         {
             "text": "People from this sub",
-            "annotation": {
+            "answer": {
                 "isSocialGroup": false
             }
         },
         {
             "text": "Christian Bakeries",
-            "annotation": {
+            "answer": {
                 "isSocialGroup": false
             }
         },
         {
             "text": "People who read all the texts",
-            "annotation": {
+            "answer": {
                 "isSocialGroup": false
             }
         }
