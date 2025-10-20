@@ -1,0 +1,786 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_7_data_107.json",
+        "out_filename": "stage_8_results_107.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-19 22:28:46",
+    "prompt_data": {
+        "system_prompt": "Determine whether the following statement portrays the mentioned social group in a negative, harmful, or demeaning way.",
+        "question": "Does this statement portray the mentioned social group as 'bad', such as describing them as dangerous, dirty, inferior, evil, or otherwise negative?",
+        "demos": []
+    },
+    "data": {
+        "5": {
+            "text": "Americans are so lazy. No wonder half the country is obese.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays Americans in a negative light by describing them as 'lazy', which carries a negative connotation. Additionally, it makes an assumption about obesity rates being directly related to laziness, further perpetuating the stereotype."
+            }
+        },
+        "2": {
+            "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement portrays men who are predators waiting for their chance to molest women in a negative light, but it does not portray all men as bad. Instead, it specifically targets those individuals who engage in such behavior."
+            }
+        },
+        "3": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad', such as describing them as dangerous, dirty, inferior, evil, or otherwise negative. Instead, it makes a generalization about Americans being lazy when driving manuals."
+            }
+        },
+        "1": {
+            "text": "The majority of people on this sub are young kids and/or clueless idiots. Don't pay too much attention to them",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe the social group, implying they are inferior or lacking in intelligence."
+            }
+        },
+        "6": {
+            "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe certain countries, implying they are inferior or evil."
+            }
+        },
+        "7": {
+            "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays the social group of Catholic priests as having a preference for young girls who have not yet developed physically, which is a negative and harmful stereotype."
+            }
+        },
+        "8": {
+            "text": "Every women is a potential child killer.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (women) in an extremely negative and harmful way by suggesting that every woman has the potential to be a child killer."
+            }
+        },
+        "9": {
+            "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the social group as 'bad' in a way that is negative, harmful, or demeaning."
+            }
+        },
+        "10": {
+            "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": -1.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad'. Instead, it criticizes and expresses negative sentiments towards a specific religion, Christianity."
+            }
+        },
+        "11": {
+            "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement uses derogatory language towards Mormons and their location, implying that they are inferior or undesirable."
+            }
+        },
+        "12": {
+            "text": "That's how they get women to be \"cool\" with their shitty behaviour, by telling us we have no sense of humour, can't take a joke, being bitchy, etc. \n\nSad thing is, it works with a lot of women. They force a strained laugh to fit in and tell themselves it's just \"Boys being boys.\"",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad'. Instead, it criticizes how some individuals from this group treat women and make them feel inferior or forced to laugh at inappropriate jokes."
+            }
+        },
+        "14": {
+            "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray men as 'bad' overall but rather criticizes their behavior or actions related to online profiles and dating."
+            }
+        },
+        "15": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement compares radical Muslims to Ebola, which is a deadly and highly infectious disease. This comparison implies that radical Muslims are a threat to European society, much like the disease is a threat to human health."
+            }
+        },
+        "16": {
+            "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (men) as 'bad' by describing them as having an \"animalistic cult mentality\" and doing \"shitty things\", especially to women. This implies that men in groups are prone to behaving poorly or harmfully towards others."
+            }
+        },
+        "17": {
+            "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray gay men as 'bad' or negative overall. It appears to be a critique of the idea that being gay grants someone special rights or privileges, specifically in terms of physical contact with women."
+            }
+        },
+        "18": {
+            "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays immigrants in a negative light by implying that they are unwilling to integrate into the host society, instead choosing to isolate themselves."
+            }
+        },
+        "19": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray women in a negative light overall but rather makes a generalization about their preferences regarding work."
+            }
+        },
+        "20": {
+            "text": "All women cheat after 10 years of marriage",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays the mentioned social group (women) in a negative light by making a sweeping generalization that they all cheat after 10 years of marriage."
+            }
+        },
+        "21": {
+            "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays immigrants as a threat to society, implying that their presence is harmful or dangerous. This kind of portrayal can perpetuate negative stereotypes and contribute to xenophobia."
+            }
+        },
+        "22": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe the mentioned social group, implying they are inferior and undesirable."
+            }
+        },
+        "23": {
+            "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -0.5,
+                "reasoning": "The statement portrays the social group of men as 'oppressors', which has a negative connotation and implies that they are inherently harmful or evil. This kind of portrayal can perpetuate harmful stereotypes and reinforce existing biases."
+            }
+        },
+        "24": {
+            "text": "Ugly girls don\u2019t deserve attention ",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays the mentioned social group (ugly girls) as undeserving of attention, which is a negative and demeaning portrayal."
+            }
+        },
+        "25": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement expresses caution about interacting with foreign immigrants but does not contain language that is inherently demeaning or harmful towards them."
+            }
+        },
+        "26": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (women) in a highly negative and demeaning way, using derogatory language to describe them."
+            }
+        },
+        "27": {
+            "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays academics as being out of touch with reality and living in isolation, which is a negative stereotype."
+            }
+        },
+        "28": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group (women) as 'bad'. Instead, it challenges and rejects a negative stereotype about women having no worth."
+            }
+        },
+        "29": {
+            "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group in a negative light by using derogatory language and implying they are acting in an inappropriate or pretentious manner."
+            }
+        },
+        "30": {
+            "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad' in a negative or demeaning way. Instead, it highlights a difference in their beliefs regarding the concept of God."
+            }
+        },
+        "31": {
+            "text": "As an outsider looking in I disagree. Religion seems to creep into everything. Ever had an atheist president or even more than a handful of congress that admit to being so? ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray atheists as 'bad', such as describing them as dangerous, dirty, inferior, evil, or otherwise negative. Instead, it questions the lack of representation of atheists in high political offices and expresses disagreement with the influence of religion on politics."
+            }
+        },
+        "32": {
+            "text": "Lol wow the media really brainwashed you folks. It is shitty in the Arab world but not close to what you have been shown. Kuwait is not Afghanistan for fuck's sake.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the social group as 'bad' in a negative or demeaning way. Instead, it criticizes the media for misrepresenting the Arab world and Kuwait, suggesting that the portrayal is inaccurate."
+            }
+        },
+        "33": {
+            "text": "Yes, for those moments they feel they have power over us. Power to make us uncomfortable, afraid, and in some cases, the power to act in a way that confirms the fear we feel.  It's a moment when they feel totally in control of someone else's reality. Disgusting.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays the mentioned social group as having power to make others uncomfortable and afraid, which is a negative portrayal."
+            }
+        },
+        "34": {
+            "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays America as a place where men engage in cruel and cowardly behavior, specifically shooting defenseless animals for sport. This portrayal is negative and demeaning towards the social group of American men who participate in such activities."
+            }
+        },
+        "35": {
+            "text": "Refugees are like rats, swarming into the country.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement compares refugees to rats, which is a derogatory and dehumanizing comparison. Rats are often associated with disease, filth, and pestilence, implying that refugees are unwanted, unclean, and potentially harmful. This kind of language can perpetuate negative stereotypes and contribute to a hostile environment for refugees."
+            }
+        },
+        "36": {
+            "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group, Mormons, in a negative light by expressing strong opposition and even celebrating when their beliefs are not made into law. The use of derogatory language ('Damn') further emphasizes the negative portrayal."
+            }
+        },
+        "37": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad'. Instead, it argues against a negative portrayal of women in human history."
+            }
+        },
+        "38": {
+            "text": "My neighbor is Muslim and he invited me over for dinner.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement simply describes a social interaction between the speaker and their Muslim neighbor without expressing any negative sentiment or stereotype about Muslims."
+            }
+        },
+        "39": {
+            "text": "Immigrants are good for the economy in the long run, especially in a relatively low population country like ours. That aging population that you refer to needs to be replaced, and most of us aren't having enough kids. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray immigrants in a negative light. Instead, it highlights their positive impact on the economy, especially in countries with low population and aging demographics. It suggests that immigrants can help replace an aging population and contribute to economic growth."
+            }
+        },
+        "40": {
+            "text": "You might want to spread that word to a lot of other fellow Christians. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group in a negative way. It suggests spreading the word to fellow Christians, which implies a positive and supportive community."
+            }
+        },
+        "41": {
+            "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad' in general terms such as describing them as dangerous, dirty, inferior, evil, or otherwise negative. Instead, it expresses frustration with a specific behavior exhibited by some women the speaker has interacted with."
+            }
+        },
+        "42": {
+            "text": "Where in the world is history NOT massively whitewashed? China? Russia? Africa? South America? It happens everywhere. And not mentioning many of the great women in the history of various cultures as they do their male counterparts? Sadly it is something that has happened for centuries all over the place.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray any social group in a negative light. Instead, it highlights a problem with historical narratives and the lack of representation of women from various cultures."
+            }
+        },
+        "43": {
+            "text": "It's also the most common spot for skin cancer on anyone with dark skin. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray people with dark skin in a negative light. Instead, it provides factual information about a health issue affecting this group."
+            }
+        },
+        "44": {
+            "text": "Women can be sexist against themselves too though, as a symptom of how society is.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray women in a negative light. Instead, it highlights that societal influences can lead to internalized sexism among women themselves."
+            }
+        },
+        "45": {
+            "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (bishops) in a negative light by labeling them as 'predators' and 'perves', which are derogatory terms. This kind of language can perpetuate harmful stereotypes and contribute to a negative perception of the group."
+            }
+        },
+        "46": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray women in a negative light. Instead, it highlights their progressive and forward-thinking nature, both historically and currently."
+            }
+        },
+        "47": {
+            "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad' in a direct or explicit manner. Instead, it uses metaphors and strong language to express disagreement with certain actions or behaviors associated with that group."
+            }
+        },
+        "48": {
+            "text": "Obese women are disgusting.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses the word \"disgusting\" to describe a specific group of people (obese women), which is a strongly negative and demeaning term."
+            }
+        },
+        "49": {
+            "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray white people as 'bad' or negative overall. Instead, it highlights a potential issue with stereotypes and differentiation within the Chinese community itself."
+            }
+        },
+        "50": {
+            "text": "In the last two thousand years, I haven't seen Jews dedicate their time to attacking other people because of their heritage. The same cannot be said of Nazis and self-identified Aryans. When I think of a Jew I think of someone who tends to be part of a fairly insular culture that isn't interested in evangelizing. Aryans have been more commonly violent and focused on knocking down anyone who isn't an Aryan.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray Jews as 'bad'. Instead, it highlights their peaceful nature and lack of violence towards others due to their heritage. The negative portrayal is actually directed at Nazis and self-identified Aryans, who are described as violent and focused on harming others."
+            }
+        },
+        "51": {
+            "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": -1.0,
+                "reasoning": "The statement does not portray the social group as 'bad' in a negative or demeaning way. Instead, it highlights a harmful and unacceptable attitude towards the LGBTQ+ community by suggesting that being gay is something to be discouraged or changed."
+            }
+        },
+        "52": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe the social group, implying they are of poor quality and unclean."
+            }
+        },
+        "54": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (men) in a highly negative light by using derogatory language ('pigs') and making a serious accusation ('rapists'). This kind of portrayal can perpetuate harmful stereotypes and contribute to a culture of prejudice and discrimination."
+            }
+        },
+        "55": {
+            "text": "Women are more emotional than men",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.5,
+                "reasoning": "The statement makes a general comparison between women and men regarding their emotional levels, but it does not contain language that is inherently harmful or demeaning towards the mentioned social group."
+            }
+        },
+        "57": {
+            "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (Mormonism) in a negative light. It describes Mormonism as a cult, which has a strongly negative connotation. Additionally, it makes serious accusations against members of this group, including involvement in harmful activities such as child abuse and polygamy."
+            }
+        },
+        "59": {
+            "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group in a negative light. The use of words like 'evil' and 'lying' creates a harmful stereotype that all members of this group are dishonest and malevolent."
+            }
+        },
+        "60": {
+            "text": "Bwahahahah, conservative white males are so fucking stupid.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe a specific social group, implying they are unintelligent and inferior."
+            }
+        },
+        "61": {
+            "text": "Journalists just write whatever gets clicks",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not explicitly describe journalists in a negative way. Instead, it criticizes their behavior of writing for the sake of getting clicks, implying that they prioritize sensationalism over quality content."
+            }
+        },
+        "62": {
+            "text": "women prefer family and raising children to working in business.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group (women) as 'bad', such as describing them as dangerous, dirty, inferior, evil, or otherwise negative. Instead, it presents a neutral preference of women regarding family and work."
+            }
+        },
+        "63": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses the word \"trash\" to describe a social group identified as gay, which is derogatory and demeaning."
+            }
+        },
+        "64": {
+            "text": "Christians are all judgmental hypocrites.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group in a negative light by using pejorative terms such as 'judgmental' and 'hypocrites', which convey a sense of disapproval or condemnation."
+            }
+        },
+        "65": {
+            "text": "Jesus, Democrats are fucking evil.  They know they control big tech & the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules.\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 & voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' by describing them as evil and anti-American."
+            }
+        },
+        "66": {
+            "text": "Immigrants just come here to take our jobs.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays immigrants in a negative light by implying that they are taking jobs away from others, which can be seen as harmful or demeaning."
+            }
+        },
+        "67": {
+            "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": -1.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad'. The text appears to be a response to an untruthful claim and is focused on comparing crime rates between countries. It uses strong language but does so in a way that criticizes certain conditions or situations rather than making a negative generalization about any particular group of people."
+            }
+        },
+        "68": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe the mentioned social group, specifically women, in a highly offensive and demeaning manner."
+            }
+        },
+        "69": {
+            "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -0.5,
+                "reasoning": "The statement portrays Europeans as 'haughty, whiny bitches', which is a negative and demeaning description."
+            }
+        },
+        "70": {
+            "text": "So.. women are allowed to but men aren't?",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group in a negative, harmful, or demeaning way. It appears to be a neutral observation about gender-based rules or restrictions."
+            }
+        },
+        "71": {
+            "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad'. It criticizes a specific individual's behavior and points out the hypocrisy in how people react to it based on their political affiliation. The criticism is directed at the actions of the person, not the group as a whole."
+            }
+        },
+        "72": {
+            "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays feminists and their values as 'trash' and describes feminist propaganda as an attack on conservative values, which is a negative portrayal."
+            }
+        },
+        "73": {
+            "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays China in a negative light by comparing its population growth to 'voracious locusts swarming over the world', which is a harmful and demeaning metaphor."
+            }
+        },
+        "74": {
+            "text": "Women only want one thing and its disgusting",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays women in a negative light by implying that they are all motivated by the same base desire, which is described as 'disgusting'. This kind of generalization can perpetuate harmful stereotypes and contribute to a culture of disrespect towards women."
+            }
+        },
+        "75": {
+            "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.\n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays liberals in a negative light by using derogatory terms such as 'anti-free speech snowflakes'."
+            }
+        },
+        "76": {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": -1.0,
+                "reasoning": "The statement does not portray the mentioned social group in a negative way. It expresses an opinion about a specific situation involving women under 30 teaching boys going through puberty, but it does not contain any inherently derogatory or demeaning language towards the group itself."
+            }
+        },
+        "78": {
+            "text": "Politicians are all the same",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement implies that politicians lack individuality and are indistinguishable from one another in a negative way, suggesting they are all untrustworthy or corrupt."
+            }
+        },
+        "79": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the social group of Muslims in a negative light by implying that their typical or expected behavior is violent and that any accomplishment other than violence is unusual or noteworthy."
+            }
+        },
+        "80": {
+            "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": -1.0,
+                "reasoning": "The statement does not portray the social group of men as 'bad' in a negative or demeaning way. Instead, it makes a comparison between men and women regarding unfairness in life and differences in behavior."
+            }
+        },
+        "81": {
+            "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group as inferior by comparing it unfavorably to America and using derogatory language ('trash country'). This kind of comparison can be seen as demeaning and harmful."
+            }
+        },
+        "82": {
+            "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 3.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' because it describes them as brainwashed and disconnected from reality, which is a negative characterization."
+            }
+        },
+        "83": {
+            "text": "Our town welcomed 50 new refugees last year",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group in a negative way. It simply states that the town welcomed 50 new refugees without expressing any negative sentiments or stereotypes about them."
+            }
+        },
+        "84": {
+            "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group in a negative way by suggesting they are more inherently prone to criminal activity."
+            }
+        },
+        "85": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": -1.0,
+                "reasoning": "The statement portrays the mentioned social group in a negative way by suggesting they have an inherent tendency towards violence based on their biology."
+            }
+        },
+        "86": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe the social group, implying they are inferior or of less value."
+            }
+        },
+        "87": {
+            "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe the social group, implying they are inferior and evil."
+            }
+        },
+        "88": {
+            "text": "So torturing people who live in evil and worship false gods is ok, right?",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' by describing them with negative terms such as 'evil', 'false gods', and implying that they are deserving of torture."
+            }
+        },
+        "89": {
+            "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' by comparing it to a harmful disease."
+            }
+        },
+        "90": {
+            "text": "So the implication here is that only atheists should be in office?",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray atheists as 'bad' but rather questions an implication about them holding public offices. It presents a neutral or inquiring tone regarding the idea that only atheists should be in office."
+            }
+        },
+        "91": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement uses derogatory language to describe women's driving abilities, implying they are inferior and lack skill in this area."
+            }
+        },
+        "92": {
+            "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.5,
+                "reasoning": "The statement does not portray the social group of Saudi Arabians in a negative way overall. Although it mentions that feminists can never be found organizing marches for their oppressed sisters there, this is more of an observation about the situation rather than a value judgment on the people themselves."
+            }
+        },
+        "93": {
+            "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' by describing them in a derogatory manner and using profanity."
+            }
+        },
+        "94": {
+            "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays America as a whole in a negative light, using strong language to express disdain for various aspects of American society and history."
+            }
+        },
+        "95": {
+            "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' by describing their behavior and appearance in a negative light, using words like 'disgusting' and 'revolting'. This kind of portrayal can be harmful or demeaning to the group."
+            }
+        },
+        "96": {
+            "text": "LGBTQ aren\u2019t covered by discrimination laws lmao, you have no clue what you\u2019re talking about. You can be denied housing, and even fired from your job for being gay in many states.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the LGBTQ social group as 'bad'. Instead, it highlights a lack of protection under discrimination laws and the potential negative consequences that members of this group may face in many states."
+            }
+        },
+        "97": {
+            "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+            "annotation": {
+                "isPortrayedAsBad": false,
+                "score": 0.0,
+                "reasoning": "The statement does not portray the mentioned social group as 'bad' in a general sense, but rather describes their behavior or actions as being hateful towards a specific subgroup."
+            }
+        },
+        "98": {
+            "text": "Change what dangerous/hateful means, and you'll control the world.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group as 'bad' by describing them in a way that implies they are capable of causing harm or danger to others."
+            }
+        },
+        "99": {
+            "text": "Ohh... we meant whale as in obese women.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays the mentioned social group (obese women) in a harmful and demeaning way by using a derogatory term ('whale') to describe them."
+            }
+        },
+        "100": {
+            "text": "Lesbians all hate men.",
+            "annotation": {
+                "isPortrayedAsBad": true,
+                "score": 1.0,
+                "reasoning": "The statement portrays lesbians in a negative and stereotypical way by implying that they all share the same hatred for men, which is not accurate or fair."
+            }
+        }
+    }
+}
