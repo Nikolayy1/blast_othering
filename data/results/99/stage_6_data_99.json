@@ -1,0 +1,304 @@
+{
+    "data": {
+        "3": {
+            "target": "Americans"
+        },
+        "4": {
+            "target": "Christian bakeries"
+        },
+        "1": {
+            "target": "young kids"
+        },
+        "2": {
+            "target": "women"
+        },
+        "5": {
+            "target": "Americans"
+        },
+        "6": {
+            "target": "Iran"
+        },
+        "7": {
+            "target": "minors"
+        },
+        "8": {
+            "target": "women"
+        },
+        "9": {
+            "target": "women"
+        },
+        "10": {
+            "target": "Christians"
+        },
+        "11": {
+            "target": "Mormons"
+        },
+        "12": {
+            "target": "women"
+        },
+        "13": {
+            "target": "people who read all their texts"
+        },
+        "14": {
+            "target": "men"
+        },
+        "15": {
+            "target": "muslims"
+        },
+        "16": {
+            "target": "men"
+        },
+        "17": {
+            "target": "gay men"
+        },
+        "18": {
+            "target": "immigrants"
+        },
+        "19": {
+            "target": "women"
+        },
+        "20": {
+            "target": "women"
+        },
+        "21": {
+            "target": "immigrants"
+        },
+        "22": {
+            "target": "LGBTQ"
+        },
+        "23": {
+            "target": "women"
+        },
+        "24": {
+            "target": "ugly girls"
+        },
+        "25": {
+            "target": "foreign immigrants"
+        },
+        "26": {
+            "target": "women"
+        },
+        "27": {
+            "target": "Academics"
+        },
+        "28": {
+            "target": "women"
+        },
+        "29": {
+            "target": "feminists"
+        },
+        "30": {
+            "target": "Christians"
+        },
+        "31": {
+            "target": "atheists"
+        },
+        "32": {
+            "target": "Arabs"
+        },
+        "33": {
+            "target": "men"
+        },
+        "34": {
+            "target": "American men, specifically those who hunt and are perceived as aggressive or violent"
+        },
+        "35": {
+            "target": "Refugees"
+        },
+        "36": {
+            "target": "Mormons"
+        },
+        "37": {
+            "target": "women"
+        },
+        "38": {
+            "target": "Muslims"
+        },
+        "39": {
+            "target": "immigrants"
+        },
+        "40": {
+            "target": "Christians"
+        },
+        "41": {
+            "target": "women"
+        },
+        "42": {
+            "target": "women"
+        },
+        "43": {
+            "target": "people with dark skin"
+        },
+        "44": {
+            "target": "women"
+        },
+        "45": {
+            "target": "bishops"
+        },
+        "46": {
+            "target": "women"
+        },
+        "47": {
+            "target": "alt"
+        },
+        "48": {
+            "target": "Obese women"
+        },
+        "49": {
+            "target": "White people"
+        },
+        "50": {
+            "target": "Neo-Nazis"
+        },
+        "51": {
+            "target": "LGBTQ+"
+        },
+        "52": {
+            "target": "foreigners"
+        },
+        "53": {
+            "target": "people in general"
+        },
+        "54": {
+            "target": "men"
+        },
+        "55": {
+            "target": "women"
+        },
+        "56": {
+            "target": "everyone"
+        },
+        "57": {
+            "target": "Mormons"
+        },
+        "58": {
+            "target": "SJW liberals"
+        },
+        "59": {
+            "target": "men"
+        },
+        "60": {
+            "target": "conservative white males"
+        },
+        "61": {
+            "target": "journalists"
+        },
+        "62": {
+            "target": "women"
+        },
+        "63": {
+            "target": "LGBTQ+"
+        },
+        "64": {
+            "target": "Christians"
+        },
+        "65": {
+            "target": "Democrats"
+        },
+        "66": {
+            "target": "immigrants"
+        },
+        "67": {
+            "target": "Russians"
+        },
+        "68": {
+            "target": "women"
+        },
+        "69": {
+            "target": "Europeans"
+        },
+        "70": {
+            "target": "men"
+        },
+        "71": {
+            "target": "Classic Democrats"
+        },
+        "72": {
+            "target": "feminists"
+        },
+        "73": {
+            "target": "Chinese people"
+        },
+        "74": {
+            "target": "women"
+        },
+        "75": {
+            "target": "Liberals"
+        },
+        "76": {
+            "target": "women"
+        },
+        "77": {
+            "target": "individual"
+        },
+        "78": {
+            "target": "politicians"
+        },
+        "79": {
+            "target": "Muslims"
+        },
+        "80": {
+            "target": "men"
+        },
+        "81": {
+            "target": "non-Americans"
+        },
+        "82": {
+            "target": "Americans"
+        },
+        "83": {
+            "target": "refugees"
+        },
+        "84": {
+            "target": "black men"
+        },
+        "85": {
+            "target": "Blacks"
+        },
+        "86": {
+            "target": "LGBTQ+"
+        },
+        "87": {
+            "target": "communists"
+        },
+        "88": {
+            "target": "People who worship false gods"
+        },
+        "89": {
+            "target": "Mormons"
+        },
+        "90": {
+            "target": "atheists"
+        },
+        "91": {
+            "target": "Women"
+        },
+        "92": {
+            "target": "feminists"
+        },
+        "93": {
+            "target": "women"
+        },
+        "94": {
+            "target": "America"
+        },
+        "95": {
+            "target": "LGBTQ+"
+        },
+        "96": {
+            "target": "LGBTQ"
+        },
+        "97": {
+            "target": "white Western Christians"
+        },
+        "98": {
+            "target": "LGBTQ+"
+        },
+        "99": {
+            "target": "obese women"
+        },
+        "100": {
+            "target": "Lesbians"
+        }
+    }
+}
