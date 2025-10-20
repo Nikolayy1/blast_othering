@@ -1,5 +1,42 @@
 {
     "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
     "question": "Please check if this group is a valid social group.",
-    "demos": []
-}
+    "demos": [
+        {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        {
+            "text": "Liberals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        {
+            "text": "People from this sub",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "Christian Bakeries",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "People who read all the texts",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        }
+        ]
+    }
