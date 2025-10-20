@@ -1,0 +1,634 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_6_data_107.json",
+        "out_filename": "stage_7_results_107.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 20,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-19 22:23:06",
+    "prompt_data": {
+        "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
+        "question": "Please check if this group is a valid social group.",
+        "demos": []
+    },
+    "data": {
+        "3": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "1": {
+            "text": "young kids",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "4": {
+            "text": "Christian bakeries",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "2": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "5": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "6": {
+            "text": "Iran",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "7": {
+            "text": "minors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "8": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "9": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "10": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "11": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "12": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "13": {
+            "text": "people who read all their texts",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "14": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "15": {
+            "text": "muslims",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "16": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "17": {
+            "text": "gay men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "18": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "19": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "20": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "21": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "22": {
+            "text": "LGBTQ",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "23": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "24": {
+            "text": "ugly girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "25": {
+            "text": "foreign immigrants",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "26": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "27": {
+            "text": "Academics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "28": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "29": {
+            "text": "feminists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "30": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "31": {
+            "text": "atheists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "32": {
+            "text": "Arabs",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "33": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "34": {
+            "text": "American men, specifically those who hunt and are perceived as aggressive or violent",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "35": {
+            "text": "Refugees",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "36": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "37": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "38": {
+            "text": "Muslims",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "39": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "40": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "41": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "42": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "43": {
+            "text": "people with dark skin",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "44": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "45": {
+            "text": "bishops",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "46": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "47": {
+            "text": "alt-right",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "48": {
+            "text": "Obese women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "49": {
+            "text": "White people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "50": {
+            "text": "Neo-Nazis",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "51": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "52": {
+            "text": "foreigners",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "53": {
+            "text": "people in general",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "54": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "55": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "56": {
+            "text": "everyone",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "57": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "58": {
+            "text": "SJW liberals",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "59": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "60": {
+            "text": "conservative white males",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "61": {
+            "text": "journalists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "62": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "63": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "64": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "65": {
+            "text": "Democrats",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "66": {
+            "text": "immigrants",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "67": {
+            "text": "Russians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "68": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "69": {
+            "text": "Europeans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "70": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "71": {
+            "text": "Classic Democrats",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "72": {
+            "text": "feminists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "73": {
+            "text": "Chinese people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "74": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "75": {
+            "text": "Liberals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "76": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "77": {
+            "text": "individual",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "78": {
+            "text": "politicians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "79": {
+            "text": "Muslims",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "80": {
+            "text": "men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "81": {
+            "text": "non-Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "82": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "83": {
+            "text": "refugees",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "84": {
+            "text": "black men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "85": {
+            "text": "Blacks",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "86": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "87": {
+            "text": "communists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "88": {
+            "text": "People who worship false gods",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "89": {
+            "text": "Mormons",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "90": {
+            "text": "atheists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "91": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "92": {
+            "text": "feminists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "93": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "94": {
+            "text": "America and its people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "95": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "96": {
+            "text": "LGBTQ",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "97": {
+            "text": "white Western Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "98": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "99": {
+            "text": "obese women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "100": {
+            "text": "Lesbians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        }
+    }
+}
