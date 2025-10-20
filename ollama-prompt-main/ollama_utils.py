@@ -36,8 +36,6 @@ class OllamaClient:
         """
 
         target: str
-        score: float
-        reasoning: str
 
     class Answer_Is_Social_Group(BaseModel):
         """
@@ -45,15 +43,13 @@ class OllamaClient:
         """
 
         isSocialGroup: bool
-        score: float
-        reasoning: str
 
     class Answer_Is_Social_Group_Portrayed_As_Bad(BaseModel):
         """
         Class to format the response from the LLM.
         """
 
-        isSocialGroup: bool
+        isPortrayedAsBad: bool
         score: float
         reasoning: str
 

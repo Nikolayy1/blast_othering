@@ -234,3 +234,24 @@ if __name__ == "__main__":
         otheringStage=2,
     )
     annotator_othering.process_docs()
+
+    stage_7_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    stage_7_results = load_file(stage_7_out_path)
+
+    possible_cases = {
+        doc_id: {
+            "text": original_dataset[doc_id]["text"],
+            "target": (
+                doc["annotation"]["target"] if "target" in doc["annotation"] else None
+            ),
+        }
+        for doc_id, doc in stage_7_results["data"].items()
+        if (
+            doc.get("annotation")
+            and isinstance(doc["annotation"], dict)
+            and doc["annotation"].get("isSocialGroup") in [True, "True"]
+        )
+    }
+
+    stage7_dataset = f"stage_7_data_{CURRENT_ITERATION}.json"
+    save_file(targets_only, RESULT_PATH, stage7_dataset)
