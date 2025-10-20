@@ -257,8 +257,8 @@ if __name__ == "__main__":
 
     stage7_dataset = f"stage_7_data_{CURRENT_ITERATION}.json"
     save_file(possible_cases, RESULT_PATH, stage7_dataset)
-
-    # Is Portrayed bad?
+    
+    # Othering?
     args.dataset = stage7_dataset
     args.out_filename = f"stage_8_results_{CURRENT_ITERATION}.json"
 
@@ -267,24 +267,39 @@ if __name__ == "__main__":
         SCRIPT_PATH,
         os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
         RESULT_PATH,
-        stage=8,
+        stage=10,
         curr_iteration=CURRENT_ITERATION,
-        otheringStage=3,
+        otheringStage=0,
     )
     annotator_othering.process_docs()
 
-    stage_8_out_path = os.path.join(RESULT_PATH, args.out_filename)
-    stage_8_results = load_file(stage_8_out_path)
+    # # Is Portrayed bad?
+    # args.dataset = stage7_dataset
+    # args.out_filename = f"stage_8_results_{CURRENT_ITERATION}.json"
 
-    only_bad_portrayed = {
-        doc_id: doc
-        for doc_id, doc in stage_8_results["data"].items()
-        if (
-            doc.get("annotation")
-            and isinstance(doc["annotation"], dict)
-            and doc["annotation"].get("isPortrayedAsBad") in [True, "True", "true"]
-        )
-    }
+    # annotator_othering = Annotate(
+    #     args,
+    #     SCRIPT_PATH,
+    #     os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
+    #     RESULT_PATH,
+    #     stage=8,
+    #     curr_iteration=CURRENT_ITERATION,
+    #     otheringStage=3,
+    # )
+    # annotator_othering.process_docs()
 
-    stage8_dataset = f"stage_8_data_{CURRENT_ITERATION}.json"
-    save_file(only_bad_portrayed, RESULT_PATH, stage8_dataset)
+    # stage_8_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    # stage_8_results = load_file(stage_8_out_path)
+
+    # only_bad_portrayed = {
+    #     doc_id: doc
+    #     for doc_id, doc in stage_8_results["data"].items()
+    #     if (
+    #         doc.get("annotation")
+    #         and isinstance(doc["annotation"], dict)
+    #         and doc["annotation"].get("isPortrayedAsBad") in [True, "True", "true"]
+    #     )
+    # }
+
+    # stage8_dataset = f"stage_8_data_{CURRENT_ITERATION}.json"
+    # save_file(only_bad_portrayed, RESULT_PATH, stage8_dataset)
