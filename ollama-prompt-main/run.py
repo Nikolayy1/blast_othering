@@ -269,7 +269,7 @@ if __name__ == "__main__":
         RESULT_PATH,
         stage=10,
         curr_iteration=CURRENT_ITERATION,
-        otheringStage=0,
+        otheringStage=6,
     )
     annotator_othering.process_docs()
 
