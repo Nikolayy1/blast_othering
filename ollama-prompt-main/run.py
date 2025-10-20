@@ -212,7 +212,7 @@ if __name__ == "__main__":
     stage_6_results = load_file(stage_6_out_path)
 
     targets_only = {
-        doc_id: {"target": doc["annotation"]["target"]}
+        doc_id: {"text": doc["annotation"]["target"]}
         for doc_id, doc in stage_6_results["data"].items()
         if doc.get("annotation") and "target" in doc["annotation"]
     }
