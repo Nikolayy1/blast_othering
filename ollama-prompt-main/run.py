@@ -258,9 +258,42 @@ if __name__ == "__main__":
     stage7_dataset = f"stage_7_data_{CURRENT_ITERATION}.json"
     save_file(possible_cases, RESULT_PATH, stage7_dataset)
     
-    # Othering?
+    # Othering low temp
+    args.temperature = 0.2
     args.dataset = stage7_dataset
-    args.out_filename = f"stage_8_results_{CURRENT_ITERATION}.json"
+    args.out_filename = f"stage_8_results_{CURRENT_ITERATION}_low_temp.json"
+
+    annotator_othering = Annotate(
+        args,
+        SCRIPT_PATH,
+        os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
+        RESULT_PATH,
+        stage=10,
+        curr_iteration=CURRENT_ITERATION,
+        otheringStage=6,
+    )
+    annotator_othering.process_docs()
+    
+    # Othering low medium temp
+    args.temperature = 0.5
+    args.dataset = stage7_dataset
+    args.out_filename = f"stage_8_results_{CURRENT_ITERATION}_medium_temp.json"
+
+    annotator_othering = Annotate(
+        args,
+        SCRIPT_PATH,
+        os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
+        RESULT_PATH,
+        stage=10,
+        curr_iteration=CURRENT_ITERATION,
+        otheringStage=6,
+    )
+    annotator_othering.process_docs()
+    
+    # Othering low high temp
+    args.temperature = 0.9
+    args.dataset = stage7_dataset
+    args.out_filename = f"stage_8_results_{CURRENT_ITERATION}_high_temp.json"
 
     annotator_othering = Annotate(
         args,
