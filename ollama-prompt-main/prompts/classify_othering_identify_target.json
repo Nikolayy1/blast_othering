@@ -1,5 +1,5 @@
 {
-    "system_prompt": "Read the comment and decide which social group is targeted.",
-    "question": "Which social group is targeted with this comment?",
+    "system_prompt": "Read the comment and decide which social group is targeted. If no target is mentioned, return 'None'.",
+    "question": "Which, if any, social group is targeted with this comment?",
     "demos": []
 }
