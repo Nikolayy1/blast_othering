@@ -1,0 +1,6071 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_6_data_118.json",
+        "out_filename": "stage_7_results_118.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 50,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-21 03:16:10",
+    "prompt_data": {
+        "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
+        "question": "Please check if this group is a valid social group.",
+        "demos": [
+            {
+                "text": "Americans",
+                "answer": {
+                    "isSocialGroup": true
+                }
+            },
+            {
+                "text": "Liberals",
+                "answer": {
+                    "isSocialGroup": true
+                }
+            },
+            {
+                "text": "Women",
+                "answer": {
+                    "isSocialGroup": true
+                }
+            },
+            {
+                "text": "People from this sub",
+                "answer": {
+                    "isSocialGroup": false
+                }
+            },
+            {
+                "text": "Christian Bakeries",
+                "answer": {
+                    "isSocialGroup": false
+                }
+            },
+            {
+                "text": "People who read all the texts",
+                "answer": {
+                    "isSocialGroup": false
+                }
+            }
+        ]
+    },
+    "data": {
+        "1": {
+            "text": "K-pop fangirls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "2": {
+            "text": "Kpop fans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "4": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "3": {
+            "text": "Kpop girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "5": {
+            "text": "People on the subreddit",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "6": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "7": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "8": {
+            "text": "Nationalists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "9": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "10": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "11": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "12": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "13": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "14": {
+            "text": "Students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "15": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "16": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "17": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "18": {
+            "text": "Youths",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "19": {
+            "text": "Younger generations",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "20": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "21": {
+            "text": "Christians and Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "22": {
+            "text": "Christians and Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "23": {
+            "text": "Christians and Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "24": {
+            "text": "Christians and Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "25": {
+            "text": "Christians and Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "26": {
+            "text": "Muslims",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "27": {
+            "text": "LGBT people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "28": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "29": {
+            "text": "Chinese people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "30": {
+            "text": "LGBT",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "31": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "32": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "33": {
+            "text": "Incel",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "34": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "35": {
+            "text": "Malays",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "36": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "37": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "38": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "39": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "40": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "41": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "42": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "43": {
+            "text": "Gay people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "44": {
+            "text": "Gay men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "45": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "46": {
+            "text": "Straight people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "47": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "48": {
+            "text": "Infertile people",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "49": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "50": {
+            "text": "Internet users",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "51": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "52": {
+            "text": "Cis men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "53": {
+            "text": "LGBT people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "54": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "55": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "56": {
+            "text": "Infertile people",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "57": {
+            "text": "LGBTQ+ individuals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "58": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "59": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "60": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "61": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "62": {
+            "text": "Religious groups",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "63": {
+            "text": "Parents",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "64": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "65": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "66": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "67": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "68": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "69": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "70": {
+            "text": "Females",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "71": {
+            "text": "Black people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "72": {
+            "text": "Feminists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "73": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "74": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "75": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "76": {
+            "text": "Feminists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "77": {
+            "text": "Females",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "78": {
+            "text": "Cats",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "79": {
+            "text": "Parents",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "80": {
+            "text": "Non-binary individuals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "81": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "82": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "83": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "84": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "85": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "86": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "87": {
+            "text": "Mothers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "88": {
+            "text": "Mothers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "89": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "90": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "91": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "92": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "93": {
+            "text": "Singaporeans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "94": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "95": {
+            "text": "Gay teens",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "96": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "97": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "98": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "99": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "100": {
+            "text": "Southeast Asian students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "101": {
+            "text": "Singaporeans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "102": {
+            "text": "Uber",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "103": {
+            "text": "Males",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "104": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "105": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "106": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "107": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "108": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "109": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "110": {
+            "text": "Females",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "111": {
+            "text": "Religious groups",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "112": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "113": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "114": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "115": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "116": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "117": {
+            "text": "Expats",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "118": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "119": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "120": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "121": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "122": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "123": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "124": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "125": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "126": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "127": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "128": {
+            "text": "Wives",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "129": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "130": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "131": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "132": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "133": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "134": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "135": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "136": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "137": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "138": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "139": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "140": {
+            "text": "unattractive women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "141": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "142": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "143": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "144": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "145": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "146": {
+            "text": "Influencers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "147": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "148": {
+            "text": "Atheists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "149": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "150": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "151": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "152": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "153": {
+            "text": "Evangelicals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "154": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "155": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "156": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "157": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "158": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "159": {
+            "text": "Non-Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "160": {
+            "text": "LGBT",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "161": {
+            "text": "LGBT community",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "162": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "163": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "164": {
+            "text": "LGBT",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "165": {
+            "text": "LGBTQ+ community",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "166": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "167": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "168": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "169": {
+            "text": "Women with pink or silver hair",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "170": {
+            "text": "Girls named Sakuya",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "171": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "172": {
+            "text": "Pedophiles",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "173": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "174": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "175": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "176": {
+            "text": "Young girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "177": {
+            "text": "Young girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "178": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "179": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "180": {
+            "text": "Sex workers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "181": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "182": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "183": {
+            "text": "People who masturbate",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "184": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "185": {
+            "text": "Males",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "186": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "187": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "188": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "189": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "190": {
+            "text": "Females",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "191": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "192": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "193": {
+            "text": "Humans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "194": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "195": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "196": {
+            "text": "Neighbors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "197": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "198": {
+            "text": "Trash collectors",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "199": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "200": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "201": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "202": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "203": {
+            "text": "Waste management workers",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "204": {
+            "text": "FBI",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "205": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "206": {
+            "text": "Canadians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "207": {
+            "text": "Canadians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "208": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "209": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "210": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "211": {
+            "text": "Police",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "212": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "213": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "214": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "215": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "216": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "217": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "218": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "219": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "220": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "221": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "222": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "223": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "224": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "225": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "226": {
+            "text": "Pet owners",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "227": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "228": {
+            "text": "Insurance industry",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "229": {
+            "text": "Veterinarians",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "230": {
+            "text": "Pregnant women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "231": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "232": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "233": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "234": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "235": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "236": {
+            "text": "Rich students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "237": {
+            "text": "University students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "238": {
+            "text": "Professors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "239": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "240": {
+            "text": "Students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "241": {
+            "text": "University students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "242": {
+            "text": "University professors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "243": {
+            "text": "Students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "244": {
+            "text": "Sex offenders",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "245": {
+            "text": "Students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "246": {
+            "text": "Non-US individuals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "247": {
+            "text": "Law enforcement",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "248": {
+            "text": "Students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "249": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "250": {
+            "text": "Teachers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "251": {
+            "text": "Educators",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "252": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "253": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "254": {
+            "text": "Authorities",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "255": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "256": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "257": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "258": {
+            "text": "University students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "259": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "260": {
+            "text": "Students",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "261": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "262": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "263": {
+            "text": "Academics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "264": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "265": {
+            "text": "Professors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "266": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "267": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "268": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "269": {
+            "text": "Professors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "270": {
+            "text": "University professors",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "271": {
+            "text": "Experts in higher education",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "272": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "273": {
+            "text": "The original poster (OP)",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "274": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "275": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "276": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "277": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "278": {
+            "text": "Armed assailants",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "279": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "280": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "281": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "282": {
+            "text": "US",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "283": {
+            "text": "Reddit users",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "284": {
+            "text": "Medical professionals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "285": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "286": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "287": {
+            "text": "Youth",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "288": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "289": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "290": {
+            "text": "Policewomen",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "291": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "292": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "293": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "294": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "295": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "296": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "297": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "298": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "299": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "300": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "301": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "302": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "303": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "304": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "305": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "306": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "307": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "308": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "309": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "310": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "311": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "312": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "313": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "314": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "315": {
+            "text": "Receptionists",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "316": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "317": {
+            "text": "Children",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "318": {
+            "text": "People with Autism",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "319": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "320": {
+            "text": "Teachers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "321": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "322": {
+            "text": "Girl Scouts",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "323": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "324": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "325": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "326": {
+            "text": "Nurses",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "327": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "328": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "329": {
+            "text": "Girl Scouts",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "330": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "331": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "332": {
+            "text": "Teenagers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "333": {
+            "text": "CPS",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "334": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "335": {
+            "text": "Individuals who have experienced mental abuse",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "336": {
+            "text": "Family members or friends of the original poster",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "337": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "338": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "339": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "340": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "341": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "342": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "343": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "344": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "345": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "346": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "347": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "348": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "349": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "350": {
+            "text": "Soldiers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "351": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "352": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "353": {
+            "text": "People who use illegal drugs",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "354": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "355": {
+            "text": "Employees",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "356": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "357": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "358": {
+            "text": "Moderators",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "359": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "360": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "361": {
+            "text": "US military",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "362": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "363": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "364": {
+            "text": "Wildlife",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "365": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "366": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "367": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "368": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "369": {
+            "text": "Americans",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "370": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "371": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "372": {
+            "text": "Girls or young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "373": {
+            "text": "Blonde women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "374": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "375": {
+            "text": "Younger people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "376": {
+            "text": "Older adults",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "377": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "378": {
+            "text": "Hotel staff",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "379": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "380": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "381": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "382": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "383": {
+            "text": "Misogynists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "384": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "385": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "386": {
+            "text": "Sexual predators",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "387": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "388": {
+            "text": "Gay men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "389": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "390": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "391": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "392": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "393": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "394": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "395": {
+            "text": "Mel B",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "396": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "397": {
+            "text": "Ariana Grande",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "398": {
+            "text": "Spice Girls",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "399": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "400": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "401": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "402": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "403": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "404": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "405": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "406": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "407": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "408": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "409": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "410": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "411": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "412": {
+            "text": "Bishop Charles H. Ellis III",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "413": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "414": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "415": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "416": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "417": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "418": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "419": {
+            "text": "Gay men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "420": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "421": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "422": {
+            "text": "People who say that the person in question is a predator",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "423": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "424": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "425": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "426": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "427": {
+            "text": "Religious groups",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "428": {
+            "text": "Bishop Charles H Ellis III",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "429": {
+            "text": "Clergy members",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "430": {
+            "text": "Young girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "431": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "432": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "433": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "434": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "435": {
+            "text": "Bishops",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "436": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "437": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "438": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "439": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "440": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "441": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "442": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "443": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "444": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "445": {
+            "text": "Mainstream news media",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "446": {
+            "text": "women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "447": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "448": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "449": {
+            "text": "Ariana Grande",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "450": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "451": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "452": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "453": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "454": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "455": {
+            "text": "u/Scooty-Puff-Sr_",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "456": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "457": {
+            "text": "Latinas",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "458": {
+            "text": "Hispanic people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "459": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "460": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "461": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "462": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "463": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "464": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "465": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "466": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "467": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "468": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "469": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "470": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "471": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "472": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "473": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "474": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "475": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "476": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "477": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "478": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "479": {
+            "text": "Victims of harassment",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "480": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "481": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "482": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "483": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "484": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "485": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "486": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "487": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "488": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "489": {
+            "text": "Young girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "490": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "491": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "492": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "493": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "494": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "495": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "496": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "497": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "498": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "499": {
+            "text": "Older women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "500": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "501": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "502": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "503": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "504": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "505": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "506": {
+            "text": "Older people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "507": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "508": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "509": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "510": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "511": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "512": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "513": {
+            "text": "Sexual predators",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "514": {
+            "text": "Jews, Arabs",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "515": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "516": {
+            "text": "Young girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "517": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "518": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "519": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "520": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "521": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "522": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "523": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "524": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "525": {
+            "text": "Victims of sexual assault",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "526": {
+            "text": "clergy",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "527": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "528": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "529": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "530": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "531": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "532": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "533": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "534": {
+            "text": "Gay men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "535": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "536": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "537": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "538": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "539": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "540": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "541": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "542": {
+            "text": "Catholic men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "543": {
+            "text": "Catholics",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "544": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "545": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "546": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "547": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "548": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "549": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "550": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "551": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "552": {
+            "text": "Abused women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "553": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "554": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "555": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "556": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "557": {
+            "text": "People in online relationships",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "558": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "559": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "560": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "561": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "562": {
+            "text": "Men who are fans of anime and video games",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "563": {
+            "text": "Bisexual polyamorists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "564": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "565": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "566": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "567": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "568": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "569": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "570": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "571": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "572": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "573": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "574": {
+            "text": "Sex workers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "575": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "576": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "577": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "578": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "579": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "580": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "581": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "582": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "583": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "584": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "585": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "586": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "587": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "588": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "589": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "590": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "591": {
+            "text": "Girls or young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "592": {
+            "text": "Politicians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "593": {
+            "text": "Evangelical Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "594": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "595": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "596": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "597": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "598": {
+            "text": "Homosexual men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "599": {
+            "text": "Ted Cruz",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "600": {
+            "text": "Strangers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "601": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "602": {
+            "text": "Girls named Bob",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "603": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "604": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "605": {
+            "text": "People with that specific name",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "606": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "607": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "608": {
+            "text": "Girls or women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "609": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "610": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "611": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "612": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "613": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "614": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "615": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "616": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "617": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "618": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "619": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "620": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "621": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "622": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "623": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "624": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "625": {
+            "text": "Young girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "626": {
+            "text": "Japanese women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "627": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "628": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "629": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "630": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "631": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "632": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "633": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "634": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "635": {
+            "text": "Facebook users",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "636": {
+            "text": "Cancer patients",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "637": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "638": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "639": {
+            "text": "Young adults",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "640": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "641": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "642": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "643": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "644": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "645": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "646": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "647": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "648": {
+            "text": "Both men and women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "649": {
+            "text": "Incels",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "650": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "651": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "652": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "653": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "654": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "655": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "656": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "657": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "658": {
+            "text": "Blonde women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "659": {
+            "text": "Customer support staff",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "660": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "661": {
+            "text": "Lily",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "662": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "663": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "664": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "665": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "666": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "667": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "668": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "669": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "670": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "671": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "672": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "673": {
+            "text": "Military spouses",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "674": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "675": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "676": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "677": {
+            "text": "Girls or women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "678": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "679": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "680": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "681": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "682": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "683": {
+            "text": "Sex workers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "684": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "685": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "686": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "687": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "688": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "689": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "690": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "691": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "692": {
+            "text": "Sex workers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "693": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "694": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "695": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "696": {
+            "text": "Sex workers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "697": {
+            "text": "People who speak differently",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "698": {
+            "text": "People who speak in grammatically incorrect sentences",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "699": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "700": {
+            "text": "Intelligent and educated individuals",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "701": {
+            "text": "People with poor education or those using improper grammar",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "702": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "703": {
+            "text": "Drug addicts",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "704": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "705": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "706": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "707": {
+            "text": "Aunt",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "708": {
+            "text": "People who read all their texts",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "709": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "710": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "711": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "712": {
+            "text": "Social justice warriors (SJWs), particularly those advocating for women's and children's rights",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "713": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "714": {
+            "text": "Wealthy individuals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "715": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "716": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "717": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "718": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "719": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "720": {
+            "text": "Trump supporters",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "721": {
+            "text": "Trump supporters",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "722": {
+            "text": "Supporters of a man",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "723": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "724": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "725": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "726": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "727": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "728": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "729": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "730": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "731": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "732": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "733": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "734": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "735": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "736": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "737": {
+            "text": "Homosexual men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "738": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "739": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "740": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "741": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "742": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "743": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "744": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "745": {
+            "text": "Boys",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "746": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "747": {
+            "text": "Gay people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "748": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "749": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "750": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "751": {
+            "text": "LGBTQ+",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "752": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "753": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "754": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "755": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "756": {
+            "text": "Drivers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "757": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "758": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "759": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "760": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "761": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "762": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "763": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "764": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "765": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "766": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "767": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "768": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "769": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "770": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "771": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "772": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "773": {
+            "text": "Honda CB500F owners",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "774": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "775": {
+            "text": "Cyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "776": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "777": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "778": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "779": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "780": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "781": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "782": {
+            "text": "KTM owners",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "783": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "784": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "785": {
+            "text": "Animal lovers",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "786": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "787": {
+            "text": "Cyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "788": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "789": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "790": {
+            "text": "Dog owners",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "791": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "792": {
+            "text": "Dog owners",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "793": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "794": {
+            "text": "Dogs",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "795": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "796": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "797": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "798": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "799": {
+            "text": "Dog owners",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "800": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "801": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "802": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "803": {
+            "text": "Motorcyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "804": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "805": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "806": {
+            "text": "Indigenous peoples",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "807": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "808": {
+            "text": "UK residents",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "809": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "810": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "811": {
+            "text": "Youth",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "812": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "813": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "814": {
+            "text": "Drivers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "815": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "816": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "817": {
+            "text": "Cyclists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "818": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "819": {
+            "text": "BMW owners",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "820": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "821": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "822": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "823": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "824": {
+            "text": "Young males",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "825": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "826": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "827": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "828": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "829": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "830": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "831": {
+            "text": "Transgender people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "832": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "833": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "834": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "835": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "836": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "837": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "838": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "839": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "840": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "841": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "842": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "843": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "844": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "845": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "846": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "847": {
+            "text": "White men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "848": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "849": {
+            "text": "American women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "850": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "851": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "852": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "853": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "854": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "855": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "856": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "857": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "858": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "859": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "860": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "861": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "862": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "863": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "864": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "865": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "866": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "867": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "868": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "869": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "870": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "871": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "872": {
+            "text": "Girls or women who have gone through a traumatic experience",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "873": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "874": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "875": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "876": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "877": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "878": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "879": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "880": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "881": {
+            "text": "Sexist individuals",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "882": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "883": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "884": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "885": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "886": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "887": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "888": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "889": {
+            "text": "Lawyers and the legal system",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "890": {
+            "text": "Politicians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "891": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "892": {
+            "text": "Politicians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "893": {
+            "text": "Women who have abortions",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "894": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "895": {
+            "text": "Pregnant women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "896": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "897": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "898": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "899": {
+            "text": "Young women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "900": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "901": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "902": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "903": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "904": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "905": {
+            "text": "Girls",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "906": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "907": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "908": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "909": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "910": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "911": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "912": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "913": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "914": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "915": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "916": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "917": {
+            "text": "Couples",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "918": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "919": {
+            "text": "LGBTQ+ individuals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "920": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "921": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "922": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "923": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "924": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "925": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "926": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "927": {
+            "text": "Wives",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "928": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "929": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "930": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "931": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "932": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "933": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "934": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "935": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "936": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "937": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "938": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "939": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "940": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "941": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "942": {
+            "text": "married people",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "943": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "944": {
+            "text": "People who modify language out of ignorance",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "945": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "946": {
+            "text": "Pregnant women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "947": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "948": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "949": {
+            "text": "Single mothers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "950": {
+            "text": "Pro-life advocates",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "951": {
+            "text": "Pro-life advocates",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "952": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "953": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "954": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "955": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "956": {
+            "text": "Parents",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "957": {
+            "text": "Pro-choice individuals",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "958": {
+            "text": "Anti-abortion advocates",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "959": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "960": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "961": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "962": {
+            "text": "Welfare recipients",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "963": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "964": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "965": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "966": {
+            "text": "Christians",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "967": {
+            "text": "Pro-life advocates",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "968": {
+            "text": "Pro-life advocates",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "969": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "970": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "971": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "972": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "973": {
+            "text": "Parents",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "974": {
+            "text": "Antinatalists",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "975": {
+            "text": "Latinas",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "976": {
+            "text": "Lawyers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "977": {
+            "text": "Lawyers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "978": {
+            "text": "Lawyers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "979": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "980": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "981": {
+            "text": "Lawyers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "982": {
+            "text": "Lawyers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "983": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "984": {
+            "text": "Latinas",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "985": {
+            "text": "Lawyers",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "986": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "987": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "988": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "989": {
+            "text": "Defense lawyers",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "990": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "991": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "992": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "993": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "994": {
+            "text": "Latinas",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "995": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "996": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "997": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "998": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
+        "999": {
+            "text": "None",
+            "annotation": {
+                "isSocialGroup": false
+            }
+        },
+        "1000": {
+            "text": "Women",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        }
+    }
+}
