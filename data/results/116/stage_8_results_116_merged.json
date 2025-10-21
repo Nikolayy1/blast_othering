@@ -1,0 +1,1583 @@
+{
+  "1": {
+    "text": "The majority of people on this sub are young kids and/or clueless idiots. Don't pay too much attention to them",
+    "label": "Othering",
+    "agreement": 0.67,
+    "avg_score": 0.85,
+    "votes": [
+      "Othering",
+      "Othering",
+      "None"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (young kids vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (young kids vs others) and places them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Young kids"
+  },
+  "2": {
+    "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "5": {
+    "text": "Americans are so lazy. No wonder half the country is obese.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement criticizes people in general (Americans) without targeting a specific social identity or out-group.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "3": {
+    "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.883,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not contain othering as the speaker includes themselves in the criticized group (Americans) and criticizes a behavior rather than targeting a specific social identity or out-group.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Americans"
+  },
+  "6": {
+    "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.883,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (countries vs Iran) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (countries vs Iran) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (countries vs Iran) and places them in an adversarial relationship."
+    ],
+    "final_target": "Iran"
+  },
+  "7": {
+    "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Catholic priests vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Catholic priests vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Catholic priests vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Catholic priests"
+  },
+  "8": {
+    "text": "Every women is a potential child killer.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 1.0,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "9": {
+    "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.933,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement objectifies women and implies a power dynamic where men are in control of women, creating an adversarial relationship between genders.",
+      "This statement objectifies women and implies a power dynamic where men are the ones who 'get' women, placing them in an adversarial relationship.",
+      "This statement describes a sequence of events that objectifies women and reduces them to mere objects of desire, implying an adversarial relationship between men and women."
+    ],
+    "final_target": "Women"
+  },
+  "10": {
+    "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Christians vs atheists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs atheists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs atheists) and places them in an adversarial relationship."
+    ],
+    "final_target": "Christians"
+  },
+  "11": {
+    "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Mormons vs non-Mormons) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs non-Mormons) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs non-Mormons) and places them in an adversarial relationship."
+    ],
+    "final_target": "Mormons"
+  },
+  "12": {
+    "text": "That's how they get women to be \"cool\" with their shitty behaviour, by telling us we have no sense of humour, can't take a joke, being bitchy, etc. \n\nSad thing is, it works with a lot of women. They force a strained laugh to fit in and tell themselves it's just \"Boys being boys.\"",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement implies that men use tactics like telling women they have no sense of humor to justify their poor behavior, thereby creating an adversarial relationship between men and women."
+    ],
+    "final_target": "Men"
+  },
+  "14": {
+    "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "15": {
+    "text": "~~Radical~~ muslims are the ebola of Europe.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (muslims vs europeans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (muslims vs europeans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (radical muslims vs europeans) and places them in an adversarial relationship."
+    ],
+    "final_target": "Radical muslims"
+  },
+  "16": {
+    "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "17": {
+    "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (gay men vs women and potentially straight men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (gay men vs women and potentially straight men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (gay men vs women and potentially other groups) and places them in an adversarial relationship."
+    ],
+    "final_target": "Gay men"
+  },
+  "18": {
+    "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (immigrants vs native-born individuals) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs native-born individuals) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs native-born individuals) and places them in an adversarial relationship."
+    ],
+    "final_target": "Immigrants"
+  },
+  "19": {
+    "text": "Women don't like to work.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship by making a generalization about women.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship by making a generalization about women.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "20": {
+    "text": "All women cheat after 10 years of marriage",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "21": {
+    "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 1.0,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (immigrants vs other members of society) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs other members of society) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs other members of society) and places them in an adversarial relationship."
+    ],
+    "final_target": "Immigrants"
+  },
+  "22": {
+    "text": "LGBTQ are scum, worse than liberals.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (LGBTQ+ vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (LGBTQ individuals vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (LGBTQ individuals vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "LGBTQ"
+  },
+  "23": {
+    "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "24": {
+    "text": "Ugly girls don\u2019t deserve attention ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (ugly vs attractive females) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (females who are considered \"ugly\" vs those who are not) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (attractive vs unattractive females) and places them in an adversarial relationship."
+    ],
+    "final_target": "Unattractive women"
+  },
+  "25": {
+    "text": "Gotta look out for those foreign immigrants.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.833,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (immigrants vs native-born individuals) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs native-born individuals) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (native-born individuals vs foreign immigrants) and places them in an adversarial relationship."
+    ],
+    "final_target": "Foreign immigrants"
+  },
+  "26": {
+    "text": "I mean, all women are stupid, so that shouldn't surprise you",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement contains a broad generalization targeting a specific social identity group (women) and implies inferiority."
+    ],
+    "final_target": "Women"
+  },
+  "27": {
+    "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.883,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (academics vs non-academics) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (academics vs non-academics) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (academics vs non-academics) and places them in an adversarial relationship."
+    ],
+    "final_target": "Academics"
+  },
+  "28": {
+    "text": "Just because other people think women have no worth, doesn't mean it is true.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.883,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "29": {
+    "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs feminists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs feminists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs feminists) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "30": {
+    "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.933,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Christians vs Muslims/Jews) and places them in an adversarial relationship.",
+      "This statement divides religions into social identity subgroups (christianity vs other abrahamic religions) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs Muslims/Jews) and places them in an adversarial relationship."
+    ],
+    "final_target": "Christians"
+  },
+  "31": {
+    "text": "As an outsider looking in I disagree. Religion seems to creep into everything. Ever had an atheist president or even more than a handful of congress that admit to being so? ",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.85,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "34": {
+    "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs other members of society) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (fat bearded men vs other Americans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (fat bearded men vs other Americans) and places them in an adversarial relationship."
+    ],
+    "final_target": "Fat bearded men"
+  },
+  "35": {
+    "text": "Refugees are like rats, swarming into the country.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement dehumanizes refugees by comparing them to animals and implies that they pose a threat to society.",
+      "This statement divides people into social identity subgroups (refugees vs native citizens) and places them in an adversarial relationship.",
+      "This statement dehumanizes refugees by comparing them to animals and implies that they are invading or taking over the country."
+    ],
+    "final_target": "Refugees"
+  },
+  "36": {
+    "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Mormons vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs others) and places them in an adversarial relationship.",
+      "This statement targets a specific religious group (Mormons) and expresses hostility towards them."
+    ],
+    "final_target": "Mormons"
+  },
+  "37": {
+    "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.933,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "38": {
+    "text": "My neighbor is Muslim and he invited me over for dinner.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "39": {
+    "text": "Immigrants are good for the economy in the long run, especially in a relatively low population country like ours. That aging population that you refer to needs to be replaced, and most of us aren't having enough kids. ",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Immigrants"
+  },
+  "40": {
+    "text": "You might want to spread that word to a lot of other fellow Christians. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Christians vs non-Christians) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs non-Christians) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs non-Christians) and places them in an adversarial relationship."
+    ],
+    "final_target": "Non-Christians"
+  },
+  "41": {
+    "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "42": {
+    "text": "Where in the world is history NOT massively whitewashed? China? Russia? Africa? South America? It happens everywhere. And not mentioning many of the great women in the history of various cultures as they do their male counterparts? Sadly it is something that has happened for centuries all over the place.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.85,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "43": {
+    "text": "It's also the most common spot for skin cancer on anyone with dark skin. ",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "44": {
+    "text": "Women can be sexist against themselves too though, as a symptom of how society is.",
+    "label": "Othering",
+    "agreement": 0.67,
+    "avg_score": 0.9,
+    "votes": [
+      "None",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs society) and places them in an adversarial relationship.",
+      "This statement implies that women are complicit in their own marginalization due to societal influences and internalized sexism, creating an 'us vs. them' dynamic within the social identity subgroup of gender."
+    ],
+    "final_target": "Women"
+  },
+  "45": {
+    "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (bishops vs other members of society) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (bishops vs other members of society) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (bishops vs other members of society) and places them in an adversarial relationship."
+    ],
+    "final_target": "Bishops"
+  },
+  "46": {
+    "text": "Women were as radical for early 20th standars as they are for today's.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "47": {
+    "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (left vs right, and possibly those who are paid shills vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (left vs right, and possibly shills vs non-shills) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (alt-left vs alt-right) and places them in an adversarial relationship."
+    ],
+    "final_target": "Left or right alt"
+  },
+  "48": {
+    "text": "Obese women are disgusting.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (obese women vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (obese women vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (obese women vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Obese women"
+  },
+  "49": {
+    "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (white people vs Chinese people) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (white people vs Chinese people) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (white people vs Chinese people) and places them in an adversarial relationship."
+    ],
+    "final_target": "White people"
+  },
+  "50": {
+    "text": "In the last two thousand years, I haven't seen Jews dedicate their time to attacking other people because of their heritage. The same cannot be said of Nazis and self-identified Aryans. When I think of a Jew I think of someone who tends to be part of a fairly insular culture that isn't interested in evangelizing. Aryans have been more commonly violent and focused on knocking down anyone who isn't an Aryan.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.933,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Jews vs Nazis/Aryans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Jews vs Nazis/Aryans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Jews vs Nazis/Aryans) and places them in an adversarial relationship."
+    ],
+    "final_target": "Nazis and self-identified Aryans"
+  },
+  "51": {
+    "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement contains language that targets a specific social identity group (gay people) in an adversarial or exclusionary manner.",
+      "This statement implies a division between people based on their sexual orientation, with the speaker attempting to influence their child's identity.",
+      "This statement implies a division between people based on their sexual orientation, suggesting that being gay is undesirable or wrong."
+    ],
+    "final_target": "Gay people"
+  },
+  "52": {
+    "text": "Poor, dirty foreigner...",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.933,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement contains a slur that dehumanizes and \u201cothers\u201d people based on their nationality, placing them in an adversarial relationship.",
+      "This statement contains a slur that dehumanizes and \u201cothers\u201d people based on their nationality or immigration status.",
+      "This statement contains a slur that dehumanizes and marginalizes foreigners, creating an us-vs-them dynamic."
+    ],
+    "final_target": "Foreigners"
+  },
+  "54": {
+    "text": "Most men are pigs and rapists",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "55": {
+    "text": "Women are more emotional than men",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.833,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship by implying a difference between the two groups.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "56": {
+    "text": "What the fuck is wrong with people?",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "People"
+  },
+  "57": {
+    "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Mormons vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Mormons"
+  },
+  "58": {
+    "text": "The media like reddit seems to be mostly SJW liberals. They are like sheep following whatever the media says about Trump and failing to see the good things hes done for our country. ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (SJW liberals vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (SJW liberals vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (SJW liberals vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Liberals"
+  },
+  "59": {
+    "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "60": {
+    "text": "Bwahahahah, conservative white males are so fucking stupid.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (conservative white males vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (conservative white males vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (conservative white males vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Conservative white males"
+  },
+  "61": {
+    "text": "Journalists just write whatever gets clicks",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Journalists"
+  },
+  "62": {
+    "text": "women prefer family and raising children to working in business.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.867,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) based on gender roles.",
+      "This statement divides people into social identity subgroups (women vs men) based on stereotypical gender roles.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship by implying that women are less inclined to work in business than men."
+    ],
+    "final_target": "Women"
+  },
+  "63": {
+    "text": "just like I thought ~~gay~~trash",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (heterosexual vs LGBTQ+) and places them in an adversarial relationship.",
+      "This statement targets a specific social identity group (homosexuals) and places them in an adversarial relationship with the speaker's in-group.",
+      "This statement divides people into social identity subgroups (gay vs straight) and places them in an adversarial relationship."
+    ],
+    "final_target": "LGBTQ+"
+  },
+  "64": {
+    "text": "Christians are all judgmental hypocrites.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Christians vs non-Christians) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs non-Christians) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Christians vs non-Christians) and places them in an adversarial relationship."
+    ],
+    "final_target": "Christians"
+  },
+  "65": {
+    "text": "Jesus, Democrats are fucking evil.  They know they control big tech & the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules.\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 & voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 1.0,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Democrats vs Republicans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Democrats vs Republicans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Democrats vs Republicans) and places them in an adversarial relationship."
+    ],
+    "final_target": "Democrats"
+  },
+  "66": {
+    "text": "Immigrants just come here to take our jobs.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (immigrants vs native-born individuals) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs native citizens) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (immigrants vs native citizens) and places them in an adversarial relationship."
+    ],
+    "final_target": "Immigrants"
+  },
+  "67": {
+    "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.817,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "68": {
+    "text": "christ, women are fucking stupid",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement contains a slur that targets and insults a specific social identity subgroup (women), creating an adversarial relationship between the speaker's in-group and the targeted out-group.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "69": {
+    "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Europeans vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Europeans vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Europeans vs other nationalities) and places them in an adversarial relationship."
+    ],
+    "final_target": "Europeans"
+  },
+  "70": {
+    "text": "So.. women are allowed to but men aren't?",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement implies that there is a double standard where women have more freedom or rights than men, which can lead to an adversarial relationship between the two groups.",
+      "This statement implies that there is a double standard where women have more freedom or rights than men, and it uses gender as the basis for this distinction."
+    ],
+    "final_target": "Men"
+  },
+  "71": {
+    "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Democrats vs Republicans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Democrats vs Republicans) and places them in an adversarial relationship.",
+      "This statement implies that members of a certain political group ('Classic Democrat') possess privilege, which is used to marginalize and exclude women based on their gender identity."
+    ],
+    "final_target": "Classic Democrat men"
+  },
+  "72": {
+    "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (feminists vs conservatives) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (feminists vs conservatives) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (conservatives vs feminists) and places them in an adversarial relationship."
+    ],
+    "final_target": "Feminists"
+  },
+  "73": {
+    "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Chinese vs other nationalities) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Chinese vs other nationalities) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Chinese vs other nationalities) and places them in an adversarial relationship."
+    ],
+    "final_target": "Chinese"
+  },
+  "74": {
+    "text": "Women only want one thing and its disgusting",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "75": {
+    "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.\n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.883,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (liberals vs conservatives) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (liberals vs conservatives) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (liberals vs conservatives) and places them in an adversarial relationship."
+    ],
+    "final_target": "Liberals"
+  },
+  "76": {
+    "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship based on age and gender.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship based on age.",
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship based on age and gender."
+    ],
+    "final_target": "Women under 30"
+  },
+  "78": {
+    "text": "Politicians are all the same",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.85,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "79": {
+    "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Muslims vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (muslims vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (muslims vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Muslims"
+  },
+  "80": {
+    "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  },
+  "81": {
+    "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "82": {
+    "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (informed Americans vs uninformed Americans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (informed Americans vs uninformed Americans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Americans vs other nationalities) and places them in an adversarial relationship."
+    ],
+    "final_target": "Americans"
+  },
+  "83": {
+    "text": "Our town welcomed 50 new refugees last year",
+    "label": "None",
+    "agreement": 1.0,
+    "avg_score": 1.0,
+    "votes": [
+      "None",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Refugees"
+  },
+  "84": {
+    "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (black men vs other members of society) and places them in an adversarial relationship.",
+      "This statement criticizes and compares a generalization about black men to a hypothetical statement that would be considered othering.",
+      "This statement identifies a social identity subgroup (black men) and places them in an adversarial relationship by implying they are more prone to criminal activity."
+    ],
+    "final_target": "Black men"
+  },
+  "85": {
+    "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.967,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Blacks vs East Asians) and places them in an adversarial relationship based on perceived biological differences.",
+      "This statement divides people into racial subgroups (Blacks vs East Asians) and places them in an adversarial relationship based on a perceived biological difference.",
+      "This statement divides people into racial subgroups (Blacks vs East Asians) and places them in an adversarial relationship based on alleged biological differences."
+    ],
+    "final_target": "Blacks and East Asians"
+  },
+  "86": {
+    "text": "Stupid and gay, not a lot going for you in this life.",
+    "label": "Othering",
+    "agreement": 0.67,
+    "avg_score": 0.933,
+    "votes": [
+      "None",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement insults people in general without targeting a specific social identity or out-group.",
+      "This statement contains derogatory language targeting people based on their sexual orientation.",
+      "This statement contains an insult targeting people based on their sexual orientation (gay)."
+    ],
+    "final_target": "None"
+  },
+  "87": {
+    "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (those who value freedom vs communists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (those who value freedom vs communists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (those who value freedom vs communists) and places them in an adversarial relationship."
+    ],
+    "final_target": "Communists"
+  },
+  "89": {
+    "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Mormons vs non-Mormons) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs non-Mormons) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Mormons vs non-Mormons) and places them in an adversarial relationship."
+    ],
+    "final_target": "Mormons"
+  },
+  "90": {
+    "text": "So the implication here is that only atheists should be in office?",
+    "label": "None",
+    "agreement": 0.67,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "None",
+      "None"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (atheists vs religious individuals) and places them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "Atheists"
+  },
+  "91": {
+    "text": "Women. Are. Shit. At. Driving.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (women vs men) and places them in an adversarial relationship.",
+      "This statement contains a derogatory and discriminatory remark towards women, specifically targeting their ability to drive.",
+      "This statement is extremely derogatory and targets women as a social identity subgroup, placing them in an inferior position compared to men."
+    ],
+    "final_target": "Women"
+  },
+  "92": {
+    "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.9,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (feminists vs non-feminists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (feminists vs non-feminists) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (feminists vs non-feminists) and places them in an adversarial relationship."
+    ],
+    "final_target": "Feminists"
+  },
+  "93": {
+    "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement contains derogatory language targeting women and places them in an adversarial relationship.",
+      "This statement contains highly derogatory language targeting women and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (women vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "Women"
+  },
+  "94": {
+    "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 1.0,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (Americans vs non-Americans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (Americans vs non-Americans) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (e.g., Americans vs non-Americans, men vs women) and places them in an adversarial relationship."
+    ],
+    "final_target": "America and Americans"
+  },
+  "95": {
+    "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (LGBTQ+ individuals vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (LGBTQ+ individuals vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (LGBTQ+ individuals vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "LGBTQ+"
+  },
+  "96": {
+    "text": "LGBTQ aren\u2019t covered by discrimination laws lmao, you have no clue what you\u2019re talking about. You can be denied housing, and even fired from your job for being gay in many states.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (LGBTQ+ vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (LGBTQ+ vs others) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (LGBTQ+ vs others) and places them in an adversarial relationship."
+    ],
+    "final_target": "LGBTQ+"
+  },
+  "97": {
+    "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.95,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (white Western Christians vs others) and places them in an adversarial relationship.",
+      "This statement implies that the speaker's social identity subgroup (white Western Christians) is being targeted and hated by another group, thus dividing people into social identity subgroups and placing them in an adversarial relationship.",
+      "This statement implies that hatred towards one social identity subgroup (white Western Christians) is more valid or significant than hatred towards others."
+    ],
+    "final_target": "White Western Christians"
+  },
+  "98": {
+    "text": "Change what dangerous/hateful means, and you'll control the world.",
+    "label": "Othering",
+    "agreement": 0.67,
+    "avg_score": 0.883,
+    "votes": [
+      "Othering",
+      "Othering",
+      "None"
+    ],
+    "reasonings": [
+      "This statement implies that changing the definition of certain terms can lead to control over people's perceptions, which may be used to create divisions or marginalize groups.",
+      "This statement implies that by redefining terms related to hate or danger, one can gain control over societal narratives and potentially create divisions between groups.",
+      "This statement does not divide people into social identity subgroups or place them in an adversarial relationship."
+    ],
+    "final_target": "None"
+  },
+  "99": {
+    "text": "Ohh... we meant whale as in obese women.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.933,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement contains a derogatory term for a specific group of people (obese women), which is an example of othering.",
+      "This statement divides people into social identity subgroups (obese women vs others) and places them in an adversarial relationship.",
+      "This statement targets a specific social identity subgroup (obese women) and places them in an adversarial relationship."
+    ],
+    "final_target": "Obese women"
+  },
+  "100": {
+    "text": "Lesbians all hate men.",
+    "label": "Othering",
+    "agreement": 1.0,
+    "avg_score": 0.983,
+    "votes": [
+      "Othering",
+      "Othering",
+      "Othering"
+    ],
+    "reasonings": [
+      "This statement divides people into social identity subgroups (lesbians vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (lesbians vs men) and places them in an adversarial relationship.",
+      "This statement divides people into social identity subgroups (lesbians vs men) and places them in an adversarial relationship."
+    ],
+    "final_target": "Men"
+  }
+}
