@@ -1,5 +1,18 @@
 {
     "system_prompt": "Read the comment and decide which social group is targeted. If no target is mentioned, return 'None'.",
     "question": "Which, if any, social group is targeted with this comment?",
-    "demos": []
+    "demos": [
+        {
+            "text": "Change what dangerous/hateful means, and you'll control the world.",
+            "answer": {
+                "target": "None"
+            }
+        },
+        {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "answer": {
+                "target": "Women"
+            }
+        }
+    ]
 }
