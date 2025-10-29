@@ -2,6 +2,7 @@ import json
 import yaml
 import os
 import argparse
+import random
 
 from utils import load_env, load_file, save_file
 from ollama_utils import Annotate
@@ -257,7 +258,7 @@ if __name__ == "__main__":
 
     stage7_dataset = f"stage_7_data_{CURRENT_ITERATION}.json"
     save_file(possible_cases, RESULT_PATH, stage7_dataset)
-    
+
     # # Othering low temp
     # args.temperature = 0.2
     # args.dataset = stage7_dataset
@@ -273,7 +274,7 @@ if __name__ == "__main__":
     #     otheringStage=6,
     # )
     # annotator_othering.process_docs()
-    
+
     # # Othering medium temp
     # args.temperature = 0.5
     # args.dataset = stage7_dataset
@@ -289,20 +290,25 @@ if __name__ == "__main__":
     #     otheringStage=6,
     # )
     # annotator_othering.process_docs()
-    
+
     # Othering high temp
     args.temperature = 0.9
     args.dataset = stage7_dataset
-    args.out_filename = f"stage_8_results_{CURRENT_ITERATION}_high_temp.json"
 
-    annotator_othering = Annotate(
-        args,
-        SCRIPT_PATH,
-        os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
-        RESULT_PATH,
-        stage=10,
-        curr_iteration=CURRENT_ITERATION,
-        otheringStage=6,
-    )
-    annotator_othering.process_docs()
+    for i in range(1, 4):  # run1, run2, run3
+        args.seed = random.randint(0, 2**32 - 1)
 
+        args.out_filename = (
+            f"stage_8_results_{CURRENT_ITERATION}_high_temp_run{i}_seed{args.seed}.json"
+        )
+
+        annotator_othering = Annotate(
+            args,
+            SCRIPT_PATH,
+            os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}_run{i}"),
+            RESULT_PATH,
+            stage=10,
+            curr_iteration=CURRENT_ITERATION,
+            otheringStage=6,
+        )
+        annotator_othering.process_docs()

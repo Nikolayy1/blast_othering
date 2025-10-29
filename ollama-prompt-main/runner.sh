@@ -12,7 +12,7 @@
 
 #SBATCH --mail-user=niklas.hofstetter@colorado.edu
 #SBATCH --mail-type=ALL
-#SBATCH --job-name=annotate_data
+#SBATCH --job-name=annotate
 #SBATCH --output=logs/data.%j.log
 
 source ~/.bashrc
