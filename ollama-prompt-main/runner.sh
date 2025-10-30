@@ -29,32 +29,21 @@ unset OLLAMA_ORIGINS
 export OLLAMA_HOST=127.0.0.1  # Localhost only, since same node
 PORT = 9999
 
-# --- Cleanup: Kill old Ollama if it exists ---
-echo "Cleaning up old Ollama processes..."
-pkill -f "ollama serve" || true
-sleep 3
 
 echo "Starting up Ollama server"
-nohup ollama serve --port $PORT > ollama_log_annotation.txt 2>&1 &
+nohup ollama serve --port 9999 > ollama_log_annotation.txt 2>&1 &
 
-# --- Verify it’s running ---
-echo "Verifying Ollama is running..."
-if ss -tlnp | grep -q ":$PORT"; then
-    echo "✅ Ollama server is running on port $PORT"
-else
-    echo "❌ Ollama failed to start, exiting."
-    exit 1
-fi
+echo "Waiting for Ollama server to start..."
+for i in {1..12}; do
+    if curl -s http://127.0.0.1:9999/api/tags >/dev/null; then
+        echo "✅ Ollama is up"
+        break
+    fi
+    echo "⏳ Waiting ($i/12)..."
+    sleep 10
+done
 
-# --- Verify Model Exists ---
-echo "Checking available models..."
-ollama list || true
+ss -tlnp | grep 9999 || echo "⚠️ Ollama not listening yet"
 
-# --- Run Your Annotator ---
-echo "Starting annotation..."
-python3 -m ollama-prompt-main.run \
-    --host 127.0.0.1 \
-    --port $PORT \
-    --config default.yaml
-
-echo "✅ Job completed successfully."
+echo "Running annotation script"
+python3 -m ollama-prompt-main.run --host 127.0.0.1 --port 9999 --config default.yaml
