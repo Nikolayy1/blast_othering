@@ -8,7 +8,7 @@
         "model": "llama3.3:70b-instruct-q4_0",
         "seed": 42,
         "temperature": 0.15,
-        "host": "10.225.144.50",
+        "host": "127.0.0.1",
         "port": "9999",
         "workers": 4,
         "save_interval": 50,
@@ -23,7 +23,7 @@
         "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
         "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
     },
-    "time_saved": "2025-10-30 01:11:49",
+    "time_saved": "2025-10-30 01:18:41",
     "prompt_data": {
         "system_prompt": "Read the comment and decide which social group is targeted. If no target is mentioned, return 'None'.",
         "question": "Which, if any, social group is targeted with this comment?",

@@ -8,7 +8,7 @@
         "model": "llama3.3:70b-instruct-q4_0",
         "seed": 42,
         "temperature": 0.15,
-        "host": "10.225.144.50",
+        "host": "127.0.0.1",
         "port": "9999",
         "workers": 4,
         "save_interval": 50,
@@ -23,7 +23,7 @@
         "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
         "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
     },
-    "time_saved": "2025-10-30 01:11:49",
+    "time_saved": "2025-10-30 01:18:42",
     "prompt_data": {
         "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
         "question": "Please check if this group is a valid social group.",
