@@ -1,0 +1,18 @@
+/var/spool/slurmd/job21515810/slurm_script: line 30: PORT: command not found
+Cleaning up old Ollama processes...
+pkill: killing pid 598475 failed: Operation not permitted
+Starting up Ollama server
+Verifying Ollama is running...
+✅ Ollama server is running on port 
+Checking available models...
+Error: ollama server not responding - could not connect to ollama server, run 'ollama serve' to start it
+Starting annotation...
+usage: run.py [-h] [--config CONFIG]
+              [--prompt_file_stage_1 PROMPT_FILE_STAGE_1]
+              [--prompt_file_stage_2 PROMPT_FILE_STAGE_2] [--dataset DATASET]
+              [--out_filename OUT_FILENAME] [--model MODEL] [--seed SEED]
+              [--temperature TEMPERATURE] --host HOST --port PORT
+              [--workers WORKERS] [--save_interval SAVE_INTERVAL]
+              [--max_retries MAX_RETRIES]
+run.py: error: argument --port: expected one argument
+✅ Job completed successfully.
