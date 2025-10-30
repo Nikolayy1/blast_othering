@@ -25,6 +25,8 @@ mkdir -p "$SLURM_SCRATCH/cache/HF"
 export HF_HOME="$SLURM_SCRATCH/cache/HF"
 export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
+unset OLLAMA_HOST
+
 echo "Starting up Ollama server"
 nohup ollama serve --host 0.0.0.0 --port 9999 > ollama_log_annotation.txt 2>&1 &
 echo "Waiting for Ollama server to start"
