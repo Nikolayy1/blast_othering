@@ -35,4 +35,4 @@ echo "DEBUG: Host IP is $(hostname -i), checking Ollama on port 9999..."
 curl -v http://localhost:9999/api/tags || echo "⚠️ Ollama not responding on port 9999"
 
 host_ip=$(hostname -i)
-python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml
+python3 -m ollama-prompt-main.run --host localhost --port 9999 --config default.yaml
