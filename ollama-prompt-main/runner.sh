@@ -26,16 +26,22 @@ export HF_HOME="$SLURM_SCRATCH/cache/HF"
 export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
 unset OLLAMA_ORIGINS
-export OLLAMA_HOST=127.0.0.1 
+export OLLAMA_HOST=127.0.0.1  # Localhost only, since same node
 
 echo "Starting up Ollama server"
 nohup ollama serve --port 9999 > ollama_log_annotation.txt 2>&1 &
-echo "Waiting for Ollama server to start"
-sleep 1m
 
-ss -tlnp | grep 9999
+echo "Waiting for Ollama server to start..."
+for i in {1..12}; do
+    if curl -s http://127.0.0.1:9999/api/tags >/dev/null; then
+        echo "✅ Ollama is up"
+        break
+    fi
+    echo "⏳ Waiting ($i/12)..."
+    sleep 10
+done
 
-host_ip=$(hostname -i)
-echo "DEBUG: Host IP is $host_ip"
-curl -s http://$host_ip:9999/api/tags || echo "⚠️ Ollama not responding on $host_ip:9999"
+ss -tlnp | grep 9999 || echo "⚠️ Ollama not listening yet"
+
+echo "Running annotation script"
 python3 -m ollama-prompt-main.run --host 127.0.0.1 --port 9999 --config default.yaml
