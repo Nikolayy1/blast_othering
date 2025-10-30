@@ -26,7 +26,7 @@ export HF_HOME="$SLURM_SCRATCH/cache/HF"
 export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
 unset OLLAMA_ORIGINS
-export OLLAMA_HOST=0.0.0.0
+export OLLAMA_HOST=127.0.0.1 
 
 echo "Starting up Ollama server"
 nohup ollama serve --port 9999 > ollama_log_annotation.txt 2>&1 &
@@ -38,4 +38,4 @@ ss -tlnp | grep 9999
 host_ip=$(hostname -i)
 echo "DEBUG: Host IP is $host_ip"
 curl -s http://$host_ip:9999/api/tags || echo "⚠️ Ollama not responding on $host_ip:9999"
-python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml
+python3 -m ollama-prompt-main.run --host 127.0.0.1 --port 9999 --config default.yaml
