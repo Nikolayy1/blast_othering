@@ -25,14 +25,11 @@ mkdir -p "$SLURM_SCRATCH/cache/HF"
 export HF_HOME="$SLURM_SCRATCH/cache/HF"
 export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
-echo "Starting up Ollama server"  # and redirecting output to a log file to currently running directory
-nohup ollama serve > ollama_log_annotation.txt 2>&1 &
-
+echo "Starting up Ollama server"
+nohup ollama serve --host 0.0.0.0 --port 9999 > ollama_log_annotation.txt 2>&1 &
 echo "Waiting for Ollama server to start"
 sleep 1m
-
-echo "DEBUG: Host IP is $(hostname -i), checking Ollama on port 9999..."
-curl -v http://localhost:9999/api/tags || echo "⚠️ Ollama not responding on port 9999"
-
 host_ip=$(hostname -i)
+echo "DEBUG: Host IP is $host_ip"
+curl -s http://$host_ip:9999/api/tags || echo "⚠️ Ollama not responding on $host_ip:9999"
 python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml
