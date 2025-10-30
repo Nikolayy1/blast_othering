@@ -1,0 +1,70 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_6_data_126.json",
+        "out_filename": "stage_7_results_126.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 50,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-29 20:50:56",
+    "prompt_data": {
+        "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
+        "question": "Please check if this group is a valid social group.",
+        "demos": [
+            {
+                "text": "Americans",
+                "answer": {
+                    "isSocialGroup": true
+                }
+            },
+            {
+                "text": "Liberals",
+                "answer": {
+                    "isSocialGroup": true
+                }
+            },
+            {
+                "text": "Women",
+                "answer": {
+                    "isSocialGroup": true
+                }
+            },
+            {
+                "text": "People from this sub",
+                "answer": {
+                    "isSocialGroup": false
+                }
+            },
+            {
+                "text": "Christian Bakeries",
+                "answer": {
+                    "isSocialGroup": false
+                }
+            },
+            {
+                "text": "People who read all the texts",
+                "answer": {
+                    "isSocialGroup": false
+                }
+            }
+        ]
+    },
+    "data": {}
+}
