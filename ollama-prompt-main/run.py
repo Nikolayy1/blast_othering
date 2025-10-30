@@ -294,10 +294,10 @@ if __name__ == "__main__":
     # Othering high temp
     args.temperature = 0.9
     args.dataset = stage7_dataset
-
     args.out_filename = (
         f"stage_8_results_{CURRENT_ITERATION}.json"
     )
+    
     annotator_othering = Annotate(
         args,
         SCRIPT_PATH,
