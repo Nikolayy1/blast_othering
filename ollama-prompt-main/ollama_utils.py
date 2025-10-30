@@ -27,7 +27,6 @@ class OllamaClient:
 
         label: str
         score: float
-        reasoning: str
         target: str
 
     class Answer_Identify_Target(BaseModel):
