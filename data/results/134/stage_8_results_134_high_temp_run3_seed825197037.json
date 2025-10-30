@@ -1,0 +1,106 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_7_data_134.json",
+        "out_filename": "stage_8_results_134_high_temp_run3_seed825197037.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 825197037,
+        "temperature": 0.9,
+        "host": "10.225.144.50",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 50,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering_no_reasoning.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-10-29 22:35:58",
+    "prompt_data": {
+        "system_prompt": "You are a sociolinguistic annotator trained to identify \u201cothering\u201d in online comments. Othering is splitting 2 subgroups (Females, Males) from a unified group (Gender) and placing them in an adversarial relationship leading to marginalization, exclusion, and a sense of 'us vs. them'. Guidelines: Do NOT label as othering if the comment insults or criticizes people in general (e.g., \u201cpeople on this sub are stupid\u201d) without targeting a social identity or out-group. Do NOT label as othering if the speaker includes themselves in the criticized group (e.g., \u201cwe Americans are lazy\u201d). Do NOT label as othering if it adresses an individual person, even if it mentions a social group in the same comment. Focus on exclusion or boundary-making between \u201cus\u201d and \u201cthem\u201d \u2014 not general negativity. Before answering, explain to yourself whether the comment shows intergroup hostility. If it does not, output label 'None'. Return output strictly in valid JSON with exactly these keys: 'label': '<Othering/None>','score': '<Your confidence score (float) from 0-1>', 'target': '<the social group being targeted, or 'None' if not applicable>.",
+        "question": "Does this comment contain othering?",
+        "demos": [
+            {
+                "text": "Men are predators waiting for their chance to molest women according to people here",
+                "answer": {
+                    "label": "Othering",
+                    "score": 1.0,
+                    "target": "Men"
+                }
+            },
+            {
+                "text": "Christians are all judgmental hypocrites",
+                "answer": {
+                    "label": "Othering",
+                    "score": 0.95,
+                    "target": "Christians"
+                }
+            },
+            {
+                "text": "Immigrants are a threat to any society because they replace it.",
+                "answer": {
+                    "label": "Othering",
+                    "score": 1.0,
+                    "target": "Immigrants"
+                }
+            },
+            {
+                "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.9,
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Our town welcomed 50 new refugees last year.",
+                "answer": {
+                    "label": "None",
+                    "score": 1.0,
+                    "target": "Refugees"
+                }
+            },
+            {
+                "text": "The majority of people on this sub are young kids and/or clueless idiots.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.85,
+                    "target": "People on this sub"
+                }
+            },
+            {
+                "text": "As a woman traveling alone, I always keep an eye on my drink.",
+                "answer": {
+                    "label": "None",
+                    "score": 1.0,
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Men and women face different expectations at work.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.9,
+                    "target": "Men and women"
+                }
+            },
+            {
+                "text": "Black men are more likely to be stopped by police.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.9,
+                    "target": "Black men"
+                }
+            }
+        ]
+    },
+    "data": {}
+}
