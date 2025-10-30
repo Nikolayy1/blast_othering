@@ -31,5 +31,8 @@ nohup ollama serve > ollama_log_annotation.txt 2>&1 &
 echo "Waiting for Ollama server to start"
 sleep 1m
 
+echo "DEBUG: Host IP is $(hostname -i), checking Ollama on port 9999..."
+curl -v http://localhost:9999/api/tags || echo "⚠️ Ollama not responding on port 9999"
+
 host_ip=$(hostname -i)
-python3 -m ollama-prompt-main.run --host $host_ip --port 11434 --config default.yaml
+python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml
