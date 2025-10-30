@@ -295,20 +295,16 @@ if __name__ == "__main__":
     args.temperature = 0.9
     args.dataset = stage7_dataset
 
-    for i in range(1, 4):  # run1, run2, run3
-        args.seed = random.randint(0, 2**32 - 1)
-
-        args.out_filename = (
-            f"stage_8_results_{CURRENT_ITERATION}_high_temp_run{i}_seed{args.seed}.json"
-        )
-
-        annotator_othering = Annotate(
-            args,
-            SCRIPT_PATH,
-            os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
-            RESULT_PATH,
-            stage=10,
-            curr_iteration=CURRENT_ITERATION,
-            otheringStage=6,
-        )
-        annotator_othering.process_docs()
+    args.out_filename = (
+        f"stage_8_results_{CURRENT_ITERATION}.json"
+    )
+    annotator_othering = Annotate(
+        args,
+        SCRIPT_PATH,
+        os.path.join(DATA_PATH, f"results/{CURRENT_ITERATION}"),
+        RESULT_PATH,
+        stage=10,
+        curr_iteration=CURRENT_ITERATION,
+        otheringStage=6,
+    )
+    annotator_othering.process_docs()
