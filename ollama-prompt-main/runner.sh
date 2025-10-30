@@ -27,7 +27,6 @@ export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
 unset OLLAMA_ORIGINS
 export OLLAMA_HOST=127.0.0.1  # Localhost only, since same node
-PORT = 9999
 
 
 echo "Starting up Ollama server"
