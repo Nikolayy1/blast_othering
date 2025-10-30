@@ -33,3 +33,5 @@ host_ip=$(hostname -i)
 echo "DEBUG: Host IP is $host_ip"
 curl -s http://$host_ip:9999/api/tags || echo "⚠️ Ollama not responding on $host_ip:9999"
 python3 -m ollama-prompt-main.run --host $host_ip --port 9999 --config default.yaml
+
+ss -tlnp | grep 9999
