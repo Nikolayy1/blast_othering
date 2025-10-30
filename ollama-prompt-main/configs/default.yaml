@@ -5,7 +5,7 @@ prompt_file_dehumanizing: prompts/classify_dehumanizing.json
 prompt_file_stigmatizing: prompts/classify_stigmatizing.json
 prompt_file_stereotyping: prompts/classify_stereotyping.json
 prompt_file_simplifying: prompts/classify_simplifying.json
-prompt_file_othering: prompts/classify_othering.json
+prompt_file_othering: prompts/classify_othering_no_reasoning.json
 prompt_file_othering_identify_target: prompts/classify_othering_identify_target.json
 prompt_file_othering_is_social_group: prompts/classify_othering_is_social_group.json
 prompt_file_othering_portrayal: prompts/classify_othering_portrayal.json
