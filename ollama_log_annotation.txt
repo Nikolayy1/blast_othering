@@ -1,1 +1,1 @@
-Error: unknown flag: --host
+Error: unknown flag: --port
