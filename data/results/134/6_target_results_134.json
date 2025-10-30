@@ -23,7 +23,7 @@
         "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
         "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
     },
-    "time_saved": "2025-10-29 22:46:50",
+    "time_saved": "2025-10-29 22:51:20",
     "prompt_data": {
         "system_prompt": "Read the comment and decide which social group is targeted. If no target is mentioned, return 'None'.",
         "question": "Which, if any, social group is targeted with this comment?",
