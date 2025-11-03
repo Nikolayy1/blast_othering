@@ -194,32 +194,32 @@ if __name__ == "__main__":
     # )
     # annotator_stage_5.process_docs()
 
-    # Target Group
-    args.dataset = original_dataset
-    args.out_filename = f"6_target_results_{CURRENT_ITERATION}.json"
+    # # Target Group
+    # args.dataset = original_dataset
+    # args.out_filename = f"6_target_results_{CURRENT_ITERATION}.json"
 
-    annotator_othering = Annotate(
-        args,
-        SCRIPT_PATH,
-        DATA_PATH,
-        RESULT_PATH,
-        stage=6,
-        curr_iteration=CURRENT_ITERATION,
-        otheringStage=1,
-    )
-    annotator_othering.process_docs()
+    # annotator_othering = Annotate(
+    #     args,
+    #     SCRIPT_PATH,
+    #     DATA_PATH,
+    #     RESULT_PATH,
+    #     stage=6,
+    #     curr_iteration=CURRENT_ITERATION,
+    #     otheringStage=1,
+    # )
+    # annotator_othering.process_docs()
 
-    stage_6_out_path = os.path.join(RESULT_PATH, args.out_filename)
-    stage_6_results = load_file(stage_6_out_path)
+    # stage_6_out_path = os.path.join(RESULT_PATH, args.out_filename)
+    # stage_6_results = load_file(stage_6_out_path)
 
-    targets_only = {
-        doc_id: {"text": doc["annotation"]["target"]}
-        for doc_id, doc in stage_6_results["data"].items()
-        if doc.get("annotation") and "target" in doc["annotation"]
-    }
+    # targets_only = {
+    #     doc_id: {"text": doc["annotation"]["target"]}
+    #     for doc_id, doc in stage_6_results["data"].items()
+    #     if doc.get("annotation") and "target" in doc["annotation"]
+    # }
 
     stage6_dataset = f"stage_6_data_{CURRENT_ITERATION}.json"
-    save_file(targets_only, RESULT_PATH, stage6_dataset)
+    # save_file(targets_only, RESULT_PATH, stage6_dataset)
 
     # Is Social Group?
     args.dataset = stage6_dataset
