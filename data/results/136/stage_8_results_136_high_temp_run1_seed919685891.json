@@ -1,0 +1,953 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "stage_7_data_136.json",
+        "out_filename": "stage_8_results_136_high_temp_run1_seed919685891.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 919685891,
+        "temperature": 0.9,
+        "host": "127.0.0.1",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 50,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering_no_reasoning.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-11-02 17:42:23",
+    "prompt_data": {
+        "system_prompt": "You are a sociolinguistic annotator trained to identify \u201cothering\u201d in online comments. Othering is splitting 2 subgroups (Females, Males) from a unified group (Gender) and placing them in an adversarial relationship leading to marginalization, exclusion, and a sense of 'us vs. them'. Guidelines: Do NOT label as othering if the comment insults or criticizes people in general (e.g., \u201cpeople on this sub are stupid\u201d) without targeting a social identity or out-group. Do NOT label as othering if the speaker includes themselves in the criticized group (e.g., \u201cwe Americans are lazy\u201d). Do NOT label as othering if it adresses an individual person, even if it mentions a social group in the same comment. Focus on exclusion or boundary-making between \u201cus\u201d and \u201cthem\u201d \u2014 not general negativity. Before answering, explain to yourself whether the comment shows intergroup hostility. If it does not, output label 'None'. Return output strictly in valid JSON with exactly these keys: 'label': '<Othering/None>','score': '<Your confidence score (float) from 0-1>', 'target': '<the social group being targeted, or 'None' if not applicable>.",
+        "question": "Does this comment contain othering?",
+        "demos": [
+            {
+                "text": "Men are predators waiting for their chance to molest women according to people here",
+                "answer": {
+                    "label": "Othering",
+                    "score": 1.0,
+                    "target": "Men"
+                }
+            },
+            {
+                "text": "Christians are all judgmental hypocrites",
+                "answer": {
+                    "label": "Othering",
+                    "score": 0.95,
+                    "target": "Christians"
+                }
+            },
+            {
+                "text": "Immigrants are a threat to any society because they replace it.",
+                "answer": {
+                    "label": "Othering",
+                    "score": 1.0,
+                    "target": "Immigrants"
+                }
+            },
+            {
+                "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.9,
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Our town welcomed 50 new refugees last year.",
+                "answer": {
+                    "label": "None",
+                    "score": 1.0,
+                    "target": "Refugees"
+                }
+            },
+            {
+                "text": "The majority of people on this sub are young kids and/or clueless idiots.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.85,
+                    "target": "People on this sub"
+                }
+            },
+            {
+                "text": "As a woman traveling alone, I always keep an eye on my drink.",
+                "answer": {
+                    "label": "None",
+                    "score": 1.0,
+                    "target": "Women"
+                }
+            },
+            {
+                "text": "Men and women face different expectations at work.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.9,
+                    "target": "Men and women"
+                }
+            },
+            {
+                "text": "Black men are more likely to be stopped by police.",
+                "answer": {
+                    "label": "None",
+                    "score": 0.9,
+                    "target": "Black men"
+                }
+            }
+        ]
+    },
+    "data": {
+        "1": {
+            "text": "The majority of people on this sub are young kids and/or clueless idiots. Don't pay too much attention to them",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.85,
+                "reasoning": "The speaker refers to a subgroup (young kids) within the larger group (people on this sub), implying that they are less competent or informed, thus creating an 'us vs. them' dynamic.",
+                "target": "Young people"
+            }
+        },
+        "4": {
+            "text": "Then Christian bakeries should have to make cakes for gay weddings",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The text mentions a specific social identity or out-group (gay weddings) and suggests that another group (Christian bakeries) must cater to them, implying an exclusion or boundary-making between the two groups.",
+                "target": "Gay weddings"
+            }
+        },
+        "2": {
+            "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment targets Men as a group by associating them with negative behavior (being predators waiting for their chance to molest women). The speaker makes an exclusion or boundary between 'us' and 'them', where 'they' are men in general who are viewed as potential threats to women.",
+                "target": "Men"
+            }
+        },
+        "3": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+            "annotation": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "The speaker includes themselves in the criticized group ('we are lazy') and does not target a specific social identity or out-group.",
+                "target": "Americans"
+            }
+        },
+        "5": {
+            "text": "Americans are so lazy. No wonder half the country is obese.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment creates an exclusion between \"us\" (those who work hard) and \"them\" (Americans, specifically those in the US). The speaker implies that Americans are lazy, which creates a boundary between the two groups.",
+                "target": "Americans"
+            }
+        },
+        "6": {
+            "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment uses derogatory language and contains intergroup hostility towards a specific country (Iran) based on its nationality, which is a clear example of othering.",
+                "target": "Iran"
+            }
+        },
+        "7": {
+            "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment creates an us versus them dynamic by targeting a specific social group (Catholic priests) and making a negative generalization about them.",
+                "target": "Catholic priests"
+            }
+        },
+        "8": {
+            "text": "Every women is a potential child killer.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text makes a sweeping negative statement about an entire group based on gender, suggesting that all women are capable of harming children.",
+                "target": "Women"
+            }
+        },
+        "9": {
+            "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The given text is likely to be from a dating app or similar context and seems to objectify women by framing them as something to be obtained after gaining power.",
+                "target": "Women"
+            }
+        },
+        "10": {
+            "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment expresses an adversarial relationship between two groups, Christians and non-Christains (specifically, atheists), portraying the latter as victims of historical injustices perpetrated by Christianity. This is a clear example of othering, where one group (non-Christians) is pitted against another (Christians). The speaker's tone suggests that they perceive themselves as being part of a unified group ('us') that has been wronged by Christianity ('them'), leading to intergroup hostility and a sense of 'us vs. them'. The mention of invading a hypothetical nation based on its Christian beliefs further emphasizes this divide.",
+                "target": "Christians"
+            }
+        },
+        "11": {
+            "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment is explicitly hostile towards a specific social group (Mormons) and uses derogatory language to express that hostility. It also implies that the speaker would prefer not to associate with this group or visit their city, which suggests an 'us vs. them' mentality.",
+                "target": "Mormons"
+            }
+        },
+        "12": {
+            "text": "That's how they get women to be \"cool\" with their shitty behaviour, by telling us we have no sense of humour, can't take a joke, being bitchy, etc. \n\nSad thing is, it works with a lot of women. They force a strained laugh to fit in and tell themselves it's just \"Boys being boys.\"",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment expresses intergroup hostility by implying that men use certain tactics to manipulate women into accepting their poor behavior, thus creating a sense of 'us vs. them' between the two groups.",
+                "target": "Men"
+            }
+        },
+        "14": {
+            "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.9,
+                "reasoning": "This comment shows intergroup hostility between men and women by implying that men are lazy with their profiles, which can lead to marginalization and exclusion.",
+                "target": "Men"
+            }
+        },
+        "15": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment shows intergroup hostility towards radical Muslims in Europe.",
+                "target": "Radical muslims"
+            }
+        },
+        "16": {
+            "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment contains intergroup hostility, as it criticizes men in packs for their behavior towards women, implying an 'us vs. them' dynamic.",
+                "target": "Men"
+            }
+        },
+        "17": {
+            "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment contains othering by implying that gay men are a threat to women, and creating an 'us vs. them' dynamic between straight people and LGBTQ+ individuals.",
+                "target": "Gay men"
+            }
+        },
+        "18": {
+            "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment shows intergroup hostility towards immigrants by creating a sense of 'us vs. them' and implying that immigrants are refusing to integrate and instead choosing to isolate themselves.",
+                "target": "Immigrants"
+            }
+        },
+        "19": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment contains a blanket statement about women, implying that they all share the same characteristic or preference, which can lead to stereotyping and marginalization.",
+                "target": "Women"
+            }
+        },
+        "20": {
+            "text": "All women cheat after 10 years of marriage",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment contains othering as it targets a specific social identity (women) and places them in an adversarial relationship by making a negative generalization about their behavior.",
+                "target": "Women"
+            }
+        },
+        "21": {
+            "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment implies that immigrants pose a threat to the host society by replacing it, thus creating an 'us vs. them' dynamic.",
+                "target": "Immigrants"
+            }
+        },
+        "22": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text shows hostility and exclusion towards the LGBTQ group, creating a sense of 'us vs. them' and placing the targeted group in an adversarial relationship.",
+                "target": "LGBTQ"
+            }
+        },
+        "23": {
+            "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text shows intergroup hostility by explicitly stating that men are oppressors and women are victims, thus creating an adversarial relationship between the two groups.",
+                "target": "Men"
+            }
+        },
+        "24": {
+            "text": "Ugly girls don\u2019t deserve attention ",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text implies that ugly girls are not worthy of attention or consideration, thus creating an 'us vs. them' dynamic based on appearance.",
+                "target": "Ugly girls"
+            }
+        },
+        "25": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text implies an 'us vs. them' dynamic by expressing the need to be cautious around a specific group (foreign immigrants), which can lead to their marginalization and exclusion.",
+                "target": "Foreign immigrants"
+            }
+        },
+        "26": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment explicitly targets and denigrates the social group \"women\" as a whole by attributing a negative trait to them, indicating an adversarial relationship leading to marginalization.",
+                "target": "Women"
+            }
+        },
+        "27": {
+            "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment implies that there are two distinct groups - academics and non-academics. It portrays the former as being detached from reality and unable to comprehend everyday life, thus creating an 'us vs. them' dichotomy.",
+                "target": "Academics"
+            }
+        },
+        "28": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment is about the perceived devaluation of women by other people and the speaker's rejection of that notion.",
+                "target": "Women"
+            }
+        },
+        "29": {
+            "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text implies an 'us vs them' dynamic between the speaker's group and men who act like feminists, indicating intergroup hostility.",
+                "target": "Men"
+            }
+        },
+        "30": {
+            "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment is creating a sense of 'us vs. them' between Christians and other religious groups (Muslims and Jews), implying that Christians are different or separate from the others.",
+                "target": "Christians"
+            }
+        },
+        "31": {
+            "text": "As an outsider looking in I disagree. Religion seems to creep into everything. Ever had an atheist president or even more than a handful of congress that admit to being so? ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.9,
+                "reasoning": "The speaker seems to be setting up an 'us vs. them' dynamic between religious individuals and atheists, which could lead to exclusion or marginalization of the latter group.",
+                "target": "Atheists"
+            }
+        },
+        "32": {
+            "text": "Lol wow the media really brainwashed you folks. It is shitty in the Arab world but not close to what you have been shown. Kuwait is not Afghanistan for fuck's sake.",
+            "annotation": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "The comment criticizes a group of people (\"you folks\") and compares them unfavorably to others in the Arab world, but does not create an \"us vs. them\" dynamic based on social identities like nationality or ethnicity.",
+                "target": "None"
+            }
+        },
+        "33": {
+            "text": "Yes, for those moments they feel they have power over us. Power to make us uncomfortable, afraid, and in some cases, the power to act in a way that confirms the fear we feel.  It's a moment when they feel totally in control of someone else's reality. Disgusting.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment expresses 'us vs. them' dynamics and targets an out-group ('they'), implying that there is a power imbalance where one group has control over the other's reality.",
+                "target": "Those moments"
+            }
+        },
+        "34": {
+            "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment contains othering language as it targets and stereotypes American men who hunt animals, creating a sense of 'us vs. them'. It portrays this group in a negative light, suggesting they lack courage and are compensating for their inadequacies through hunting.",
+                "target": "American men who hunt"
+            }
+        },
+        "35": {
+            "text": "Refugees are like rats, swarming into the country.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment compares refugees to \"rats\", which is a highly derogatory term that dehumanizes and marginalizes them. It creates an 'us vs. them' dynamic, where refugees are portrayed as a threat to the in-group, leading to exclusion and hostility.",
+                "target": "Refugees"
+            }
+        },
+        "36": {
+            "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment shows intergroup hostility and a sense of 'us vs. them' by targeting Mormons and expressing happiness about their beliefs being rejected.",
+                "target": "Mormons"
+            }
+        },
+        "37": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text marginalizes women by suggesting they are inherently worthless based on human history.",
+                "target": "Women"
+            }
+        },
+        "39": {
+            "text": "Immigrants are good for the economy in the long run, especially in a relatively low population country like ours. That aging population that you refer to needs to be replaced, and most of us aren't having enough kids. ",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "This comment does not show othering as it discusses the benefits of immigrants in a positive context without creating an adversarial relationship between 'us' and 'them'. Instead, it highlights the need for immigration to replace an aging population and address low birth rates.",
+                "target": "None"
+            }
+        },
+        "40": {
+            "text": "You might want to spread that word to a lot of other fellow Christians. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment suggests addressing only \"fellow Christians\", which creates an in-group ('us') and potentially excludes or marginalizes those who are not part of this group ('them'). This can be seen as othering.",
+                "target": "Non-Christians"
+            }
+        },
+        "41": {
+            "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment contains intergroup hostility and us vs. them mentality by excluding and negatively portraying women as a group.",
+                "target": "Women"
+            }
+        },
+        "42": {
+            "text": "Where in the world is history NOT massively whitewashed? China? Russia? Africa? South America? It happens everywhere. And not mentioning many of the great women in the history of various cultures as they do their male counterparts? Sadly it is something that has happened for centuries all over the place.",
+            "annotation": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "The comment does discuss social groups and historical context, but it does not exhibit intergroup hostility or exclusion towards any specific group, instead highlighting a general issue of whitewashing in history across different cultures and regions.",
+                "target": "None"
+            }
+        },
+        "43": {
+            "text": "It's also the most common spot for skin cancer on anyone with dark skin. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.85,
+                "reasoning": "This is a statement about people of color being at risk for a certain health condition due to their darker skin tone.",
+                "target": "People with dark skin"
+            }
+        },
+        "44": {
+            "text": "Women can be sexist against themselves too though, as a symptom of how society is.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment contains language that could imply women being sexist against themselves, which might be perceived as creating an 'us vs. them' dynamic within the group 'women'. However, this interpretation depends on context and tone.",
+                "target": "Women"
+            }
+        },
+        "45": {
+            "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text shows an instance of 'othering' because it creates a subgroup (bishops) from the larger group (men) and portrays them in a negative light as predators or perverts.",
+                "target": "Bishops"
+            }
+        },
+        "47": {
+            "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment creates an us vs them dynamic between the speaker's in-group and the alt (left or right) by labeling it as a 'cancer'. This indicates exclusion or boundary-making between \"us\" and \"them\", which is a characteristic of othering.",
+                "target": "The alt, whether left or right"
+            }
+        },
+        "48": {
+            "text": "Obese women are disgusting.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment contains intergroup hostility towards a specific subgroup within the category of gender (females) and body type (obese), creating an adversarial relationship that leads to marginalization.",
+                "target": "Obese women"
+            }
+        },
+        "49": {
+            "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment implies that a particular group (White people) will not be able to differentiate between subgroups within another group (Chinese people) based on their generation or place of birth/growing up, thus applying stereotypes to all Chinese people regardless of their background.",
+                "target": "White people"
+            }
+        },
+        "50": {
+            "text": "In the last two thousand years, I haven't seen Jews dedicate their time to attacking other people because of their heritage. The same cannot be said of Nazis and self-identified Aryans. When I think of a Jew I think of someone who tends to be part of a fairly insular culture that isn't interested in evangelizing. Aryans have been more commonly violent and focused on knocking down anyone who isn't an Aryan.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment contains a comparison between two groups (Jews and Aryans) with negative sentiment towards the latter group, framing them as violent and hostile. This creates an 'us vs. them' dynamic and marginalizes the out-group (Aryans), which is characteristic of othering.",
+                "target": "Aryans"
+            }
+        },
+        "51": {
+            "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text implies discrimination or marginalization of the LGBTQ+ community by advising parents to dissuade their children from being gay.",
+                "target": "LGBTQ+"
+            }
+        },
+        "52": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment is directed at a specific social identity (foreigners) and contains language that implies exclusion or hostility towards them.",
+                "target": "Foreigners"
+            }
+        },
+        "54": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment targets a social group (men) by attributing a negative characteristic to the majority of them.",
+                "target": "Men"
+            }
+        },
+        "55": {
+            "text": "Women are more emotional than men",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The statement implies a negative stereotype about women, suggesting they are inherently more emotional than men. This kind of generalization can contribute to marginalization and reinforce harmful gender stereotypes.",
+                "target": "Women"
+            }
+        },
+        "57": {
+            "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment creates an 'us vs. them' dynamic between the speaker's group (implied to be non-Mormons) and Mormons, who are portrayed as part of a cult that promotes harmful practices like polygamy and child abuse.",
+                "target": "Mormons"
+            }
+        },
+        "58": {
+            "text": "The media like reddit seems to be mostly SJW liberals. They are like sheep following whatever the media says about Trump and failing to see the good things hes done for our country. ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment implies a divisive relationship between two groups: those who follow the media (referred to as \"SJW liberals\") and those who do not. It portrays the former group in a negative light, implying they are mindless followers of the media, which constitutes othering.",
+                "target": "Liberals"
+            }
+        },
+        "59": {
+            "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment contains othering as it targets and stereotypes a social group, specifically women, implying that they are inherently manipulative and evil. The use of the phrase 'horde evil lying women' is particularly indicative of intergroup hostility and boundary-making between 'us' (men) and 'them' (women).",
+                "target": "Women"
+            }
+        },
+        "60": {
+            "text": "Bwahahahah, conservative white males are so fucking stupid.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment shows intergroup hostility by explicitly criticizing and insulting a specific social group (conservative white males), which is a clear indicator of othering.",
+                "target": "Conservative white males"
+            }
+        },
+        "61": {
+            "text": "Journalists just write whatever gets clicks",
+            "annotation": {
+                "label": "None",
+                "score": 1.0,
+                "reasoning": "The comment insults people in general without targeting a social identity or out-group.",
+                "target": "Journalists"
+            }
+        },
+        "62": {
+            "text": "women prefer family and raising children to working in business.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment targets women as a group and implies they have different priorities than men.",
+                "target": "Women"
+            }
+        },
+        "63": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment contains intergroup hostility directed at a specific social group.",
+                "target": "Gay people"
+            }
+        },
+        "64": {
+            "text": "Christians are all judgmental hypocrites.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment expresses hostility towards a specific social group (Christians) by making a sweeping generalization about them.",
+                "target": "Christians"
+            }
+        },
+        "65": {
+            "text": "Jesus, Democrats are fucking evil.  They know they control big tech & the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules.\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 & voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment excludes and marginalizes Democrats by using derogatory language ('evil', 'bullshit', 'disgust') and placing them in an adversarial relationship with the speaker's group (Republicans). The speaker generalizes all Democrats as being anti-American, which further reinforces the exclusionary tone. The comment also includes a conspiracy theory about Democrats controlling big tech and denying service based on political views, adding to the sense of 'us vs. them' division.",
+                "target": "Democrats"
+            }
+        },
+        "66": {
+            "text": "Immigrants just come here to take our jobs.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment targets a specific social group (immigrants) and places them in an adversarial relationship with the speaker's in-group ('our' jobs), implying that immigrants are a threat to the employment of the in-group.",
+                "target": "Immigrants"
+            }
+        },
+        "67": {
+            "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The comment insults or criticizes a whole country (America) and possibly another country (Russia), which does not target any specific social identity or out-group.",
+                "target": "None"
+            }
+        },
+        "68": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text contains an explicit insult targeting a specific social group (women) based on their gender.",
+                "target": "Women"
+            }
+        },
+        "69": {
+            "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The text displays intergroup hostility by using derogatory language to describe Europeans.",
+                "target": "Europeans"
+            }
+        },
+        "70": {
+            "text": "So.. women are allowed to but men aren't?",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment suggests a double standard where women have more freedom than men, creating an 'us vs. them' dynamic between the two groups.",
+                "target": "Men"
+            }
+        },
+        "71": {
+            "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment implies a difference in treatment based on political affiliation, specifically between Democrats and Republicans, suggesting that if someone from one group were to engage in certain behaviors, there would be different reactions to it.",
+                "target": "Democrats and Republicans"
+            }
+        },
+        "72": {
+            "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment targets and negatively stereotypes a social group (feminists), implying that they are promoting propaganda and attacking conservative values, thus creating an 'us vs. them' dynamic.",
+                "target": "Feminists"
+            }
+        },
+        "73": {
+            "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment displays intergroup hostility by creating an 'us vs. them' dynamic between the speaker's country (implied to be the United States) and China, portraying China in a negative and threatening light.",
+                "target": "Chinese people"
+            }
+        },
+        "74": {
+            "text": "Women only want one thing and its disgusting",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment targets a specific social group (women) with an adversarial tone.",
+                "target": "Women"
+            }
+        },
+        "75": {
+            "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.\n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment targets 'Liberals', creating an 'us vs. them' dynamic between liberals and conservatives.",
+                "target": "Liberals"
+            }
+        },
+        "76": {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment suggests a specific age and gender group (women under 30) should not hold a particular position (teaching boys), potentially implying that women in this age group are not suitable or trustworthy for the role due to their gender and age.",
+                "target": "Women under 30"
+            }
+        },
+        "77": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The given text is an insult to an individual and does not target a specific social group or identity, so it does not qualify as \"othering\" according to the provided guidelines.",
+                "target": "None"
+            }
+        },
+        "78": {
+            "text": "Politicians are all the same",
+            "annotation": {
+                "label": "None",
+                "score": 1.0,
+                "reasoning": "The comment does not mention any social identity or out-group, and it expresses a general sentiment about politicians without targeting a specific group.",
+                "target": "None"
+            }
+        },
+        "79": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The speaker presents a negative and stereotypical view of the out-group (Muslims) by implying that they are typically associated with violence. This creates an 'us vs. them' dynamic, where Muslims are portrayed as being inherently violent, thus leading to marginalization and exclusion.",
+                "target": "Muslims"
+            }
+        },
+        "80": {
+            "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment suggests an adversarial relationship between men and women based on perceived complaining behavior of the latter group.",
+                "target": "Women"
+            }
+        },
+        "81": {
+            "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment creates a distinction between \"us\" (America) and \"them\" (other countries), implying that America is superior to other countries, which can lead to marginalization and exclusion of people from those countries.",
+                "target": "Non-Americans"
+            }
+        },
+        "82": {
+            "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment implies that one group (informed people) is aware of what an administration is doing, while another group (Americans) is brainwashed by the right and media, leading to a sense of 'us vs. them' between these two groups.",
+                "target": "Americans"
+            }
+        },
+        "83": {
+            "text": "Our town welcomed 50 new refugees last year",
+            "annotation": {
+                "label": "None",
+                "score": 1.0,
+                "reasoning": "The comment does not show any exclusion or boundary-making between \"us\" and \"them\". It states a fact about the town welcoming new refugees without expressing hostility towards them.",
+                "target": "None"
+            }
+        },
+        "84": {
+            "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The text shows clear intergroup hostility by implying that Black men are more likely to engage in criminal behavior due to their inherent nature.",
+                "target": "Black men"
+            }
+        },
+        "85": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment contains othering as it makes a general statement about two groups (Blacks and East Asians) based on assumed biological differences, implying that one group is inherently more prone to violent crime than the other.",
+                "target": "Blacks and East Asians"
+            }
+        },
+        "86": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment targets the social identity of 'gay' individuals with hostility, exclusion, and marginalization.",
+                "target": "Gay people"
+            }
+        },
+        "87": {
+            "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text shows clear othering by creating an 'us vs. them' scenario between the speaker's group and another group ('communist scum'), which leads to exclusion and marginalization of the targeted out-group.",
+                "target": "Communists"
+            }
+        },
+        "88": {
+            "text": "So torturing people who live in evil and worship false gods is ok, right?",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text implies the idea of \"us vs. them\", where \"they\" are those who allegedly live in evil and worship false gods. This creates a sense of exclusion and boundary-making between two groups: those who supposedly do not live in evil or worship false gods (the in-group) and those who do (the out-group). The tone suggests hostility towards the out-group, which is a key characteristic of othering.",
+                "target": "People who allegedly live in evil and worship false gods"
+            }
+        },
+        "89": {
+            "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text shows clear intergroup hostility and makes a negative generalization about Mormonism, implying that it is harmful or toxic to society ('cancer'). This kind of language contributes to an 'us vs. them' mentality, which can lead to exclusion and marginalization.",
+                "target": "Mormonism"
+            }
+        },
+        "90": {
+            "text": "So the implication here is that only atheists should be in office?",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment suggests exclusion of a group (people with religious beliefs) from holding public office, which can lead to marginalization and an 'us vs. them' mentality.",
+                "target": "Atheists"
+            }
+        },
+        "91": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text shows clear intergroup hostility and exclusion towards women, specifically targeting their driving abilities.",
+                "target": "Women"
+            }
+        },
+        "92": {
+            "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment implies an 'us vs them' mentality by contrasting the speaker's own group (presumably Western or global feminists) with those in Saudi Arabia (implied to be oppressed and unable to organize). This exclusionary language contributes to a sense of othering.",
+                "target": "Saudi Arabian women"
+            }
+        },
+        "93": {
+            "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment contains exclusion or boundary-making between \"us\" and \"them\" based on social identity (women). The speaker insults women in general and addresses them as a group, showing intergroup hostility.",
+                "target": "Women"
+            }
+        },
+        "94": {
+            "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment explicitly targets and marginalizes several social groups, including America as a whole, its Founding Fathers, plantation owners and their descendants, contractors who build bombs, men who engage in harmful behavior, and white women voters. This creates an 'us vs. them' dynamic, leading to exclusion and hostility towards these groups.",
+                "target": "America, Founding Fathers, plantation owners, contractors, men, white women voters"
+            }
+        },
+        "95": {
+            "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "This comment contains othering as it targets a specific social group (the LGBTQ+ community) and creates an 'us vs. them' dynamic, marginalizing and excluding them.",
+                "target": "LGBTQ+"
+            }
+        },
+        "96": {
+            "text": "LGBTQ aren\u2019t covered by discrimination laws lmao, you have no clue what you\u2019re talking about. You can be denied housing, and even fired from your job for being gay in many states.",
+            "annotation": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "The comment implies exclusion and marginalization of the LGBTQ+ group due to lack of legal protections against discrimination.",
+                "target": "LGBTQ+"
+            }
+        },
+        "97": {
+            "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The comment implies a subgroup (white Western Christians) is being hated by another group and downplays this by saying 'it doesn't even count'. This shows intergroup hostility and exclusion.",
+                "target": "White Western Christians"
+            }
+        },
+        "99": {
+            "text": "Ohh... we meant whale as in obese women.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "This comment shows exclusion or boundary-making between \"us\" and \"them\", where 'them' refers to a social group (obese women). The speaker implies that there is an adversarial relationship between the in-group ('we') and out-group ('obese women').",
+                "target": "Obese women"
+            }
+        },
+        "100": {
+            "text": "Lesbians all hate men.",
+            "annotation": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "The text targets lesbians as a group and assigns them a negative characteristic of hating men.",
+                "target": "Lesbians"
+            }
+        }
+    }
+}
