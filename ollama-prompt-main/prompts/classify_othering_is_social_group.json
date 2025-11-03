@@ -37,6 +37,18 @@
             "answer": {
                 "isSocialGroup": false
             }
+        },
+        {
+            "text": "Journalists",
+            "answer": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "Russia",
+            "answer": {
+                "isSocialGroup": true
+            }
         }
-        ]
-    }
+    ]
+}
