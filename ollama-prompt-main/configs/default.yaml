@@ -10,10 +10,10 @@ prompt_file_othering_identify_target: prompts/classify_othering_identify_target.
 prompt_file_othering_is_social_group: prompts/classify_othering_is_social_group.json
 prompt_file_othering_portrayal: prompts/classify_othering_portrayal.json
 prompt_file_othering_identify_unified_group: prompts/classify_othering_identify_unified_group.json
-dataset: ../data/annotations_100.json
+dataset: ../data/15k.json
 model: llama3.3:70b-instruct-q4_0
 seed: 42
-temperature: 0.15
+temperature: 0.2
 workers: 4
-save_interval: 50
+save_interval: 100
 max_retries: 3
