@@ -4,7 +4,7 @@
         "prompt_file_stage_1": "prompts/default.json",
         "prompt_file_stage_2": "prompts/classify_harm.json",
         "dataset": "../data/annotations_100.json",
-        "out_filename": "6_target_results_139.json",
+        "out_filename": "6_target_results_140.json",
         "model": "llama3.3:70b-instruct-q4_0",
         "seed": 42,
         "temperature": 0.15,
@@ -23,7 +23,7 @@
         "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
         "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
     },
-    "time_saved": "2025-11-02 22:12:53",
+    "time_saved": "2025-11-02 22:24:06",
     "prompt_data": {
         "system_prompt": "Read the comment and decide which social group is targeted. If no target is mentioned, return 'None'.",
         "question": "Which, if any, social group is targeted with this comment?",
@@ -61,10 +61,10 @@
         ]
     },
     "data": {
-        "4": {
-            "text": "Then Christian bakeries should have to make cakes for gay weddings",
+        "3": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
             "annotation": {
-                "target": "Christian bakeries"
+                "target": "Americans"
             }
         },
         "1": {
@@ -79,10 +79,10 @@
                 "target": "Men"
             }
         },
-        "3": {
-            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+        "4": {
+            "text": "Then Christian bakeries should have to make cakes for gay weddings",
             "annotation": {
-                "target": "Americans"
+                "target": "Christian bakeries"
             }
         },
         "5": {
@@ -256,7 +256,7 @@
         "33": {
             "text": "Yes, for those moments they feel they have power over us. Power to make us uncomfortable, afraid, and in some cases, the power to act in a way that confirms the fear we feel.  It's a moment when they feel totally in control of someone else's reality. Disgusting.",
             "annotation": {
-                "target": "Men"
+                "target": "Those who take advantage of others"
             }
         },
         "34": {
@@ -610,7 +610,7 @@
         "92": {
             "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
             "annotation": {
-                "target": "Women"
+                "target": "Feminists"
             }
         },
         "93": {
@@ -622,7 +622,7 @@
         "94": {
             "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
             "annotation": {
-                "target": "American people, particularly those of European descent, as well as American founding fathers and plantation owners"
+                "target": "American people, specifically: \n1) Founding Fathers of America\n2) Plantation owners and their descendants\n3) Contractors involved in building bombs used in Yemen\n4) Men who engage in sexual assault or harassment (implied by \"turn up music so nobody can hear the women scream\")\n5) White American women voters"
             }
         },
         "95": {
@@ -646,7 +646,7 @@
         "98": {
             "text": "Change what dangerous/hateful means, and you'll control the world.",
             "annotation": {
-                "target": "None"
+                "target": "LGBTQ+"
             }
         },
         "99": {

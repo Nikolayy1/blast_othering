@@ -3,8 +3,8 @@
         "config": "default.yaml",
         "prompt_file_stage_1": "prompts/default.json",
         "prompt_file_stage_2": "prompts/classify_harm.json",
-        "dataset": "stage_6_data_139.json",
-        "out_filename": "stage_7_results_139.json",
+        "dataset": "stage_6_data_140.json",
+        "out_filename": "stage_7_results_140.json",
         "model": "llama3.3:70b-instruct-q4_0",
         "seed": 42,
         "temperature": 0.15,
@@ -23,7 +23,7 @@
         "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
         "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
     },
-    "time_saved": "2025-11-02 22:12:53",
+    "time_saved": "2025-11-02 22:25:00",
     "prompt_data": {
         "system_prompt": "Decide if the following group is a valid social group that can be othered. Valid examples include genders like women and men. Non valid examples include very specific groups like 'people who read all their texts'. ",
         "question": "Please check if this group is a valid social group.",
@@ -79,6 +79,12 @@
         ]
     },
     "data": {
+        "2": {
+            "text": "Men",
+            "annotation": {
+                "isSocialGroup": true
+            }
+        },
         "4": {
             "text": "Christian bakeries",
             "annotation": {
@@ -93,12 +99,6 @@
         },
         "3": {
             "text": "Americans",
-            "annotation": {
-                "isSocialGroup": true
-            }
-        },
-        "2": {
-            "text": "Men",
             "annotation": {
                 "isSocialGroup": true
             }
@@ -272,9 +272,9 @@
             }
         },
         "33": {
-            "text": "Men",
+            "text": "Those who take advantage of others",
             "annotation": {
-                "isSocialGroup": true
+                "isSocialGroup": false
             }
         },
         "34": {
@@ -626,7 +626,7 @@
             }
         },
         "92": {
-            "text": "Women",
+            "text": "Feminists",
             "annotation": {
                 "isSocialGroup": true
             }
@@ -638,9 +638,9 @@
             }
         },
         "94": {
-            "text": "American people, particularly those of European descent, as well as American founding fathers and plantation owners",
+            "text": "American people, specifically: \n1) Founding Fathers of America\n2) Plantation owners and their descendants\n3) Contractors involved in building bombs used in Yemen\n4) Men who engage in sexual assault or harassment (implied by \"turn up music so nobody can hear the women scream\")\n5) White American women voters",
             "annotation": {
-                "isSocialGroup": true
+                "isSocialGroup": false
             }
         },
         "95": {
@@ -662,9 +662,9 @@
             }
         },
         "98": {
-            "text": "None",
+            "text": "LGBTQ+",
             "annotation": {
-                "isSocialGroup": false
+                "isSocialGroup": true
             }
         },
         "99": {
