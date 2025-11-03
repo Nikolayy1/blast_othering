@@ -26,11 +26,11 @@ export HF_HOME="$SLURM_SCRATCH/cache/HF"
 export PYTHONPATH=/scratch/alpine/niho8409/blast_othering/ollama-prompt-main
 
 unset OLLAMA_ORIGINS
-export OLLAMA_HOST=127.0.0.1  # Localhost only, since same node
+export OLLAMA_HOST=127.0.0.1:9999
 
 
 echo "Starting up Ollama server"
-nohup ollama serve --port 9999 > ollama_log_annotation.txt 2>&1 &
+nohup ollama serve > ollama_log_annotation.txt 2>&1 &
 
 echo "Waiting for Ollama server to start..."
 for i in {1..12}; do
