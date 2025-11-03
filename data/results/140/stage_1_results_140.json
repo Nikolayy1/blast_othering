@@ -1,0 +1,934 @@
+{
+    "config": {
+        "config": "default.yaml",
+        "prompt_file_stage_1": "prompts/default.json",
+        "prompt_file_stage_2": "prompts/classify_harm.json",
+        "dataset": "../data/annotations_100.json",
+        "out_filename": "stage_1_results_140.json",
+        "model": "llama3.3:70b-instruct-q4_0",
+        "seed": 42,
+        "temperature": 0.15,
+        "host": "127.0.0.1",
+        "port": "9999",
+        "workers": 4,
+        "save_interval": 50,
+        "max_retries": 3,
+        "prompt_file_dehumanizing": "prompts/classify_dehumanizing.json",
+        "prompt_file_stigmatizing": "prompts/classify_stigmatizing.json",
+        "prompt_file_stereotyping": "prompts/classify_stereotyping.json",
+        "prompt_file_simplifying": "prompts/classify_simplifying.json",
+        "prompt_file_othering": "prompts/classify_othering.json",
+        "prompt_file_othering_identify_target": "prompts/classify_othering_identify_target.json",
+        "prompt_file_othering_is_social_group": "prompts/classify_othering_is_social_group.json",
+        "prompt_file_othering_portrayal": "prompts/classify_othering_portrayal.json",
+        "prompt_file_othering_identify_unified_group": "prompts/classify_othering_identify_unified_group.json"
+    },
+    "time_saved": "2025-11-02 22:18:53",
+    "prompt_data": {
+        "system_prompt": "You are an expert in harmful language detection. Decide whether the following text contains harmful, offensive, or discriminatory language toward a social group. Harmful language includes hate speech, dehumanization, stereotyping, or any content that marginalizes people based on social identity (e.g., gender, religion, nationality, ethnicity, sexuality, disability, political group). Return output strictly in valid JSON with exactly these keys: 'label': 'Hate' or 'None', 'reasoning': '<1 sentence explaining your decision>', 'target': '<the social group being targeted, or 'None' if not applicable>'",
+        "question": "Is this comment harmful?",
+        "demos": []
+    },
+    "data": {
+        "4": {
+            "text": "Then Christian bakeries should have to make cakes for gay weddings",
+            "annotation": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "The text does not contain any language that marginalizes people based on social identity, but rather advocates for inclusivity and equal treatment of all individuals.",
+                "target": "None"
+            }
+        },
+        "3": {
+            "text": "Agreed. I\u2019m guessing they are downvoting because they don\u2019t like my statement. We all know it\u2019s true though. Americans are rejecting Manuals because it takes more effort to drive  and we are lazy. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains a sweeping generalization that stereotypes Americans as 'lazy', which could be considered dehumanizing or marginalizing.",
+                "target": "Americans"
+            }
+        },
+        "2": {
+            "text": "Exactly. Men are predators waiting for their chance to molest women according to people here. People are seriously going as far as saying he gets off on the power, we should get his name out to get him fired, and that he probably does this to women all the time. What insane conclusions to jump to from a handful of carefully selected screenshots.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains harmful language towards men, portraying them as predators and making generalizing statements about their behavior.",
+                "target": "Men"
+            }
+        },
+        "1": {
+            "text": "The majority of people on this sub are young kids and/or clueless idiots. Don't pay too much attention to them",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains derogatory language towards a social group, specifically referring to some individuals as 'clueless idiots' in a demeaning manner.",
+                "target": "Young people on an online sub"
+            }
+        },
+        "5": {
+            "text": "Americans are so lazy. No wonder half the country is obese.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a sweeping generalization that dehumanizes and stereotypes Americans based on their nationality.",
+                "target": "Americans"
+            }
+        },
+        "6": {
+            "text": "shipping lanes are classified as international waters so that dickbag countries like Iran can't pull stupid shit.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains derogatory language towards a specific country (Iran) and its government, which is considered hate speech.",
+                "target": "Iran"
+            }
+        },
+        "7": {
+            "text": "Also, Catholic priests tend to go for girls that haven't developed boobs yet. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains a statement that marginalizes and dehumanizes young girls based on their physical development.",
+                "target": "young girls"
+            }
+        },
+        "8": {
+            "text": "Every women is a potential child killer.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language towards women, implying they are all potential child killers.",
+                "target": "women"
+            }
+        },
+        "9": {
+            "text": "First you get the sugar. Then you get the power. Then you get the woman.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a sequence that objectifies women by implying they can be acquired like commodities.",
+                "target": "Women"
+            }
+        },
+        "10": {
+            "text": "So long as it's not against Christians themselves, great. Fuck Christianity. If it was a nation we'd have invaded it with the entire world and convicted its leaders for countless crimes and atrocities by now. If you think /r/atheism is going too far, I don't think you realize how far Christianity has gone in its history. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains explicit language and derogatory statements towards Christianity, expressing a strong anti-Christian sentiment.",
+                "target": "Christians"
+            }
+        },
+        "11": {
+            "text": "Mormons are fucking crazy. I'd rather go to hell than Salt Lake city. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains derogatory language and stereotypes targeting the Mormon community.",
+                "target": "Mormons"
+            }
+        },
+        "12": {
+            "text": "That's how they get women to be \"cool\" with their shitty behaviour, by telling us we have no sense of humour, can't take a joke, being bitchy, etc. \n\nSad thing is, it works with a lot of women. They force a strained laugh to fit in and tell themselves it's just \"Boys being boys.\"",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The comment criticizes how some men use humor to justify their bad behavior towards women, rather than promoting hate or discrimination.",
+                "target": "None"
+            }
+        },
+        "13": {
+            "text": "From my point of view people who read all their texts are evil!",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains dehumanizing language towards a social group, referring to them as 'evil'.",
+                "target": "people who read all their texts"
+            }
+        },
+        "14": {
+            "text": "Men are super lazy with their profiles, whenever i hear a guy complain about not getting matches my first assumption is that they've taken selfies in the bedroom.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains a stereotype about men being lazy and taking poor quality profile pictures.",
+                "target": "Men"
+            }
+        },
+        "15": {
+            "text": "~~Radical~~ muslims are the ebola of Europe.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text compares a specific religious group to a deadly disease, dehumanizing and stereotyping them.",
+                "target": "Muslims"
+            }
+        },
+        "16": {
+            "text": "Why is it when men are in packs (military, fraternities, sports teams) they do such shitty things, especially to women? It\u2019s like their animalistic cult mentality comes out in full force. Disturbing.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The comment contains harmful language towards men, specifically those in groups such as military, fraternities, and sports teams, implying they engage in 'shitty things' and have an 'animalistic cult mentality', which is a form of dehumanization.",
+                "target": "Men"
+            }
+        },
+        "17": {
+            "text": "Gay men don't have some magical right to touch a woman's intimate areas (or her body in general) just because they're not sexually attracted to them.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains language that marginalizes people based on their sexual orientation and gender.",
+                "target": "Gay men"
+            }
+        },
+        "18": {
+            "text": "Immigrants just refuse to integrate, they stick to their own and avoid us.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses a negative sentiment towards immigrants, implying that they are intentionally avoiding integration with the rest of society.",
+                "target": "Immigrants"
+            }
+        },
+        "19": {
+            "text": "Women don't like to work.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a sweeping generalization about women that could be perceived as sexist and derogatory.",
+                "target": "Women"
+            }
+        },
+        "20": {
+            "text": "All women cheat after 10 years of marriage",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a sweeping generalization that is derogatory and stereotyping towards women, implying that all women are unfaithful in their marriages.",
+                "target": "women"
+            }
+        },
+        "21": {
+            "text": "Immigrants are a threat to any society because they replace it. Politicians and big business sure love immigration though.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses a negative sentiment towards immigrants, implying that they pose a threat to society.",
+                "target": "Immigrants"
+            }
+        },
+        "22": {
+            "text": "LGBTQ are scum, worse than liberals.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses strong negative sentiment and dehumanization towards the LGBTQ community, comparing them unfavorably to another group.",
+                "target": "LGBTQ"
+            }
+        },
+        "23": {
+            "text": "Because women are victims and men are oppressors.  Anything else is counter to the approved narrative.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a statement that generalizes all men as oppressors and all women as victims, which can be perceived as stereotyping and marginalizing people based on their gender.",
+                "target": "Men"
+            }
+        },
+        "24": {
+            "text": "Ugly girls don\u2019t deserve attention ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a statement that dehumanizes and marginalizes people based on their appearance, specifically targeting girls perceived as \"ugly\".",
+                "target": "Girls perceived as ugly"
+            }
+        },
+        "25": {
+            "text": "Gotta look out for those foreign immigrants.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text expresses a negative sentiment towards foreign immigrants, implying that they need to be watched or guarded against.",
+                "target": "foreign immigrants"
+            }
+        },
+        "26": {
+            "text": "I mean, all women are stupid, so that shouldn't surprise you",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains a sweeping generalization and derogatory statement about women as a group, which is an example of hate speech.",
+                "target": "women"
+            }
+        },
+        "27": {
+            "text": "Academics only live in their ivory towers, they don\u2019t understand real life.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains dehumanizing language towards academics, implying that they are out of touch with reality and lack understanding of everyday life.",
+                "target": "academics"
+            }
+        },
+        "28": {
+            "text": "Just because other people think women have no worth, doesn't mean it is true.",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The text argues against the devaluation of women and promotes equality.",
+                "target": "None"
+            }
+        },
+        "29": {
+            "text": "Until that happens this is just a bunch of men acting like little fucking feminists.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language towards men who are perceived as acting in a way that is stereotypically feminine.",
+                "target": "Men"
+            }
+        },
+        "30": {
+            "text": "No, because of the trinity. Muslims and Jews worship the same God, but Christians do not.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses a negative sentiment towards Christians by implying that they are different from Muslims and Jews in terms of their object of worship.",
+                "target": "Christians"
+            }
+        },
+        "31": {
+            "text": "As an outsider looking in I disagree. Religion seems to creep into everything. Ever had an atheist president or even more than a handful of congress that admit to being so? ",
+            "annotation": {
+                "label": "None",
+                "score": 0.0,
+                "reasoning": "The text does not contain any language that marginalizes people based on social identity and is rather questioning the influence of religion in politics.",
+                "target": "None"
+            }
+        },
+        "32": {
+            "text": "Lol wow the media really brainwashed you folks. It is shitty in the Arab world but not close to what you have been shown. Kuwait is not Afghanistan for fuck's sake.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The comment contains strong profanity and derogatory language towards a social group, specifically the media and people who believe in its portrayal of certain regions.",
+                "target": "Media and people from Arab world"
+            }
+        },
+        "33": {
+            "text": "Yes, for those moments they feel they have power over us. Power to make us uncomfortable, afraid, and in some cases, the power to act in a way that confirms the fear we feel.  It's a moment when they feel totally in control of someone else's reality. Disgusting.",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The text does not contain language that marginalizes people based on social identity (e.g., gender, religion, nationality, ethnicity, sexuality, disability, political group), but rather describes a situation where someone feels uncomfortable and afraid due to the actions of another person.",
+                "target": "None"
+            }
+        },
+        "34": {
+            "text": "America. Where fat bearded men take pride in shooting a defenseless animal because they don't have the balls fight them with their bare fists because they know they'd lose. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language and stereotypes towards men who hunt in America.",
+                "target": "Men who hunt in America"
+            }
+        },
+        "35": {
+            "text": "Refugees are like rats, swarming into the country.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text compares refugees to rats, which is a dehumanizing and derogatory comparison that marginalizes people based on their social identity.",
+                "target": "Refugees"
+            }
+        },
+        "36": {
+            "text": "Damn mormons trying to make their beliefs law. So happy they got shot down this time!",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses strong anti-Mormon sentiment and celebrates the failure of a Mormon-related initiative, which is harmful language.",
+                "target": "Mormons"
+            }
+        },
+        "37": {
+            "text": "Nobody could legitimately look at human history and conclude that women are just inherently worthless.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains a statement that dehumanizes women, implying they have no inherent value.",
+                "target": "Women"
+            }
+        },
+        "38": {
+            "text": "My neighbor is Muslim and he invited me over for dinner.",
+            "annotation": {
+                "label": "None",
+                "score": 0.0,
+                "reasoning": "The text simply describes a friendly interaction between the speaker and their Muslim neighbor.",
+                "target": "None"
+            }
+        },
+        "39": {
+            "text": "Immigrants are good for the economy in the long run, especially in a relatively low population country like ours. That aging population that you refer to needs to be replaced, and most of us aren't having enough kids. ",
+            "annotation": {
+                "label": "None",
+                "score": 0.5,
+                "reasoning": "The comment discusses immigrants positively, highlighting their economic benefits in the long run.",
+                "target": "None"
+            }
+        },
+        "40": {
+            "text": "You might want to spread that word to a lot of other fellow Christians. ",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The text does not contain any language that marginalizes people based on social identity.",
+                "target": "None"
+            }
+        },
+        "41": {
+            "text": "What is it with women and not believing men can be in pain?\n\nI don't know how prevalent it is with others, but every women I've been with has always been a prick about it.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains harmful language towards women, making generalizations and stereotypes based on gender.",
+                "target": "women"
+            }
+        },
+        "42": {
+            "text": "Where in the world is history NOT massively whitewashed? China? Russia? Africa? South America? It happens everywhere. And not mentioning many of the great women in the history of various cultures as they do their male counterparts? Sadly it is something that has happened for centuries all over the place.",
+            "annotation": {
+                "label": "None",
+                "score": 0.5,
+                "reasoning": "The comment discusses the issue of whitewashing in history and mentions the lack of representation of women in historical accounts, but does not contain any language that is hateful, offensive, or discriminatory toward a social group.",
+                "target": "None"
+            }
+        },
+        "43": {
+            "text": "It's also the most common spot for skin cancer on anyone with dark skin. ",
+            "annotation": {
+                "label": "None",
+                "score": 0.9999,
+                "reasoning": "The text does not contain any language that marginalizes or stereotypes people based on their social identity.",
+                "target": "None"
+            }
+        },
+        "44": {
+            "text": "Women can be sexist against themselves too though, as a symptom of how society is.",
+            "annotation": {
+                "label": "None",
+                "score": 0.9999,
+                "reasoning": "The text discusses the possibility of women being sexist against themselves due to societal influences and does not contain any language that marginalizes or dehumanizes people based on their social identity.",
+                "target": "None"
+            }
+        },
+        "45": {
+            "text": "He's a predator and perve AND bishop. In fact, a lot of bishops are predators and perves, remember?",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language towards a social group (bishops) by labeling them as 'predators' and 'perves', which is harmful.",
+                "target": "Bishops"
+            }
+        },
+        "46": {
+            "text": "Women were as radical for early 20th standars as they are for today's.",
+            "annotation": {
+                "label": "None",
+                "score": 0.9999,
+                "reasoning": "The text does not contain any language that marginalizes or dehumanizes people based on their gender.",
+                "target": "None"
+            }
+        },
+        "47": {
+            "text": "The alt, whether it's left or right is a cancer.  Attacking one while defending the other is disgusting.\n\nThen again with so many paid shills infecting Reddit like cancer, I'm not surprised.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text compares certain groups to 'cancer', which dehumanizes and marginalizes them.",
+                "target": "Political groups"
+            }
+        },
+        "48": {
+            "text": "Obese women are disgusting.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses a hateful sentiment towards obese women, dehumanizing and marginalizing them based on their physical appearance.",
+                "target": "obese women"
+            }
+        },
+        "49": {
+            "text": "White people already can't differentiate Chinese from other East-Asians, I doubt they will also be able to differentiate first-gen Chinese from 2nd gen and 3rd gen and apply the same stereotypes of immigrants to chinese that are born in western countries and grew up there. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains harmful language by implying that white people will stereotype Chinese individuals based on their place of birth or upbringing, which could lead to marginalization.",
+                "target": "Chinese"
+            }
+        },
+        "50": {
+            "text": "In the last two thousand years, I haven't seen Jews dedicate their time to attacking other people because of their heritage. The same cannot be said of Nazis and self-identified Aryans. When I think of a Jew I think of someone who tends to be part of a fairly insular culture that isn't interested in evangelizing. Aryans have been more commonly violent and focused on knocking down anyone who isn't an Aryan.",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The comment critiques the behavior of Nazis and self-identified Aryans for their violence and hate towards other groups, while describing Jews as generally peaceful and non-evangelizing.",
+                "target": "None"
+            }
+        },
+        "51": {
+            "text": "You can tell your kid over and over again to not be gay. \n\nI don't think that works. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains language that marginalizes people based on their sexual orientation.",
+                "target": "LGBTQ+"
+            }
+        },
+        "52": {
+            "text": "Poor, dirty foreigner...",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language towards foreigners, implying they are poor and dirty.",
+                "target": "foreigners"
+            }
+        },
+        "53": {
+            "text": "Gotta make someone the evil bad guy cause people just can't be fucking nice to each other.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains language that is derogatory and dehumanizing, implying that people are inherently unable to be kind or civil towards one another.",
+                "target": "Humanity"
+            }
+        },
+        "54": {
+            "text": "Most men are pigs and rapists",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a sweeping generalization that dehumanizes and stereotypes men as a group, implying they are inherently capable of committing violent crimes.",
+                "target": "men"
+            }
+        },
+        "55": {
+            "text": "Women are more emotional than men",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains a stereotype about women.",
+                "target": "Women"
+            }
+        },
+        "56": {
+            "text": "What the fuck is wrong with people?",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains strong profanity and expresses frustration towards people in general, which can be perceived as dehumanizing or hateful.",
+                "target": "People"
+            }
+        },
+        "57": {
+            "text": "I've heard enough church speak. Religion is all about control of people and Mormonism is the Pinnacle of this. It's a cult plain and simple. With magic underwear to boot. You can defend it all u want. Sounds like you are into fucking kids and having 7 wives\n\nEdit: they didn't care about the prophets. I'm sure that's what they teach you in church right before your wife was assigned to you but the fact is it was purely about keeping polygamy and the rape of small girls",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains dehumanizing language towards members of the Mormon faith, including accusations of child abuse and rape.",
+                "target": "Mormonism and its followers"
+            }
+        },
+        "58": {
+            "text": "The media like reddit seems to be mostly SJW liberals. They are like sheep following whatever the media says about Trump and failing to see the good things hes done for our country. ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains dehumanizing language towards a social group ('SJW liberals') and expresses negative sentiment towards them.",
+                "target": "Liberals"
+            }
+        },
+        "59": {
+            "text": "Yeah I can't wait for a completely innocent man to have his life thoroughly ruined by a horde evil lying women (or men!), seems to be taking a while though...",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text expresses hate towards women and men who lie, implying that they are evil.",
+                "target": "women and men who lie"
+            }
+        },
+        "60": {
+            "text": "Bwahahahah, conservative white males are so fucking stupid.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains dehumanizing language targeting a specific social group based on their political beliefs and demographics.",
+                "target": "Conservative white males"
+            }
+        },
+        "61": {
+            "text": "Journalists just write whatever gets clicks",
+            "annotation": {
+                "label": "None",
+                "score": 0.5,
+                "reasoning": "The text does not contain any language that marginalizes people based on social identity, but rather criticizes journalists for prioritizing clickbait over factual reporting.",
+                "target": "None"
+            }
+        },
+        "62": {
+            "text": "women prefer family and raising children to working in business.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains a stereotype about women's preferences, implying that they are less interested in business careers and more focused on family responsibilities.",
+                "target": "women"
+            }
+        },
+        "63": {
+            "text": "just like I thought ~~gay~~trash",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language targeting the LGBTQ+ community.",
+                "target": "LGBTQ+"
+            }
+        },
+        "64": {
+            "text": "Christians are all judgmental hypocrites.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a sweeping generalization that dehumanizes and stereotypes Christians as a group.",
+                "target": "Christians"
+            }
+        },
+        "65": {
+            "text": "Jesus, Democrats are fucking evil.  They know they control big tech & the internet, so they're denying people service based upon political views?\n\nHate speech pretty much means any speech that Democrats disagree with.\n\nJonathan Haidt explains the concept of abusing hate speech rules.\n\nI'm sick of this bullshit. I'm voting for any Republican in 2018 & voting for Trump again in 2020.  I'm a former Democrat.  Democrats disgust me now. They've become so anti-American.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text expresses extreme dislike and hatred towards Democrats, dehumanizing them by using derogatory language and making false accusations about their control over big tech and the internet.",
+                "target": "Democrats"
+            }
+        },
+        "66": {
+            "text": "Immigrants just come here to take our jobs.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses a negative sentiment towards immigrants, implying they are taking jobs away from others, which is a form of stereotyping and discrimination.",
+                "target": "Immigrants"
+            }
+        },
+        "67": {
+            "text": "The fuck? That's not even remotely true. Meanwhile the U.S. has 10x the violent crime that Canada and most European countries have. And Russia, where you're probably posting from, is even more fucked up than America.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The comment contains strong profanity and derogatory language towards specific countries (the U.S., Canada, European countries, and Russia), which marginalizes people based on their nationality.",
+                "target": "People from the U.S., Canada, European countries, and Russia"
+            }
+        },
+        "68": {
+            "text": "christ, women are fucking stupid",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language targeting women, which is a form of hate speech.",
+                "target": "women"
+            }
+        },
+        "69": {
+            "text": "Europeans are just haughty, whiny bitches in general.\n\nChinese attitudes toward cheating and dishonesty are easy to see on both the individual and macro levels ",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a derogatory statement targeting Europeans, using offensive language to describe them.",
+                "target": "Europeans"
+            }
+        },
+        "70": {
+            "text": "So.. women are allowed to but men aren't?",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text implies a gender-based double standard, which could be perceived as discriminatory towards men.",
+                "target": "Men"
+            }
+        },
+        "71": {
+            "text": "Classic Democrat Privilege.  \n\n- molest women in public on the biggest stage\n- makes racist jokes\n\nIf he was an (R) the internet would be on fire.  Instead people are just \"kind of upset\".",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains harmful language, including references to sexual harassment and racism.",
+                "target": "women and racial groups"
+            }
+        },
+        "72": {
+            "text": "It\u2019s feminist propaganda to attack conservative values. It\u2019s well produced propaganda but still propaganda. It\u2019s trash. Don\u2019t pollute your mind with it or the book it\u2019s based on.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains dehumanizing language towards people who support feminist and liberal values, referring to their beliefs as 'trash' and advising others not to engage with them.",
+                "target": "Feminists and liberals"
+            }
+        },
+        "73": {
+            "text": "It'll far surpass anything the United States has even dreamed of. \n\nA billion people could die in China tomorrow and they'd STILL have more citizens than the United States. Just try to imagine their population in 50 years, 100 years. It'll be absolute insanity, like voracious locusts swarming over the world. They'll be the next colonizers of Africa, I can tell you that.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The comment expresses dehumanizing and derogatory language towards people of Chinese nationality, comparing them to 'voracious locusts' and implying they will colonize Africa in the future.",
+                "target": "Chinese people"
+            }
+        },
+        "74": {
+            "text": "Women only want one thing and its disgusting",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text expresses a hateful sentiment towards women, implying that they are all motivated by the same base desire.",
+                "target": "Women"
+            }
+        },
+        "75": {
+            "text": "Liberals *are* anti-free speech snowflakes.  Doesn\u2019t mean conservatives don\u2019t have plenty of their own issues (they do), but don\u2019t assume one side is pure while the other is the embodiment of evil.  Both sides have their issues they need to address.\n\nEdit: I\u2019ll let the downvotes serve as perfect evidence of my claim.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains pejorative language ('snowflakes') directed at a political group ('Liberals'), which is considered hate speech.",
+                "target": "Liberals"
+            }
+        },
+        "76": {
+            "text": "I think women under 30 probably shouldn't be teaching boys going into puberty.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains a statement that could be perceived as discriminatory towards young women based on their age and gender.",
+                "target": "women under 30"
+            }
+        },
+        "77": {
+            "text": "You are a really retarded piece of shit.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains extremely derogatory and dehumanizing language directed at an individual.",
+                "target": "Individual"
+            }
+        },
+        "78": {
+            "text": "Politicians are all the same",
+            "annotation": {
+                "label": "None",
+                "score": 0.5,
+                "reasoning": "The text does not contain any language that marginalizes people based on social identity.",
+                "target": "None"
+            }
+        },
+        "79": {
+            "text": "Wait, Muslims actually fucking accomplished something other than violence?",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a statement that is derogatory and stereotypical towards Muslims, implying they are typically associated with violence.",
+                "target": "Muslims"
+            }
+        },
+        "80": {
+            "text": "TIL life is more unfair to men.  The difference is that women complain more.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.9,
+                "reasoning": "The text contains a statement that implies men are treated unfairly in comparison to women and stereotypes women as complainers, which could be perceived as marginalizing or demeaning towards women.",
+                "target": "women"
+            }
+        },
+        "81": {
+            "text": "I guarentee America is better than whatever trash country you\u2019re in right now lmao",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains dehumanizing language and stereotypes towards people from other countries, implying they are inferior to Americans.",
+                "target": "People from other countries"
+            }
+        },
+        "82": {
+            "text": "In this case, absolutely. I don't believe for a second people who are informed as to what that administration are doing would willingly support it. Americans are so brainwashed by the right and media that they don't even believe in reality anymore. A wake up call in order.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains harmful language towards a social group, specifically Americans who support a certain administration, implying they are brainwashed and do not believe in reality.",
+                "target": "Americans"
+            }
+        },
+        "83": {
+            "text": "Our town welcomed 50 new refugees last year",
+            "annotation": {
+                "label": "None",
+                "score": 0.95,
+                "reasoning": "The text does not contain any language that marginalizes people based on social identity.",
+                "target": "None"
+            }
+        },
+        "84": {
+            "text": "Yeah this is like someone saying black men are more inherently prone to criminal activity. Pretty sure you'd take issue with that or at least you should.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text implies a stereotype about black men being more prone to criminal activity.",
+                "target": "black men"
+            }
+        },
+        "85": {
+            "text": "Blacks are more likely to commit violent crime over East Asians, mostly due to biological differences",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains a racist statement that makes a generalization about Black people being more prone to committing violent crimes than East Asians based on unproven \"biological differences\", which is a harmful stereotype.",
+                "target": "Black people and East Asians"
+            }
+        },
+        "86": {
+            "text": "Stupid and gay, not a lot going for you in this life.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains derogatory language targeting an individual's sexual orientation and intelligence.",
+                "target": "LGBTQ+ community"
+            }
+        },
+        "87": {
+            "text": "Sounds like you need a serving of F R E E D O M, communist scum.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains derogatory language targeting communists.",
+                "target": "Communists"
+            }
+        },
+        "88": {
+            "text": "So torturing people who live in evil and worship false gods is ok, right?",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text implies that it's acceptable to torture people based on their beliefs or actions, which marginalizes a group of people.",
+                "target": "People who live in evil and worship false gods"
+            }
+        },
+        "89": {
+            "text": "LOL how convincing. It's all true, though. Mormonism is cancer.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text expresses a strong negative sentiment towards Mormonism, comparing it to 'cancer', which can be perceived as dehumanizing and hateful.",
+                "target": "Mormonism"
+            }
+        },
+        "90": {
+            "text": "So the implication here is that only atheists should be in office?",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text implies that a particular religious group (atheists) should hold public offices, which could be considered discriminatory towards other religious groups.",
+                "target": "Religious groups other than atheists"
+            }
+        },
+        "91": {
+            "text": "Women. Are. Shit. At. Driving.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a derogatory statement about women's driving abilities, which is a form of hate speech and stereotyping.",
+                "target": "Women"
+            }
+        },
+        "92": {
+            "text": "true... although saudi arabia can't be too bad, as feminists can never be found organizing marches for there oppressed sisters over there",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.8,
+                "reasoning": "The text contains a derogatory statement about Saudi Arabia and its treatment of women, implying that the country is oppressive towards females.",
+                "target": "Saudi Arabian government"
+            }
+        },
+        "93": {
+            "text": "Leave it to someone preaching this whiny bullshit to play victim. Nobodys harassing you. You're making this up for victim points. Fucking woman holy shit.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains dehumanizing language and stereotypes towards women.",
+                "target": "Women"
+            }
+        },
+        "94": {
+            "text": "Fuck America. Fuck America and all its bullshit.  Fuck that it portrays itself as a hero, a good guy and a beacon of moral clarity.\n\nFuck the Founding Fathers and their genocidal bullshit. Fuck the plantation owners and their descendants who still profit from the ill-gotten wealth.  Fuck the contractors who build the bombs that rip through Yemeni schoolbuses. Fuck the men who turn up music so nobody can hear the women scream, and fuck the white women voters who prop it all up.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text contains extreme hate speech towards multiple social groups, including America as a whole, its Founding Fathers, plantation owners, contractors involved in war efforts, and specific demographics such as white women voters.",
+                "target": "Multiple social groups, including America, the Founding Fathers, plantation owners, contractors, and white women voters"
+            }
+        },
+        "95": {
+            "text": "I don\u2019t care what people say, the whole pride thing is disgusting. Men walking around in leather thongs and women kissing in public \u2014 it\u2019s revolting. That\u2019s why people don\u2019t take them seriously.",
+            "annotation": {
+                "label": "Hate",
+                "score": 1.0,
+                "reasoning": "The text expresses a strong negative sentiment towards the LGBTQ+ community, specifically targeting their pride celebrations and public displays of affection.",
+                "target": "LGBTQ+"
+            }
+        },
+        "96": {
+            "text": "LGBTQ aren\u2019t covered by discrimination laws lmao, you have no clue what you\u2019re talking about. You can be denied housing, and even fired from your job for being gay in many states.",
+            "annotation": {
+                "label": "None",
+                "score": 0.9999,
+                "reasoning": "The comment is not harmful but rather highlights the lack of protection under discrimination laws for LGBTQ individuals.",
+                "target": "None"
+            }
+        },
+        "97": {
+            "text": "That\u2019s ok though. They only hate white Western Christians so it doesn\u2019t even count.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text trivializes and justifies hate speech towards a specific group of people.",
+                "target": "white Western Christians"
+            }
+        },
+        "98": {
+            "text": "Change what dangerous/hateful means, and you'll control the world.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text implies that by redefining terms related to hate speech, one can manipulate public perception and gain power over others.",
+                "target": "None"
+            }
+        },
+        "99": {
+            "text": "Ohh... we meant whale as in obese women.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a derogatory term for a specific group of people (obese women), which is considered hate speech.",
+                "target": "Obese women"
+            }
+        },
+        "100": {
+            "text": "Lesbians all hate men.",
+            "annotation": {
+                "label": "Hate",
+                "score": 0.95,
+                "reasoning": "The text contains a statement that generalizes and stereotypes a social group (lesbians) as hating another social group (men).",
+                "target": "Men"
+            }
+        }
+    }
+}
