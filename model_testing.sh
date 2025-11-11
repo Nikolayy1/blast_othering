@@ -19,6 +19,6 @@
 source ~/.bashrc
 
 module load anaconda
-conda activate bt_2025_models
+conda activate bt_2025_models_test
 
 python model_testing.py

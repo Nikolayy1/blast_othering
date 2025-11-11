@@ -98,7 +98,13 @@ if __name__ == "__main__":
             "kappa": kappa,
         }
 
-    model_names = ["microsoft/deberta-v3-base"]
+    model_names = [
+        "microsoft/deberta-v3-base",
+        "microsoft/deberta-v3-large",
+        "xlm-roberta-large",
+        "facebook/roberta-hate-speech-dynabench-r4-target",
+        "vinai/bertweet-large",
+    ]
 
     results = {}
 
