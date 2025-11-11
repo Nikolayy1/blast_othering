@@ -1,4 +1,4 @@
-name: bt_2025
+name: bt_2025_models_train
 channels:
   - defaults
   - https://repo.anaconda.com/pkgs/main
