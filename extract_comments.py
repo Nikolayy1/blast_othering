@@ -196,7 +196,7 @@ single_patterns = [
     re.compile(rf"(?i)(?<!\w){re.escape(t)}(?!\w)") for t in single_terms
 ]
 
-input_path = "/pl/active/blast-data/corpora/reddit/comments/RC_2023-03_filtered.zst"
+input_path = "/pl/active/blast-data/corpora/reddit/comments/RC_2023-03.zst"
 output_path = "full_comments/RC_2023-03_results.jsonl"
 
 counter = 0        
