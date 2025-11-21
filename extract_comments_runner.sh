@@ -17,7 +17,16 @@
 
 source ~/.bashrc
 
+echo "SLURM job started"
+
+echo "Loading anaconda..."
 module load anaconda
+
+echo "Activating conda..."
 conda activate bt_2025
 
+echo "Running python..."
+python3 -c "print('Python works')"
 python extract_comments.py
+
+echo "DONE"
