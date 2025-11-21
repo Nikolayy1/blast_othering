@@ -201,28 +201,38 @@ output_path = "full_comments/RC_2023-03_results.jsonl"
 
 with open(input_path, "rb") as fh, open(output_path, "w") as out:
     dctx = zstd.ZstdDecompressor(max_window_size=2**31)
+
     with dctx.stream_reader(fh) as reader:
-        for raw_line in reader:
-            # decode
-            try:
-                line = raw_line.decode("utf-8", errors="ignore")
-            except:
-                continue
+        buffer = b""
 
-            text = line.lower()
+        while True:
+            chunk = reader.read(2**20)  # 1MB chunk
+            if not chunk:
+                break
 
-            # fast substring check for multi-word phrases
-            if any(term in text for term in multi_terms):
-                pass
-            # fallback to regex for single words
-            elif not any(p.search(text) for p in single_patterns):
-                continue
+            buffer += chunk
+            lines = buffer.split(b"\n")
+            buffer = lines.pop()
 
-            # parse json
-            try:
-                obj = json.loads(text)
-            except:
-                continue
+            for raw_line in lines:
+                try:
+                    line = raw_line.decode("utf-8", errors="ignore")
+                except:
+                    continue
 
-            # write output
-            out.write(json.dumps(obj) + "\n")
+                text = line.lower()
+
+                # --- multi-word and single-word matching ---
+                if any(term in text for term in multi_terms):
+                    pass
+                elif not any(p.search(text) for p in single_patterns):
+                    continue
+
+                # --- parse JSON ---
+                try:
+                    obj = json.loads(text)
+                except:
+                    continue
+
+                out.write(json.dumps(obj) + "\n")
+
