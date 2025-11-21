@@ -1,7 +1,6 @@
 import re
 from convokit import Corpus, download
-from wordcloud import WordCloud, STOPWORDS
-import matplotlib.pyplot as plt
+import json
 
 # Method definitions
 def load_dataset_dynamic(corpus, start_index, end_index):
@@ -101,42 +100,41 @@ def get_id_chain(corpus, target_id):
     chain = chain[::-1]
     return chain
 
-def plot_wordcloud(chain, title):
-    all_words = " ".join(u.text for u in chain).lower()
-    wordcloud = WordCloud(width=800, height=400, background_color='white', stopwords=STOPWORDS).generate(all_words)
-    plt.figure(figsize=(10, 5))
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    plt.title(title)
-    plt.show()
     
 def export_comments_to_json(corpus, target_ids, filepath):
     results = []
     
     for target_id in target_ids:
+        utt = corpus.get_utterance(target_id)
         id_chain = get_id_chain(corpus, target_id)
+
         record = {
-            "id": target_id.id,
+            "id": utt.id,
             "text": utt.text,
             "timestamp": getattr(utt, "timestamp", None),
             "conversation_id": getattr(utt, "conversation_id", None),
-            "comment_chain": chain
+            "comment_chain": [
+                {
+                    "id": u.id,
+                    "text": u.text,
+                    "reply_to": u.reply_to,
+                    "timestamp": getattr(u, "timestamp", None)
+                }
+                for u in id_chain
+            ]
         }
+
         results.append(record)
+        
+    with open(filepath, "w") as f:
+        json.dump(results, f, indent=2)
+
+    return results
+
             
 if __name__ == "__main__":
     corpus = load_dataset_dynamic("reddit-corpus-small", 200, 1000)
     target_ids = get_target_ids(corpus)
-
-    for target_id in target_ids:
-        chain = get_id_chain(corpus, target_id)
-        for u in chain:
-            print(f"{u.id}")
-        print("-----")
-
-    print(target_ids)
-    
-    print(plot_wordcloud(get_id_chain(corpus, "e6x0yb0"), f"Conversation Chain for Target ID {'e6x0yb0'}"))
-    print(corpus.get_utterance("9k4nb6"))
-    print(corpus.get_conversation("9k4nb6"))
-
+    export_comments_to_json(corpus, target_ids, "othering_comments.json")
+    print("Exported JSON with", len(target_ids), "records.")
+        
