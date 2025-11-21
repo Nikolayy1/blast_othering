@@ -230,3 +230,4 @@
 
 import os
 print(os.path.exists("/pl/active/blast-data/corpora/reddit/comments/RC_2023-03.zst"))
+print(os.getcwd())
