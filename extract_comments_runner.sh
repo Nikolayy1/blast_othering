@@ -18,6 +18,7 @@
 source ~/.bashrc
 
 echo "SLURM job started"
+pwd
 
 echo "Loading anaconda..."
 module load anaconda
