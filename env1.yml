@@ -1,0 +1,4 @@
+name: env1
+channels:
+  - defaults
+prefix: /projects/niho8409/software/anaconda/envs/env1

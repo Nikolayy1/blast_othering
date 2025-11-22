@@ -1,0 +1,13 @@
+
+EnvironmentNameNotFound: Could not find conda environment: bt_2025_models_test
+You can list all discoverable environments with `conda info --envs`.
+
+
+Matplotlib is building the font cache; this may take a moment.
+The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+None of PyTorch, TensorFlow >= 2.0, or Flax have been found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Traceback (most recent call last):
+  File "/gpfs/alpine1/scratch/niho8409/blast_othering/model_testing.py", line 23, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
