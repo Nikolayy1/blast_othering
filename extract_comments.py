@@ -199,8 +199,8 @@ single_patterns = [
 input_path = "/pl/active/blast-data/corpora/reddit/comments/RC_2023-03.zst"
 output_path = "full_comments/RC_2023-03_results.jsonl"
 
-counter = 0        
-matches = 0        
+counter = 0
+matches = 0
 
 with open(input_path, "rb") as fh, open(output_path, "w") as out:
     dctx = zstd.ZstdDecompressor(max_window_size=2**31)
@@ -219,10 +219,12 @@ with open(input_path, "rb") as fh, open(output_path, "w") as out:
 
             for raw_line in lines:
                 counter += 1
-                
-                if counter % 500000 == 0:   # prints every 500k lines
-                    print(f"Processed {counter:,} comments; matches so far: {matches:,}")
-                    
+
+                if counter % 500000 == 0:  # prints every 500k lines
+                    print(
+                        f"Processed {counter:,} comments; matches so far: {matches:,}"
+                    )
+
                 try:
                     line = raw_line.decode("utf-8", errors="ignore")
                 except:
@@ -241,6 +243,12 @@ with open(input_path, "rb") as fh, open(output_path, "w") as out:
                     obj = json.loads(text)
                 except:
                     continue
+
+                body = obj.get("body", "")
+                token_count = len(body.split())
+                if token_count > 100:
+                    continue
+
+                # Passed all filters -> keep it
                 matches += 1
                 out.write(json.dumps(obj) + "\n")
-
