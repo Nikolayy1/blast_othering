@@ -187,11 +187,11 @@ othering_terms = [
     "drag kings",
 ]
 
-# split terms into single-word and multi-word
+# Split into single-word vs multi-word
 single_terms = [t for t in othering_terms if " " not in t]
 multi_terms = [t for t in othering_terms if " " in t]
 
-# compile regex for single words
+# Regex for single-word terms
 single_patterns = [
     re.compile(rf"(?i)(?<!\w){re.escape(t)}(?!\w)") for t in single_terms
 ]
@@ -209,7 +209,7 @@ with open(input_path, "rb") as fh, open(output_path, "w") as out:
         buffer = b""
 
         while True:
-            chunk = reader.read(2**20)  # 1MB chunk
+            chunk = reader.read(2**20)  # 1MB
             if not chunk:
                 break
 
@@ -220,7 +220,7 @@ with open(input_path, "rb") as fh, open(output_path, "w") as out:
             for raw_line in lines:
                 counter += 1
 
-                if counter % 500000 == 0:  # prints every 500k lines
+                if counter % 500000 == 0:
                     print(
                         f"Processed {counter:,} comments; matches so far: {matches:,}"
                     )
@@ -230,25 +230,30 @@ with open(input_path, "rb") as fh, open(output_path, "w") as out:
                 except:
                     continue
 
-                text = line.lower()
-
-                # --- multi-word and single-word matching ---
-                if any(term in text for term in multi_terms):
-                    pass
-                elif not any(p.search(text) for p in single_patterns):
-                    continue
-
-                # --- parse JSON ---
+                # --- parse JSON FIRST ---
                 try:
-                    obj = json.loads(text)
+                    obj = json.loads(line)
                 except:
                     continue
 
-                body = obj.get("body", "")
+                body = obj.get("body", "").lower()
+
+                # Skip deleted/removed
+                if body in ("[deleted]", "[removed]"):
+                    continue
+
+                # --- apply matching ONLY on comment body ---
+                if not (
+                    any(term in body for term in multi_terms)
+                    or any(p.search(body) for p in single_patterns)
+                ):
+                    continue
+
+                # --- token limit ---
                 token_count = len(body.split())
                 if token_count > 100:
                     continue
 
-                # Passed all filters -> keep it
+                # --- save match ---
                 matches += 1
                 out.write(json.dumps(obj) + "\n")
