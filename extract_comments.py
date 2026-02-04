@@ -187,17 +187,224 @@ othering_terms = [
     "drag kings",
 ]
 
-# Split into single-word vs multi-word
+othering_terms_de = [
+    # Dehumanizing terms (animals, pests, disease metaphors)
+    "tier",
+    "bestie",
+    "wild",
+    "barbarisch",
+    "unmensch",
+    "untermensch",
+    "primitiv",
+    "parasit",
+    "parasiten",
+    "ungeziefer",
+    "ratte",
+    "kakerlake",
+    "ungeheuer",
+    "monster",
+    "brut",
+    "affe",
+    "gorilla",
+    "hund",
+    "schwein",
+    "sau",
+    "ziege",
+    "insekt",
+    "egel",
+    "zecke",
+    "laus",
+    "maden",
+    "wurm",
+    "krebs",
+    "tumor",
+    "virus",
+    "pest",
+    "seuche",
+    "infektion",
+
+    # Moral judgment / worthlessness
+    "abschaum",
+    "müll",
+    "dreck",
+    "wertlos",
+    "minderwertig",
+    "degeneriert",
+    "asozial",
+    "gesindel",
+    "unwürdig",
+    "unrein",
+    "verdorben",
+    "schmutzig",
+    "ekelhaft",
+    "widerlich",
+    "verachtenswert",
+    "böse",
+    "verkommen",
+    "sündig",
+    "verflucht",
+    "last",
+    "schmarotzer",
+    "parasitär",
+    "sozialschmarotzer",
+
+    # Threatening / dangerous
+    "gefährlich",
+    "gewalttätig",
+    "aggressiv",
+    "feindselig",
+    "kriminell",
+    "verbrecher",
+    "gangster",
+    "schläger",
+    "abartig",
+    "radikal",
+    "extremist",
+    "fundamentalist",
+    "terrorist",
+    "raubtier",
+    "vergewaltiger",
+    "invasor",
+    "eindringling",
+    "besatzer",
+    "unterwanderer",
+    "bedrohung",
+
+    # Exclusion / separation
+    "außenseiter",
+    "fremdkörper",
+    "eindringling",
+    "alien",
+    "fremder",
+    "ausländer",
+    "feind",
+    "unerwünscht",
+    "illegal",
+    "illegale",
+    "abschieben",
+    "abschiebung",
+    "ausgestoßener",
+    "unerwünschte",
+    "kolonialist",
+    "siedler",
+
+    # Diminishing / infantilizing
+    "ignorant",
+    "rückständig",
+    "naiv",
+    "unzivilisiert",
+    "hilflos",
+    "schwach",
+    "dumm",
+    "faul",
+    "unreif",
+    "kindisch",
+    "lächerlich",
+    "überemotional",
+    "hysterisch",
+    "irrational",
+    "ahnungslos",
+    "hirngewaschen",
+    "schaf",
+    "mitläufer",
+    "marionette",
+
+    # Religion & secular identities
+    "atheisten",
+    "ungläubige",
+    "gottlose",
+    "säkularisten",
+    "buddhisten",
+    "hindus",
+    "christen",
+    "christlich",
+    "katholiken",
+    "protestanten",
+    "evangelikale",
+    "mormonen",
+    "heidnische",
+    "satanisten",
+    "muslime",
+    "islamisch",
+    "islamisten",
+    "juden",
+    "jüdisch",
+    "zionisten",
+    "orthodoxe juden",
+
+    # Migration / nationality
+    "migranten",
+    "immigranten",
+    "ausländer",
+    "fremde",
+    "flüchtlinge",
+    "asylbewerber",
+    "asylanten",
+    "expats",
+    "einheimische",
+    "illegale einwanderer",
+    "invasoren",
+    "kolonisatoren",
+    "siedler",
+
+    # Gender & women
+    "frauen",
+    "frau",
+    "mädchen",
+    "weibchen",
+    "damen",
+    "ehefrauen",
+    "mütter",
+    "schlampen",
+    "nutten",
+    "huren",
+    "fotzen",
+    "zicken",
+    "feministinnen",
+    "feminazis",
+
+    # LGBTQ+
+    "lgbt",
+    "schwul",
+    "schwule",
+    "lesbisch",
+    "lesben",
+    "bisexuell",
+    "transgender",
+    "trans",
+    "transe",
+    "queer",
+    "tunte",
+    "schwuchtel",
+    "nichtbinär",
+    "dragqueen",
+    "dragking",
+]
+
+
+# Split into single-word vs multi-word ENGLISH
 single_terms = [t for t in othering_terms if " " not in t]
 multi_terms = [t for t in othering_terms if " " in t]
+
+# Split into single-word vs multi-word GERMAN
+single_terms_de = [t for t in othering_terms if " " not in t]
+multi_terms_de = [t for t in othering_terms if " " in t]
 
 # Regex for single-word terms
 single_patterns = [
     re.compile(rf"(?i)(?<!\w){re.escape(t)}(?!\w)") for t in single_terms
 ]
 
-input_path = "/pl/active/blast-data/corpora/reddit/subreddits24/changemyview_comments.zst"
-output_path = "full_comments/changemyview.jsonl"
+# Regex for single-word terms GERMAN
+single_patterns_de = [
+    re.compile(rf"(?i)(?<!\w){re.escape(t)}(?!\w)") for t in single_terms_de
+]
+
+#input_path = "/pl/active/blast-data/corpora/reddit/subreddits24/changemyview_comments.zst"
+#output_path = "full_comments/changemyview.jsonl"
+
+input_path = "/pl/active/blast-data/corpora/reddit/subreddits24/AskAGerman_comments.zst"
+output_path = "full_comments/AskAGerman_comments.jsonl"
 
 counter = 0
 matches = 0
@@ -244,8 +451,8 @@ with open(input_path, "rb") as fh, open(output_path, "w") as out:
 
                 # --- apply matching ONLY on comment body ---
                 if not (
-                    any(term in body for term in multi_terms)
-                    or any(p.search(body) for p in single_patterns)
+                    any(term in body for term in multi_terms_de)
+                    or any(p.search(body) for p in single_patterns_de)
                 ):
                     continue
 
