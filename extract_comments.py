@@ -388,7 +388,7 @@ multi_terms = [t for t in othering_terms if " " in t]
 
 # Split into single-word vs multi-word GERMAN
 single_terms_de = [t for t in othering_terms if " " not in t]
-multi_terms_de = [t for t in othering_terms if " " in t]
+multi_terms_de = [t for t in othering_terms_de if " " in t]
 
 # Regex for single-word terms
 single_patterns = [
