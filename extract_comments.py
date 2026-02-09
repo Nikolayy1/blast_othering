@@ -403,7 +403,7 @@ single_patterns_de = [
 #input_path = "/pl/active/blast-data/corpora/reddit/subreddits24/changemyview_comments.zst"
 #output_path = "full_comments/changemyview.jsonl"
 
-input_path = "/pl/active/blast-data/corpora/reddit/subreddits24/DePi_comments.zst.zst"
+input_path = "/pl/active/blast-data/corpora/reddit/subreddits24/DePi_comments.zst"
 output_path = "full_comments/DePi_comments.jsonl"
 
 counter = 0
