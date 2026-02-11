@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/gpfs/alpine1/scratch/niho8409/blast_othering/extract_comments.py", line 205, in <module>
-    with open(input_path, "rb") as fh, open(output_path, "w") as out:
-         ^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '/pl/active/blast-data/corpora/reddit/comments/RC_2023-03_filtered.zst'
