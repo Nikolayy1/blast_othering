@@ -1,206 +1,0 @@
-Starting up Ollama server
-Waiting for Ollama server to start
-2025-09-20 19:33:40,574 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-20 19:33:40,577 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/default.json
-2025-09-20 19:33:40,615 - INFO - Loaded data from: ./data/../data/examples.json
-2025-09-20 19:33:40,633 - INFO - Formatting docs
-  0%|          | 0/100 [00:00<?, ?it/s]100%|██████████| 100/100 [00:00<00:00, 1431503.07it/s]
-2025-09-20 19:33:40,650 - INFO - Processing docs with 4 workers.
-  0%|          | 0/100 [00:00<?, ?it/s]2025-09-20 19:34:44,950 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  1%|          | 1/100 [01:04<1:46:05, 64.30s/it]2025-09-20 19:34:45,498 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  2%|▏         | 2/100 [01:04<43:46, 26.80s/it]  2025-09-20 19:34:46,672 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  3%|▎         | 3/100 [01:06<24:24, 15.10s/it]2025-09-20 19:34:47,214 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  4%|▍         | 4/100 [01:06<14:57,  9.35s/it]2025-09-20 19:34:47,753 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  5%|▌         | 5/100 [01:07<09:46,  6.17s/it]2025-09-20 19:34:48,299 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  6%|▌         | 6/100 [01:07<06:40,  4.26s/it]2025-09-20 19:34:48,789 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  7%|▋         | 7/100 [01:08<04:41,  3.03s/it]2025-09-20 19:34:49,323 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  8%|▊         | 8/100 [01:08<03:25,  2.23s/it]2025-09-20 19:34:49,876 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  9%|▉         | 9/100 [01:09<02:35,  1.71s/it]2025-09-20 19:34:50,409 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 10%|█         | 10/100 [01:09<02:01,  1.35s/it]2025-09-20 19:34:50,894 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 11%|█         | 11/100 [01:10<01:36,  1.08s/it]2025-09-20 19:34:51,440 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 12%|█▏        | 12/100 [01:10<01:20,  1.09it/s]2025-09-20 19:34:51,918 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 13%|█▎        | 13/100 [01:11<01:08,  1.27it/s]2025-09-20 19:34:52,463 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 14%|█▍        | 14/100 [01:11<01:01,  1.40it/s]2025-09-20 19:34:52,999 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 15%|█▌        | 15/100 [01:12<00:56,  1.52it/s]2025-09-20 19:34:53,547 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 16%|█▌        | 16/100 [01:12<00:52,  1.60it/s]2025-09-20 19:34:54,047 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 17%|█▋        | 17/100 [01:13<00:48,  1.70it/s]2025-09-20 19:34:54,602 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 18%|█▊        | 18/100 [01:13<00:47,  1.73it/s]2025-09-20 19:34:55,145 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 19%|█▉        | 19/100 [01:14<00:45,  1.76it/s]2025-09-20 19:34:55,638 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 20%|██        | 20/100 [01:14<00:43,  1.83it/s]2025-09-20 19:34:55,660 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:34:55,661 - INFO - Progress saved after processing 20 docs.
-2025-09-20 19:34:56,183 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 21%|██        | 21/100 [01:15<00:43,  1.83it/s]2025-09-20 19:34:56,730 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 22%|██▏       | 22/100 [01:16<00:42,  1.83it/s]2025-09-20 19:34:57,275 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 23%|██▎       | 23/100 [01:16<00:41,  1.83it/s]2025-09-20 19:34:57,808 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 24%|██▍       | 24/100 [01:17<00:41,  1.85it/s]2025-09-20 19:34:58,348 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 25%|██▌       | 25/100 [01:17<00:42,  1.77it/s]2025-09-20 19:34:58,884 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 26%|██▌       | 26/100 [01:18<00:39,  1.88it/s]2025-09-20 19:34:59,445 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 27%|██▋       | 27/100 [01:18<00:39,  1.85it/s]2025-09-20 19:34:59,937 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 28%|██▊       | 28/100 [01:19<00:37,  1.90it/s]2025-09-20 19:35:00,483 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 29%|██▉       | 29/100 [01:19<00:37,  1.88it/s]2025-09-20 19:35:01,027 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 30%|███       | 30/100 [01:20<00:37,  1.87it/s]2025-09-20 19:35:01,563 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 31%|███       | 31/100 [01:20<00:36,  1.86it/s]2025-09-20 19:35:02,121 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 32%|███▏      | 32/100 [01:21<00:36,  1.84it/s]2025-09-20 19:35:02,677 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 33%|███▎      | 33/100 [01:22<00:36,  1.83it/s]2025-09-20 19:35:03,200 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 34%|███▍      | 34/100 [01:22<00:35,  1.85it/s]2025-09-20 19:35:03,704 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 35%|███▌      | 35/100 [01:23<00:34,  1.89it/s]2025-09-20 19:35:04,197 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 36%|███▌      | 36/100 [01:23<00:33,  1.93it/s]2025-09-20 19:35:04,741 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 37%|███▋      | 37/100 [01:24<00:33,  1.90it/s]2025-09-20 19:35:05,286 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 38%|███▊      | 38/100 [01:24<00:32,  1.88it/s]2025-09-20 19:35:05,829 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 39%|███▉      | 39/100 [01:25<00:32,  1.87it/s]2025-09-20 19:35:06,365 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 40%|████      | 40/100 [01:25<00:32,  1.87it/s]2025-09-20 19:35:06,371 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:35:06,371 - INFO - Progress saved after processing 40 docs.
-2025-09-20 19:35:06,909 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 41%|████      | 41/100 [01:26<00:31,  1.86it/s]2025-09-20 19:35:07,465 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 42%|████▏     | 42/100 [01:26<00:31,  1.84it/s]2025-09-20 19:35:07,997 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 43%|████▎     | 43/100 [01:27<00:30,  1.85it/s]2025-09-20 19:35:08,544 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 44%|████▍     | 44/100 [01:27<00:30,  1.85it/s]2025-09-20 19:35:09,078 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 45%|████▌     | 45/100 [01:28<00:29,  1.85it/s]2025-09-20 19:35:09,632 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 46%|████▌     | 46/100 [01:28<00:29,  1.84it/s]2025-09-20 19:35:10,175 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 47%|████▋     | 47/100 [01:29<00:28,  1.84it/s]2025-09-20 19:35:10,720 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 48%|████▊     | 48/100 [01:30<00:28,  1.84it/s]2025-09-20 19:35:11,200 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 49%|████▉     | 49/100 [01:30<00:26,  1.91it/s]2025-09-20 19:35:11,690 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 50%|█████     | 50/100 [01:31<00:25,  1.94it/s]2025-09-20 19:35:12,224 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 51%|█████     | 51/100 [01:31<00:25,  1.92it/s]2025-09-20 19:35:12,775 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 52%|█████▏    | 52/100 [01:32<00:25,  1.89it/s]2025-09-20 19:35:13,264 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 53%|█████▎    | 53/100 [01:32<00:24,  1.93it/s]2025-09-20 19:35:13,811 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 54%|█████▍    | 54/100 [01:33<00:24,  1.90it/s]2025-09-20 19:35:14,350 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 55%|█████▌    | 55/100 [01:33<00:23,  1.89it/s]2025-09-20 19:35:14,838 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 56%|█████▌    | 56/100 [01:34<00:22,  1.93it/s]2025-09-20 19:35:15,334 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 57%|█████▋    | 57/100 [01:34<00:21,  1.96it/s]2025-09-20 19:35:15,882 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 58%|█████▊    | 58/100 [01:35<00:21,  1.91it/s]2025-09-20 19:35:16,427 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 59%|█████▉    | 59/100 [01:35<00:21,  1.89it/s]2025-09-20 19:35:16,918 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 60%|██████    | 60/100 [01:36<00:20,  1.93it/s]2025-09-20 19:35:16,926 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:35:16,926 - INFO - Progress saved after processing 60 docs.
-2025-09-20 19:35:17,482 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 61%|██████    | 61/100 [01:36<00:20,  1.88it/s]2025-09-20 19:35:18,033 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 62%|██████▏   | 62/100 [01:37<00:20,  1.86it/s]2025-09-20 19:35:18,608 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 63%|██████▎   | 63/100 [01:37<00:20,  1.82it/s]2025-09-20 19:35:19,091 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 64%|██████▍   | 64/100 [01:38<00:19,  1.89it/s]2025-09-20 19:35:19,628 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 65%|██████▌   | 65/100 [01:38<00:18,  1.88it/s]2025-09-20 19:35:20,165 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 66%|██████▌   | 66/100 [01:39<00:18,  1.88it/s]2025-09-20 19:35:20,701 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 67%|██████▋   | 67/100 [01:40<00:17,  1.87it/s]2025-09-20 19:35:21,247 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 68%|██████▊   | 68/100 [01:40<00:17,  1.86it/s]2025-09-20 19:35:21,783 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 69%|██████▉   | 69/100 [01:41<00:16,  1.86it/s]2025-09-20 19:35:22,343 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 70%|███████   | 70/100 [01:41<00:16,  1.84it/s]2025-09-20 19:35:22,845 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 71%|███████   | 71/100 [01:42<00:15,  1.88it/s]2025-09-20 19:35:23,331 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 72%|███████▏  | 72/100 [01:42<00:14,  1.93it/s]2025-09-20 19:35:23,889 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 73%|███████▎  | 73/100 [01:43<00:14,  1.89it/s]2025-09-20 19:35:24,365 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 74%|███████▍  | 74/100 [01:43<00:13,  1.95it/s]2025-09-20 19:35:24,923 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 75%|███████▌  | 75/100 [01:44<00:13,  1.90it/s]2025-09-20 19:35:25,456 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 76%|███████▌  | 76/100 [01:44<00:12,  1.89it/s]2025-09-20 19:35:25,947 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 77%|███████▋  | 77/100 [01:45<00:11,  1.93it/s]2025-09-20 19:35:26,490 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 78%|███████▊  | 78/100 [01:45<00:11,  1.90it/s]2025-09-20 19:35:27,023 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 79%|███████▉  | 79/100 [01:46<00:11,  1.90it/s]2025-09-20 19:35:27,524 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 80%|████████  | 80/100 [01:46<00:10,  1.92it/s]2025-09-20 19:35:27,531 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:35:27,531 - INFO - Progress saved after processing 80 docs.
-2025-09-20 19:35:28,027 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 81%|████████  | 81/100 [01:47<00:09,  1.94it/s]2025-09-20 19:35:28,607 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 82%|████████▏ | 82/100 [01:47<00:09,  1.87it/s]2025-09-20 19:35:29,144 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 83%|████████▎ | 83/100 [01:48<00:09,  1.87it/s]2025-09-20 19:35:29,680 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 84%|████████▍ | 84/100 [01:49<00:08,  1.87it/s]2025-09-20 19:35:30,171 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 85%|████████▌ | 85/100 [01:49<00:07,  1.92it/s]2025-09-20 19:35:30,662 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 86%|████████▌ | 86/100 [01:50<00:07,  1.95it/s]2025-09-20 19:35:31,206 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 87%|████████▋ | 87/100 [01:50<00:06,  1.92it/s]2025-09-20 19:35:31,696 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 88%|████████▊ | 88/100 [01:51<00:06,  1.95it/s]2025-09-20 19:35:32,253 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 89%|████████▉ | 89/100 [01:51<00:05,  1.90it/s]2025-09-20 19:35:32,774 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 90%|█████████ | 90/100 [01:52<00:05,  1.91it/s]2025-09-20 19:35:33,317 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 91%|█████████ | 91/100 [01:52<00:04,  1.89it/s]2025-09-20 19:35:33,859 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 92%|█████████▏| 92/100 [01:53<00:04,  1.87it/s]2025-09-20 19:35:34,402 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 93%|█████████▎| 93/100 [01:53<00:03,  1.86it/s]2025-09-20 19:35:34,952 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 94%|█████████▍| 94/100 [01:54<00:03,  1.85it/s]2025-09-20 19:35:35,487 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 95%|█████████▌| 95/100 [01:54<00:02,  1.86it/s]2025-09-20 19:35:36,042 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 96%|█████████▌| 96/100 [01:55<00:02,  1.84it/s]2025-09-20 19:35:36,585 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 97%|█████████▋| 97/100 [01:55<00:01,  1.84it/s]2025-09-20 19:35:37,064 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 98%|█████████▊| 98/100 [01:56<00:01,  1.91it/s]2025-09-20 19:35:37,595 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 99%|█████████▉| 99/100 [01:56<00:00,  1.90it/s]2025-09-20 19:35:38,081 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-100%|██████████| 100/100 [01:57<00:00,  1.95it/s]2025-09-20 19:35:38,088 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:35:38,088 - INFO - Progress saved after processing 100 docs.
-100%|██████████| 100/100 [01:57<00:00,  1.17s/it]
-2025-09-20 19:35:38,090 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:35:38,092 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-20 19:35:38,094 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_harm.json
-2025-09-20 19:35:38,095 - INFO - Loaded data from: ./data/results/11/stage_2_data_11.json
-2025-09-20 19:35:38,115 - INFO - Formatting docs
-  0%|          | 0/72 [00:00<?, ?it/s]100%|██████████| 72/72 [00:00<00:00, 1556648.91it/s]
-2025-09-20 19:35:38,115 - INFO - Processing docs with 4 workers.
-  0%|          | 0/72 [00:00<?, ?it/s]2025-09-20 19:35:39,203 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  1%|▏         | 1/72 [00:01<01:17,  1.08s/it]2025-09-20 19:35:39,803 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  3%|▎         | 2/72 [00:01<00:55,  1.25it/s]2025-09-20 19:35:40,402 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  4%|▍         | 3/72 [00:02<00:48,  1.41it/s]2025-09-20 19:35:40,991 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  6%|▌         | 4/72 [00:02<00:44,  1.51it/s]2025-09-20 19:35:41,579 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  7%|▋         | 5/72 [00:03<00:42,  1.58it/s]2025-09-20 19:35:42,175 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-  8%|▊         | 6/72 [00:04<00:41,  1.61it/s]2025-09-20 19:35:42,762 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 10%|▉         | 7/72 [00:04<00:39,  1.63it/s]2025-09-20 19:35:43,375 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 11%|█         | 8/72 [00:05<00:39,  1.64it/s]2025-09-20 19:35:43,956 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 12%|█▎        | 9/72 [00:05<00:37,  1.66it/s]2025-09-20 19:35:44,583 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 14%|█▍        | 10/72 [00:06<00:37,  1.64it/s]2025-09-20 19:35:45,189 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 15%|█▌        | 11/72 [00:07<00:37,  1.64it/s]2025-09-20 19:35:45,777 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 17%|█▋        | 12/72 [00:07<00:36,  1.66it/s]2025-09-20 19:35:46,390 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 18%|█▊        | 13/72 [00:08<00:35,  1.65it/s]2025-09-20 19:35:46,981 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 19%|█▉        | 14/72 [00:08<00:34,  1.66it/s]2025-09-20 19:35:47,570 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 21%|██        | 15/72 [00:09<00:34,  1.67it/s]2025-09-20 19:35:48,170 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 22%|██▏       | 16/72 [00:10<00:33,  1.67it/s]2025-09-20 19:35:48,757 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 24%|██▎       | 17/72 [00:10<00:32,  1.68it/s]2025-09-20 19:35:49,354 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 25%|██▌       | 18/72 [00:11<00:32,  1.68it/s]2025-09-20 19:35:49,940 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 26%|██▋       | 19/72 [00:11<00:31,  1.69it/s]2025-09-20 19:35:50,555 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 28%|██▊       | 20/72 [00:12<00:31,  1.67it/s]2025-09-20 19:35:50,561 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:35:50,561 - INFO - Progress saved after processing 20 docs.
-2025-09-20 19:35:51,143 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 29%|██▉       | 21/72 [00:13<00:30,  1.68it/s]2025-09-20 19:35:51,762 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 31%|███       | 22/72 [00:13<00:30,  1.66it/s]2025-09-20 19:35:52,368 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 32%|███▏      | 23/72 [00:14<00:29,  1.66it/s]2025-09-20 19:35:52,967 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 33%|███▎      | 24/72 [00:14<00:28,  1.66it/s]2025-09-20 19:35:53,556 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 35%|███▍      | 25/72 [00:15<00:28,  1.67it/s]2025-09-20 19:35:54,177 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 36%|███▌      | 26/72 [00:16<00:27,  1.65it/s]2025-09-20 19:35:54,792 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 38%|███▊      | 27/72 [00:16<00:27,  1.64it/s]2025-09-20 19:35:55,402 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 39%|███▉      | 28/72 [00:17<00:26,  1.64it/s]2025-09-20 19:35:56,005 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 40%|████      | 29/72 [00:17<00:26,  1.65it/s]2025-09-20 19:35:56,590 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 42%|████▏     | 30/72 [00:18<00:25,  1.67it/s]2025-09-20 19:35:57,187 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 43%|████▎     | 31/72 [00:19<00:24,  1.67it/s]2025-09-20 19:35:57,790 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 44%|████▍     | 32/72 [00:19<00:24,  1.67it/s]2025-09-20 19:35:58,385 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 46%|████▌     | 33/72 [00:20<00:23,  1.67it/s]2025-09-20 19:35:58,973 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 47%|████▋     | 34/72 [00:20<00:22,  1.68it/s]2025-09-20 19:35:59,577 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 49%|████▊     | 35/72 [00:21<00:22,  1.67it/s]2025-09-20 19:36:00,165 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 50%|█████     | 36/72 [00:22<00:21,  1.68it/s]2025-09-20 19:36:00,782 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 51%|█████▏    | 37/72 [00:22<00:21,  1.66it/s]2025-09-20 19:36:01,382 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 53%|█████▎    | 38/72 [00:23<00:20,  1.66it/s]2025-09-20 19:36:01,979 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 54%|█████▍    | 39/72 [00:23<00:19,  1.67it/s]2025-09-20 19:36:02,569 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 56%|█████▌    | 40/72 [00:24<00:19,  1.67it/s]2025-09-20 19:36:02,575 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:36:02,575 - INFO - Progress saved after processing 40 docs.
-2025-09-20 19:36:03,164 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 57%|█████▋    | 41/72 [00:25<00:18,  1.68it/s]2025-09-20 19:36:03,763 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 58%|█████▊    | 42/72 [00:25<00:17,  1.68it/s]2025-09-20 19:36:04,353 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 60%|█████▉    | 43/72 [00:26<00:17,  1.68it/s]2025-09-20 19:36:04,957 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 61%|██████    | 44/72 [00:26<00:16,  1.67it/s]2025-09-20 19:36:05,552 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 62%|██████▎   | 45/72 [00:27<00:16,  1.68it/s]2025-09-20 19:36:06,137 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 64%|██████▍   | 46/72 [00:28<00:15,  1.69it/s]2025-09-20 19:36:06,726 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 65%|██████▌   | 47/72 [00:28<00:14,  1.69it/s]2025-09-20 19:36:07,341 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 67%|██████▋   | 48/72 [00:29<00:14,  1.67it/s]2025-09-20 19:36:07,929 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 68%|██████▊   | 49/72 [00:29<00:13,  1.68it/s]2025-09-20 19:36:08,518 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 69%|██████▉   | 50/72 [00:30<00:13,  1.68it/s]2025-09-20 19:36:09,106 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 71%|███████   | 51/72 [00:30<00:12,  1.69it/s]2025-09-20 19:36:09,705 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 72%|███████▏  | 52/72 [00:31<00:11,  1.68it/s]2025-09-20 19:36:10,294 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 74%|███████▎  | 53/72 [00:32<00:11,  1.69it/s]2025-09-20 19:36:10,914 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 75%|███████▌  | 54/72 [00:32<00:10,  1.66it/s]2025-09-20 19:36:11,530 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 76%|███████▋  | 55/72 [00:33<00:10,  1.65it/s]2025-09-20 19:36:12,149 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 78%|███████▊  | 56/72 [00:34<00:09,  1.64it/s]2025-09-20 19:36:12,737 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 79%|███████▉  | 57/72 [00:34<00:09,  1.66it/s]2025-09-20 19:36:13,355 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 81%|████████  | 58/72 [00:35<00:08,  1.65it/s]2025-09-20 19:36:13,945 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 82%|████████▏ | 59/72 [00:35<00:07,  1.66it/s]2025-09-20 19:36:14,584 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 83%|████████▎ | 60/72 [00:36<00:07,  1.63it/s]2025-09-20 19:36:14,594 - INFO - Saved data to: ./data/results/11
-2025-09-20 19:36:14,594 - INFO - Progress saved after processing 60 docs.
-2025-09-20 19:36:15,177 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 85%|████████▍ | 61/72 [00:37<00:06,  1.65it/s]2025-09-20 19:36:15,784 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 86%|████████▌ | 62/72 [00:37<00:06,  1.65it/s]2025-09-20 19:36:16,389 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 88%|████████▊ | 63/72 [00:38<00:05,  1.65it/s]2025-09-20 19:36:17,012 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 89%|████████▉ | 64/72 [00:38<00:04,  1.64it/s]2025-09-20 19:36:17,614 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 90%|█████████ | 65/72 [00:39<00:04,  1.64it/s]2025-09-20 19:36:18,216 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 92%|█████████▏| 66/72 [00:40<00:03,  1.65it/s]2025-09-20 19:36:18,838 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 93%|█████████▎| 67/72 [00:40<00:03,  1.64it/s]2025-09-20 19:36:19,435 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 94%|█████████▍| 68/72 [00:41<00:02,  1.65it/s]2025-09-20 19:36:20,051 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 96%|█████████▌| 69/72 [00:41<00:01,  1.64it/s]2025-09-20 19:36:20,642 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 97%|█████████▋| 70/72 [00:42<00:01,  1.66it/s]2025-09-20 19:36:21,242 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
- 99%|█████████▊| 71/72 [00:43<00:00,  1.66it/s]2025-09-20 19:36:21,831 - INFO - HTTP Request: POST http://10.225.144.50:9999/api/chat "HTTP/1.1 200 OK"
-100%|██████████| 72/72 [00:43<00:00,  1.67it/s]100%|██████████| 72/72 [00:43<00:00,  1.65it/s]
-2025-09-20 19:36:21,837 - INFO - Saved data to: ./data/results/11

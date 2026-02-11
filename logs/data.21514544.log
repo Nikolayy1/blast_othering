@@ -1,49 +1,0 @@
-Starting up Ollama server
-Waiting for Ollama server to start
-DEBUG: Host IP is 10.225.144.50
-⚠️ Ollama not responding on 10.225.144.50:9999
-2025-10-29 22:40:58,372 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 22:40:58,372 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_identify_target.json
-2025-10-29 22:40:58,372 - INFO - Loaded data from: ./data/../data/annotations_100.json
-2025-10-29 22:40:58,372 - INFO - Loaded data from: ./data/results/134/6_target_results_134.json
-2025-10-29 22:40:58,372 - INFO - Found 100 existing results.
-2025-10-29 22:40:58,390 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,402 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,410 - INFO - Saved data to: ./data/results/134
-2025-10-29 22:40:58,411 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 22:40:58,411 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_is_social_group.json
-2025-10-29 22:40:58,411 - INFO - Loaded data from: ./data/results/134/stage_6_data_134.json
-2025-10-29 22:40:58,411 - INFO - Loaded data from: ./data/results/134/stage_7_results_134.json
-2025-10-29 22:40:58,411 - INFO - Found 0 existing results.
-2025-10-29 22:40:58,429 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,429 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,430 - INFO - Saved data to: ./data/results/134
-2025-10-29 22:40:58,431 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 22:40:58,431 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-29 22:40:58,431 - INFO - Loaded data from: ./data/results/134/stage_7_data_134.json
-2025-10-29 22:40:58,448 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,449 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,451 - INFO - Saved data to: ./data/results/134
-2025-10-29 22:40:58,451 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 22:40:58,451 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-29 22:40:58,452 - INFO - Loaded data from: ./data/results/134/stage_7_data_134.json
-2025-10-29 22:40:58,469 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,469 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,470 - INFO - Saved data to: ./data/results/134
-2025-10-29 22:40:58,470 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 22:40:58,470 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-29 22:40:58,470 - INFO - Loaded data from: ./data/results/134/stage_7_data_134.json
-2025-10-29 22:40:58,488 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,488 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 22:40:58,489 - INFO - Saved data to: ./data/results/134
-LISTEN 0      2048       127.0.0.1:9999       0.0.0.0:*          

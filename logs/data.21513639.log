@@ -1,53 +1,0 @@
-Starting up Ollama server
-Waiting for Ollama server to start
-DEBUG: Host IP is 10.225.144.50, checking Ollama on port 9999...
-* processing: http://localhost:9999/api/tags
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:9999...
-* connect to ::1 port 9999 failed: Connection refused
-*   Trying 127.0.0.1:9999...
-* Connected to localhost (127.0.0.1) port 9999
-> GET /api/tags HTTP/1.1
-> Host: localhost:9999
-> User-Agent: curl/8.2.1
-> Accept: */*
-> 
-< HTTP/1.1 200 OK
-< Content-Type: application/json; charset=utf-8
-< Date: Thu, 30 Oct 2025 03:38:37 GMT
-< Content-Length: 2000
-< 
-{ [2000 bytes data]
-100  2000  100  2000    0     0   9209      0 --:--:-- --:--:-- --:--:--  9216
-* Connection #0 to host localhost left intact
-{"models":[{"name":"llama3.3-70b-q4:latest","model":"llama3.3-70b-q4:latest","modified_at":"2025-10-29T12:55:00.219033135-06:00","size":42520399372,"digest":"789d2b137b28231674f8382932d28ab95f989361a18168b9e25080dda00f9bf2","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"70.6B","quantization_level":"Q4_K_M"}},{"name":"qwen3:8b","model":"qwen3:8b","modified_at":"2025-10-28T09:57:26.748703657-06:00","size":5225388164,"digest":"500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41","details":{"parent_model":"","format":"gguf","family":"qwen3","families":["qwen3"],"parameter_size":"8.2B","quantization_level":"Q4_K_M"}},{"name":"qwen3:14b","model":"qwen3:14b","modified_at":"2025-10-28T09:55:53.567447007-06:00","size":9276198565,"digest":"bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8","details":{"parent_model":"","format":"gguf","family":"qwen3","families":["qwen3"],"parameter_size":"14.8B","quantization_level":"Q4_K_M"}},{"name":"qwen3:32b","model":"qwen3:32b","modified_at":"2025-10-27T20:22:01.428241014-06:00","size":20201253829,"digest":"030ee887880fc378860c2dd35101da424377520441ae4bfe7be6deff8ade7840","details":{"parent_model":"","format":"gguf","family":"qwen3","families":["qwen3"],"parameter_size":"32.8B","quantization_level":"Q4_K_M"}},{"name":"mistral:7b","model":"mistral:7b","modified_at":"2025-10-16T10:37:31.744769041-06:00","size":4372824384,"digest":"6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf","details":{"parent_model":"","format":"gguf","family":"llama","families":["llama"],"parameter_size":"7.2B","quantization_level":"Q4_K_M"}},{"name":"gpt-oss:20b","model":"gpt-oss:20b","modified_at":"2025-10-02T09:51:40.054425281-06:00","size":13780173724,"digest":"aa4295ac10c3afb60e6d711289fc6896f5aef82258997b9efdaed6d0cc4cd8b8","details":{"parent_model":"","format":"gguf","family":"gptoss","families":["gptoss"],"parameter_size":"20.9B","quantization_level":"MXFP4"}}]}2025-10-29 21:38:38,475 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 21:38:38,475 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_identify_target.json
-2025-10-29 21:38:38,475 - INFO - Loaded data from: ./data/../data/annotations_100.json
-2025-10-29 21:38:38,476 - INFO - Loaded data from: ./data/results/130/6_target_results_130.json
-2025-10-29 21:38:38,476 - INFO - Found 100 existing results.
-2025-10-29 21:38:38,493 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 21:38:38,506 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 21:38:38,516 - INFO - Saved data to: ./data/results/130
-2025-10-29 21:38:38,516 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 21:38:38,516 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_is_social_group.json
-2025-10-29 21:38:38,516 - INFO - Loaded data from: ./data/results/130/stage_6_data_130.json
-2025-10-29 21:38:38,518 - INFO - Loaded data from: ./data/results/130/stage_7_results_130.json
-2025-10-29 21:38:38,518 - INFO - Found 0 existing results.
-2025-10-29 21:38:38,536 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 21:38:38,536 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 21:38:38,537 - INFO - Saved data to: ./data/results/130
-2025-10-29 21:38:38,537 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-29 21:38:38,537 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-29 21:38:38,538 - INFO - Loaded data from: ./data/results/130/stage_7_data_130.json
-2025-10-29 21:38:38,538 - INFO - Loaded data from: ./data/results/130/stage_8_results_130.json
-2025-10-29 21:38:38,538 - INFO - Found 0 existing results.
-2025-10-29 21:38:38,555 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 21:38:38,556 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-29 21:38:38,558 - INFO - Saved data to: ./data/results/130

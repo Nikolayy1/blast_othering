@@ -1,50 +1,0 @@
-/var/spool/slurmd/job21515818/slurm_script: line 30: PORT: command not found
-Starting up Ollama server
-Waiting for Ollama server to start...
-✅ Ollama is up
-LISTEN 0      2048       127.0.0.1:9999       0.0.0.0:*          
-Running annotation script
-2025-10-30 01:56:42,542 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-30 01:56:42,542 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_identify_target.json
-2025-10-30 01:56:42,543 - INFO - Loaded data from: ./data/../data/annotations_100.json
-2025-10-30 01:56:42,543 - INFO - Loaded data from: ./data/results/135/6_target_results_135.json
-2025-10-30 01:56:42,543 - INFO - Found 100 existing results.
-2025-10-30 01:56:42,560 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,575 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,583 - INFO - Saved data to: ./data/results/135
-2025-10-30 01:56:42,584 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-30 01:56:42,585 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_is_social_group.json
-2025-10-30 01:56:42,585 - INFO - Loaded data from: ./data/results/135/stage_6_data_135.json
-2025-10-30 01:56:42,585 - INFO - Loaded data from: ./data/results/135/stage_7_results_135.json
-2025-10-30 01:56:42,585 - INFO - Found 0 existing results.
-2025-10-30 01:56:42,603 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,603 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,604 - INFO - Saved data to: ./data/results/135
-2025-10-30 01:56:42,606 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-30 01:56:42,606 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-30 01:56:42,606 - INFO - Loaded data from: ./data/results/135/stage_7_data_135.json
-2025-10-30 01:56:42,623 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,624 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,628 - INFO - Saved data to: ./data/results/135
-2025-10-30 01:56:42,628 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-30 01:56:42,628 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-30 01:56:42,628 - INFO - Loaded data from: ./data/results/135/stage_7_data_135.json
-2025-10-30 01:56:42,645 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,646 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,647 - INFO - Saved data to: ./data/results/135
-2025-10-30 01:56:42,647 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-10-30 01:56:42,647 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_othering_no_reasoning.json
-2025-10-30 01:56:42,647 - INFO - Loaded data from: ./data/results/135/stage_7_data_135.json
-2025-10-30 01:56:42,665 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,665 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-10-30 01:56:42,666 - INFO - Saved data to: ./data/results/135

@@ -1,52 +1,0 @@
-Starting up Ollama server
-Waiting for Ollama server to start
-2025-09-21 20:58:47,269 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-21 20:58:47,272 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/default.json
-2025-09-21 20:58:47,304 - INFO - Loaded data from: ./data/../data/examples.json
-2025-09-21 20:58:47,305 - INFO - Loaded data from: ./data/results/28/stage_1_results_28.json
-2025-09-21 20:58:47,305 - INFO - Found 100 existing results.
-2025-09-21 20:58:47,322 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,332 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,339 - INFO - Saved data to: ./data/results/28
-2025-09-21 20:58:47,342 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-21 20:58:47,344 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_dehumanizing.json
-2025-09-21 20:58:47,344 - INFO - Loaded data from: ./data/results/28/stage_2_data_28.json
-2025-09-21 20:58:47,345 - INFO - Loaded data from: ./data/results/28/stage_2_results_28.json
-2025-09-21 20:58:47,345 - INFO - Found 73 existing results.
-2025-09-21 20:58:47,361 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,361 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,365 - INFO - Saved data to: ./data/results/28
-2025-09-21 20:58:47,366 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-21 20:58:47,369 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_stigmatizing.json
-2025-09-21 20:58:47,369 - INFO - Loaded data from: ./data/results/28/stage_3_data_28.json
-2025-09-21 20:58:47,369 - INFO - Loaded data from: ./data/results/28/stage_3_results_28.json
-2025-09-21 20:58:47,369 - INFO - Found 7 existing results.
-2025-09-21 20:58:47,386 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,386 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,390 - INFO - Saved data to: ./data/results/28
-2025-09-21 20:58:47,390 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-21 20:58:47,391 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_stereotyping.json
-2025-09-21 20:58:47,391 - INFO - Loaded data from: ./data/results/28/stage_4_data_28.json
-2025-09-21 20:58:47,391 - INFO - Loaded data from: ./data/results/28/stage_4_results_28.json
-2025-09-21 20:58:47,391 - INFO - Found 0 existing results.
-2025-09-21 20:58:47,408 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,408 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,409 - INFO - Saved data to: ./data/results/28
-2025-09-21 20:58:47,410 - INFO - Setting Annotator variables and initializing Ollama client.
-2025-09-21 20:58:47,410 - INFO - Loaded data from: /gpfs/alpine1/scratch/niho8409/blast_othering/ollama-prompt-main/prompts/classify_simplifying.json
-2025-09-21 20:58:47,410 - INFO - Loaded data from: ./data/results/28/stage_5_data_28.json
-2025-09-21 20:58:47,411 - INFO - Loaded data from: ./data/results/28/stage_5_results_28.json
-2025-09-21 20:58:47,411 - INFO - Found 0 existing results.
-2025-09-21 20:58:47,427 - INFO - Formatting docs
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,427 - INFO - Processing docs with 4 workers.
-0it [00:00, ?it/s]0it [00:00, ?it/s]
-2025-09-21 20:58:47,428 - INFO - Saved data to: ./data/results/28
