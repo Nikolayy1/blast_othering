@@ -1,0 +1,87 @@
+{
+    "system_prompt": "Du bist ein soziolinguistischer Annotator, der darauf trainiert ist, sogenanntes „Othering“ in Online-Kommentaren zu erkennen. Othering bedeutet, eine einheitliche Gruppe (z. B. Geschlecht) in zwei Untergruppen (z. B. Frauen, Männer) aufzuspalten und sie in eine gegnerische Beziehung zu setzen, was zu Marginalisierung, Ausgrenzung und einem „Wir gegen sie“-Denken führt. Richtlinien: Kennzeichne es NICHT als Othering, wenn der Kommentar Menschen im Allgemeinen beleidigt oder kritisiert (z. B. „Die Leute in diesem Sub sind dumm“), ohne eine soziale Identität oder Außengruppe zu benennen. Kennzeichne es NICHT als Othering, wenn der Sprecher sich selbst in die kritisierte Gruppe einschließt (z. B. „Wir Amerikaner sind faul“). Kennzeichne es NICHT als Othering, wenn sich der Kommentar an eine einzelne Person richtet, selbst wenn im selben Kommentar eine soziale Gruppe erwähnt wird. Konzentriere dich auf Ausgrenzung oder Grenzziehung zwischen „wir“ und „sie“ – nicht auf allgemeine Negativität. Erkläre dir vor der Antwort selbst, ob der Kommentar intergruppale Feindseligkeit zeigt. Falls nicht, gib das Label „None“ aus. Gib die Ausgabe strikt als gültiges JSON mit genau diesen Schlüsseln zurück: 'label': '<Othering/None>', 'score': '<Dein Vertrauenswert (Float) von 0–1>', 'reasoning': '<1 Satz, der deine Entscheidung erklärt>', 'target': '<die angesprochene soziale Gruppe oder \"None\", falls nicht zutreffend>'.",
+    "question": "Enthält dieser Kommentar Othering?",
+    "demos": [
+        {
+            "text": "Männer sind laut den Leuten hier Raubtiere, die nur auf ihre Chance warten, Frauen zu missbrauchen.",
+            "answer": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "Diese Aussage teilt Menschen in soziale Identitätsgruppen (Männer vs. Frauen) und stellt sie in eine gegnerische Beziehung.",
+                "target": "Männer"
+            }
+        },
+        {
+            "text": "Christen sind alle verurteilende Heuchler.",
+            "answer": {
+                "label": "Othering",
+                "score": 0.95,
+                "reasoning": "Diese Aussage teilt Menschen anhand religiöser Identität in Gruppen ein und stellt sie in eine gegnerische Beziehung.",
+                "target": "Christen"
+            }
+        },
+        {
+            "text": "Einwanderer sind eine Bedrohung für jede Gesellschaft, weil sie sie ersetzen.",
+            "answer": {
+                "label": "Othering",
+                "score": 1.0,
+                "reasoning": "Diese Aussage stellt Einwanderer als gegnerische Außengruppe gegenüber der restlichen Gesellschaft dar.",
+                "target": "Einwanderer"
+            }
+        },
+        {
+            "text": "Niemand könnte sich ernsthaft die Geschichte der Menschheit ansehen und zu dem Schluss kommen, dass Frauen von Natur aus wertlos sind.",
+            "answer": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "Diese Aussage stellt keine gegnerische Beziehung zwischen sozialen Gruppen her.",
+                "target": "Frauen"
+            }
+        },
+        {
+            "text": "Unsere Stadt hat letztes Jahr 50 neue Geflüchtete aufgenommen.",
+            "answer": {
+                "label": "None",
+                "score": 1.0,
+                "reasoning": "Diese Aussage beschreibt ein Ereignis ohne Ausgrenzung oder Gegnerschaft.",
+                "target": "Geflüchtete"
+            }
+        },
+        {
+            "text": "Die Mehrheit der Leute in diesem Sub sind junge Kinder und/oder ahnungslose Idioten.",
+            "answer": {
+                "label": "None",
+                "score": 0.85,
+                "reasoning": "Die Aussage beleidigt allgemein, ohne eine soziale Identitätsgruppe gegeneinanderzustellen.",
+                "target": "Leute in diesem Sub"
+            }
+        },
+        {
+            "text": "Als Frau, die alleine reist, behalte ich immer mein Getränk im Auge.",
+            "answer": {
+                "label": "None",
+                "score": 1.0,
+                "reasoning": "Das ist ein Sicherheitshinweis und keine feindselige Aussage über Männer oder Frauen.",
+                "target": "Frauen"
+            }
+        },
+        {
+            "text": "Männer und Frauen stehen bei der Arbeit vor unterschiedlichen Erwartungen.",
+            "answer": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "Der Kommentar vergleicht Erfahrungen, ohne Gegnerschaft oder Ausgrenzung auszudrücken.",
+                "target": "Männer und Frauen"
+            }
+        },
+        {
+            "text": "Schwarze Männer werden häufiger von der Polizei kontrolliert.",
+            "answer": {
+                "label": "None",
+                "score": 0.9,
+                "reasoning": "Dies ist eine sachliche Beobachtung über Ungleichbehandlung, keine feindselige Abgrenzung.",
+                "target": "Schwarze Männer"
+            }
+        }
+    ]
+}

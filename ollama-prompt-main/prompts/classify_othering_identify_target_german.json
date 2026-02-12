@@ -1,0 +1,36 @@
+{
+    "system_prompt": "Lies den Kommentar und entscheide, welche soziale Gruppe angesprochen wird. Wenn keine Zielgruppe erwähnt wird, gib 'None' zurück.",
+    "question": "Welche, wenn überhaupt, soziale Gruppe wird mit diesem Kommentar angesprochen?",
+    "demos": [
+        {
+            "text": "Ändere, was gefährlich bedeutet, und du wirst die Welt kontrollieren.",
+            "answer": {
+                "target": "None"
+            }
+        },
+        {
+            "text": "Ich denke, Frauen unter 30 sollten wahrscheinlich keine Jungen unterrichten, die in die Pubertät kommen.",
+            "answer": {
+                "target": "Frauen"
+            }
+        },
+        {
+            "text": "Solange es sich nicht gegen Christen selbst richtet, großartig. Scheiß auf das Christentum. Wenn es eine Nation wäre, hätten wir sie längst mit der ganzen Welt angegriffen und ihre Anführer wegen unzähliger Verbrechen und Gräueltaten verurteilt. Wenn du denkst, /r/atheism geht zu weit, dann ist dir, glaube ich, nicht klar, wie weit das Christentum historisch gegangen ist.",
+            "answer": {
+                "target": "Christentum"
+            }
+        },
+        {
+            "text": "Solange es sich nicht gegen Christen selbst richtet, großartig. Scheiß auf das Christentum. Wenn es eine Nation wäre, hätten wir sie längst mit der ganzen Welt angegriffen und ihre Anführer wegen unzähliger Verbrechen und Gräueltaten verurteilt. Wenn du denkst, /r/atheism geht zu weit, dann ist dir, glaube ich, nicht klar, wie weit das Christentum historisch gegangen ist.",
+            "answer": {
+                "target": "Christentum"
+            }
+        },
+        {
+            "text": "Man muss wohl immer jemanden zum bösen Feind machen, weil die Leute einfach nicht nett zueinander sein können.",
+            "answer": {
+                "target": "None"
+            }
+        }
+    ]
+}
