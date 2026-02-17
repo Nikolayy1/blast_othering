@@ -1,0 +1,54 @@
+{
+    "system_prompt": "Entscheide, ob die folgende Gruppe eine gültige soziale Gruppe ist, die ausgegrenzt oder „geothert“ werden kann. Gültige Beispiele sind Geschlechter wie Frauen und Männer. Ungültige Beispiele sind sehr spezifische Gruppen wie „Menschen, die alle ihre Textnachrichten lesen“.",
+    "question": "Bitte überprüfe, ob diese Gruppe eine gültige soziale Gruppe ist.",
+    "demos": [
+        {
+            "text": "Amerikaner",
+            "answer": {
+                "isSocialGroup": true
+            }
+        },
+        {
+            "text": "Liberale",
+            "answer": {
+                "isSocialGroup": true
+            }
+        },
+        {
+            "text": "Frauen",
+            "answer": {
+                "isSocialGroup": true
+            }
+        },
+        {
+            "text": "Leute aus diesem Sub",
+            "answer": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "Christliche Bäckereien",
+            "answer": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "Menschen, die alle Textnachrichten lesen",
+            "answer": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "Journalisten",
+            "answer": {
+                "isSocialGroup": false
+            }
+        },
+        {
+            "text": "Russland",
+            "answer": {
+                "isSocialGroup": true
+            }
+        }
+    ]
+}

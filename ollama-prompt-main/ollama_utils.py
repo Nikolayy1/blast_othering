@@ -239,7 +239,8 @@ class Annotate:
             )
         elif stage == 7:
             prompt_path = os.path.join(
-                script_path, self.config.prompt_file_othering_is_social_group
+                # script_path, self.config.prompt_file_othering_is_social_group
+                script_path, self.config.prompt_file_othering_is_social_group_german
             )
         elif stage == 8:
             prompt_path = os.path.join(
@@ -251,7 +252,8 @@ class Annotate:
             )
         elif stage == 10:
             prompt_path = os.path.join(
-                script_path, self.config.prompt_file_othering
+                # script_path, self.config.prompt_file_othering
+                script_path, self.config.prompt_file_othering_german
             )
         
 
