@@ -19,6 +19,7 @@ source ~/.bashrc
 
 module load anaconda
 conda activate bt_2025  # activate the conda environment with ollama installed
+module load ollama
 
 mkdir -p "$SLURM_SCRATCH/cache/HF"
 
